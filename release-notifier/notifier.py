@@ -264,7 +264,7 @@ def send_email(subject: str, body: str):
     smtp_port = int(os.getenv("SMTP_PORT", "587"))
     smtp_user = os.getenv("SMTP_USER", "")
     smtp_pass = os.getenv("SMTP_PASS", "")
-    to_addr   = os.getenv("NOTIFY_TO", "e.nishide@bigm.one")
+    to_addr   = os.getenv("NOTIFY_TO", "")
 
     if not smtp_user or not smtp_pass:
         print("[警告] SMTP_USER / SMTP_PASS が未設定のためメール送信をスキップします。")
