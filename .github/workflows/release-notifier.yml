@@ -38,6 +38,7 @@ jobs:
           NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
           OPTILOGIC_EMAIL: ${{ secrets.OPTILOGIC_EMAIL }}
           OPTILOGIC_PASSWORD: ${{ secrets.OPTILOGIC_PASSWORD }}
+          EMAIL_GREETING: ${{ secrets.EMAIL_GREETING }}
         run: python release-notifier/notifier.py
 
       - name: Commit updated hash

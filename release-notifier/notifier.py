@@ -42,17 +42,15 @@ LOG_DIR = BASE_DIR / "logs"
 LOG_DIR.mkdir(exist_ok=True)
 
 RELEASE_LOG_URL = "https://optilogic.app/#/release-log"
-
-EMAIL_GREETING = """\
-Optilogicユーザー様
-いつも大変お世話になっております。BigM株式会社カスタマーサポート担当でございます。
-
-Optilogicの最新リリースログが更新されましたのでお知らせいたします。
-最新情報に関するご質問がございましたら何なりとお申し付けくださいませ。
-"""
 # ----------------
 
 load_dotenv(ENV_FILE)
+
+# 挨拶文は環境変数から取得（GitHub Secrets: EMAIL_GREETING）
+EMAIL_GREETING = os.getenv(
+    "EMAIL_GREETING",
+    "Optilogicの最新リリースログが更新されましたのでお知らせいたします。",
+)
 
 
 # ── セッション管理 ──────────────────────────────────────────────
