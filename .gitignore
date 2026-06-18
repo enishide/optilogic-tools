@@ -12,8 +12,3 @@ document-scraper/*.xlsx
 release-notifier/logs/
 **/__pycache__/
 **/.venv/
-
-# お客様プロジェクトフォルダ（機密データのため除外）
-01_AAM/
-02_Nedlecokes/
-AAM/
