@@ -23,10 +23,10 @@ jobs:
       - name: Run scraper
         run: uv run document-scraper/scraper.py
 
-      - name: Commit updated notebook_source.md
+      - name: Commit updated notebook_source files
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add document-scraper/notebook_source.md
-          git diff --staged --quiet || git commit -m "chore: update notebook_source.md [skip ci]"
+          git add document-scraper/notebook_source.md document-scraper/notebook_source_docs.md
+          git diff --staged --quiet || git commit -m "chore: update notebook_source files [skip ci]"
           git diff HEAD origin/main --quiet || git push

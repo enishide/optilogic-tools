@@ -41,6 +41,7 @@ INCLUDE_PATHS = [
 ]
 URLS_FILE = Path(__file__).parent / "all_urls.txt"
 OUTPUT_FILE = Path(__file__).parent / "notebook_source.md"
+DOCS_ONLY_FILE = Path(__file__).parent / "notebook_source_docs.md"
 REQUEST_DELAY = 1.5  # リクエスト間隔（秒）
 
 # Anura データ構造 Excel ファイル（入力・出力仕様書）
@@ -149,9 +150,11 @@ def step_fetch_contents(urls: list[str] | None = None):
     fetched = 0
     errors = 0
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as out:
-        out.write("# Optilogic ドキュメント - 全コンテンツ\n")
-        out.write("# CosmicFrog / DataStar / Ada / Composable Apps 操作ガイド\n\n")
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as out, \
+         open(DOCS_ONLY_FILE, "w", encoding="utf-8") as docs:
+        header = "# Optilogic ドキュメント - 全コンテンツ\n# CosmicFrog / DataStar / Ada / Composable Apps 操作ガイド\n\n"
+        out.write(header)
+        docs.write(header)
 
         for i, url in enumerate(urls, 1):
             print(f"[{i}/{len(urls)}] {url}")
@@ -169,7 +172,9 @@ def step_fetch_contents(urls: list[str] | None = None):
                     soup = BeautifulSoup(r.text, "lxml")
                     title = soup.find("title")
                     title_text = title.get_text(strip=True) if title else url.split("/")[-1]
-                    out.write(f"\n\n---\n## {title_text}\n**URL:** {url}\n\n{content}\n")
+                    entry = f"\n\n---\n## {title_text}\n**URL:** {url}\n\n{content}\n"
+                    out.write(entry)
+                    docs.write(entry)
                     fetched += 1
                 else:
                     print(f"  [スキップ] コンテンツ抽出できず")
@@ -178,7 +183,7 @@ def step_fetch_contents(urls: list[str] | None = None):
                 errors += 1
                 print(f"  [エラー] {e}")
 
-    print(f"\n[OK] {fetched}/{len(urls)} 件を {OUTPUT_FILE.name} に保存しました。")
+    print(f"\n[OK] {fetched}/{len(urls)} 件を {OUTPUT_FILE.name} / {DOCS_ONLY_FILE.name} に保存しました。")
     if errors:
         print(f"[警告] {errors} 件でエラーが発生しました。")
     print("\n次のステップ:")
