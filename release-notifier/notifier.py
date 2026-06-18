@@ -81,6 +81,7 @@ def setup_session():
 
 def _do_login(page, email: str, password: str):
     """メール・パスワードでOptilogicにログインする（GitHub Actions用）"""
+    # メールアドレス入力
     page.wait_for_selector(
         "input[type='email'], input[name='email'], input[name='username']",
         timeout=15_000,
@@ -90,19 +91,17 @@ def _do_login(page, email: str, password: str):
     ).first
     email_input.fill(email)
 
-    # Auth0等の2段階ログイン（Continueボタンがある場合）
-    try:
-        page.locator("button[type='submit']").first.click(timeout=3_000)
-        page.wait_for_timeout(2_000)
-    except Exception:
-        pass
+    # Auth0等の2段階ログイン（Continueボタンがある場合はEnterで進む）
+    email_input.press("Enter")
+    page.wait_for_timeout(2_000)
 
     # パスワード入力
     pw = page.locator("input[type='password']").first
     pw.wait_for(timeout=10_000)
     pw.fill(password)
 
-    page.locator("button[type='submit']").first.click()
+    # Enterキーでフォーム送信（ボタンのセレクタに依存しない）
+    pw.press("Enter")
 
     # ログイン完了を最大30秒待つ
     for _ in range(15):
