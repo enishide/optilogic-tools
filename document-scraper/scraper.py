@@ -42,6 +42,7 @@ INCLUDE_PATHS = [
 URLS_FILE = Path(__file__).parent / "all_urls.txt"
 OUTPUT_FILE = Path(__file__).parent / "notebook_source.md"
 DOCS_ONLY_FILE = Path(__file__).parent / "notebook_source_docs.md"
+DOCS_ONLY_MAX_CHARS = 3000  # NotebookLM上限対策: 1ページあたり最大文字数
 REQUEST_DELAY = 1.5  # リクエスト間隔（秒）
 
 # Anura データ構造 Excel ファイル（入力・出力仕様書）
@@ -174,7 +175,8 @@ def step_fetch_contents(urls: list[str] | None = None):
                     title_text = title.get_text(strip=True) if title else url.split("/")[-1]
                     entry = f"\n\n---\n## {title_text}\n**URL:** {url}\n\n{content}\n"
                     out.write(entry)
-                    docs.write(entry)
+                    truncated = content if len(content) <= DOCS_ONLY_MAX_CHARS else content[:DOCS_ONLY_MAX_CHARS] + "\n…（省略）"
+                    docs.write(f"\n\n---\n## {title_text}\n**URL:** {url}\n\n{truncated}\n")
                     fetched += 1
                 else:
                     print(f"  [スキップ] コンテンツ抽出できず")
