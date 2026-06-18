@@ -1,0 +1,50 @@
+name: Optilogic Release Notifier
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 毎週月曜 9:00 JST (UTC 0:00)
+  workflow_dispatch:      # GitHub画面から手動実行も可能
+
+permissions:
+  contents: write         # last_hash.txt をコミットバックするために必要
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install playwright anthropic python-dotenv markdown
+
+      - name: Install Playwright browsers
+        run: playwright install chromium --with-deps
+
+      - name: Run notifier
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMTP_HOST: smtp.gmail.com
+          SMTP_PORT: "587"
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+          OPTILOGIC_EMAIL: ${{ secrets.OPTILOGIC_EMAIL }}
+          OPTILOGIC_PASSWORD: ${{ secrets.OPTILOGIC_PASSWORD }}
+        run: python release-notifier/notifier.py
+
+      - name: Commit updated hash
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add release-notifier/last_hash.txt
+          git diff --staged --quiet || git commit -m "chore: update last_hash.txt [skip ci]"
+          git diff HEAD origin/main --quiet || git push

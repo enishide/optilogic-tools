@@ -1,0 +1,29 @@
+name: Optilogic Document Scraper
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 毎週月曜 9:00 JST (UTC 0:00)
+  workflow_dispatch:      # GitHub画面から手動実行も可能
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Run scraper
+        run: uv run document-scraper/scraper.py
+        working-directory: .
+
+      - name: Upload notebook_source.md as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: notebook-source-${{ github.run_id }}
+          path: document-scraper/notebook_source.md
+          retention-days: 90

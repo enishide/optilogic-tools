@@ -1,0 +1,19 @@
+# 認証情報・機密ファイル
+app.key
+release-notifier/.env
+release-notifier/session.json
+
+# 生成物（大容量）
+document-scraper/notebook_source.md
+document-scraper/all_urls.txt
+document-scraper/*.xlsx
+
+# ログ・キャッシュ
+release-notifier/logs/
+**/__pycache__/
+**/.venv/
+
+# お客様プロジェクトフォルダ（機密データのため除外）
+01_AAM/
+02_Nedlecokes/
+AAM/
