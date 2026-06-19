@@ -2,7 +2,7 @@ name: Optilogic Release Notifier
 
 on:
   schedule:
-    - cron: '20 1 * * *'  # [一時変更] 自動実行確認用 毎日 10:20 JST (UTC 1:20) ※正時を避けて分散
+    - cron: '0 0 * * 1'  # 毎週月曜 9:00 JST (UTC 0:00)
   workflow_dispatch:      # GitHub画面から手動実行も可能
 
 permissions:
