@@ -1952,6 +1952,7 @@ Execution Summary
 The log ends with runtime statistics and the full list of skills that were available to the agent:
 What the agent expects in your database:
 The agent works with any tables in the selected database. There are no fixed column name requirements -- the agent discovers the schema automatically. However, for best results:
+To help you decide if you should use the Data Profiler or Data Cleanser Agent for your task, here is a quick overview of both:
 A user wants to understand what data is in their database before deciding what to clean.
 Database: Supply Chain Dataset
 Task Description: List all tables in the database and show their schemas
@@ -2022,6 +2023,7 @@ Execution Summary
 The log ends with runtime statistics and the full list of skills that were available to the agent:
 What the agent expects in your database:
 The agent works with any tables in the selected database. There are no fixed column name requirements -- the agent discovers the schema automatically. However, for best results:
+To help you decide if you should use the Data Profiler or Data Cleanser Agent for your task, here is a quick overview of both:
 A user wants to understand what data is in their database before deciding what to clean.
 Database: Supply Chain Dataset
 Task Description: List all tables in the database and show their schemas
@@ -2090,10 +2092,11 @@ While the task is running and after it has completed, the Task Logs tab contains
 As an example output, let us have a look at the _dq_table_profiles table:
 In this table, the entire executive summary for the customer_returns table is as follows: "The customer_returns table records return events tied to individual sales order lines, supporting analysis of return volumes, reasons, and financial impact. Each record links a return reference return_id to an order_line_id, with return_date providing the time dimension for trend reporting. Operational metrics include return_qty and restock_flag, while refund_amount captures the customer reimbursement value but is stored as text and includes invalid entries. Return reasons are mostly standardized but include missing values and placeholder or corrupted categories, suggesting a need for data cleansing and validation."
 It is recommended to be somewhat familiar with Ada and how to talk to her in the chat UI before diving into this content. Please see the Getting Started with Ada & Agentic AI article, and in particular its How to Use Ada section.
-Once logged into the next generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada and everaging the Data Profiler Agent right away from the central part of the Home page. You can access it by using the Data Cleanser Agent, as this agent can call the Data Profiler Agent as a tool.
-After selecting thedatabase to profile (here a DataStar project named Dairy End-to-End Ada), set the agent to DataCleanser, write your prompt indicating you want to profile the data (or a subset of it) contained in the connected database. It is recommended to mentioning the Data Profiler pipeline and wanting to write the results into the database itself:
+Once logged into the next generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada and leveraging the Data Profiler Agent right away from the central part of the Home page. You can access it by using the Data Cleanser Agent, as this agent can call the Data Profiler Agent as a tool.
+After selecting the database to profile (here a DataStar project named Dairy End-to-End Ada), set the agent to Data Cleanser, write your prompt indicating you want to profile the data (or a subset of it) contained in the connected database. It is recommended to mention the Data Profiler pipeline and wanting to write the results into the database itself:
 This prompt results in running the full Data Profiler Agent's pipeline and the __pq_ tables can be found in the sandbox of the connected DataStar project.
 The following table summarizes the most common use cases for the 2 ways of accessing the Data Profiler Agent:
+To help you decide if you should use the Data Profiler or Data Cleanser Agent for your task, here is a quick overview of both:
 You point the Data Profiler AI Agent at a database, walk away, and come back a few minutes later to a queryable catalogue of every table — what each column means, what type it should be, where the data is broken, how the tables relate, and a single quality score per table to triage what needs cleaning first.
 Questions or feedback? Please contact the Optilogic Support team on support@optilogic.com.
 The Data Profiler AI Agent is one of Ada's AI-powered assistants, focused on assessing data. It automatically analyzes the quality, structure, and relationships of data stored in an Optilogic database. By profiling every table and column, the agent creates a comprehensive data-quality catalog that helps users understand their data, identify issues, discover relationships, and prioritize cleansing efforts.
@@ -2129,10 +2132,11 @@ While the task is running and after it has completed, the Task Logs tab contains
 As an example output, let us have a look at the _dq_table_profiles table:
 In this table, the entire executive summary for the customer_returns table is as follows: "The customer_returns table records return events tied to individual sales order lines, supporting analysis of return volumes, reasons, and financial impact. Each record links a return reference return_id to an order_line_id, with return_date providing the time dimension for trend reporting. Operational metrics include return_qty and restock_flag, while refund_amount captures the customer reimbursement value but is stored as text and includes invalid entries. Return reasons are mostly standardized but include missing values and placeholder or corrupted categories, suggesting a need for data cleansing and validation."
 It is recommended to be somewhat familiar with Ada and how to talk to her in the chat UI before diving into this content. Please see the Getting Started with Ada & Agentic AI article, and in particular its How to Use Ada section.
-Once logged into the next generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada and everaging the Data Profiler Agent right away from the central part of the Home page. You can access it by using the Data Cleanser Agent, as this agent can call the Data Profiler Agent as a tool.
-After selecting thedatabase to profile (here a DataStar project named Dairy End-to-End Ada), set the agent to DataCleanser, write your prompt indicating you want to profile the data (or a subset of it) contained in the connected database. It is recommended to mentioning the Data Profiler pipeline and wanting to write the results into the database itself:
+Once logged into the next generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada and leveraging the Data Profiler Agent right away from the central part of the Home page. You can access it by using the Data Cleanser Agent, as this agent can call the Data Profiler Agent as a tool.
+After selecting the database to profile (here a DataStar project named Dairy End-to-End Ada), set the agent to Data Cleanser, write your prompt indicating you want to profile the data (or a subset of it) contained in the connected database. It is recommended to mention the Data Profiler pipeline and wanting to write the results into the database itself:
 This prompt results in running the full Data Profiler Agent's pipeline and the __pq_ tables can be found in the sandbox of the connected DataStar project.
 The following table summarizes the most common use cases for the 2 ways of accessing the Data Profiler Agent:
+To help you decide if you should use the Data Profiler or Data Cleanser Agent for your task, here is a quick overview of both:
 You point the Data Profiler AI Agent at a database, walk away, and come back a few minutes later to a queryable catalogue of every table — what each column means, what type it should be, where the data is broken, how the tables relate, and a single quality score per table to triage what needs cleaning first.
 Questions or feedback? Please contact the Optilogic Support team on support@optilogic.com.
 
@@ -8795,39 +8799,25 @@ As always, please feel free to reach out to Optilogic support at support@optilog
 **URL:** https://optilogic.com/resources/help-center/docs/model-output-insights-ai-agent
 
 The Model Output Insights Agent helps users investigate and analyze Cosmic Frog model outputs by turning analytical questions into structured, data-backed strategic reports. It breaks down complex questions into a step-by-step exploration plan, executes targeted queries, synthesizes findings, and produces a professional report - complete with visualizations and actionable recommendations.
-This documentation describes how this specific agent works and can be configured, including walking through an example. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
-This agent is a tool the Modeler AI Agent has access to, so its functionality can also be accessed when chatting with Ada while using the Modeler Agent as the selected agent for a prompt. Please see the following help center articles for more details:
+This documentation describes how this specific agent works and can be configured. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
 Extracting meaningful insights from large databases typically requires exploring and analyzing many output tables which can take a lot of time and effort. The Model Output Insights Agent streamlines the process, helping users get to the insights quicker than ever before.
 Main skills the Model Output Insights Agent uses:
 Supporting capabilities:
-The agent can be accessed through the Run AI Agent task in DataStar. The key inputs are:
-Optionally, users can configure the following Run AI Agent task inputs:
-After the run, a report in markdown format (.md) and charts (if any) are created and can be found in the Explorer with the specified file name and folder. Once clicked, the file is opened in the Lightning Editor application for review.
-Note that currently the charts are only included in the markdown file as a file name. Users can look for the charts in the Charts folder in the targeted report directory:
-The Run AI Agent task also offers the ability for users to set Run Configuration options. This is optional.
-This example uses the Global Supply Chain Strategy model from the Resource Library to get insights on Baseline vs. No Detroit DC scenario comparison where cost, flow shifts and service impacts are explored.
-Cosmic Frog Model Name: Global Supply Chain Strategy
-Analysis Question: Compare cost and flow from Baseline and No Detroit DC scenarios. I'm interested in knowing the cost bucket that drives total savings. I want to know where the flow from Detroit DC was redirected to. Lastly, compare weighted average service distance - i.e. do customers have shorter/longer/the same service distance when Detroit closes down. Who are the top 5 customers with highest service impact?
-Knowledge: Info on target audience for the report, expected report length and tone:
-Should you wish to read the entire report instructions file and/or use it as a starting point for your own usage with this Agent, you can download it here. After downloading, please rename the .txt extension to .md. You can then upload it to your Optilogic account using the Explorer application and then view it in the Lightning Editor application.
-Outputs: The report as a markdown file and a chart in the Charts folder:
+The agent can be accessed through the Run AI Agent task in DataStar. Once a Run AI Agent task is added to the macro, first the Model Output Insights Agent needs to be selected from the list of available agents and utilities in the "Select Utility" section:
+Next, the inputs and settings for the task can be specified in the Configure Utility, Run Configuration, and Notes sections:
+This next screenshot shows how to get a Folder Path while in the Explorer application: 1) right-click on the folder in the Explorer, 2) hover over Copy in the context menu, and 3) click on Folder Path:
+After the run, a report in both markdown (.md) and pdf (.pdf) format and charts (if any) are created and can be found in the Explorer with the specified file name and folder. Once clicked, the file is opened in the Lightning Editor application for review.
+Note that currently the charts are only included in the markdown file as a file name. Users can look for the charts in the Charts folder in the targeted output directory.
 The Model Output Insights Agent helps users investigate and analyze Cosmic Frog model outputs by turning analytical questions into structured, data-backed strategic reports. It breaks down complex questions into a step-by-step exploration plan, executes targeted queries, synthesizes findings, and produces a professional report - complete with visualizations and actionable recommendations.
-This documentation describes how this specific agent works and can be configured, including walking through an example. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
-This agent is a tool the Modeler AI Agent has access to, so its functionality can also be accessed when chatting with Ada while using the Modeler Agent as the selected agent for a prompt. Please see the following help center articles for more details:
+This documentation describes how this specific agent works and can be configured. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
 Extracting meaningful insights from large databases typically requires exploring and analyzing many output tables which can take a lot of time and effort. The Model Output Insights Agent streamlines the process, helping users get to the insights quicker than ever before.
 Main skills the Model Output Insights Agent uses:
 Supporting capabilities:
-The agent can be accessed through the Run AI Agent task in DataStar. The key inputs are:
-Optionally, users can configure the following Run AI Agent task inputs:
-After the run, a report in markdown format (.md) and charts (if any) are created and can be found in the Explorer with the specified file name and folder. Once clicked, the file is opened in the Lightning Editor application for review.
-Note that currently the charts are only included in the markdown file as a file name. Users can look for the charts in the Charts folder in the targeted report directory:
-The Run AI Agent task also offers the ability for users to set Run Configuration options. This is optional.
-This example uses the Global Supply Chain Strategy model from the Resource Library to get insights on Baseline vs. No Detroit DC scenario comparison where cost, flow shifts and service impacts are explored.
-Cosmic Frog Model Name: Global Supply Chain Strategy
-Analysis Question: Compare cost and flow from Baseline and No Detroit DC scenarios. I'm interested in knowing the cost bucket that drives total savings. I want to know where the flow from Detroit DC was redirected to. Lastly, compare weighted average service distance - i.e. do customers have shorter/longer/the same service distance when Detroit closes down. Who are the top 5 customers with highest service impact?
-Knowledge: Info on target audience for the report, expected report length and tone:
-Should you wish to read the entire report instructions file and/or use it as a starting point for your own usage with this Agent, you can download it here. After downloading, please rename the .txt extension to .md. You can then upload it to your Optilogic account using the Explorer application and then view it in the Lightning Editor application.
-Outputs: The report as a markdown file and a chart in the Charts folder:
+The agent can be accessed through the Run AI Agent task in DataStar. Once a Run AI Agent task is added to the macro, first the Model Output Insights Agent needs to be selected from the list of available agents and utilities in the "Select Utility" section:
+Next, the inputs and settings for the task can be specified in the Configure Utility, Run Configuration, and Notes sections:
+This next screenshot shows how to get a Folder Path while in the Explorer application: 1) right-click on the folder in the Explorer, 2) hover over Copy in the context menu, and 3) click on Folder Path:
+After the run, a report in both markdown (.md) and pdf (.pdf) format and charts (if any) are created and can be found in the Explorer with the specified file name and folder. Once clicked, the file is opened in the Lightning Editor application for review.
+Note that currently the charts are only included in the markdown file as a file name. Users can look for the charts in the Charts folder in the targeted output directory.
 
 
 ---
@@ -12569,6 +12559,127 @@ Connect with Optilogic peers, exchange insights, and accelerate supply chain suc
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+The Model Output Insights Agent helps users investigate and analyze Cosmic Frog model outputs by turning analytical questions into structured, data-backed strategic reports. It breaks down complex questions into a step-by-step exploration plan, executes targeted queries, synthesizes findings, and produces a professional report - complete with visualizations and actionable recommendations.
+This documentation describes how this specific agent works and can be configured. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
+Extracting meaningful insights from large databases typically requires exploring and analyzing many output tables which can take a lot of time and effort. The Model Output Insights Agent streamlines the process, helping users get to the insights quicker than ever before.
+Main skills the Model Output Insights Agent uses:
+Supporting capabilities:
+The agent can be accessed through the Run AI Agent task in DataStar. Once a Run AI Agent task is added to the macro, first the Model Output Insights Agent needs to be selected from the list of available agents and utilities in the "Select Utility" section:
+Next, the inputs and settings for the task can be specified in the Configure Utility, Run Configuration, and Notes sections:
+This next screenshot shows how to get a Folder Path while in the Explorer application: 1) right-click on the folder in the Explorer, 2) hover over Copy in the context menu, and 3) click on Folder Path:
+After the run, a report in both markdown (.md) and pdf (.pdf) format and charts (if any) are created and can be found in the Explorer with the specified file name and folder. Once clicked, the file is opened in the Lightning Editor application for review.
+Note that currently the charts are only included in the markdown file as a file name. Users can look for the charts in the Charts folder in the targeted output directory.
+The Data Cleansing Agent is one of Ada’s AI-powered assistants. It helps users profile, clean, and standardize their database data without writing code. Users describe what they want in plain English -- such as "find and fix postal code issues in the customers table" or "standardize date formats in the orders table to ISO" -- and the agent autonomously discovers issues, creates safe working copies of the data, applies the appropriate fixes, and verifies the results. The agent handles common supply chain data problems including mixed date formats, inconsistent country codes, Excel-corrupted postal codes, missing values, outliers, and messy text fields. It expects a connected database with one or more tables as input. The output is a set of cleaned copies of their tables in the database which users can immediately use for Cosmic Frog model building, reporting, or further analysis, while the original data is preserved untouched for comparison or rollback.
+This documentation describes how this specific agent works and can be configured, including walking through multiple examples. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
+Cleaning and standardizing data for supply chain modeling typically requires significant manual effort -- writing SQL queries, inspecting column values, fixing formatting issues one at a time, and verifying results. The Data Cleansing Agent streamlines this process by turning a single natural language prompt into a full profiling, cleaning, and verification workflow.
+Key Capabilities:
+Tools:
+The agent can be accessed on the next generation Optilogic platform by chatting with Ada and through the Run AI Agent task in DataStar. Both ways will be explained, via Ada first, then the DataStar workflow, followed by an overview of the main differences between the 2 methods.
+It is recommended to be somewhat familiar with Ada before diving into this content. Please see the Getting Started with Ada & Agentic AI article, and in particular its How to Use Ada section.
+Once logged into the next-generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada leveraging the Data Cleansing Agent right away from the central part of the Home page.
+Regarding how to write good prompts, please note that the general Best Practices, Tips & Tricks, and Current Limitations and Known Behaviors included in the Getting Started with Ada documentation also apply to the Data Cleansing Agent.
+After submitting a prompt, the Data Cleansing Agent will start processing and formulating a response:
+The Data Cleansing Agent may ask for feedback before proceeding — for example, when:
+When Ada finishes, the final response is presented:
+For completeness, the cleaned data shows up in the connected database as clean_* table copies — for example, clean_customers, clean_orders — with the originals preserved untouched for comparison or rollback:
+In DataStar, the Data Cleansing Agent is accessed by using a Run AI Agent task, see also the screenshots below. The key inputs are:
+The Task Description field includes placeholder examples to help you get started:
+Optionally, users can:
+Not shown in the screenshots above, there is also a Run Configuration section, where users can add Tags to facilitate finding job runs, set a Timeout for the task, and set the Resource Size to use. Note that for most Run AI Agent tasks, the Resource Size will need to be set to XS or higher.
+Suggested workflow:
+After the run, the agent produces a structured summary of everything it did, including metrics on rows affected, issues found, and issues fixed; see the next section where this Job Log is described in more detail. The cleaned data is persisted as clean_* tables in the database (e.g., clean_customers, clean_shipments).
+There are a few differences to keep in mind when running the Data Cleansing Agent either through chatting with Ada or from within DataStar:
+Recommendation: Use the chat UI to develop and refine a prompt, then transfer the working prompt into a DataStar Run AI Agent task once you want the workflow to become repeatable.
+After a run completes, the Task Log provides a detailed trace of every step the agent took. Understanding the log structure helps users verify what happened and troubleshoot if needed. The log follows a consistent structure from start to finish.
+Header
+Every log begins with a banner showing the database name and the exact prompt that was submitted.
+Connection & Setup
+The agent validates the database connection and initializes itself with its full set of tools. If Verbose Output is set to "Detailed", the log also prints the system prompt and tool list at this stage.
+Planning Phase
+For non-trivial tasks, the agent creates a strategic execution plan before taking action. This appears as a PlanningSkill tool call, followed by an AI Response box containing a structured plan with numbered steps, an objective, approach, and skill mapping. The plan gives users visibility into the agent's intended approach before it begins working.
+Tool Calls and Thinking
+The bulk of the log shows the agent calling its specialized tools one at a time. Each tool call appears in a bordered box showing the tool name. Between tool calls, the agent's reasoning is shown in Thinking boxes -- explaining what it learned from the previous tool, what it plans to do next, and why. These thinking sections are among the most useful parts of the log for understanding the agent's decision-making.
+The agent may call many tools in sequence depending on the complexity of the task. Profiling-only prompts typically involve discovery tools (schema, missing data, date issues, location issues, outliers). Cleanup prompts add transformation tools (ensure_clean_table, standardize_country_codes, standardize_date_column, etc.).
+Occasionally a Memory Action Applied entry appears between steps -- this is the agent recording context for its own use and can be ignored.
+Error Recovery
+If the agent encounters a validation error on a tool call (e.g., a column stored as TEXT when a numeric type was expected, or a missing parameter), the log shows the error and the agent's automatic adjustment. The agent reasons about the failure in a Thinking block and retries with corrected parameters. Users do not need to intervene.
+Agent Response
+At the end of the run, the agent produces a structured summary of everything it discovered or changed. This is the most important section of the log for understanding outcomes:
+For profiling prompts, this section reports what was found across all tables -- schema details, missing data percentages, date format inconsistencies, location quality issues, numeric anomalies, and recommendations for next steps. For cleanup prompts, it reports which tables were modified, what transformations were applied, how many rows were affected, and confirmation that originals are preserved.
+Execution Summary
+The log ends with runtime statistics and the full list of skills that were available to the agent:
+What the agent expects in your database:
+The agent works with any tables in the selected database. There are no fixed column name requirements -- the agent discovers the schema automatically. However, for best results:
+To help you decide if you should use the Data Profiler or Data Cleanser Agent for your task, here is a quick overview of both:
+A user wants to understand what data is in their database before deciding what to clean.
+Database: Supply Chain Dataset
+Task Description: List all tables in the database and show their schemas
+What happens: The agent calls get_database_schema for all tables and exits with a structured report.
+Output:
+Requested: List all tables and show schemas.
+Discovered (schema 'starburst'):
+...
+Total: 12 tables, 405 rows, 112 columns
+A user needs to clean up customer location data before using it in a Cosmic Frog network optimization model.
+Database: Supply Chain Dataset
+Task Description: Clean the customers table completely: standardize dates to ISO, fix postal codes (Excel corruption + placeholders), standardize country codes to alpha-2, clean city names, and normalize emails to lowercase
+What the agent does:
+Output:
+Completed data cleansing of clean_customers table:
+All changes applied to clean_customers (original customers table preserved).
+The cleaned data is available in the clean_customers table in the database. The original customers table remains untouched.
+A user with a 14-table enterprise supply chain database needs to clean and standardize all data before building Cosmic Frog models for network optimization and simulation.
+Database: Enterprise Supply Chain
+Task Description: Perform a complete data cleanup across all tables: standardize all dates to ISO, standardize all country codes to alpha-2, clean all city names, fix all postal codes, and normalize all email addresses to lowercase. Work systematically through each table.
+What the agent does: The agent works systematically through all tables -- standardizing dates across 12+ tables, fixing country codes, cleaning city names, repairing postal codes, normalizing emails and status fields, detecting and handling negative values, converting mixed units to metric, validating calculated fields like order totals, and reporting any remaining referential integrity issues. This is the most comprehensive operation the agent can perform.
+Output: A detailed summary covering every table touched, every transformation applied, and a final quality scorecard showing the before/after improvement.
+A user has multiple records for the same customer in the customers table and wants golden keys created and propagated to the orders table.
+Database: Supply Chain Dataset
+Task Description: Find duplicate customer records in the customers table, create golden key mappings, and propagate them to the orders table.
+What the agent does: Delegates the task to the Deduplication sub-agent, which detects exact and fuzzy duplicate groups, picks a canonical record for each group, and updates the orders table so every order points to the canonical customer.
+Output: A summary listing how many duplicate groups were detected, how many golden keys were created, and how many rows in orders were updated to point to the canonical master record.
+Below are example prompts users can try, organized by category.
+Questions or feedback? Please contact the Optilogic Support team on support@optilogic.com.
+The Data Profiler AI Agent is one of Ada's AI-powered assistants, focused on assessing data. It automatically analyzes the quality, structure, and relationships of data stored in an Optilogic database. By profiling every table and column, the agent creates a comprehensive data-quality catalog that helps users understand their data, identify issues, discover relationships, and prioritize cleansing efforts.
+The agent can be accessed by chatting with Ada in the next generation Optilogic platform and via Run AI Agent tasks in DataStar.
+Understanding the quality and meaning of data is often one of the most time-consuming steps in any analytics, modeling, or optimization project. The Data Profiler AI Agent automates this process by:
+The result is a queryable inventory of your data assets, complete with quality assessments and relationship insights.
+The Data Profiler AI Agent performs several layers of analysis.
+For every table and column, the agent calculates statistical characteristics such as:
+For large datasets, the agent uses deterministic sampling to ensure consistent results across profiling runs.
+Using LLM-assisted analysis, the agent generates:
+These descriptions help users quickly understand the purpose and meaning of data assets.
+Based on semantic classifications, the agent recommends appropriate database data types. Examples include:
+These recommendations help improve data consistency and prevent issues such as loss of leading zeros in identifiers.
+After semantic types are identified, the agent performs specialized validation checks against actual data values. Examples include:
+The agent performs dozens of validation checks tailored to the detected semantic type.
+Each detected issue is stored as a single row structured alert. Each alert contains:
+Notable specialized checks include:
+The agent can identify relationships even when keys are not formally defined in the schema.
+The discovery process includes
+The Data Profiler AI Agent assigns scores ranging from 0.0 to 1.0 across three dimensions:
+The overall score is a weighted average, which is capped if data integrity drops too low. Tables without data receive a baseline minimum score, while tables that generate errors display an error stub so users are always aware of the issue.
+Measures whether values are:
+When the same column name appears in multiple tables with different semantic tags, a majority vote picks one and corrects the outliers.
+The only required input is to point the agent to a database. There are several optional inputs which we will cover in the Using the Data Profiler Agent section below.
+The output consists of tables written to the database that was profiled:
+In addition to database outputs, the agent generates a timestamped execution log, which includes table processing times, alerts, and primary key/foreign key findings. Reviewing the log can help diagnose profiling issues and understand execution performance.
+There are two ways to access the Data Profiler Agent:
+Both ways will be explained, through DataStar first, then using the chat UI.
+Accessing the Data Profiler Agent through DataStar is done via a Run AI Agent task:
+In the Configure Utility section of the Configuration tab (from top to bottom):
+Note that it is recommended to change the Resource Size from 3XS to XS in the Run Configuration section, since 3XS is usually not sufficient to run the Data Profiler Agent:
+While the task is running and after it has completed, the Task Logs tab contains the log file where the user can monitor progress and review key alerts and high-level output summaries:
+As an example output, let us have a look at the _dq_table_profiles table:
+In this table, the entire executive summary for the customer_returns table is as follows: "The customer_returns table records return events tied to individual sales order lines, supporting analysis of return volumes, reasons, and financial impact. Each record links a return reference return_id to an order_line_id, with return_date providing the time dimension for trend reporting. Operational metrics include return_qty and restock_flag, while refund_amount captures the customer reimbursement value but is stored as text and includes invalid entries. Return reasons are mostly standardized but include missing values and placeholder or corrupted categories, suggesting a need for data cleansing and validation."
+It is recommended to be somewhat familiar with Ada and how to talk to her in the chat UI before diving into this content. Please see the Getting Started with Ada & Agentic AI article, and in particular its How to Use Ada section.
+Once logged into the next generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada and leveraging the Data Profiler Agent right away from the central part of the Home page. You can access it by using the Data Cleanser Agent, as this agent can call the Data Profiler Agent as a tool.
+After selecting the database to profile (here a DataStar project named Dairy End-to-End Ada), set the agent to Data Cleanser, write your prompt indicating you want to profile the data (or a subset of it) contained in the connected database. It is recommended to mention the Data Profiler pipeline and wanting to write the results into the database itself:
+This prompt results in running the full Data Profiler Agent's pipeline and the __pq_ tables can be found in the sandbox of the connected DataStar project.
+The following table summarizes the most common use cases for the 2 ways of accessing the Data Profiler Agent:
+To help you decide if you should use the Data Profiler or Data Cleanser Agent for your task, here is a quick overview of both:
+You point the Data Profiler AI Agent at a database, walk away, and come back a few minutes later to a queryable catalogue of every table — what each column means, what type it should be, where the data is broken, how the tables relate, and a single quality score per table to triage what needs cleaning first.
+Questions or feedback? Please contact the Optilogic Support team on support@optilogic.com.
 The Air Express Freight Costing utility solves the challenge of pricing air express freight shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
 The Air Express Freight Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
 Sample Data
@@ -12953,23 +13064,6 @@ An agent is the intelligent layer that decides what to do. It's like a project m
 Skills are packaged capabilities that combine one or more tools with guidance on when and how to use them. Think of a skill as a trained procedure or technique.
 Tools are the specific actions an AI agent can perform. They are specialized and do one specific thing reliably. They don't make decisions - they just execute when called.
 As an AI Agent works, it produces the logs which include steps that the agent takes, tools it calls, as well as a work summary. The AI Response sections are typically the most useful as they explain the exploration plan, the work it has done, and the results after exploration. This is generally a response to the user. While all others are more for internal processes.
-The Model Output Insights Agent helps users investigate and analyze Cosmic Frog model outputs by turning analytical questions into structured, data-backed strategic reports. It breaks down complex questions into a step-by-step exploration plan, executes targeted queries, synthesizes findings, and produces a professional report - complete with visualizations and actionable recommendations.
-This documentation describes how this specific agent works and can be configured, including walking through an example. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
-This agent is a tool the Modeler AI Agent has access to, so its functionality can also be accessed when chatting with Ada while using the Modeler Agent as the selected agent for a prompt. Please see the following help center articles for more details:
-Extracting meaningful insights from large databases typically requires exploring and analyzing many output tables which can take a lot of time and effort. The Model Output Insights Agent streamlines the process, helping users get to the insights quicker than ever before.
-Main skills the Model Output Insights Agent uses:
-Supporting capabilities:
-The agent can be accessed through the Run AI Agent task in DataStar. The key inputs are:
-Optionally, users can configure the following Run AI Agent task inputs:
-After the run, a report in markdown format (.md) and charts (if any) are created and can be found in the Explorer with the specified file name and folder. Once clicked, the file is opened in the Lightning Editor application for review.
-Note that currently the charts are only included in the markdown file as a file name. Users can look for the charts in the Charts folder in the targeted report directory:
-The Run AI Agent task also offers the ability for users to set Run Configuration options. This is optional.
-This example uses the Global Supply Chain Strategy model from the Resource Library to get insights on Baseline vs. No Detroit DC scenario comparison where cost, flow shifts and service impacts are explored.
-Cosmic Frog Model Name: Global Supply Chain Strategy
-Analysis Question: Compare cost and flow from Baseline and No Detroit DC scenarios. I'm interested in knowing the cost bucket that drives total savings. I want to know where the flow from Detroit DC was redirected to. Lastly, compare weighted average service distance - i.e. do customers have shorter/longer/the same service distance when Detroit closes down. Who are the top 5 customers with highest service impact?
-Knowledge: Info on target audience for the report, expected report length and tone:
-Should you wish to read the entire report instructions file and/or use it as a starting point for your own usage with this Agent, you can download it here. After downloading, please rename the .txt extension to .md. You can then upload it to your Optilogic account using the Explorer application and then view it in the Lightning Editor application.
-Outputs: The report as a markdown file and a chart in the Charts folder:
 Exciting tools that drastically shorten the time spent wrangling data, building supply chain models for Cosmic Frog, and analyzing outputs of these models are now available on the Optilogic platform.
 Collectively, the Optilogic agentic AI tools are called Ada. This is after Ada Lovelace, widely regarded as the world’s first computer programmer and one of the earliest visionaries to recognize the potential of computational systems beyond pure calculation.
 This documentation briefly explains how to access these AI Agents and Utilities, lists the available tools with a short description of each, and provides links to detailed documentation for several of these tools.
@@ -12986,115 +13080,6 @@ Provide the inputs for at least the required parameters, and if desired for any 
 Using Utilities works in the same way as using AI Agents, just through the Run Utility task instead of the Run AI Agent task. The following 3 screenshots show 1) a Run Utility task added to a Macro, 2) its Select Utility section, and 3) the Configure Utility section of the Duplicate Macro utility:
 Resource Size for both Run AI Agent and Run Utility tasks can be set in the Run Configuration section, which is indicated as optional. However, for most agents and utilities, the default 3XS Resource Size is not sufficient. It is recommended to update this to XS:
 The folloing AI Agents and Utilities are currently available. More are being added as they come available. For each a short description is given and for those that have more detailed documentation to go with them, a link to this documentation is included.
-The Data Cleansing Agent is one of Ada’s AI-powered assistants. It helps users profile, clean, and standardize their database data without writing code. Users describe what they want in plain English -- such as "find and fix postal code issues in the customers table" or "standardize date formats in the orders table to ISO" -- and the agent autonomously discovers issues, creates safe working copies of the data, applies the appropriate fixes, and verifies the results. The agent handles common supply chain data problems including mixed date formats, inconsistent country codes, Excel-corrupted postal codes, missing values, outliers, and messy text fields. It expects a connected database with one or more tables as input. The output is a set of cleaned copies of their tables in the database which users can immediately use for Cosmic Frog model building, reporting, or further analysis, while the original data is preserved untouched for comparison or rollback.
-This documentation describes how this specific agent works and can be configured, including walking through multiple examples. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
-Cleaning and standardizing data for supply chain modeling typically requires significant manual effort -- writing SQL queries, inspecting column values, fixing formatting issues one at a time, and verifying results. The Data Cleansing Agent streamlines this process by turning a single natural language prompt into a full profiling, cleaning, and verification workflow.
-Key Capabilities:
-Tools:
-The agent can be accessed on the next generation Optilogic platform by chatting with Ada and through the Run AI Agent task in DataStar. Both ways will be explained, via Ada first, then the DataStar workflow, followed by an overview of the main differences between the 2 methods.
-It is recommended to be somewhat familiar with Ada before diving into this content. Please see the Getting Started with Ada & Agentic AI article, and in particular its How to Use Ada section.
-Once logged into the next-generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada leveraging the Data Cleansing Agent right away from the central part of the Home page.
-Regarding how to write good prompts, please note that the general Best Practices, Tips & Tricks, and Current Limitations and Known Behaviors included in the Getting Started with Ada documentation also apply to the Data Cleansing Agent.
-After submitting a prompt, the Data Cleansing Agent will start processing and formulating a response:
-The Data Cleansing Agent may ask for feedback before proceeding — for example, when:
-When Ada finishes, the final response is presented:
-For completeness, the cleaned data shows up in the connected database as clean_* table copies — for example, clean_customers, clean_orders — with the originals preserved untouched for comparison or rollback:
-In DataStar, the Data Cleansing Agent is accessed by using a Run AI Agent task, see also the screenshots below. The key inputs are:
-The Task Description field includes placeholder examples to help you get started:
-Optionally, users can:
-Not shown in the screenshots above, there is also a Run Configuration section, where users can add Tags to facilitate finding job runs, set a Timeout for the task, and set the Resource Size to use. Note that for most Run AI Agent tasks, the Resource Size will need to be set to XS or higher.
-Suggested workflow:
-After the run, the agent produces a structured summary of everything it did, including metrics on rows affected, issues found, and issues fixed; see the next section where this Job Log is described in more detail. The cleaned data is persisted as clean_* tables in the database (e.g., clean_customers, clean_shipments).
-There are a few differences to keep in mind when running the Data Cleansing Agent either through chatting with Ada or from within DataStar:
-Recommendation: Use the chat UI to develop and refine a prompt, then transfer the working prompt into a DataStar Run AI Agent task once you want the workflow to become repeatable.
-After a run completes, the Task Log provides a detailed trace of every step the agent took. Understanding the log structure helps users verify what happened and troubleshoot if needed. The log follows a consistent structure from start to finish.
-Header
-Every log begins with a banner showing the database name and the exact prompt that was submitted.
-Connection & Setup
-The agent validates the database connection and initializes itself with its full set of tools. If Verbose Output is set to "Detailed", the log also prints the system prompt and tool list at this stage.
-Planning Phase
-For non-trivial tasks, the agent creates a strategic execution plan before taking action. This appears as a PlanningSkill tool call, followed by an AI Response box containing a structured plan with numbered steps, an objective, approach, and skill mapping. The plan gives users visibility into the agent's intended approach before it begins working.
-Tool Calls and Thinking
-The bulk of the log shows the agent calling its specialized tools one at a time. Each tool call appears in a bordered box showing the tool name. Between tool calls, the agent's reasoning is shown in Thinking boxes -- explaining what it learned from the previous tool, what it plans to do next, and why. These thinking sections are among the most useful parts of the log for understanding the agent's decision-making.
-The agent may call many tools in sequence depending on the complexity of the task. Profiling-only prompts typically involve discovery tools (schema, missing data, date issues, location issues, outliers). Cleanup prompts add transformation tools (ensure_clean_table, standardize_country_codes, standardize_date_column, etc.).
-Occasionally a Memory Action Applied entry appears between steps -- this is the agent recording context for its own use and can be ignored.
-Error Recovery
-If the agent encounters a validation error on a tool call (e.g., a column stored as TEXT when a numeric type was expected, or a missing parameter), the log shows the error and the agent's automatic adjustment. The agent reasons about the failure in a Thinking block and retries with corrected parameters. Users do not need to intervene.
-Agent Response
-At the end of the run, the agent produces a structured summary of everything it discovered or changed. This is the most important section of the log for understanding outcomes:
-For profiling prompts, this section reports what was found across all tables -- schema details, missing data percentages, date format inconsistencies, location quality issues, numeric anomalies, and recommendations for next steps. For cleanup prompts, it reports which tables were modified, what transformations were applied, how many rows were affected, and confirmation that originals are preserved.
-Execution Summary
-The log ends with runtime statistics and the full list of skills that were available to the agent:
-What the agent expects in your database:
-The agent works with any tables in the selected database. There are no fixed column name requirements -- the agent discovers the schema automatically. However, for best results:
-A user wants to understand what data is in their database before deciding what to clean.
-Database: Supply Chain Dataset
-Task Description: List all tables in the database and show their schemas
-What happens: The agent calls get_database_schema for all tables and exits with a structured report.
-Output:
-Requested: List all tables and show schemas.
-Discovered (schema 'starburst'):
-...
-Total: 12 tables, 405 rows, 112 columns
-A user needs to clean up customer location data before using it in a Cosmic Frog network optimization model.
-Database: Supply Chain Dataset
-Task Description: Clean the customers table completely: standardize dates to ISO, fix postal codes (Excel corruption + placeholders), standardize country codes to alpha-2, clean city names, and normalize emails to lowercase
-What the agent does:
-Output:
-Completed data cleansing of clean_customers table:
-All changes applied to clean_customers (original customers table preserved).
-The cleaned data is available in the clean_customers table in the database. The original customers table remains untouched.
-A user with a 14-table enterprise supply chain database needs to clean and standardize all data before building Cosmic Frog models for network optimization and simulation.
-Database: Enterprise Supply Chain
-Task Description: Perform a complete data cleanup across all tables: standardize all dates to ISO, standardize all country codes to alpha-2, clean all city names, fix all postal codes, and normalize all email addresses to lowercase. Work systematically through each table.
-What the agent does: The agent works systematically through all tables -- standardizing dates across 12+ tables, fixing country codes, cleaning city names, repairing postal codes, normalizing emails and status fields, detecting and handling negative values, converting mixed units to metric, validating calculated fields like order totals, and reporting any remaining referential integrity issues. This is the most comprehensive operation the agent can perform.
-Output: A detailed summary covering every table touched, every transformation applied, and a final quality scorecard showing the before/after improvement.
-A user has multiple records for the same customer in the customers table and wants golden keys created and propagated to the orders table.
-Database: Supply Chain Dataset
-Task Description: Find duplicate customer records in the customers table, create golden key mappings, and propagate them to the orders table.
-What the agent does: Delegates the task to the Deduplication sub-agent, which detects exact and fuzzy duplicate groups, picks a canonical record for each group, and updates the orders table so every order points to the canonical customer.
-Output: A summary listing how many duplicate groups were detected, how many golden keys were created, and how many rows in orders were updated to point to the canonical master record.
-Below are example prompts users can try, organized by category.
-Questions or feedback? Please contact the Optilogic Support team on support@optilogic.com.
-The Data Profiler AI Agent is one of Ada's AI-powered assistants, focused on assessing data. It automatically analyzes the quality, structure, and relationships of data stored in an Optilogic database. By profiling every table and column, the agent creates a comprehensive data-quality catalog that helps users understand their data, identify issues, discover relationships, and prioritize cleansing efforts.
-The agent can be accessed by chatting with Ada in the next generation Optilogic platform and via Run AI Agent tasks in DataStar.
-Understanding the quality and meaning of data is often one of the most time-consuming steps in any analytics, modeling, or optimization project. The Data Profiler AI Agent automates this process by:
-The result is a queryable inventory of your data assets, complete with quality assessments and relationship insights.
-The Data Profiler AI Agent performs several layers of analysis.
-For every table and column, the agent calculates statistical characteristics such as:
-For large datasets, the agent uses deterministic sampling to ensure consistent results across profiling runs.
-Using LLM-assisted analysis, the agent generates:
-These descriptions help users quickly understand the purpose and meaning of data assets.
-Based on semantic classifications, the agent recommends appropriate database data types. Examples include:
-These recommendations help improve data consistency and prevent issues such as loss of leading zeros in identifiers.
-After semantic types are identified, the agent performs specialized validation checks against actual data values. Examples include:
-The agent performs dozens of validation checks tailored to the detected semantic type.
-Each detected issue is stored as a single row structured alert. Each alert contains:
-Notable specialized checks include:
-The agent can identify relationships even when keys are not formally defined in the schema.
-The discovery process includes
-The Data Profiler AI Agent assigns scores ranging from 0.0 to 1.0 across three dimensions:
-The overall score is a weighted average, which is capped if data integrity drops too low. Tables without data receive a baseline minimum score, while tables that generate errors display an error stub so users are always aware of the issue.
-Measures whether values are:
-When the same column name appears in multiple tables with different semantic tags, a majority vote picks one and corrects the outliers.
-The only required input is to point the agent to a database. There are several optional inputs which we will cover in the Using the Data Profiler Agent section below.
-The output consists of tables written to the database that was profiled:
-In addition to database outputs, the agent generates a timestamped execution log, which includes table processing times, alerts, and primary key/foreign key findings. Reviewing the log can help diagnose profiling issues and understand execution performance.
-There are two ways to access the Data Profiler Agent:
-Both ways will be explained, through DataStar first, then using the chat UI.
-Accessing the Data Profiler Agent through DataStar is done via a Run AI Agent task:
-In the Configure Utility section of the Configuration tab (from top to bottom):
-Note that it is recommended to change the Resource Size from 3XS to XS in the Run Configuration section, since 3XS is usually not sufficient to run the Data Profiler Agent:
-While the task is running and after it has completed, the Task Logs tab contains the log file where the user can monitor progress and review key alerts and high-level output summaries:
-As an example output, let us have a look at the _dq_table_profiles table:
-In this table, the entire executive summary for the customer_returns table is as follows: "The customer_returns table records return events tied to individual sales order lines, supporting analysis of return volumes, reasons, and financial impact. Each record links a return reference return_id to an order_line_id, with return_date providing the time dimension for trend reporting. Operational metrics include return_qty and restock_flag, while refund_amount captures the customer reimbursement value but is stored as text and includes invalid entries. Return reasons are mostly standardized but include missing values and placeholder or corrupted categories, suggesting a need for data cleansing and validation."
-It is recommended to be somewhat familiar with Ada and how to talk to her in the chat UI before diving into this content. Please see the Getting Started with Ada & Agentic AI article, and in particular its How to Use Ada section.
-Once logged into the next generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada and everaging the Data Profiler Agent right away from the central part of the Home page. You can access it by using the Data Cleanser Agent, as this agent can call the Data Profiler Agent as a tool.
-After selecting thedatabase to profile (here a DataStar project named Dairy End-to-End Ada), set the agent to DataCleanser, write your prompt indicating you want to profile the data (or a subset of it) contained in the connected database. It is recommended to mentioning the Data Profiler pipeline and wanting to write the results into the database itself:
-This prompt results in running the full Data Profiler Agent's pipeline and the __pq_ tables can be found in the sandbox of the connected DataStar project.
-The following table summarizes the most common use cases for the 2 ways of accessing the Data Profiler Agent:
-You point the Data Profiler AI Agent at a database, walk away, and come back a few minutes later to a queryable catalogue of every table — what each column means, what type it should be, where the data is broken, how the tables relate, and a single quality score per table to triage what needs cleaning first.
-Questions or feedback? Please contact the Optilogic Support team on support@optilogic.com.
 At Optilogic, we have built the next generation (next-gen) platform to complement our AI. It is a modern, unified workspace where users:
 While the next-gen platform is still in development, there is plenty available already for users to start working with it. Especially the AI-first approach will be a gamechanger for many. This documentation gives a high-level overview of the new platform. Please see the separate Getting Started with Ada & Agentic AI documentation for in-depth documentation on Ada, your supply chain modeling partner.
 Optilogic users can log into the next-gen platform at https://ai.optilogic.app, using the same credentials as those used to log into the current platform (on https://optilogic.app).
