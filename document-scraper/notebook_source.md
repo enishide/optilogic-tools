@@ -16,7 +16,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -471,6 +471,38 @@ As an AI Agent works, it produces the logs which include steps that the agent ta
 
 
 ---
+## Air Express Freight Costing Utility
+**URL:** https://optilogic.com/resources/help-center/docs/air-express-freight-costing-utility
+
+The Air Express Freight Costing utility solves the challenge of pricing air express freight shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
+The Air Express Freight Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
+Sample Data
+System Utility
+The steps to use this utility are as follows. These are illustrated with screenshots below.
+Screenshots of the steps where the project from the Resource Library is used (Copy to Account option), which creates the DataStar project including macro shown below in the user's account:
+Key Constraints:
+The utility produces an output table containing all lanes from the input with the following columns populated:
+Zones are determined automatically based on the following priority:
+Special Zones (for Alaska/Hawaii):
+Standard Distance-Based Zones:
+Costs are calculated using the following formula:
+base_charge = shipment_weight x price_per_lb final_cost = MAX(base_charge, minimum_charge) Effective Weight: If the shipment weight is below the minimum weight for a service/zone combination, the utility uses the minimum weight band's rate but calculates the charge based on the actual shipment weight.
+The Air Express Freight Costing utility solves the challenge of pricing air express freight shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
+The Air Express Freight Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
+Sample Data
+System Utility
+The steps to use this utility are as follows. These are illustrated with screenshots below.
+Screenshots of the steps where the project from the Resource Library is used (Copy to Account option), which creates the DataStar project including macro shown below in the user's account:
+Key Constraints:
+The utility produces an output table containing all lanes from the input with the following columns populated:
+Zones are determined automatically based on the following priority:
+Special Zones (for Alaska/Hawaii):
+Standard Distance-Based Zones:
+Costs are calculated using the following formula:
+base_charge = shipment_weight x price_per_lb final_cost = MAX(base_charge, minimum_charge) Effective Weight: If the shipment weight is below the minimum weight for a service/zone combination, the utility uses the minimum weight band's rate but calculates the charge based on the actual shipment weight.
+
+
+---
 ## Anura 2.8.19 Upgrade - Release Notes
 **URL:** https://optilogic.com/resources/help-center/docs/anura-2-8-19-upgrade---release-notes
 
@@ -656,7 +688,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -818,7 +850,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -7960,7 +7992,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -8344,7 +8376,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -8444,7 +8476,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -9447,7 +9479,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -9467,7 +9499,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -9486,7 +9518,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -11746,7 +11778,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -12549,7 +12581,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -12559,6 +12591,23 @@ Connect with Optilogic peers, exchange insights, and accelerate supply chain suc
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+Please feel free to download the Cosmic Frog Python Library PDF file. Please note that this library requires Python 3.11.
+You can also reference the video shown below that covers an overview on scripting within Cosmic Frog.
+Thank you for using the most powerful supply chain design software in the galaxy (I mean, as far as we know).
+To see the highlights of the software please watch the following video.
+The Air Express Freight Costing utility solves the challenge of pricing air express freight shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
+The Air Express Freight Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
+Sample Data
+System Utility
+The steps to use this utility are as follows. These are illustrated with screenshots below.
+Screenshots of the steps where the project from the Resource Library is used (Copy to Account option), which creates the DataStar project including macro shown below in the user's account:
+Key Constraints:
+The utility produces an output table containing all lanes from the input with the following columns populated:
+Zones are determined automatically based on the following priority:
+Special Zones (for Alaska/Hawaii):
+Standard Distance-Based Zones:
+Costs are calculated using the following formula:
+base_charge = shipment_weight x price_per_lb final_cost = MAX(base_charge, minimum_charge) Effective Weight: If the shipment weight is below the minimum weight for a service/zone combination, the utility uses the minimum weight band's rate but calculates the charge based on the actual shipment weight.
 The Model Output Insights Agent helps users investigate and analyze Cosmic Frog model outputs by turning analytical questions into structured, data-backed strategic reports. It breaks down complex questions into a step-by-step exploration plan, executes targeted queries, synthesizes findings, and produces a professional report - complete with visualizations and actionable recommendations.
 This documentation describes how this specific agent works and can be configured. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
 Extracting meaningful insights from large databases typically requires exploring and analyzing many output tables which can take a lot of time and effort. The Model Output Insights Agent streamlines the process, helping users get to the insights quicker than ever before.
@@ -12680,19 +12729,6 @@ The following table summarizes the most common use cases for the 2 ways of acces
 To help you decide if you should use the Data Profiler or Data Cleanser Agent for your task, here is a quick overview of both:
 You point the Data Profiler AI Agent at a database, walk away, and come back a few minutes later to a queryable catalogue of every table — what each column means, what type it should be, where the data is broken, how the tables relate, and a single quality score per table to triage what needs cleaning first.
 Questions or feedback? Please contact the Optilogic Support team on support@optilogic.com.
-The Air Express Freight Costing utility solves the challenge of pricing air express freight shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
-The Air Express Freight Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
-Sample Data
-System Utility
-The steps to use this utility are as follows. These are illustrated with screenshots below.
-Screenshots of the steps where the project from the Resource Library is used (Copy to Account option), which creates the DataStar project including macro shown below in the user's account:
-Key Constraints:
-The utility produces an output table containing all lanes from the input with the following columns populated:
-Zones are determined automatically based on the following priority:
-Special Zones (for Alaska/Hawaii):
-Standard Distance-Based Zones:
-Costs are calculated using the following formula:
-base_charge = shipment_weight x price_per_lb final_cost = MAX(base_charge, minimum_charge) Effective Weight: If the shipment weight is below the minimum weight for a service/zone combination, the utility uses the minimum weight band's rate but calculates the charge based on the actual shipment weight.
 The Full Truckload Costing utility solves the common problem of missing transportation cost data when building supply chain models. Rather than requiring users to manually research rates for every lane, this workflow automatically derives costs from a company's existing shipment history. The utility expects two input tables: a lanes-to-cost table containing the origin-destination pairs that need pricing, and an optional historical shipments table containing preprocessed cost data. After running the utility, users receive a fully costed lanes table with confidence levels for each estimate.
 The Full Truckload Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
 Sample Data
@@ -13625,19 +13661,6 @@ if __name__ == "__main__":
 The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
 Anura 2.8 is the current schema.
 A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
-The best way to understand modeling in Cosmic Frog is to understand the data model and structure. The following link provides a downloadable (Excel) template with the documentation and explanation for every input table and field in the modeling schema.
-A downloadable template describing the fields in the output tables can be downloaded from the Downloadable Anura Data Structure - Outputs Help Center article.
-For a brief review of how to use the template file, please watch the following video.
-If you are seeing a "Something went wrong" error when trying to open a model in Cosmic Frog — for example, Cannot read properties of undefined (reading 'call') — this is likely caused by a cached version of the application conflicting with a recent platform update. Follow the steps below in order to resolve it.
-A hard refresh forces the browser to bypass its cache and reload all files directly from the server. It clears the cache for that specific page only and ensures the latest version is loaded. This is the quickest fix for pages that have not updated properly and should be tried first.
-Press the following keyboard shortcut to perform a hard refresh:
-Once the page has reloaded, try opening your model again.
-If the hard refresh does not resolve the issue, clearing your full browser cache will remove all stored files and force the browser to fetch the latest version of Cosmic Frog from the server.
-Press the following keyboard shortcut to open the Clear Browsing Data menu:
-In the menu that appears:
-Once cleared, refresh the Cosmic Frog page and try opening your model again.
-If neither step resolves the problem, please contact the Optilogic support team. Include your browser type and version, and a screenshot of the error if possible.
-Email: support@optilogic.com
 
 
 ---
@@ -13653,7 +13676,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -13672,7 +13695,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -13691,7 +13714,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -13710,7 +13733,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -13729,7 +13752,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
@@ -13748,7 +13771,7 @@ Stay updated on the latest from Optilogic.
 Enhance your skills with our hands-on training sessions and courses.
 Dive into expert insights, industry trends, and practical tips for success.
 Discover Optilogic's partner network empowering transformation and supply chain success.
-Discover on-demand interviews, demos, and customer sessions.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
 Find step-by-step guides, FAQs, and support.
 Access our full library of guides, case studies, and tools to help you succeed.
 Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
