@@ -591,15 +591,16 @@ In this documentation we will cover how grids can be configured to use these new
 These new grid features can be accessed from the “Columns” section on the side bar on the right-hand side of input and output tables while in the Data module of Cosmic Frog:
 Alternatively, users can also start grouping and subsequently aggregating by right clicking on the column names in the table grid:
 We will first cover Row Grouping, then Aggregated Table Mode, and finally Pivot Mode.
-Using the row grouping functionality allows users to select 1 column in an input or output table by which all the records in the table will be grouped. These groups of records can be collapsed and expanded as desired to review the data. In the following screenshot the row grouping feature is used to compare the sources of a certain finished good in a particular period for 1 scenario:
+Using the row grouping functionality allows users to select 1 or multiple columns of an input or output table by which all records in the table will be grouped. These groups of records can be collapsed and expanded as desired to review the data. In the following screenshot the row grouping feature is used to compare the sources of a certain finished good in a particular period for 1 scenario:
 When clicking on Columns on the right hand-side of the table to open the row grouping / aggregated table / pivot grid configuration pane shows the configuration for this row grouping:
-Once a table is grouped by a field, a next step can be to aggregate one or multiple columns by this grouped field. When this is done, we call this aggregated table mode. Different types of aggregation are available to the user, which will be discussed in this section.
+The above example showed grouping the rows by 1 column, this next example shows the same table, but now the rows are grouped by 3 columns. Note that you can change the order of the Row Groups by clicking on a column header and dragging it up or down.
+The table then looks as follows:
+The number in parenthesis indicates how many unique values there are for the next row group:
+Once a table is grouped by one or more fields, a next step can be to aggregate one or multiple columns by this/these grouped field(s). When this is done, we call this aggregated table mode. Different types of aggregation are available to the user, which will be discussed in this section.
 When configuring the grid through the configuration panel that comes up when clicking on Columns on the right-hand side of input & output tables, several options are available to help users find field names quickly and turn multiple on/off simultaneously:
 To configure the grid, fields can be dragged and dropped:
-Alternatively, instead of dragging and dropping, user can also right-click on the field(s) of interest to add them to the configuration areas. This can be done both in the list with column names at the top of the configuration window as shown in the following screenshot, but also on the column names in the grid itself (which we have seen an example of in the “How to Access the New Grid Features” section above):
-In the screenshot above (taken with Pivot Mode on which is why the Column Labels area is also visible), user right-clicked on the Flow Volume field and now user can choose to add it to the Row Groups area (“Group by FlowVolume”), to the ∑ Values area (“Add FlowVolume to values”), or to the Column Labels area (“Add FlowVolume to labels”).
-The next screenshot shows the result of a configured aggregated table grid:
-When adding numeric fields to the ∑ Values area, the fol
+Alternatively, instead of dragging and dropping, users can also right-click on the field(s) of interest to add them to the configuration areas. This can be done both in the list with column names at the top of the configuration window as shown in the following screenshot, but also on the column names in the grid itself (which we have seen an example of in the “How to Access the New Grid Features” section above):
+In the screenshot above (taken with Pivot Mode on which is why th
 …（省略）
 
 
@@ -888,6 +889,28 @@ After creating the connection, the Data Connections tab on the DataStar start pa
 You can either go into an existing DataStar project or create a new one to set up a Macro that will import the data from the Historical Shipments CSV connection we just set up. For this example, we create a new project by clicking on the Create Project button in the toolbar at the top when on the start page of DataStar. Enter the name for the project, optionally add a description, change the appearance of the project if desired by clicking on the Edit button, and then click on the Add Project button:
 After the project is created, the Projects tab will be shown on the DataStar start page. Click on the newly created project to open it in DataStar. Inside DataStar, you can either click on the Create Macro button in the toolbar at the top or the Create a Macro button in the center part of the application (the Macro Canvas) to create a new macro which will then be listed in the Macros tab in the left-hand side panel. Type the name for the macro into the textbox:
 When a macro is created, it automatically gets a Sta
+…（省略）
+
+
+---
+## DataStar Quick Start: Macro Building with Ada
+**URL:** https://optilogic.com/resources/help-center/docs/datastar-quick-start-macro-building-with-ada
+
+In this quick start guide we will walk through how you can build a DataStar macro for repeatable Cosmic Frog model building, where data needs to be refreshed periodically, through chatting with Ada.
+When using Ada to have the Modeler Agent create a model, it is a non-deterministic process where you may not get the same results every time. Once you are happy with the model you have built using Ada, you want to be able to repeat those steps every time in a reliable, performant, deterministic fashion. That is the value of being able to persist the process in DataStar.
+It is helpful to be familiar with the contents of the following Help Center articles prior to diving into this quick start:
+This quick start guide uses a historical shipments file that was also used in the Importing a CSV File quick start guide. In addition, we will create a second data connection for a basic costs file and import that one into the Project Sandbox too. We then use the data in those 2 files to populate tables of an initially empty Cosmic Frog model with the aim to run a Neo solve. Finally, the steps to populate this model are automatically captured in a DataStar macro to create a repeatable model build workflow. In summary the steps are:
+We will cover what is contained in the 2 CSV files and steps 1-3 in this section.
+The next 2 screenshots show the structure of the data in the 2 CSV files used in this quick start.
+Of the Historical_Shipments.csv file, the first 5 of a total of 42,656 records are shown. The Ship Dates range from May 2024 through August 2025:
+The next 2 screenshots show all data contained in the Basic_Costs.csv file:
+Now, we move on to chatting with Ada in the next generation Optilogic platform at https://ai.optilogic.app. Here, we will walk-through an initial prompt and the back and forth that follows. Note that you can get different responses and clarifying questions from Ada, even with the same starting data and initial prompt.
+We first connect the DataStar project and empty Cosmic Frog model in the Databases drop-down selector, and then submit our prompt:
+Ada comes back with three consecutive clarifying questions, 1 on model configuration decisions and 2 to approve running the DataStar macro and a Neo solve on the Cosmic Frog model. You can see the questions and the user’s responses in this screenshot:
+Ada’s response is then as follows:
+So, this achieved what we set out to do in the prompt. We did not yet run the Neo solve as we first want to examine the Cosmic Frog model and DataStar macro.
+In DataStar, we see that in addition to the macro that imports the data from the 2 CSV files, there is now a Model Build macro present too. Note that you may need to refresh your browser to see the new macro in case the project was still open from before. You can click on any task to select it and inspect its configuration which comes up on the right-hand side.
+Opening the model in Cosmic Frog, we see that the expected tables are populated. Here, the Facilities t
 …（省略）
 
 
@@ -3206,26 +3229,20 @@ Connect with Optilogic peers, exchange insights, and accelerate supply chain suc
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Please feel free to download the Cosmic Frog Python Library PDF file. Please note that this library requires Python 3.11.
-You can also reference the video shown below that covers an overview on scripting within Cosmic Frog.
-Thank you for using the most powerful supply chain design software in the galaxy (I mean, as far as we know).
-To see the highlights of the software please watch the following video.
-The Air Express Freight Costing utility solves the challenge of pricing air express freight shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
-The Air Express Freight Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
-Sample Data
-System Utility
-The steps to use this utility are as follows. These are illustrated with screenshots below.
-Screenshots of the steps where the project from the Resource Library is used (Copy to Account option), which creates the DataStar project including macro shown below in the user's account:
-Key Constraints:
-The utility produces an output table containing all lanes from the input with the following columns populated:
-Zones are determined automatically based on the following priority:
-Special Zones (for Alaska/Hawaii):
-Standard Distance-Based Zones:
-Costs are calculated using the following formula:
-base_charge = shipment_weight x price_per_lb final_cost = MAX(base_charge, minimum_charge) Effective Weight: If the shipment weight is below the minimum weight for a service/zone combination, the utility uses the minimum weight band's rate but calculates the charge based on the actual shipment weight.
-The Model Output Insights Agent helps users investigate and analyze Cosmic Frog model outputs by turning analytical questions into structured, data-backed strategic reports. It breaks down complex questions into a step-by-step exploration plan, executes targeted queries, synthesizes findings, and produces a professional report - complete with visualizations and actionable recommendations.
-This documentation describes how this specific agent works and can be configured. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
-Extracting meaningful insights from large databases typically requires exploring and analyzing many output tables which can take a lot of time and effort. The Model Output Insights Agent stream
+Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
+In this documentation we will first cover the Integrity Checker tool’s scope, how to run it, and how to review its results. Next, we will compare the Integrity Checker to other Cosmic Frog data validation tools, and we will wrap up with several tips & tricks to help users make optimal use of the tool.
+The Integrity Checker extends cell validation and data entry helper capabilities to support users identify a range of issues relating to referential integrity and data types before running a model. The following types of data and referential integrity issues are being checked for when the Integrity Checker is run:
+Here, we provide a high-level description for each of these 4 categories; in the appendix at the end of this help center article more details and examples for each type of check are given. From left to right:
+The Integrity Checker can be accessed in two ways while in Cosmic Frog’s Data module: from the pane on the right-hand side that also contains Model Assistant and Scenario Errors or from the Grid drop-down menu. The latter is shown in the next screenshot:
+*Please note that in this first version of the Integrity Checker, the Inventory Policies and Inventory Policies Multi-Time Period tables are not included in any checks the Integrity Checker performs. All other tables are.
+The second way to access the Integrity Checker is, as mentioned above, from the pane on the right-hand side in Cosmic Frog:
+If the Integrity Checker has been run previously on a model, opening it again will show the previous results and gives user the option to re-run it by clicking on a “Rerun Check” button which we will see in screenshots further below.
+After starting the Integrity Checker in one of the 2 ways described above, a message indicating it is starting will appear in the Integrity Checker pane on the right-hand side:
+While the Integrity Checker is running, the status of the run will be continuously updated, while results will be added underneath as checks on individual tables complete. Only tables which have errors in them will be listed in the results.
+Once the Integrity Checker run is finished, its status changes to Completed:
+Users can see the errors identified by the Integrity Checker by clicking on one of the table cards which will open the table and the Integrity Checker Errors table beneath it:
+Clicking on a record in the Integrity Checker Errors table will filter the table above (here the Transportation Policies table) down to the record(s) with that error:
+User can go through each reco
 …（省略）
 
 

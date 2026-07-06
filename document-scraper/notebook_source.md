@@ -946,19 +946,24 @@ In this documentation we will cover how grids can be configured to use these new
 These new grid features can be accessed from the “Columns” section on the side bar on the right-hand side of input and output tables while in the Data module of Cosmic Frog:
 Alternatively, users can also start grouping and subsequently aggregating by right clicking on the column names in the table grid:
 We will first cover Row Grouping, then Aggregated Table Mode, and finally Pivot Mode.
-Using the row grouping functionality allows users to select 1 column in an input or output table by which all the records in the table will be grouped. These groups of records can be collapsed and expanded as desired to review the data. In the following screenshot the row grouping feature is used to compare the sources of a certain finished good in a particular period for 1 scenario:
+Using the row grouping functionality allows users to select 1 or multiple columns of an input or output table by which all records in the table will be grouped. These groups of records can be collapsed and expanded as desired to review the data. In the following screenshot the row grouping feature is used to compare the sources of a certain finished good in a particular period for 1 scenario:
 When clicking on Columns on the right hand-side of the table to open the row grouping / aggregated table / pivot grid configuration pane shows the configuration for this row grouping:
-Once a table is grouped by a field, a next step can be to aggregate one or multiple columns by this grouped field. When this is done, we call this aggregated table mode. Different types of aggregation are available to the user, which will be discussed in this section.
+The above example showed grouping the rows by 1 column, this next example shows the same table, but now the rows are grouped by 3 columns. Note that you can change the order of the Row Groups by clicking on a column header and dragging it up or down.
+The table then looks as follows:
+The number in parenthesis indicates how many unique values there are for the next row group:
+Once a table is grouped by one or more fields, a next step can be to aggregate one or multiple columns by this/these grouped field(s). When this is done, we call this aggregated table mode. Different types of aggregation are available to the user, which will be discussed in this section.
 When configuring the grid through the configuration panel that comes up when clicking on Columns on the right-hand side of input & output tables, several options are available to help users find field names quickly and turn multiple on/off simultaneously:
 To configure the grid, fields can be dragged and dropped:
-Alternatively, instead of dragging and dropping, user can also right-click on the field(s) of interest to add them to the configuration areas. This can be done both in the list with column names at the top of the configuration window as shown in the following screenshot, but also on the column names in the grid itself (which we have seen an example of in the “How to Access the New Grid Features” section above):
-In the screenshot above (taken with Pivot Mode on which is why the Column Labels area is also visible), user right-clicked on the Flow Volume field and now user can choose to add it to the Row Groups area (“Group by FlowVolume”), to the ∑ Values area (“Add FlowVolume to values”), or to the Column Labels area (“Add FlowVolume to labels”).
+Alternatively, instead of dragging and dropping, users can also right-click on the field(s) of interest to add them to the configuration areas. This can be done both in the list with column names at the top of the configuration window as shown in the following screenshot, but also on the column names in the grid itself (which we have seen an example of in the “How to Access the New Grid Features” section above):
+In the screenshot above (taken with Pivot Mode on which is why the Column Labels area is also visible), the user right-clicked on the Flow Volume field and now they can choose to add it to the Row Groups area (“Group by FlowVolume”), to the ∑ Values area (“Add FlowVolume to values”), or to the Column Labels area (“Add FlowVolume to labels”).
 The next screenshot shows the result of a configured aggregated table grid:
 When adding numeric fields to the ∑ Values area, the following aggregation options are available to the user:
 For non-numeric fields, only the last 3 options are available as aggregations:
-When adding an aggregation field through right-clicking on a field name in the grid, it looks as follows. User right-clicked on a numerical field, Transportation Cost, here:
+When adding an aggregation field through right-clicking on a field name in the grid, it looks as follows. The user right-clicked on a numerical field, Transportation Cost, here:
 When filters are applied to the table, these are still applied when the table is being grouped by rows, aggregated, or pivoted:
 It was mentioned above that the number in parentheses after the scenario name represents the number of rows that the aggregation was applied to. We can expand this by clicking on the greater than (>) icon to view the individual rows that make up the aggregation:
+Next is an aggregated table mode example where more than 1 Row Group is used. Here, the Flow Quantity on the Optimization Flow Summary table is summed by scenario, origin, and product:
+The resulting table:
 When users turn on pivot mode, an extra configuration area named Column Labels becomes available in addition to the Row Groups and ∑ Values areas:
 Another example to show the total volumes of different flow types, filtered for finished goods, by scenario is shown in the next screenshot:
 So far, we have only looked at using the new grid features on the Optimization Flow Summary output table. Here, we will show some additional examples on different input and output tables.
@@ -974,19 +979,24 @@ In this documentation we will cover how grids can be configured to use these new
 These new grid features can be accessed from the “Columns” section on the side bar on the right-hand side of input and output tables while in the Data module of Cosmic Frog:
 Alternatively, users can also start grouping and subsequently aggregating by right clicking on the column names in the table grid:
 We will first cover Row Grouping, then Aggregated Table Mode, and finally Pivot Mode.
-Using the row grouping functionality allows users to select 1 column in an input or output table by which all the records in the table will be grouped. These groups of records can be collapsed and expanded as desired to review the data. In the following screenshot the row grouping feature is used to compare the sources of a certain finished good in a particular period for 1 scenario:
+Using the row grouping functionality allows users to select 1 or multiple columns of an input or output table by which all records in the table will be grouped. These groups of records can be collapsed and expanded as desired to review the data. In the following screenshot the row grouping feature is used to compare the sources of a certain finished good in a particular period for 1 scenario:
 When clicking on Columns on the right hand-side of the table to open the row grouping / aggregated table / pivot grid configuration pane shows the configuration for this row grouping:
-Once a table is grouped by a field, a next step can be to aggregate one or multiple columns by this grouped field. When this is done, we call this aggregated table mode. Different types of aggregation are available to the user, which will be discussed in this section.
+The above example showed grouping the rows by 1 column, this next example shows the same table, but now the rows are grouped by 3 columns. Note that you can change the order of the Row Groups by clicking on a column header and dragging it up or down.
+The table then looks as follows:
+The number in parenthesis indicates how many unique values there are for the next row group:
+Once a table is grouped by one or more fields, a next step can be to aggregate one or multiple columns by this/these grouped field(s). When this is done, we call this aggregated table mode. Different types of aggregation are available to the user, which will be discussed in this section.
 When configuring the grid through the configuration panel that comes up when clicking on Columns on the right-hand side of input & output tables, several options are available to help users find field names quickly and turn multiple on/off simultaneously:
 To configure the grid, fields can be dragged and dropped:
-Alternatively, instead of dragging and dropping, user can also right-click on the field(s) of interest to add them to the configuration areas. This can be done both in the list with column names at the top of the configuration window as shown in the following screenshot, but also on the column names in the grid itself (which we have seen an example of in the “How to Access the New Grid Features” section above):
-In the screenshot above (taken with Pivot Mode on which is why the Column Labels area is also visible), user right-clicked on the Flow Volume field and now user can choose to add it to the Row Groups area (“Group by FlowVolume”), to the ∑ Values area (“Add FlowVolume to values”), or to the Column Labels area (“Add FlowVolume to labels”).
+Alternatively, instead of dragging and dropping, users can also right-click on the field(s) of interest to add them to the configuration areas. This can be done both in the list with column names at the top of the configuration window as shown in the following screenshot, but also on the column names in the grid itself (which we have seen an example of in the “How to Access the New Grid Features” section above):
+In the screenshot above (taken with Pivot Mode on which is why the Column Labels area is also visible), the user right-clicked on the Flow Volume field and now they can choose to add it to the Row Groups area (“Group by FlowVolume”), to the ∑ Values area (“Add FlowVolume to values”), or to the Column Labels area (“Add FlowVolume to labels”).
 The next screenshot shows the result of a configured aggregated table grid:
 When adding numeric fields to the ∑ Values area, the following aggregation options are available to the user:
 For non-numeric fields, only the last 3 options are available as aggregations:
-When adding an aggregation field through right-clicking on a field name in the grid, it looks as follows. User right-clicked on a numerical field, Transportation Cost, here:
+When adding an aggregation field through right-clicking on a field name in the grid, it looks as follows. The user right-clicked on a numerical field, Transportation Cost, here:
 When filters are applied to the table, these are still applied when the table is being grouped by rows, aggregated, or pivoted:
 It was mentioned above that the number in parentheses after the scenario name represents the number of rows that the aggregation was applied to. We can expand this by clicking on the greater than (>) icon to view the individual rows that make up the aggregation:
+Next is an aggregated table mode example where more than 1 Row Group is used. Here, the Flow Quantity on the Optimization Flow Summary table is summed by scenario, origin, and product:
+The resulting table:
 When users turn on pivot mode, an extra configuration area named Column Labels becomes available in addition to the Row Groups and ∑ Values areas:
 Another example to show the total volumes of different flow types, filtered for finished goods, by scenario is shown in the next screenshot:
 So far, we have only looked at using the new grid features on the Optimization Flow Summary output table. Here, we will show some additional examples on different input and output tables.
@@ -1089,6 +1099,18 @@ There were no errors found, which can be seen from:
 The green checkmark icon as opposed to the red exclamation mark icon when errors have been found.
 Total errors and tables with errors both are 0.
 The text “No Validation Errors Found” in the lower part of the Integrity Checker.
+Integrity Checker and the Technology Filter
+It is helpful to use the Technology Filter in the top toolbar of Cosmic Frog when using the Integrity Checker. It ensures you only see problems identified in the Integrity Checker results that are pertinent to the technology/technologies you are building a model for:
+In this model, there is an incorrect value in the Product Name Group Behavior field on the Customer Demand table. Its value should be Enumerate or Aggregate, but is set to AllTogether. This field is only used by the Neo (network Optimization) engine, and not by any of the other 5.
+We are building a model that we want to use for both Neo and Triad (Greenfield) solves and therefore we have turned off the other 4 technologies in the Technology Filter (grey: turned off; colored: turned on).
+When running the Integrity Checker on the Customer Demand table, we see the tags for Neo and Triad at the bottom of the status area.
+In the results area, we see that 1 error has been identified in the Customer Demand table. Clicking here opens the Integrity Checker Errors table underneath the Customer Demand table.
+In the Integrity Checker Errors table, we see that the error is only for Neo in the Relevant Technology field.
+To illustrate how the Technology Filter affects the Integrity Checker, we now turn off Neo in the Technology Filter, so that Triad is the only enabled technology:
+Only the Triad technology is still enabled.
+The Neo tag has been removed and only the Triad tag is left in the Integrity Checker status area.
+No errors are reported, as the only one was a Neo-specific one, which is now not relevant to us anymore.
+In the Customer Demand table itself, we do not see the Product Name Group Behavior field anymore, as only Triad specific fields are now shown.
 Comparison with other Cosmic Frog Data Validation Tools
 There are additional tools in Cosmic Frog which can help with finding problems in the model’s data and overall construction, the table below gives an overview of how these tools compare to each other to help users choose the most suitable one for their situation:
 Tips & Tricks
@@ -1212,6 +1234,18 @@ There were no errors found, which can be seen from:
 The green checkmark icon as opposed to the red exclamation mark icon when errors have been found.
 Total errors and tables with errors both are 0.
 The text “No Validation Errors Found” in the lower part of the Integrity Checker.
+Integrity Checker and the Technology Filter
+It is helpful to use the Technology Filter in the top toolbar of Cosmic Frog when using the Integrity Checker. It ensures you only see problems identified in the Integrity Checker results that are pertinent to the technology/technologies you are building a model for:
+In this model, there is an incorrect value in the Product Name Group Behavior field on the Customer Demand table. Its value should be Enumerate or Aggregate, but is set to AllTogether. This field is only used by the Neo (network Optimization) engine, and not by any of the other 5.
+We are building a model that we want to use for both Neo and Triad (Greenfield) solves and therefore we have turned off the other 4 technologies in the Technology Filter (grey: turned off; colored: turned on).
+When running the Integrity Checker on the Customer Demand table, we see the tags for Neo and Triad at the bottom of the status area.
+In the results area, we see that 1 error has been identified in the Customer Demand table. Clicking here opens the Integrity Checker Errors table underneath the Customer Demand table.
+In the Integrity Checker Errors table, we see that the error is only for Neo in the Relevant Technology field.
+To illustrate how the Technology Filter affects the Integrity Checker, we now turn off Neo in the Technology Filter, so that Triad is the only enabled technology:
+Only the Triad technology is still enabled.
+The Neo tag has been removed and only the Triad tag is left in the Integrity Checker status area.
+No errors are reported, as the only one was a Neo-specific one, which is now not relevant to us anymore.
+In the Customer Demand table itself, we do not see the Product Name Group Behavior field anymore, as only Triad specific fields are now shown.
 Comparison with other Cosmic Frog Data Validation Tools
 There are additional tools in Cosmic Frog which can help with finding problems in the model’s data and overall construction, the table below gives an overview of how these tools compare to each other to help users choose the most suitable one for their situation:
 Tips & Tricks
@@ -2445,6 +2479,58 @@ When a macro is created, it automatically gets a Start task added to it. Next, w
 When hovering close to the Start task, it will be suggested to connect the new Import task to the Start task. Dropping the Import task here will create the connecting line between the 2 tasks automatically. Once the Import task is placed on the macro canvas, the Configuration tab in the right-hand side panel will be opened. Here users can enter the name for the task, select the data connection that is the source for the import (the Historical Shipments CSV connection), and the data connection that is the destination of the import (a new table named “rawshipments” in the Project Sandbox):
 If not yet connected automatically in the previous step, connect the Import Raw Shipments task to the Start task by clicking on the connection point in the middle of the right edge of the Start task, holding the mouse down and dragging the connection line to the connection point in the middle of the left edge of the Import Raw Shipments task. Next, we can test the macro that has been set up so far by running it: either click on the green Run button in the toolbar at the top of DataStar or click on the Run button in the Logs tab at the bottom of the macro canvas:
 You can follow the progress of the Macro run in the Logs tab and once finished examine the results on the Data Connections tab. Expand the Project Sandbox data connection to open the rawshipments table by clicking on it. A preview of the table of up to 10,000 records will be displayed in the central part of DataStar:
+
+
+---
+## DataStar Quick Start: Macro Building with Ada
+**URL:** https://optilogic.com/resources/help-center/docs/datastar-quick-start-macro-building-with-ada
+
+In this quick start guide we will walk through how you can build a DataStar macro for repeatable Cosmic Frog model building, where data needs to be refreshed periodically, through chatting with Ada.
+When using Ada to have the Modeler Agent create a model, it is a non-deterministic process where you may not get the same results every time. Once you are happy with the model you have built using Ada, you want to be able to repeat those steps every time in a reliable, performant, deterministic fashion. That is the value of being able to persist the process in DataStar.
+It is helpful to be familiar with the contents of the following Help Center articles prior to diving into this quick start:
+This quick start guide uses a historical shipments file that was also used in the Importing a CSV File quick start guide. In addition, we will create a second data connection for a basic costs file and import that one into the Project Sandbox too. We then use the data in those 2 files to populate tables of an initially empty Cosmic Frog model with the aim to run a Neo solve. Finally, the steps to populate this model are automatically captured in a DataStar macro to create a repeatable model build workflow. In summary the steps are:
+We will cover what is contained in the 2 CSV files and steps 1-3 in this section.
+The next 2 screenshots show the structure of the data in the 2 CSV files used in this quick start.
+Of the Historical_Shipments.csv file, the first 5 of a total of 42,656 records are shown. The Ship Dates range from May 2024 through August 2025:
+The next 2 screenshots show all data contained in the Basic_Costs.csv file:
+Now, we move on to chatting with Ada in the next generation Optilogic platform at https://ai.optilogic.app. Here, we will walk-through an initial prompt and the back and forth that follows. Note that you can get different responses and clarifying questions from Ada, even with the same starting data and initial prompt.
+We first connect the DataStar project and empty Cosmic Frog model in the Databases drop-down selector, and then submit our prompt:
+Ada comes back with three consecutive clarifying questions, 1 on model configuration decisions and 2 to approve running the DataStar macro and a Neo solve on the Cosmic Frog model. You can see the questions and the user’s responses in this screenshot:
+Ada’s response is then as follows:
+So, this achieved what we set out to do in the prompt. We did not yet run the Neo solve as we first want to examine the Cosmic Frog model and DataStar macro.
+In DataStar, we see that in addition to the macro that imports the data from the 2 CSV files, there is now a Model Build macro present too. Note that you may need to refresh your browser to see the new macro in case the project was still open from before. You can click on any task to select it and inspect its configuration which comes up on the right-hand side.
+Opening the model in Cosmic Frog, we see that the expected tables are populated. Here, the Facilities table is shown with the 7 DCs and 1 (geocoded) Factory, as we requested:
+All tables look good, except:
+To understand the distance calculation and correct the model horizon, we continue our conversation with Ada:
+As a result of the last prompt Ada updates the build_transportationpolicies Run SQL task in the Model Build macro, which we can see by opening its SQL Script:
+In addition, she adds 2 tasks to the Model Build macro to take care of setting the model start and end date in the Model Settings table:
+Double-checking the Cosmic Frog model to ensure the updated macro was run and results in the desired changes, we can see that the Unit Costs on the Factory-DC lanes have increased by 17% and that the Model Settings table now has Model Start Date and Model End Date set correctly.
+Now we have created a repeatable, deterministic workflow in DataStar to build a basic Neo model from the 2 input files, which may be refreshed with newer data regularly.
+To get an idea of the types of interactions you can have with Ada while working on DataStar projects, here are some example prompts to get you started:
+As always, please do not hesitate to reach out to our Support team via support@optilogic.com in case of questions or feedback.
+In this quick start guide we will walk through how you can build a DataStar macro for repeatable Cosmic Frog model building, where data needs to be refreshed periodically, through chatting with Ada.
+When using Ada to have the Modeler Agent create a model, it is a non-deterministic process where you may not get the same results every time. Once you are happy with the model you have built using Ada, you want to be able to repeat those steps every time in a reliable, performant, deterministic fashion. That is the value of being able to persist the process in DataStar.
+It is helpful to be familiar with the contents of the following Help Center articles prior to diving into this quick start:
+This quick start guide uses a historical shipments file that was also used in the Importing a CSV File quick start guide. In addition, we will create a second data connection for a basic costs file and import that one into the Project Sandbox too. We then use the data in those 2 files to populate tables of an initially empty Cosmic Frog model with the aim to run a Neo solve. Finally, the steps to populate this model are automatically captured in a DataStar macro to create a repeatable model build workflow. In summary the steps are:
+We will cover what is contained in the 2 CSV files and steps 1-3 in this section.
+The next 2 screenshots show the structure of the data in the 2 CSV files used in this quick start.
+Of the Historical_Shipments.csv file, the first 5 of a total of 42,656 records are shown. The Ship Dates range from May 2024 through August 2025:
+The next 2 screenshots show all data contained in the Basic_Costs.csv file:
+Now, we move on to chatting with Ada in the next generation Optilogic platform at https://ai.optilogic.app. Here, we will walk-through an initial prompt and the back and forth that follows. Note that you can get different responses and clarifying questions from Ada, even with the same starting data and initial prompt.
+We first connect the DataStar project and empty Cosmic Frog model in the Databases drop-down selector, and then submit our prompt:
+Ada comes back with three consecutive clarifying questions, 1 on model configuration decisions and 2 to approve running the DataStar macro and a Neo solve on the Cosmic Frog model. You can see the questions and the user’s responses in this screenshot:
+Ada’s response is then as follows:
+So, this achieved what we set out to do in the prompt. We did not yet run the Neo solve as we first want to examine the Cosmic Frog model and DataStar macro.
+In DataStar, we see that in addition to the macro that imports the data from the 2 CSV files, there is now a Model Build macro present too. Note that you may need to refresh your browser to see the new macro in case the project was still open from before. You can click on any task to select it and inspect its configuration which comes up on the right-hand side.
+Opening the model in Cosmic Frog, we see that the expected tables are populated. Here, the Facilities table is shown with the 7 DCs and 1 (geocoded) Factory, as we requested:
+All tables look good, except:
+To understand the distance calculation and correct the model horizon, we continue our conversation with Ada:
+As a result of the last prompt Ada updates the build_transportationpolicies Run SQL task in the Model Build macro, which we can see by opening its SQL Script:
+In addition, she adds 2 tasks to the Model Build macro to take care of setting the model start and end date in the Model Settings table:
+Double-checking the Cosmic Frog model to ensure the updated macro was run and results in the desired changes, we can see that the Unit Costs on the Factory-DC lanes have increased by 17% and that the Model Settings table now has Model Start Date and Model End Date set correctly.
+Now we have created a repeatable, deterministic workflow in DataStar to build a basic Neo model from the 2 input files, which may be refreshed with newer data regularly.
+To get an idea of the types of interactions you can have with Ada while working on DataStar projects, here are some example prompts to get you started:
+As always, please do not hesitate to reach out to our Support team via support@optilogic.com in case of questions or feedback.
 
 
 ---
@@ -12591,6 +12677,168 @@ Connect with Optilogic peers, exchange insights, and accelerate supply chain suc
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
+In this documentation we will first cover the Integrity Checker tool’s scope, how to run it, and how to review its results. Next, we will compare the Integrity Checker to other Cosmic Frog data validation tools, and we will wrap up with several tips & tricks to help users make optimal use of the tool.
+The Integrity Checker extends cell validation and data entry helper capabilities to support users identify a range of issues relating to referential integrity and data types before running a model. The following types of data and referential integrity issues are being checked for when the Integrity Checker is run:
+Here, we provide a high-level description for each of these 4 categories; in the appendix at the end of this help center article more details and examples for each type of check are given. From left to right:
+The Integrity Checker can be accessed in two ways while in Cosmic Frog’s Data module: from the pane on the right-hand side that also contains Model Assistant and Scenario Errors or from the Grid drop-down menu. The latter is shown in the next screenshot:
+*Please note that in this first version of the Integrity Checker, the Inventory Policies and Inventory Policies Multi-Time Period tables are not included in any checks the Integrity Checker performs. All other tables are.
+The second way to access the Integrity Checker is, as mentioned above, from the pane on the right-hand side in Cosmic Frog:
+If the Integrity Checker has been run previously on a model, opening it again will show the previous results and gives user the option to re-run it by clicking on a “Rerun Check” button which we will see in screenshots further below.
+After starting the Integrity Checker in one of the 2 ways described above, a message indicating it is starting will appear in the Integrity Checker pane on the right-hand side:
+While the Integrity Checker is running, the status of the run will be continuously updated, while results will be added underneath as checks on individual tables complete. Only tables which have errors in them will be listed in the results.
+Once the Integrity Checker run is finished, its status changes to Completed:
+Users can see the errors identified by the Integrity Checker by clicking on one of the table cards which will open the table and the Integrity Checker Errors table beneath it:
+Clicking on a record in the Integrity Checker Errors table will filter the table above (here the Transportation Policies table) down to the record(s) with that error:
+User can go through each record in the Integrity Checker Errors table at the bottom and filter out the associated records with the errors in the table above to review the errors and possibly fix them. In the next screenshot, user has moved onto the second record in the Integrity Checker Errors table:
+We will look at one more error, the one that was found on the Products table:
+Finally, the following screenshot shows what it looks like when the Integrity Checker was run on an individual table and in the case no errors are found:
+It is helpful to use the Technology Filter in the top toolbar of Cosmic Frog when using the Integrity Checker. It ensures you only see problems identified in the Integrity Checker results that are pertinent to the technology/technologies you are building a model for:
+To illustrate how the Technology Filter affects the Integrity Checker, we now turn off Neo in the Technology Filter, so that Triad is the only enabled technology:
+There are additional tools in Cosmic Frog which can help with finding problems in the model’s data and overall construction, the table below gives an overview of how these tools compare to each other to help users choose the most suitable one for their situation:
+Please take note of the following so you can make optimal use of the Integrity Checker capabilities:
+We saw the next diagram further above in the Integrity Checker Scope section. Here we will expand on each of these categories and provide examples.
+From left to right:
+Note that the numeric and data type checks sound similar, but they are different: a value in a field can pass the data type check (e.g. a double field contains the value -2000), but not the numeric check (a latitude field can only contain values between -90 and 90, so -2000 would be invalid).
+We hope you will find the Integrity Checker to be a helpful additional tool to facilitate your model building in Cosmic Frog! For any questions, please contact Optilogic support on support@optilogic.com.
+Cosmic Frog users can now perform additional quick analyses on their supply chain models’ input and output data through Cosmic Frog’s new grid features. This functionality enables users to easily apply different types of grouping and aggregation to their data, while also allowing users to view their data in a pivoted format. Think for example of the following use cases:
+In this documentation we will cover how grids can be configured to use these new features, show several additional examples, and conclude with a few pointers for effective use of these features.
+These new grid features can be accessed from the “Columns” section on the side bar on the right-hand side of input and output tables while in the Data module of Cosmic Frog:
+Alternatively, users can also start grouping and subsequently aggregating by right clicking on the column names in the table grid:
+We will first cover Row Grouping, then Aggregated Table Mode, and finally Pivot Mode.
+Using the row grouping functionality allows users to select 1 or multiple columns of an input or output table by which all records in the table will be grouped. These groups of records can be collapsed and expanded as desired to review the data. In the following screenshot the row grouping feature is used to compare the sources of a certain finished good in a particular period for 1 scenario:
+When clicking on Columns on the right hand-side of the table to open the row grouping / aggregated table / pivot grid configuration pane shows the configuration for this row grouping:
+The above example showed grouping the rows by 1 column, this next example shows the same table, but now the rows are grouped by 3 columns. Note that you can change the order of the Row Groups by clicking on a column header and dragging it up or down.
+The table then looks as follows:
+The number in parenthesis indicates how many unique values there are for the next row group:
+Once a table is grouped by one or more fields, a next step can be to aggregate one or multiple columns by this/these grouped field(s). When this is done, we call this aggregated table mode. Different types of aggregation are available to the user, which will be discussed in this section.
+When configuring the grid through the configuration panel that comes up when clicking on Columns on the right-hand side of input & output tables, several options are available to help users find field names quickly and turn multiple on/off simultaneously:
+To configure the grid, fields can be dragged and dropped:
+Alternatively, instead of dragging and dropping, users can also right-click on the field(s) of interest to add them to the configuration areas. This can be done both in the list with column names at the top of the configuration window as shown in the following screenshot, but also on the column names in the grid itself (which we have seen an example of in the “How to Access the New Grid Features” section above):
+In the screenshot above (taken with Pivot Mode on which is why the Column Labels area is also visible), the user right-clicked on the Flow Volume field and now they can choose to add it to the Row Groups area (“Group by FlowVolume”), to the ∑ Values area (“Add FlowVolume to values”), or to the Column Labels area (“Add FlowVolume to labels”).
+The next screenshot shows the result of a configured aggregated table grid:
+When adding numeric fields to the ∑ Values area, the following aggregation options are available to the user:
+For non-numeric fields, only the last 3 options are available as aggregations:
+When adding an aggregation field through right-clicking on a field name in the grid, it looks as follows. The user right-clicked on a numerical field, Transportation Cost, here:
+When filters are applied to the table, these are still applied when the table is being grouped by rows, aggregated, or pivoted:
+It was mentioned above that the number in parentheses after the scenario name represents the number of rows that the aggregation was applied to. We can expand this by clicking on the greater than (>) icon to view the individual rows that make up the aggregation:
+Next is an aggregated table mode example where more than 1 Row Group is used. Here, the Flow Quantity on the Optimization Flow Summary table is summed by scenario, origin, and product:
+The resulting table:
+When users turn on pivot mode, an extra configuration area named Column Labels becomes available in addition to the Row Groups and ∑ Values areas:
+Another example to show the total volumes of different flow types, filtered for finished goods, by scenario is shown in the next screenshot:
+So far, we have only looked at using the new grid features on the Optimization Flow Summary output table. Here, we will show some additional examples on different input and output tables.
+In this first additional example, a pivot grid is configured to show the total production quantity for each facility by scenario:
+In the next example, we will show how to configure a pivot grid to do a quick check on the shipment quantities: how much the backhaul vs linehaul quantity is and how much of each is set to Include vs Exclude:
+In the following 2 examples, we are doing some quick analysis on the Simulation Inventory On Hand Report, a simulation (Throg) output table containing granular details on the inventory levels by location and product over time. In the first of these 2 examples, we want to see the average inventory by location and product for a specific scenario:
+In the next example, we want to see how often products stock out at the different facilities in the Baseline scenario:
+The last 2 examples in this section show 2 different views of Greenfield (Triad) outputs. The first example shows the average transport distance and time by scenario:
+Lastly, we want to look, by scenario, how much of the quantity delivered to customers falls in the 300 miles, 500 miles, and 750 miles service bands:
+Please take note of following to make working with Row Grouping, Aggregated Table Grids and Pivot Grids as effective as possible:
+In this quick start guide we will walk through how you can build a DataStar macro for repeatable Cosmic Frog model building, where data needs to be refreshed periodically, through chatting with Ada.
+When using Ada to have the Modeler Agent create a model, it is a non-deterministic process where you may not get the same results every time. Once you are happy with the model you have built using Ada, you want to be able to repeat those steps every time in a reliable, performant, deterministic fashion. That is the value of being able to persist the process in DataStar.
+It is helpful to be familiar with the contents of the following Help Center articles prior to diving into this quick start:
+This quick start guide uses a historical shipments file that was also used in the Importing a CSV File quick start guide. In addition, we will create a second data connection for a basic costs file and import that one into the Project Sandbox too. We then use the data in those 2 files to populate tables of an initially empty Cosmic Frog model with the aim to run a Neo solve. Finally, the steps to populate this model are automatically captured in a DataStar macro to create a repeatable model build workflow. In summary the steps are:
+We will cover what is contained in the 2 CSV files and steps 1-3 in this section.
+The next 2 screenshots show the structure of the data in the 2 CSV files used in this quick start.
+Of the Historical_Shipments.csv file, the first 5 of a total of 42,656 records are shown. The Ship Dates range from May 2024 through August 2025:
+The next 2 screenshots show all data contained in the Basic_Costs.csv file:
+Now, we move on to chatting with Ada in the next generation Optilogic platform at https://ai.optilogic.app. Here, we will walk-through an initial prompt and the back and forth that follows. Note that you can get different responses and clarifying questions from Ada, even with the same starting data and initial prompt.
+We first connect the DataStar project and empty Cosmic Frog model in the Databases drop-down selector, and then submit our prompt:
+Ada comes back with three consecutive clarifying questions, 1 on model configuration decisions and 2 to approve running the DataStar macro and a Neo solve on the Cosmic Frog model. You can see the questions and the user’s responses in this screenshot:
+Ada’s response is then as follows:
+So, this achieved what we set out to do in the prompt. We did not yet run the Neo solve as we first want to examine the Cosmic Frog model and DataStar macro.
+In DataStar, we see that in addition to the macro that imports the data from the 2 CSV files, there is now a Model Build macro present too. Note that you may need to refresh your browser to see the new macro in case the project was still open from before. You can click on any task to select it and inspect its configuration which comes up on the right-hand side.
+Opening the model in Cosmic Frog, we see that the expected tables are populated. Here, the Facilities table is shown with the 7 DCs and 1 (geocoded) Factory, as we requested:
+All tables look good, except:
+To understand the distance calculation and correct the model horizon, we continue our conversation with Ada:
+As a result of the last prompt Ada updates the build_transportationpolicies Run SQL task in the Model Build macro, which we can see by opening its SQL Script:
+In addition, she adds 2 tasks to the Model Build macro to take care of setting the model start and end date in the Model Settings table:
+Double-checking the Cosmic Frog model to ensure the updated macro was run and results in the desired changes, we can see that the Unit Costs on the Factory-DC lanes have increased by 17% and that the Model Settings table now has Model Start Date and Model End Date set correctly.
+Now we have created a repeatable, deterministic workflow in DataStar to build a basic Neo model from the 2 input files, which may be refreshed with newer data regularly.
+To get an idea of the types of interactions you can have with Ada while working on DataStar projects, here are some example prompts to get you started:
+As always, please do not hesitate to reach out to our Support team via support@optilogic.com in case of questions or feedback.
+Cyclo is Optilogic’s new Multi Echelon Inventory Optimization (MEIO) engine within Cosmic Frog. It helps supply chain teams determine where safety stock should be held across a network, how much is needed at each stage, and how service levels impact total safety stock cost and responsiveness.
+If you just want to get going with Cyclo as quick as possible, follow these steps:
+Multi Echelon Inventory Optimization (MEIO) is a planning approach used to optimize safety stock across an entire supply chain network.
+Cyclo, the MEIO engine, is designed to optimize safety stock placement across multi-stage supply chains that may include suppliers, manufacturing plants, distribution centers, and customer-facing locations. Instead of optimizing each node independently, Cyclo evaluates the entire network simultaneously so organizations can reduce total safety stock while maintaining desired service levels.
+Cyclo uses a Guaranteed Service Model (GSM) approach to optimize service-time relationships between facilities and derive recommended safety stock levels.
+Cyclo helps organizations answer key supply chain questions such as:
+By optimizing safety stock placement across the entire network, Cyclo can help organizations:
+Cyclo is especially valuable for:
+Both Cyclo and Dendro support inventory optimization workflows in Cosmic Frog, but they are designed for different planning problems.
+In practice both can be used together:
+Cyclo uses a Guaranteed Service Model (GSM) approach. Rather than directly optimizing safety stock quantities, Cyclo optimizes service-time commitments between facilities. Those service-time decisions are then translated into safety stock requirements.
+Represents your risk tolerance – balancing the cost of holding extra buffer inventory against the risk and cost of lost sales. This is a user input. Two risk measures are available:
+Service Type 1 is a stricter measure than Type 2 and will in most cases lead to more safety stock.
+Time a facility expects upstream suppliers to deliver material. This is a decision variable in the optimization
+Time a facility needs to replenish – typically transport time from the upstream location to the facility and/or production/processing time at the facility. These are model inputs.
+Time a facility promises to deliver to downstream customers. This is a decision variable in the optimization.
+The effective time window over which demand uncertainty accumulates.
+In a Guaranteed Service Model (GSM), each facility commits to serving downstream nodes within a defined service time. The effective exposure to uncertainty is the Net Replenishment Time (NRT):
+NRT = Incoming Service Time + Fixed Lead Times − Outgoing Service Time
+As NRT increases, more uncertainty accumulates and more safety stock is typically required.
+Cyclo evaluates many combinations of incoming and outgoing service times across the network to find the lowest total safety stock holding cost, while reaching the target service level. The optimization is not changing any fixed lead times. Instead, it is strategically deciding where responsiveness should exist in the network.
+Consider a product with the following flow path:
+Manufacturer → Distribution Center → Customer
+Assume the following fixed lead times:
+The total physical replenishment lead time across the network is therefore 5 days.
+These lead times are inputs to the model and are not optimized. What Cyclo optimizes are the service-time commitments between stages. Specifically:
+These service times are optimized with the goal to minimize total safety stock holding cost across the network.
+In the next example scenarios:
+Manufacturer ----> DC (5 days safety stock) ----> Customer
+Interpretation:
+This approach is common in highly responsive distribution networks.
+Manufacturer (2 days safety stock) --> DC (3 days safety stock) --> Customer
+Interpretation:
+Manufacturer (4 days safety stock) --> DC (1 day safety stock) --> Customer
+Interpretation:
+The total physical replenishment exposure is driven by the same 5-day total network lead time in all 3 scenarios.
+What changes is:
+Cyclo evaluates many combinations of:
+to determine the optimal inventory strategy across the network.
+Without MEIO, organizations often duplicate safety stock across multiple locations and optimize inventory independently at each node. Cyclo instead evaluates the network holistically and strategically concentrates inventory where it is most cost-effective, while achieving the required service level.
+The following diagram summarizes the inputs and outputs of the Cyclo engine; they will be covered in more detail in the Cyclo in Cosmic Frog section that follows.
+The following workflow provides a step-by-step approach for configuring and running Cyclo.
+The following table provides an overview of the input tables used by Cyclo, whether they are required, and their purpose. Further below, several screenshots show examples of some of the main inputs in Cosmic Frog.
+The following screenshots show several input tables with key Cyclo fields.
+Demand can be specified in either of the Customer Orders and Customer Order Profiles tables. If the Customer Orders table is populated it will be used and the Customer Order Profiles table will be skipped in that case. If the Customer Orders table is blank, the Customer Order Profiles table will be used.
+Before running Cyclo, verify that the supply chain network is fully configured. Recommended validation checks:
+You can also use Cosmic Frog’s Integrity Checker and filter the results where the Relevant Technology field contains Cyclo.
+Once the model has been built, you can optionally configure additional scenarios to run. Here 1 additional scenario is added besides the Baseline:
+After inputs are validated and scenarios set up, users can kick off their Cyclo optimization run by clicking on the green Run button at the top right in Cosmic Frog, which brings up the Run Settings modal:
+During execution, Cyclo processes:
+The optimization engine evaluates inventory decisions holistically across the network rather than independently by node.
+After the optimization is completed, review the generated outputs.
+The Cyclo outputs are in 2 tables, Inventory Network Summary and Inventory Safety Stock Summary, and include:
+Cyclo outputs help users understand recommended inventory placement, service-time commitments, and total network inventory cost tradeoffs.
+The Inventory Network Summary summarizes results by scenario:
+This helps users:
+The Inventory Safety Stock Summary shows detailed results at the product x location level, by scenario:
+The 4 screenshots in the next sub-sections are of additional fields on the same table and do not always show the fields of the screenshot above again.
+The recommended safety stock reflects:
+Note that another field not shown in the screenshot, Holding Cost, is available in this table too. Its value is the holding cost for 1 unit of product at that location for the length of the model run. The Holding Cost Contribution is calculated as this Holding Cost value multiplied with the Safety Stock value.
+These values represent:
+Cyclo can recommend inventory policies and their parameters:
+These policies help operationalize inventory decisions.
+When reviewing Cyclo outputs, focus on patterns across the network rather than individual locations.
+Questions to ask include:
+Safety stock optimization quality depends heavily on the quality of the data.
+Recommended practices:
+Cyclo is especially valuable for scenario analysis.
+Examples include:
+Scenario comparisons help quantify operational tradeoffs.
+MEIO is fundamentally a system-wide optimization problem; avoid evaluating locations independently. The best global solution may intentionally increase inventory at one node in order to reduce much larger inventory requirements elsewhere.
+Cyclo outputs are most valuable when reviewed collaboratively by:
+Why does Cyclo place more inventory at upstream locations?
+In many networks, upstream buffering can reduce downstream safety stock due to variability evening out when aggregating demand from multiple downstream locations (pooling effect). This lowers the total inventory holding cost. Cyclo evaluates these trade-offs automatically.
+Does higher service always mean more inventory?
+Generally, yes. Higher service-level targets reduce allowable stockout risk, which usually increases safety stock requirements.
+Why are service times optimized instead of inventory directly?
+The Guaranteed Service Model simplifies the optimization problem and provides a scalable framework for network-wide inventory positioning. Safety stock is derived from optimized service-time relationships.
+Cyclo brings advanced Multi Echelon Inventory Optimization capabilities into Cosmic Frog.
+By optimizing service-time commitments and safety stock placement across the entire supply chain network, Cyclo helps organizations:
+Cyclo is especially valuable for organizations operating complex, multi-stage supply chains where local safety stock decisions can create unintended network-wide impacts.
+Please do not hesitate to contact our support team on Support@optilogic.com in case of any questions of feedback.
 Please feel free to download the Cosmic Frog Python Library PDF file. Please note that this library requires Python 3.11.
 You can also reference the video shown below that covers an overview on scripting within Cosmic Frog.
 Thank you for using the most powerful supply chain design software in the galaxy (I mean, as far as we know).
@@ -13143,88 +13391,6 @@ The Next Gen UI Agent is one of Ada’s agents and can be accessed through the c
 The response to the prompt is as follows, where at the top the asked for bar chart is shown and the agent proactively added the data used for the chart in a table underneath the chart:
 Here are a few example prompts you can try using the Next Gen UI Agent:
 As always, please reach out to Optilogic Support (support@optilogic.com) in case of questions or feedback.
-Cyclo is Optilogic’s new Multi Echelon Inventory Optimization (MEIO) engine within Cosmic Frog. It helps supply chain teams determine where safety stock should be held across a network, how much is needed at each stage, and how service levels impact total safety stock cost and responsiveness.
-If you just want to get going with Cyclo as quick as possible, follow these steps:
-Multi Echelon Inventory Optimization (MEIO) is a planning approach used to optimize safety stock across an entire supply chain network.
-Cyclo, the MEIO engine, is designed to optimize safety stock placement across multi-stage supply chains that may include suppliers, manufacturing plants, distribution centers, and customer-facing locations. Instead of optimizing each node independently, Cyclo evaluates the entire network simultaneously so organizations can reduce total safety stock while maintaining desired service levels.
-Cyclo uses a Guaranteed Service Model (GSM) approach to optimize service-time relationships between facilities and derive recommended safety stock levels.
-Cyclo helps organizations answer key supply chain questions such as:
-By optimizing safety stock placement across the entire network, Cyclo can help organizations:
-Cyclo is especially valuable for:
-Both Cyclo and Dendro support inventory optimization workflows in Cosmic Frog, but they are designed for different planning problems.
-In practice both can be used together:
-Cyclo uses a Guaranteed Service Model (GSM) approach. Rather than directly optimizing safety stock quantities, Cyclo optimizes service-time commitments between facilities. Those service-time decisions are then translated into safety stock requirements.
-Represents your risk tolerance – balancing the cost of holding extra buffer inventory against the risk and cost of lost sales. This is a user input. Two risk measures are available:
-Service Type 1 is a stricter measure than Type 2 and will in most cases lead to more safety stock.
-Time a facility expects upstream suppliers to deliver material. This is a decision variable in the optimization
-Time a facility needs to replenish – typically transport time from the upstream location to the facility and/or production/processing time at the facility. These are model inputs.
-Time a facility promises to deliver to downstream customers. This is a decision variable in the optimization.
-The effective time window over which demand uncertainty accumulates.
-In a Guaranteed Service Model (GSM), each facility commits to serving downstream nodes within a defined service time. The effective exposure to uncertainty is the Net Replenishment Time (NRT):
-NRT = Incoming Service Time + Fixed Lead Times − Outgoing Service Time
-As NRT increases, more uncertainty accumulates and more safety stock is typically required.
-Cyclo evaluates many combinations of incoming and outgoing service times across the network to find the lowest total safety stock holding cost, while reaching the target service level. The optimization is not changing any fixed lead times. Instead, it is strategically deciding where responsiveness should exist in the network.
-Consider a product with the following flow path:
-Manufacturer → Distribution Center → Customer
-Assume the following fixed lead times:
-The total physical replenishment lead time across the network is therefore 5 days.
-These lead times are inputs to the model and are not optimized. What Cyclo optimizes are the service-time commitments between stages. Specifically:
-These service times are optimized with the goal to minimize total safety stock holding cost across the network.
-In the next example scenarios:
-Manufacturer ----> DC (5 days safety stock) ----> Customer
-Interpretation:
-This approach is common in highly responsive distribution networks.
-Manufacturer (2 days safety stock) --> DC (3 days safety stock) --> Customer
-Interpretation:
-Manufacturer (4 days safety stock) --> DC (1 day safety stock) --> Customer
-Interpretation:
-The total physical replenishment exposure is driven by the same 5-day total network lead time in all 3 scenarios.
-What changes is:
-Cyclo evaluates many combinations of:
-to determine the optimal inventory strategy across the network.
-Without MEIO, organizations often duplicate safety stock across multiple locations and optimize inventory independently at each node. Cyclo instead evaluates the network holistically and strategically concentrates inventory where it is most cost-effective, while achieving the required service level.
-The following diagram summarizes the inputs and outputs of the Cyclo engine; they will be covered in more detail in the Cyclo in Cosmic Frog section that follows.
-The following workflow provides a step-by-step approach for configuring and running Cyclo.
-The following table provides an overview of the input tables used by Cyclo, whether they are required, and their purpose. Further below, several screenshots show examples of some of the main inputs in Cosmic Frog.
-The following screenshots show several input tables with key Cyclo fields.
-Demand can be specified in either of the Customer Orders and Customer Order Profiles tables. If the Customer Orders table is populated it will be used and the Customer Order Profiles table will be skipped in that case. If the Customer Orders table is blank, the Customer Order Profiles table will be used.
-Before running Cyclo, verify that the supply chain network is fully configured. Recommended validation checks:
-You can also use Cosmic Frog’s Integrity Checker and filter the results where the Relevant Technology field contains Cyclo.
-Once the model has been built, you can optionally configure additional scenarios to run. Here 1 additional scenario is added besides the Baseline:
-After inputs are validated and scenarios set up, users can kick off their Cyclo optimization run by clicking on the green Run button at the top right in Cosmic Frog, which brings up the Run Settings modal:
-During execution, Cyclo processes:
-The optimization engine evaluates inventory decisions holistically across the network rather than independently by node.
-After the optimization is completed, review the generated outputs.
-The Cyclo outputs are in 2 tables, Inventory Network Summary and Inventory Safety Stock Summary, and include:
-Cyclo outputs help users understand recommended inventory placement, service-time commitments, and total network inventory cost tradeoffs.
-The Inventory Network Summary summarizes results by scenario:
-This helps users:
-The Inventory Safety Stock Summary shows detailed results at the product x location level, by scenario:
-The 4 screenshots in the next sub-sections are of additional fields on the same table and do not always show the fields of the screenshot above again.
-The recommended safety stock reflects:
-Note that another field not shown in the screenshot, Holding Cost, is available in this table too. Its value is the holding cost for 1 unit of product at that location for the length of the model run. The Holding Cost Contribution is calculated as this Holding Cost value multiplied with the Safety Stock value.
-These values represent:
-Cyclo can recommend inventory policies and their parameters:
-These policies help operationalize inventory decisions.
-When reviewing Cyclo outputs, focus on patterns across the network rather than individual locations.
-Questions to ask include:
-Safety stock optimization quality depends heavily on the quality of the data.
-Recommended practices:
-Cyclo is especially valuable for scenario analysis.
-Examples include:
-Scenario comparisons help quantify operational tradeoffs.
-MEIO is fundamentally a system-wide optimization problem; avoid evaluating locations independently. The best global solution may intentionally increase inventory at one node in order to reduce much larger inventory requirements elsewhere.
-Cyclo outputs are most valuable when reviewed collaboratively by:
-Why does Cyclo place more inventory at upstream locations?
-In many networks, upstream buffering can reduce downstream safety stock due to variability evening out when aggregating demand from multiple downstream locations (pooling effect). This lowers the total inventory holding cost. Cyclo evaluates these trade-offs automatically.
-Does higher service always mean more inventory?
-Generally, yes. Higher service-level targets reduce allowable stockout risk, which usually increases safety stock requirements.
-Why are service times optimized instead of inventory directly?
-The Guaranteed Service Model simplifies the optimization problem and provides a scalable framework for network-wide inventory positioning. Safety stock is derived from optimized service-time relationships.
-Cyclo brings advanced Multi Echelon Inventory Optimization capabilities into Cosmic Frog.
-By optimizing service-time commitments and safety stock placement across the entire supply chain network, Cyclo helps organizations:
-Cyclo is especially valuable for organizations operating complex, multi-stage supply chains where local safety stock decisions can create unintended network-wide impacts.
-Please do not hesitate to contact our support team on Support@optilogic.com in case of any questions of feedback.
 In just a few clicks, you can create a free account on the Optilogic platform, which includes Cosmic Frog and DataStar among other applications. This document walks you through the steps.
 If you just want the fastest way to get started:
 You will go through 3 main stages:
@@ -13561,106 +13727,6 @@ To create the timeline grid on the Supplier Transition Timeline dashboard, we fi
 Next, this table was populated from the outputs in the Optimization Supply Summary output table, using a SQL Query, which is saved in the model and can be used to refresh the custom table if scenarios are modified/added and (re-)run. For this we use the SQL Editor application on the Optilogic platform:
 The following screenshot shows the central part and right-hand side panel of the SQL Editor application:
 Please note that this custom table, the Supplier Transition Timeline dashboard, and SQL Query to populate it are specific to how this model is set up. All three will need to be updated if the model is changed in certain ways. For example, when adding/removing/renaming periods or if it becomes possible for 1 supplier to supply more than 1 raw material within a period.
-Scenarios let you rapidly explore "what-if" questions against an existing Cosmic Frog model. Define one or more data changes (scenario items), run the scenarios, then compare outputs - all without altering your baseline input data.
-Follow these five steps to run your first scenario:
-💡 Tip: Use Leapfrog (Cosmic Frog's AI assistant) to create scenarios and items from plain-language prompts - no manual configuration needed.
-A scenario defines one or more input-table changes to apply before running a solve. Common examples include:
-In the context of this documentation, we mean the following with scenario and scenario item:
-In other words: a scenario without any scenario items uses all the data in the input tables as is (often called Baseline); most scenarios will contain 1 or more scenario items to test certain changes as compared to a baseline.
-Open the Scenarios module from the Module menu. A freshly opened module looks like this:
-The Scenario drop-down (top of module) provides quick access to common actions:
-Each scenario is associated with one engine. To change it, select the scenario and use the radio buttons in the central panel:
-📝 Note: Running with multiple technologies
-You can solve the same scenario with more than one engine sequentially: assign the first technology → run → change technology → run again. Be aware that any scenario edits between runs may cause results to differ for subsequent runs.
-💡 Tip: Dendro workflow
-To optimize inventory policies with Dendro: first build and validate a Throg (simulation) scenario, then switch its technology to Dendro and run.
-Right-click an existing scenario or the Scenarios folder and choose New Scenario, or use the New Scenario option from the Scenario drop-down menu. Enter a name when prompted:
-Select the target scenario, then right-click → New Item (or use the Scenario drop-down). Name the item - its configuration panel opens automatically:
-After selecting the table, specify the change in the Actions field. Intelli-type suggests column names as you type:
-Once the column to change has been typed in, we can set its new value. In our example we want to set the value of the status column to Exclude:
-Intelli-type also validates syntax. Incorrect quote style (need to use single quotes, not double quotes):
-Unrecognized column name:
-📝 Note: For full Actions syntax, see the Writing Syntax for Actions Help Center article.
-By default, a scenario item's action applies to every record in the selected table. Add a filter to restrict which records are changed. Two methods are available:
-If Named Filters exist for the selected table, you can apply one directly to the scenario item:
-After selecting a filter, the Filter Grid Preview updates to show exactly which records will be affected:
-💡 Tip: Why prefer Named Filters?
-Named Filters are pre-validated - you have already confirmed they select the right records when creating the filter. The Condition Builder requires you to write syntax manually, which is more error-prone. Named Filters also show a record preview. (Preview for Condition Builder is coming soon.)
-📝 Note: One Named Filter per scenario item
-Each scenario item supports a maximum of one Named Filter. If you need to combine multiple filter conditions, create a new Named Filter that merges all required conditions.
-Use the Condition Builder when no applicable Named Filter exists, or for ad hoc conditions:
-📝 Note: For condition syntax, see the Writing Syntax for Conditions Help Center article.
-When multiple items modify the same column in the same table, they execute top-to-bottom. Order matters. Consider the following 2 scenarios where both scenario items are applied to the Quantity column in the Customer Demand table:
-💡 Tip: Drag items up or down within a scenario to reorder them.
-A single scenario item can be shared across multiple scenarios. The Item Assignments panel (right side) appears automatically when an item is selected:
-Switch to the Item Information tab on the same panel to edit the item's name or add a description:
-The Scenario Assignments panel (right side) appears when a scenario is selected, showing all available items and which are assigned:
-Switch to the Scenario Information tab to edit the scenario name or add a description:
-The scenarios list includes several navigation and status indicators that become useful as your model grows:
-Click the green Run button (top right in Cosmic Frog), select the scenario(s) to solve, and configure technology parameters. See the Running Models & Scenarios in Cosmic Frog Help Center article for full details.
-Sensitivity @ Scale automates demand-quantity and transportation-cost sensitivity analysis with a single click. See the Sensitivity at Scale Scenarios Help Center article for more information.
-In addition, there are three S@S-related utilities available in the Utilities module:
-📝 Note: See the How to Use & Create Cosmic Frog Model Utilities Help Center article for details on using and building utilities.
-Select one or more scenarios or items, then right-click ? Delete or use the Delete option from the Scenario drop-down menu at the top of the module. Key behaviors to keep in mind:
-Deleting removes only the two scenarios. Items used exclusively by those scenarios move to Unassigned Items; items shared with other scenarios remain untouched.
-Deleting removes both selected scenarios and all 6 selected items - including from any other scenarios that use them. The one unselected item in these 2 scenarios, "Add Inventory capacity at CDCs", remains.
-⚠️ Important: Deleting a scenario item removes it from all scenarios that it is assigned to, not just the selected scenario. Review item assignments before deleting.
-Use Delete Scenario Results (context menu or Scenario drop-down) to clear output data for one or more scenarios without removing the scenarios themselves:
-Think through scenario naming conventions ahead of time. You can for example:
-Most input tables include Status and Notes fields. A powerful scenario pattern is:
-This keeps all data in the model without interfering with the Baseline.
-Custom columns let you store alternative values in a table and reference them in scenario items, e.g.:
-The Copy Scenarios utility (Utilities module → Copy to a Model) copies a single scenario or all scenarios from one model to another, including all items and assignments.
-Use Leapfrog for scenario and item creation, and also for manipulating scenario-specific data.
-Leapfrog can create scenarios and scenario items from a plain-language description - ideal for quickly spinning up variations without manually configuring each item. See the specific section on this in the Getting Started with Leapfrog AI Help Center article.
-🔧 Leapfrog Use Case: 2026 Demand Projections from 2025 Numbers
-Model 2026 demand from 2025 quantities using a custom growth projections table. Leapfrog can be utilized to set this up, so no external tool needs to be used:
-Happy scenario modeling! As always, please contact our Support team on support@optilogic.com for any questions or feedback.
-The Run Python task allows you to execute Python scripts within a DataStar macro. You select a script, define its inputs (arguments), and run it as part of your workflow. This is ideal when built-in tasks are insufficient or when you want to reuse existing Python logic.
-The Run Python task is especially useful when:
-This walkthrough uses the end state of the DataStar Quick Start: Creating a Task using Natural Language guide as a starting point. At that point, a raw_shipments table has been imported and a Run SQL task has produced a customers table with unique customers. We will use a Run Python task to transform customer names from the format CZ1, CZ10, CZ100 to Cust_0001, Cust_0010, Cust_0100 - ensuring alphabetical sort matches customer number order and aligning the prefix with other data sources. The transformation steps are:
-The screenshot below shows the "Change customer names" Run Python task added to the macro:
-Once a Python task is added to the macro canvas, its configuration tab opens on the right:
-After clicking Use File with update_customer_names.py selected, the configuration updates as follows:
-Before configuring arguments, we will cover the update_customer_names.py script. We can review its arguments so we can verify auto-detection is correct and look at the script body to understand what it does. You can copy the full script text from the Appendix.
-With the script understood, let us use Detect arguments and configure the task:
-The Notes section is the final configuration area. It is especially valuable for complex tasks or collaborative projects, enabling users to quickly understand what the task does. Formatting options are available above the text box:
-Before running the task, we examine the customers table in the sandbox:
-Now run the "Change customer names" task (hover over it on the macro canvas and click the play button) and examine the results:
-The Run Manager logs are useful for monitoring progress and troubleshooting:
-Instead of using an existing file, users can click the Create File button in the Code File area (see bullet 10 underneath the first screenshot of the Code File section) to create a new script directly on the Optilogic platform:
-Templates are pre-built scripts available to all users from the Resource Library, covering common import/export patterns. To browse them, open the Resource Library application, filter for DataStar resources (button at the right top) and the Script tag. Clicking a resource also shows available documentation, which can be copied to your Optilogic account or downloaded.
-The Python base image used by the Run Python task contains the Python libraries most used in conjunction with DataStar. If your script uses a library that is not included in this base image, you need to create a requirements.txt file and place it in the same location as your Python script. In this file, you need to list the names of the libraries (without quotes), 1 library name per line.
-If your script uses a library that is not part of the base image, the Job Error Log of the Python task run will contain the following error: "ModuleNotFoundError: No module named '<module name>'".
-Keep the following in mind when developing scripts for Run Python tasks:
-As always, our Support team is happy to help with any questions; they can be reached at support@optilogic.com.
-Copy the script below into a .py file in your Optilogic account (via the Lightning Editor) and modify it as needed:
-import argparse
-from datastar import *
-def main():
-    parser = argparse.ArgumentParser(description="Script to update names of customers using format of CZ1, CZ10, etc. \
-                                                    to Cust_0001, Cust_0010, etc; copies the entire original table into a \
-                                                    new table (new_<original table name>) with just the customer names updated.")
-    parser.add_argument("--project", required=True, help="Name of the DataStar project")
-    parser.add_argument("--original_table", required=True, help="Original table with the customer name field to be updated")
-    parser.add_argument("--column_name", required=True, help="Name of the field containing the name of the customer")
-    
-    args = parser.parse_args()
-    project = Project.connect_to(args.project)
-    sandbox = project.get_sandbox()
-    df_table = sandbox.read_table(args.original_table)
-    df_new_table = df_table
-    df_new_table[args.column_name] = df_new_table[args.column_name].map(lambda x: x.lstrip('CZ'))
-    df_new_table[args.column_name] = df_new_table[args.column_name].str.zfill(4)
-    df_new_table[args.column_name] = 'Cust_' + df_new_table[args.column_name]
-    sandbox.write_table(df_new_table, "new_" + args.original_table)
-    
-    print(f"new table new_{args.original_table} created with updated customer names")
-if __name__ == "__main__":
-    main()
-The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
-Anura 2.8 is the current schema.
-A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
 
 
 ---
