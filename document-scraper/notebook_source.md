@@ -3871,26 +3871,8 @@ At this point you can run your workflow and it will be populated with the data f
 ## Editing Dashboards and Visualizations
 **URL:** https://optilogic.com/resources/help-center/docs/editing-dashboards-and-visualizations
 
-You can customize existing dashboards to fit your needs.
-Inside of a dashboard, add a new visualization:
-or edit an existing visualization:
-The most common elements of visualizations are values and labels.
-Values represent the data you want to be presented in the visualization. Typically, values are aggregated representations of your data (e.g. sum, average, etc.).
-Labels refer to the labels on the visualization axes and consequently the groups by which you want to aggregate your values.
-To build a visualization, we drag fields (i.e. database columns) into these elements.
-Other elements include categories which allow for additional grouping and filters which allow users to adjust inclusion and exclusion criteria while viewing the dashboard.
-You can use the Analytics dropdown button to create a new dashboard.
-You can use the “+” button to add your first visualization to the dashboard.
-You can customize existing dashboards to fit your needs.
-Inside of a dashboard, add a new visualization:
-or edit an existing visualization:
-The most common elements of visualizations are values and labels.
-Values represent the data you want to be presented in the visualization. Typically, values are aggregated representations of your data (e.g. sum, average, etc.).
-Labels refer to the labels on the visualization axes and consequently the groups by which you want to aggregate your values.
-To build a visualization, we drag fields (i.e. database columns) into these elements.
-Other elements include categories which allow for additional grouping and filters which allow users to adjust inclusion and exclusion criteria while viewing the dashboard.
-You can use the Analytics dropdown button to create a new dashboard.
-You can use the “+” button to add your first visualization to the dashboard.
+To learn all about dashboards and visualizations within Cosmic Frog, please refer to the Getting Started with Analytics help center article, which contains the latest information.
+To learn all about dashboards and visualizations within Cosmic Frog, please refer to the Getting Started with Analytics help center article, which contains the latest information.
 
 
 ---
@@ -4509,18 +4491,58 @@ Best Practices: Users should avoid including sensitive information (PII, credent
 ## Getting Started with Analytics
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-analytics
 
-Once you have run a model, you can visualize your results using the Analytics tab.
-In Analytics, a dashboard is a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
-In Cosmic Frog, there are default dashboards available to help you analyze your model results.
-The default dashboards highlight some common analytics and metrics. They are designed to be interacted with through a set of filters.
-We can hover over visualization elements to get more information. This floating card of information is called a “Tooltip”.
-We can customize existing dashboards to fit our needs. For more information see Editing Dashboards and Visualizations.
-Once you have run a model, you can visualize your results using the Analytics tab.
-In Analytics, a dashboard is a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
-In Cosmic Frog, there are default dashboards available to help you analyze your model results.
-The default dashboards highlight some common analytics and metrics. They are designed to be interacted with through a set of filters.
-We can hover over visualization elements to get more information. This floating card of information is called a “Tooltip”.
-We can customize existing dashboards to fit our needs. For more information see Editing Dashboards and Visualizations.
+Once you have run a model, you can visualize your results using the Analytics module. A dashboard in the Analytics module is a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
+To access the Analytics module:
+Once in the Analytics module, the left-hand side panel looks as follows:
+When opening a dashboard it is shown in the central part of Cosmic Frog. This is the default Optimization Scenario Comparison dashboard shown for the Global Supply Chain Strategy model, which highlights some common analytics and metrics:
+Many dashboards are designed to be interacted with through a set of filters, like for example the Optimization Transportation Flows one (also shown for the Global Supply Chain Strategy model):
+In the screenshot directly above, the dashboard is shown for all products in the model, which includes raw materials and finished goods. Filtering for just the finished goods changes the shown chart on this dashboard as follows:
+We can hover over visualization elements to get more information, which will be shown in a tooltip. Here, we show the information for one of the facilities, Princeton Factory, in a chart named Facility Geographic Risk Metrics, which is part of the Optimization Facility Risk Summary dashboard. This is again in the Global Supply Chain Strategy model:
+The Analytics drop-down menu at the top of the module contains the following options:
+The context menu that comes up when right-clicking on a dashboard in the list has all the same options, except for the New Dashboard one:
+After you click on New Dashboard in the Analytics menu, the central part of Cosmic Frog will look as follows:
+After clicking on the + Visualization button, first we need to choose the source data we will use for the visualization:
+The form now looks similar to the following screenshot, where on the left-hand side the visualization can be configured and on the right-hand side the chart will be shown as it is being built:
+After dragging the fields we want on top of the Label, Values, and Category areas, our visualization configuration area looks as follows:
+Clicking on a field in any of the configuration areas (bullet 3 above) brings up the Field Settings form:
+The following screenshot shows an example of using conditional formatting in a grid visualization, where the background color for values less than 2M is orange and over 2M green:
+While the chart is being configured, its current state is shown on the right-hand side where several additional settings and options are available to the user:
+The chart configuration options available to the user under the Settings tab are shown in the next 2 screenshots; these specify what is shown on the chart and the formatting of the different chart items:
+Once you are happy with the visualization, click on the Save checkmark icon to save it and close the editor for this visualization. This will bring you back to the dashboard:
+When you choose a Dashboard Filter, you are first prompted to choose your data source (a table, view or function) in the same way as selecting the source data for a visualization. After selecting your source, the Dashboard Filter form is shown:
+Creating a Date Filter works as follows:
+Note that after a Date Filter has been added to the dashboard, users can still switch between different timeframes when using the filter; this is not fixed at the time of Date Filter configuration.
+After a filter has been created, it is accessible in the top part of the dashboard, underneath the dashboard's description. Here we have added a filter for scenario name:
+We can customize existing dashboards to fit our needs. Click on the icon with 3 vertical dots to bring up the options to Edit, Refresh, and Export (Image, PowerPoint, PDF, or Excel) the current dashboard. If previously a visualization was copied to the Clipboard, a Paste option will be available here too:
+Please see the sections above on adding and configuring visualizations and dashboards which apply here in the same way.
+If bars are not showing in a chart this is likely due to the first column having no value or its value being 0. To resolve:
+As always, please reach out to our Support team at support@optilogic.com in case of any questions or feedback.
+Once you have run a model, you can visualize your results using the Analytics module. A dashboard in the Analytics module is a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
+To access the Analytics module:
+Once in the Analytics module, the left-hand side panel looks as follows:
+When opening a dashboard it is shown in the central part of Cosmic Frog. This is the default Optimization Scenario Comparison dashboard shown for the Global Supply Chain Strategy model, which highlights some common analytics and metrics:
+Many dashboards are designed to be interacted with through a set of filters, like for example the Optimization Transportation Flows one (also shown for the Global Supply Chain Strategy model):
+In the screenshot directly above, the dashboard is shown for all products in the model, which includes raw materials and finished goods. Filtering for just the finished goods changes the shown chart on this dashboard as follows:
+We can hover over visualization elements to get more information, which will be shown in a tooltip. Here, we show the information for one of the facilities, Princeton Factory, in a chart named Facility Geographic Risk Metrics, which is part of the Optimization Facility Risk Summary dashboard. This is again in the Global Supply Chain Strategy model:
+The Analytics drop-down menu at the top of the module contains the following options:
+The context menu that comes up when right-clicking on a dashboard in the list has all the same options, except for the New Dashboard one:
+After you click on New Dashboard in the Analytics menu, the central part of Cosmic Frog will look as follows:
+After clicking on the + Visualization button, first we need to choose the source data we will use for the visualization:
+The form now looks similar to the following screenshot, where on the left-hand side the visualization can be configured and on the right-hand side the chart will be shown as it is being built:
+After dragging the fields we want on top of the Label, Values, and Category areas, our visualization configuration area looks as follows:
+Clicking on a field in any of the configuration areas (bullet 3 above) brings up the Field Settings form:
+The following screenshot shows an example of using conditional formatting in a grid visualization, where the background color for values less than 2M is orange and over 2M green:
+While the chart is being configured, its current state is shown on the right-hand side where several additional settings and options are available to the user:
+The chart configuration options available to the user under the Settings tab are shown in the next 2 screenshots; these specify what is shown on the chart and the formatting of the different chart items:
+Once you are happy with the visualization, click on the Save checkmark icon to save it and close the editor for this visualization. This will bring you back to the dashboard:
+When you choose a Dashboard Filter, you are first prompted to choose your data source (a table, view or function) in the same way as selecting the source data for a visualization. After selecting your source, the Dashboard Filter form is shown:
+Creating a Date Filter works as follows:
+Note that after a Date Filter has been added to the dashboard, users can still switch between different timeframes when using the filter; this is not fixed at the time of Date Filter configuration.
+After a filter has been created, it is accessible in the top part of the dashboard, underneath the dashboard's description. Here we have added a filter for scenario name:
+We can customize existing dashboards to fit our needs. Click on the icon with 3 vertical dots to bring up the options to Edit, Refresh, and Export (Image, PowerPoint, PDF, or Excel) the current dashboard. If previously a visualization was copied to the Clipboard, a Paste option will be available here too:
+Please see the sections above on adding and configuring visualizations and dashboards which apply here in the same way.
+If bars are not showing in a chart this is likely due to the first column having no value or its value being 0. To resolve:
+As always, please reach out to our Support team at support@optilogic.com in case of any questions or feedback.
 
 
 ---
@@ -11855,20 +11877,8 @@ By default, the Geocoding option in Cosmic Frog will use Mapbox as the geodata p
 ## Using Analytics in Cosmic Frog
 **URL:** https://optilogic.com/resources/help-center/docs/using-analytics-in-cosmic-frog
 
-Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
-Model, optimize, and simulate even the most complex supply chains at scale and trade off cost, service, risk, and sustainability.
-Eliminate data challenges with AI-automated cleansing and workflow orchestration for decision-ready intelligence instantly.
-Optilogic's breakthrough agentic AI system for supply chain design — compresses months of supply chain design work into a single day.
-Purpose-built apps for every stakeholder — Deploy across your entire organization today. Act on insights from day one.
-Stay updated on the latest from Optilogic.
-Enhance your skills with our hands-on training sessions and courses.
-Dive into expert insights, industry trends, and practical tips for success.
-Discover Optilogic's partner network empowering transformation and supply chain success.
-Attend in-person events, live training, and webinars, or catch sessions on demand.
-Find step-by-step guides, FAQs, and support.
-Access our full library of guides, case studies, and tools to help you succeed.
-Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
-Watch the video to learn how to build dashboards to analyze scenarios and tell the stories behind your Cosmic Frog models:
+Watch the video to learn how to build dashboards to analyze scenarios and tell the stories behind your Cosmic Frog models. You can also refer to the Getting Started with Analytics help center article, which contains the latest information as of July 2026 in text + screenshot format.
+Watch the video to learn how to build dashboards to analyze scenarios and tell the stories behind your Cosmic Frog models. You can also refer to the Getting Started with Analytics help center article, which contains the latest information as of July 2026 in text + screenshot format.
 
 
 ---
@@ -12677,6 +12687,34 @@ Connect with Optilogic peers, exchange insights, and accelerate supply chain suc
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+Once you have run a model, you can visualize your results using the Analytics module. A dashboard in the Analytics module is a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
+To access the Analytics module:
+Once in the Analytics module, the left-hand side panel looks as follows:
+When opening a dashboard it is shown in the central part of Cosmic Frog. This is the default Optimization Scenario Comparison dashboard shown for the Global Supply Chain Strategy model, which highlights some common analytics and metrics:
+Many dashboards are designed to be interacted with through a set of filters, like for example the Optimization Transportation Flows one (also shown for the Global Supply Chain Strategy model):
+In the screenshot directly above, the dashboard is shown for all products in the model, which includes raw materials and finished goods. Filtering for just the finished goods changes the shown chart on this dashboard as follows:
+We can hover over visualization elements to get more information, which will be shown in a tooltip. Here, we show the information for one of the facilities, Princeton Factory, in a chart named Facility Geographic Risk Metrics, which is part of the Optimization Facility Risk Summary dashboard. This is again in the Global Supply Chain Strategy model:
+The Analytics drop-down menu at the top of the module contains the following options:
+The context menu that comes up when right-clicking on a dashboard in the list has all the same options, except for the New Dashboard one:
+After you click on New Dashboard in the Analytics menu, the central part of Cosmic Frog will look as follows:
+After clicking on the + Visualization button, first we need to choose the source data we will use for the visualization:
+The form now looks similar to the following screenshot, where on the left-hand side the visualization can be configured and on the right-hand side the chart will be shown as it is being built:
+After dragging the fields we want on top of the Label, Values, and Category areas, our visualization configuration area looks as follows:
+Clicking on a field in any of the configuration areas (bullet 3 above) brings up the Field Settings form:
+The following screenshot shows an example of using conditional formatting in a grid visualization, where the background color for values less than 2M is orange and over 2M green:
+While the chart is being configured, its current state is shown on the right-hand side where several additional settings and options are available to the user:
+The chart configuration options available to the user under the Settings tab are shown in the next 2 screenshots; these specify what is shown on the chart and the formatting of the different chart items:
+Once you are happy with the visualization, click on the Save checkmark icon to save it and close the editor for this visualization. This will bring you back to the dashboard:
+When you choose a Dashboard Filter, you are first prompted to choose your data source (a table, view or function) in the same way as selecting the source data for a visualization. After selecting your source, the Dashboard Filter form is shown:
+Creating a Date Filter works as follows:
+Note that after a Date Filter has been added to the dashboard, users can still switch between different timeframes when using the filter; this is not fixed at the time of Date Filter configuration.
+After a filter has been created, it is accessible in the top part of the dashboard, underneath the dashboard's description. Here we have added a filter for scenario name:
+We can customize existing dashboards to fit our needs. Click on the icon with 3 vertical dots to bring up the options to Edit, Refresh, and Export (Image, PowerPoint, PDF, or Excel) the current dashboard. If previously a visualization was copied to the Clipboard, a Paste option will be available here too:
+Please see the sections above on adding and configuring visualizations and dashboards which apply here in the same way.
+If bars are not showing in a chart this is likely due to the first column having no value or its value being 0. To resolve:
+As always, please reach out to our Support team at support@optilogic.com in case of any questions or feedback.
+To learn all about dashboards and visualizations within Cosmic Frog, please refer to the Getting Started with Analytics help center article, which contains the latest information.
+Watch the video to learn how to build dashboards to analyze scenarios and tell the stories behind your Cosmic Frog models. You can also refer to the Getting Started with Analytics help center article, which contains the latest information as of July 2026 in text + screenshot format.
 Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
 In this documentation we will first cover the Integrity Checker tool’s scope, how to run it, and how to review its results. Next, we will compare the Integrity Checker to other Cosmic Frog data validation tools, and we will wrap up with several tips & tricks to help users make optimal use of the tool.
 The Integrity Checker extends cell validation and data entry helper capabilities to support users identify a range of issues relating to referential integrity and data types before running a model. The following types of data and referential integrity issues are being checked for when the Integrity Checker is run:
@@ -13474,259 +13512,6 @@ Some notable features of this map are:
 Lastly, the following screenshot shows a map of the Tariffs example model, a network optimization (Neo engine) model available from Optilogic’s Resource Library (here), where suppliers located in Europe and China supply raw materials to the US and Mexico:
 Some notable features of this map are:
 We hope users feel empowered to create their own insightful maps. For any questions, please do not hesitate to contact Optilogic support at support@optilogic.com.
-Cosmic Frog users can now visualize routes from Hopper (transportation optimization) and Neo (network optimization) on real road networks instead of straight lines. Valhalla, an open-source routing engine for OpenStreetMap, is used to calculate the waypoints.
-This guide assumes familiarity with how to configure maps and their layers in Cosmic Frog. See the Getting Started with Maps help center article for the basics.
-There are 2 tables available in the Table Name drop-down on the Condition Builder panel of a map layer for which waypoint routes can be generated:
-In both cases the configuration is similar; first we will cover a Hopper example and then a Neo example.
-Please note:
-In our example case neither warning comes up, and the user turns on the Waypoint Routes option:
-Processing time depends on the number of origin-destination pairs. As an indication, a larger Hopper model with ~3,000 routes took a little under 4 minutes to generate all waypoints.
-Users can monitor the progress of the waypoint routes generation by opening the Model Activity panel:
-Once the calculation completes, the map is updated to show the routes the waypoints have been calculated for on the road network:
-In this Neo example, we will generate road network flows for the following DC to Customer flows. This represents 1,333 unique origin-destination pairs:
-Once the waypoints have been calculated, the map updates and now looks as follows:
-Hopper is the Transportation Optimization algorithm within Cosmic Frog. It designs optimal multi-stop routes to deliver/pickup a given set of shipments to/from customer locations at the lowest cost. Fleet sizing and balancing weekly demand can be achieved with Hopper too. Example business questions Hopper can answer are:
-Hopper’s transportation optimization capabilities can be used in combination with network design to test out what a new network design means in terms of the last-mile delivery configuration. For example, questions that can be looked at are:
-With ever increasing transportation costs, getting the last-mile delivery part of your supply chain right can make a big impact on the overall supply chain costs!
-It is recommended to watch this short Getting Started with Hopper video before diving into the details of this documentation. The video gives a nice, concise overview of the basic inputs, process, and outputs of a Hopper model.
-In this documentation we will first cover some general Cosmic Frog functionality that is used extensively in Hopper, next we go through how to build a Hopper model which discusses required and optional inputs, how to run a Hopper model is explained, Hopper outputs in tables, on maps and analytics are covered as well, and finally references to a few additional Hopper resources are listed. Note that additional more advanced Hopper features are covered in separate articles:
-To not make this document too repetitive we will cover some general Cosmic Frog functionality here that applies to all Cosmic Frog technologies and is used extensively for Hopper too.
-To only show tables and fields in them that can be used by the Hopper transportation optimization algorithm, disable all icons except the 4th (“Transportation”) in the Technologies Selector from the toolbar at the top in Cosmic Frog. This will hide any tables and fields that are not used by Hopper and therefore simplifies the user interface:
-Many Hopper related fields in the input and output tables will be discussed in this document. Keep in mind however that a lot of this information can also be found in the tooltips that are shown when you hover over the column name in a table, see following screenshot for an example. The column name, technology/technologies that use this field, a description of how this field is used by those algorithm(s), its default value, and whether it is part of the table’s primary key are listed in the tooltip.
-There are a lot of fields with names that end in “…UOM” throughout the input tables. How they work will be explained here so that individual UOM fields across the tables do not need to be explained further in this documentation as they all work similarly. These UOM fields are unit of measure fields and often appear to the immediate right of the field that they apply to, like for example Distance Cost and Distance Cost UOM in the screenshot above. In these UOM fields you can type the Symbol of a unit of measure that is of the required Type from the ones specified in the Units Of Measure table. For example, in the screenshot above, the unit of measure Type for the Distance Cost UOM field is Distance. Looking in the Units of Measure table, we see there are multiple of these specified, like for example Mile (Symbol = MI), Yard (Symbol = YD) and Kilometer (Symbol = KM), so we can use any of these in this UOM field. If we leave a UOM field blank, then the Primary UOM for that UOM Type specified in the Model Settings table will be used. For example, for the Distance Cost UOM field in the screenshot above the tooltip says Default Value = {Primary Distance UOM}. Looking this up in the Model Settings table shows us that this is set to MI (= mile) in our current model. Let’s illustrate this with the following screenshots of 1) the tooltip for the Distance Cost UOM field (located on the Transportation Assets table), 2) units of measure of Type = Distance in the Units Of Measure table and 3) checking what the Primary Distance UOM is set to in the Model Settings table, respectively:
-Note that only hours (Symbol = HR) is currently allowed as the Primary Time UOM in the Model Settings table. This means that if another Time UOM, like for example minutes (MIN) or days (DAY), is to be used, the individual UOM fields need to be used to set these. Leaving them blank would mean HR is used by default.
-With few exceptions, all tables in Cosmic Frog contain both a Status field and a Notes field. These are often used extensively to add elements to a model that are not currently part of the supply chain (commonly referred to as the “Baseline”), but are to be included in scenarios in case they will definitely become part of the future supply chain or to see whether there are benefits to optionally include these going forward. In these cases, the Status in the input table is set to Exclude and the Notes field often contains a description along the lines of ‘New Market’, ‘New Product’, ‘Box truck for Scenarios 2-4’, ‘Depot for scenario 5’, ‘Include S6’, etc. When creating scenario items for setting up scenarios, the table can then be filtered for Notes = ‘New Market’ while setting Status = ‘Include’ for those filtered records. We will not call out these Status and Notes fields in each individual input table in the remainder of this document, but we definitely do encourage users to use these extensively as they make creating scenarios very easy. When exploring any Cosmic Frog models in the Resource Library, you will notice the extensive use of these fields too. The following 2 screenshots illustrate the use of the Status and Notes fields for scenario creation: 1) shows several customers on the Customers table where CZ_Secondary_1 and CZ_Secondary_2 are not currently customers that are being served but we want to explore what it takes to serve them in future. Their Status is set to Exclude and the Notes field contains ‘New Market’; 2) a scenario item called ‘Include New Market’ shows that the Status of Customers where Notes = ‘New Market’ is changed to ‘Include’.
-The Status and Notes fields are also often used for the opposite where existing elements of the current supply chain are excluded in scenarios in cases where for example locations, products or assets are going to go offline in the future. To learn more about scenario creation, please see this short Scenarios Overview video, this Scenario Creation and Maps and Analytics training session video, this Creating Scenarios in Cosmic Frog help article, and this Writing Scenario Syntax help article.
-A subset of Cosmic Frog’s input tables needs to be populated in order to run Transportation Optimization, whereas several other tables can be used optionally based on the type of network that is being modelled, and the questions the model needs to answer. The required tables are indicated with a green check mark in the screenshot below, whereas the optional tables have an orange circle in front of them. The Units Of Measure and Model Settings tables are general Cosmic Frog tables, not only used by Hopper and will always be populated with default settings already; these can be added to and changed as needed.
-We will first discuss the tables that are required to be populated to set up a basic Hopper model and then cover what can be achieved by also using the optional tables and fields. Note that the screenshots of all input and output tables mostly contain the fields in the order they appear in in the Cosmic Frog user interface, however on occasion the order of the fields was rearranged manually. So, if you do not see a specific field in the same location as in a screenshot, then please scroll through the table to find it.
-The Customers table contains what for purposes of modelling are considered the customers: the locations that we need to deliver a certain amount of certain product(s) to or pick a certain amount of product(s) up from. The customers need to have their latitudes and longitudes specified so that distances and transport times of route segments can be calculated, and routes can be visualized on a map. Alternatively, users can enter location information like address, city, state, postal code, country and use Cosmic Frog’s built in geocoding tool to populate the latitude and longitude fields. If the customer’s business hours are important to take into account in the Hopper run, its operating schedule can be specified here too, along with customer specific variable and fixed pickup & delivery times. Following screenshot shows an example of several populated records in the Customers table:
-The pickup & delivery time input fields can be seen when scrolling right in the Customers table (the accompanying UOM fields are omitted in this screenshot):
-Finally, scrolling even more right, there are 3 additional Hopper-specific fields in the Customers table:
-The Facilities table needs to be populated with the location(s) the transportation routes start from and end at; they are the domicile locations for vehicles (assets). The table is otherwise identical to the customers table, where location information can again be used by the geocoding tool to populate the latitude and longitude fields if they are not yet specified. And like other tables, the Status and Notes field are often used to set up scenarios. This screenshot shows the Facilities table populated with 2 depots, 1 current one in Atlanta, GA, and 1 new one in Jacksonville, FL:
-Scrolling further right in the Facilities table shows almost all the same fields as those to the right on the Customers table: Operating Schedule, Operating Calendar, and Fixed & Unit Pickup & Delivery Times plus their UOM fields. These all work the same as those on the Customers table, please refer to the descriptions of them in the previous section.
-The item(s) that are to be delivered to the customers from the facilities are entered into the Products table. It contains the Product Name, and again a Status and Notes fields for ease of scenario creation. Details around the Volume and Weight of the product are entered here too, which are further explained below this screenshot of the Products table where just one product “PRODUCT” has been specified:
-On the Transportation Assets table, the vehicles to be used in the Hopper baseline and any scenario runs are specified. There are a lot of fields around capacities, route and stop details, delivery & pickup times, and driver breaks that can be used on this table, but there is no requirement to use all of them. Use only those that are relevant to your network and the questions you are trying to answer with your model. We will discuss most of them through multiple screenshots. Note that the UOM fields have been omitted in these screenshots. Let’s start with this screenshot showing basic asset details like name, number of units, domicile locations, and rate information:
-The following screenshot shows the fields where the operating schedule of the asset, any fixed costs, and capacity of the vehicles can be entered:
-Note that if all 3 of these capacities are specified, the most restrictive one will be used. If you for example know that a certain type of vehicle always cubes out, then you could just populate the Volume Capacity and Volume Capacity UOM fields and leave the other capacity fields blank.
-If you scroll further right, you will see the following fields that can be used to set limits on route distance and time when using this type of vehicle. Where applicable, you will notice their UOM fields too (omitted in the screenshot):
-Limits on the amount of stops per route can be set too:
-A tour is defined as all the routes a specific unit of a vehicle is used on during the model horizon. Limits around routes, time, and distance for tours can be added if required:
-Scrolling still further right you will see the following fields that can be used to add details around how long pickup and delivery take when using this type of vehicle. These all have their own UOM fields too (omitted in the screenshot):
-The next 2 screenshots shows the fields on the Transportation Assets table where rules around driver duty, shift, and break times can be entered. Note that these fields each have a UOM field that is not shown in the screenshot:
-Limits around out of route distance can be set too. Plus details regarding the weight of the asset itself and the level of CO2 emissions:
-Lastly, a default cost, fixed times for admin, and an operating calendar can be specified for a vehicle in the following fields on the transportation assets table:
-As a reference, these are the department of transportation driver regulations in the US and the EU. They have been somewhat simplified from these sources: US DoT Regulations and EU DoT Regulations:
-Consider this route that starts from the DC, then goes to CZ1 & CZ2, and then returns to the DC:
-The activities on this route can be thought of as follows, where the start of the Rest is the end of Shift 1 and Shift 2 starts at the end of the Rest:
-Notes on Driver Breaks:
-Except for asset fixed costs, which are set on the Transportation Assets table, and any Direct Costs which are set on the Shipments table, all costs that can be associated with a multi-stop route can be specified in the Transportation Rates table. The following screenshot shows how a transportation rate is set up with a name, a destination name and the first several cost fields. Note that UOM fields have been omitted in this screenshot, but that each cost field has its own UOM field to specify how the costs should be applied:
-Scrolling further right in the Transportation Rates table we see the remaining cost fields:
-Finally, a minimum charge and fuel surcharge can be specified as part of a transportation rate too:
-The amount of product that needs to be delivered from which source facility/supplier to which destination customer or picked up from which customer is specified on the Shipments table. Optionally, details around pickup and delivery times, direct costs, and fixed template routes can be set on this table too. Note that the Shipments table is Transportation Asset agnostic, meaning that the Hopper transportation optimization algorithm will choose the optimal one to use from the vehicles domiciled at the source location. This first screenshot of the Shipments table shows the basic shipment details:
-Here is an example of a subset of Shipments for a model that will route both pickups and deliveries:
-To the right in the Shipments table we find the fields where details around shipment windows can be entered:
-Still further right on the Shipments table are the fields where details around pickup and delivery times can be specified:
-Finally, furthest right on the Shipments table are fields where Direct Costs, details around Template Routes and decompositions can be configured:
-Note that there are multiple ways to switching between forcing Shipments and the order of stops onto a template route and letting Hopper optimize which shipments will be put on a route together and in which order. Two example approaches are:
-The tables and their input fields that can optionally be populated for their inputs to be used by Hopper will now be covered. Where applicable, it will also be mentioned how Hopper will behave when these are not populated.
-In the Transit Matrix table, the transport distance and time for any source-destination-asset combination that could be considered as a segment of a route by Hopper can be specified. Note that the UOM fields in this table are omitted in following screenshot:
-The transport distances for any source-destination pairs that are not specified in this table will be calculated based on the latitudes and longitudes of the source and destination and the Circuity Factor that is set in the Model Settings table. Transport times for these pairs will be calculated based on the transport distance and the vehicle’s Speed as set on the Transportation Assets table or, if Speed is not defined on the Transportation Assets table, the Average Speed in the Model Settings table.
-Costs that need to be applied on a stop basis can be specified in the Transportation Stop Rates table:
-If Template Routes are specified on the Shipments table by using the Template Route Name and Template Route Stop Sequence fields, then the Template Routes table can be used to specify if and how insertions of other Shipments can be made into these template routes:
-If a template route is set up by using the Template Route Name and Template Route Stop Sequence fields in the Shipments table and this route is not specified in the Template Routes table, it means that no insertions can be made into this template route.
-In addition to routing shipments with a fixed amount of product to be delivered to a customer location, Hopper can also solve problems where routes throughout a week need to be designed to balance out weekly demand while achieving the lowest overall routing costs. The Load Balancing Demand and Load Balancing Schedules tables can be used to set this up. If both the Shipments table and the Load Balancing Demand/Schedules tables are populated, by default the Shipments table will be used and the Load Balancing Demand/Schedules tables will be ignored. To switch to using the Load Balancing Demand/Schedules tables (and ignoring the Shipments) table, the Run Load Balancing toggle in the Hopper (Transportation Optimization) Parameters section on the Run screen needs to be switched to on (toggle to the left and grey is off; to the right and blue is on):
-The weekly demand, the number of deliveries per week, and, optionally, a balancing schedule can be specified in the Load Balancing Demand table:
-To balance demand over a week according to a schedule, these schedules can be specified in the Load Balancing Schedules table:
-In the screenshots above, the 3 load balancing schedules that have been set up will spread the demand out as follows:
-In the Relationship Constraints table, we can tell Hopper what combinations of entities are not allowed on the same route. For example, in the screenshot below we are saying that customers that make up the Primary Market cannot be served on the same route as customers from the Secondary Market:
-A few examples of common Relationship Constraints are shown in the following screenshot where the Notes field explains what the constraint does:
-To set the availability of customers, facilities, and assets to certain start and end times by day of the week, the Business Hours table can be used. The Schedule Name specified on this table can then be used in the Operating Schedule fields on the Customers, Facilities and Transportation Assets tables. Note that the Wednesday – Saturday Open Time and Close Time fields are omitted in the following screenshot:
-To schedule closure of customers, facilities, and assets on certain days, the Business Calendars table can be used. The Calendar Name specified on this table can then be used in the Operating Calendar fields on the Customers, Facilities and Transportation Assets tables:
-Groups are a general Cosmic Frog feature to make modelling quicker and easier. By grouping elements that behave the same together in a group we can reduce the number of records we need to populate in certain tables since we can use the Group names to populate the fields instead of setting up multiple records for each individual element which will all have the same information otherwise. Underneath the hood, when a model that uses Groups is run, these Groups are enumerated into the individual members of the group. We have for example already seen that groups of Type = Customers were used in the Relationship Constraints table in the previous section to prevent customers in the Primary Market being served on the same route as customers in the Secondary Market. Looking in the Groups table we can see which customers are part (‘members’) of each of these groups:
-Examples of other Hopper input tables where use of Groups can be convenient are:
-Note that in addition to Groups, Named Filters can be used in these instances too. Learn more about Named Filters in this help center article.
-The Step Costs table is a general table in Cosmic Frog used by multiple technologies. It is used to specify costs that change based on the throughput level. For Hopper, all cost fields on the Transportation Rates table, the Transportation Stop Rates table, and the Fixed Cost on the Transportation Assets table can be set up to use Step Costs. We will go through an example of how Step Costs are set up, associated with the correct cost field, and how to understand outputs using the following 3 screenshots of the Step Costs table, Transportation Rates table and Transportation Route Summary output table, respectively. The latter will also be discussed in more detail in the next section on Hopper outputs.
-In this example, the per unit cost for units 0 through 20 is $1, $0.9 for units 21 through 40, and $0.85 for all units over 40. Had the Step Cost Behavior field been set to All Item, then the per unit cost for all items is $1 if the throughput is between 0 and 20 units, the per unit cost for all items is $0.9 if the throughput is between 21 and 40 units, and the per unit cost for all items is $0.85 if the throughput is over 41 units.
-In this screenshot of the Transportation Rates table, it is shown that the Unit Cost field is set to UnitCost_1 which is the stepped cost with 3 throughput levels that we just discussed in the screenshot above:
-Lastly, this is a screenshot of the Transportation Route Summary output table where we see that the Delivered Quantity on Route 1 is 78. With the stepped cost structure as explained above for UnitCost_1, the Unit Cost in the output is calculated as follows: 20 * $1 (for units 1-20) + 20 * $0.9 (for units 21-40) + 38 * $0.85 (for units 41-78) = $20 + $18 + $32.30 = $70.30.
-When the input tables have been populated and scenarios are created (several resources explaining how to set up and configure scenarios are listed in the “2.4 Status and Notes fields” section further above), one can start a Hopper run by clicking on the Run button at the top right in Cosmic Frog:
-The Run screen will come up:
-Once a Hopper run is completed, the Hopper output tables will contain the outputs of the run.
-As with other Cosmic Frog algorithms, we can look at Hopper outputs in output tables, on maps and analytics dashboards. We will discuss each of these in the next 3 sections. Often scenarios will be compared to each other in the outputs to determine which changes need to be made to the last-mile delivery part of the supply chain.
-In the Output Summary Tables section of the Output Tables are 8 Hopper specific tables, they start with “Transportation…”. Plus, there is also the Hopper specific detailed Transportation Activity Report table in the Output Report Tables section:
-Switch from viewing Input Tables to Output Tables by clicking on the round grid at the top right of the tables list. The Transportation Summary table gives a high-level summary of each Hopper scenario that has been run and the next 6 Summary output tables contain the detailed outputs at the route, asset, shipment, stop, segment, and tour level. The Transportation Load Balancing Summary output table is populated when a Load Balancing scenario has been run, and summarizes outputs at the daily level. The Transportation Activity Report is especially useful to understand when Rests and Breaks are required on a route. All these output tables will be covered individually in the following sections.
-The Transportation Summary table contains outputs for each scenario run that include Hopper run details, cost details, how much product was delivered and how, total distance and time, and how many routes, stops and shipments there were in total.
-The Hopper run details that are listed for each scenario include:
-The next 2 screenshots show the Hopper cost outputs, summarized by scenario:
-Scrolling further right in the Transportation Summary table shows the details around how much product was delivered in each scenario:
-For the Quantity UOM that is shown in the farthest right column in this screenshot (eaches here), the Total Delivered Quantity, Total Direct Quantity and Total Undelivered Quantity are listed in these columns. If the Total Direct Quantity is greater than 0, details around which shipments were delivered directly to the customer can be found in the Transportation Shipment Summary output table where the Shipment Status = Direct Shipping. Similarly, if the total undelivered quantity is greater than 0, then more details on which shipments were not delivered and why are detailed in the Unrouted Reason field of the Transportation Shipment Summary output table where the Shipment Status = Unrouted.
-The next set of output columns when scrolling further right repeat these delivered, direct and undelivered amounts by scenario, but in terms of volume and weight.
-Still further to the right we find the outputs that summarize the total distance and time by scenario:
-Lastly, the fields furthest right on the Transportation Summary output table contain details around the number of routes, assets and shipments, and CO2 emissions:
-A few columns contained in this table are not shown in any of the above screenshots, these are:
-The Transportation Route Summary table contains details for each route in each scenario that include cost, distance & time, number of stops & shipments, and the amount of product delivered on the route.
-The costs that together make up the total Route Cost are listed in the next 11 fields shown in the next 2 screenshots:
-The next set of output fields show the distance and time for each route:
-Finally, the fields furthest right in the Transportation Route Summary table list the amount of product that was delivered on the routes, and the number of stops and delivered shipments on each route.
-The Transportation Asset Summary output table contains the details of each type of asset used in each scenario. These details include costs, amount of product delivered, distance & time, and the number of delivered shipments.
-The costs that together make up the Total Cost are listed in the next 12 fields:
-The next set of fields in the Transportation Asset Summary summarize the distances and times by asset type for the scenario:
-Furthest to the right on the Transportation Asset Summary output table we find the outputs that list the total amount of product that was delivered, the number of delivered shipments, and the total CO2 emissions:
-The Transportation Shipment Summary output table lists for each included Shipment of the scenario the details of which asset type it is served by, which stop on which route it is, the amount of product delivered, the allocated cost, and its status.
-The next set of fields in the Transportation Shipment Summary table list the total amount of product that was delivered to this stop.
-The next screenshot of the Transportation Shipment Summary shows the outputs that detail the status of the shipment, costs, and a reason in case the shipment was unrouted.
-Lastly, the outputs furthest to the right on the Transportation Shipment Summary output table list the pickup and delivery time and dates, the allocation of CO2 emissions and associated costs, and the Decomposition Name if used:
-The Transportation Stop Summary output table lists for each route all the individual stops and their details around amount of product delivered, allocated cost, service time, and stop location information.
-This first screenshot shows the basic details of the stops in terms of route name, stop ID, location, stop type, and how much product was delivered:
-Somewhat further right on the Transportation Stop Summary table we find the outputs that detail the route cost allocation and the different types of time spent at the stop:
-Lastly, farthest right on the Transportation Stop Summary table, arrival, service, and departure dates are listed, along with the stop’s latitude and longitude:
-The Transportation Segment Summary output table contains distance, time, and source and destination location details for each segment (or “leg”) of each route.
-The basic details of each segment are shown in the following screenshot of the Transportation Segment Summary table:
-Further right on the Transportation Segment Summary output table, the time details of each segment are shown:
-Next on the Transportation Segment Summary table are the latitudes and longitudes of the segment’s origin and destination locations:
-And farthest right on the Transportation Segment Summary output table details around the start and end date and time of the segment are listed, plus CO2 emissions and the associated CO2 cost:
-For each Tour (= asset schedule) the Transportation Tour Summary output table summarizes the costs, distances, times, and CO2 details.
-The next 3 screenshots show the basic tour details and all costs associated with a tour:
-The next screenshot shows the distance outputs available for each tour on the Transportation Tour Summary output table:
-Scrolling further right on the Transportation Tour Summary table, the outputs available for tour times are listed:
-If a load balancing scenario has been run (see the Load Balancing Demand input table further above for more details on how to run this), then the Transportation Load Balancing Summary output table will be populated too. Details on amount of product delivered, plus the number of routes, assets and delivered shipments by day of the week can be found in this output table; see the following 2 screenshots:
-For each route, the Transportation Activity Report details all the activities that happen in chronological order with details around distance and time and it breaks down how far along the duty and drive times are at each point in the route, which is very helpful to understand when rests and short breaks are happening.
-This first screenshot of the Transportation Activity Report shows the basic details of the activities:
-Next, the distance, time, and delivered amount of product are detailed on the Transportation Activity Report:
-Finally, the last several fields on the Transportation Activity Report details cost, and the thus far accumulated duty and drive times:
-As with the other engines within Cosmic Frog, Maps are very helpful in visualizing baseline and scenario outputs. Here, we will discuss how to set up Hopper specific Maps at a high level; we will not cover all the ins and outs of maps. If you are unfamiliar with the Maps module in Cosmic Frog, then please review the “Getting Started with Maps” article in the Optilogic Help Center first. It covers how to add and configure new maps and their layers.
-Visualizing Hopper routes and direct shipments on maps is achieved by adding map layers which use 1 of the following as the table name:
-Using what we have discussed above and the learnings from the Getting Started with Maps help center article, we can create the following map quite easily and quickly (the model used here is one from the Resource Library, named Transportation Optimization):
-The steps taken to create this map are:
-Let’s also cover 2 maps of a model where both pickups and deliveries are being made, from “backhaul” and to “linehaul” customers, respectively. When setting the LIFO (Is Last In First Out) field on the Transportation Assets table to True, this leads to routes that contain both pickup and delivery stops, but all the pickups are made at the end (e.g. modeling backhaul):
-Two example routes are being shown in the screenshot above and we can see that all deliveries are first made to the linehaul customers which have blue icons. Then, pickups are made at the backhaul customers which have orange icons. If we want to design interleaved routes where pickups and deliveries can be mixed, we need to set the LIFO field to False. The following screenshot shows 2 of these interleaved routes:
-The above 2 screenshots use the Transportation Routes Map Layer as the table name to draw the Routes map layer, where the condition builder is used to filter for 2 of the route names.
-Finally, we will go back to the Transportation Optimization model which was used for the first map screenshot in this section. The Baseline scenario in this model has 1 shipment that is being shipped directly. To visualize this on the map we add a map layer named "Direct Shipping" which uses the Transportation Shipment Summary as the table name input. On the Layer Style pane we change the color for this line layer to red. We also keep the "Routes" map layer, which is drawn from the Transportation Routes Map Layer with the default dark blue color:
-In the Analytics module of Cosmic Frog, dashboards that show graphs of scenario outputs, sliced and diced to the user’s preferences, can quickly be configured. Like Maps, this functionality is not Hopper specific and other Cosmic Frog technologies use these extensively too. We will cover setting up a Hopper specific visualization, but not all the details of configuring dashboards. Please review these resources on Analytics in Cosmic Frog first if you are not yet familiar with these:
-We will do a quick step by step walk through of how to set up a visualization of comparing scenario costs by cost type in a new dashboard:
-The steps to set this up are detailed here, note that the first 4 bullet points are not shown in the screenshot above:
-All Hopper specific Help Center articles can be found in the Hopper - Transportation Optimization section under Navigating Cosmic Frog.
-There are also several models in the Resource Library that transportation optimization users may find helpful to review. How to use resources in the Resource Library is described in the help center article “How to Use the Resource Library”.
-Incremental Change is a powerful new capability in Cosmic Frog’s NEO engine (Network Optimization) that helps you manage the transition between two network states – such as moving from your current baseline network to an optimized future state. Rather than implementing all changes at once, Incremental Change allows you to control the pace and sequence of changes over time, making network transformations more practical and manageable.
-This feature bridges the gap between theoretical optimization results and realistic implementation plans by generating a sequenced roadmap of network changes.
-In this documentation, we will discuss the impact of Incremental Change, explain how to use it, and then walk through 2 demo models showing examples of the new capabilities. These models can be copied to your own Optilogic account from the Resource Library:
-Please also see the following brief video for an introduction to Incremental Change and an overview of the second demo model, Incremental Change - Supplier Base Transition:
-Supply chain networks rarely change overnight. Whether you are opening new distribution centers, shifting supplier bases, or adapting to seasonal demand fluctuations, real-world constraints limit how quickly you can implement changes. Organizations face practical limitations including:
-Incremental Change addresses these realities by helping you answer critical questions: What is the best order of changes? What is the optimal rate of change? What tolerance levels are appropriate for different types of modifications?
-Understand which network modifications deliver the greatest value earliest in your transition. Incremental Change provides clear visibility into expected savings versus the number of changes required, along with detailed change checklists for each scenario.
-Create realistic, step-by-step roadmaps for moving from your current network to your target network. You will receive:
-Manage network evolution in response to changing business conditions while respecting operational constraints. Balance total cost optimization against your tolerance for change, with detailed monthly implementation plans.
-Cosmic Frog's Incremental Change currently supports the following network changes:
-Progressive Facility Expansion: When opening a new distribution center, specify that you want to reassign up to 10 customers per month, and the system determines which customers to transition each month to maximize savings.
-Seasonal Production Smoothing: For products with seasonal demand patterns, set constraints to ensure facility production never varies by more than 10% month-over-month, maintaining operational stability.
-Multi-Year Facility Rollouts: Plan the optimal sequence for opening 10 facilities over five years including a detailed 2-year implementation roadmap.
-Strategic Supplier Transitions: Systematically shift your supplier base. For example, progressively move sourcing out of or into a particular region – with Incremental Change determining the optimal sequence of supplier changes.
-Incremental Change uses a new input table and generates 2 new output tables with different levels of detail:
-Input: Use the Incremental Change Constraints table to set the change type(s) being included and your change budget for each period.
-Outputs:
-By leveraging Incremental Change, you can transform theoretical network optimization results into actionable, phased implementation plans that respect real-world operational constraints while maximizing value delivery.
-Some additional pointers that may prove helpful are as follows:
-In this example model, "Incremental Change - Production Smoothing", we will see how we can ensure that increases in production from one month to the next are limited to a certain percentage using the Incremental Change feature. This model can be copied from the Resource Library to your own account in case you want to follow along.
-The following screenshot shows which input tables are populated in this example model:
-This next screenshot shows the customer and facility locations on a map:
-As mentioned, the demand varies quite a lot by period; the following bar chart shows the total demand by period:
-Now, we will take a closer look at the new Incremental Change Constraints input table:
-Please note that this table also has a Notes field, which is not shown in the screenshot. Notes fields are also often used by scenarios, for example to filter out a subset of records for which the Status needs to be switched based on the text contained in the Notes field.
-The following 5 scenarios are included in this example model:
-After running all 5 scenarios, we will first look at the 2 new output tables, and then at several graphs set up in the Analytics module specifically for this model.
-The following screenshot shows the Optimization Incremental Change Summary output table:
-The other new output table, the Optimization Incremental Change Report, contains the changes at a more detailed level. For production increase incremental change types, it indicates the change in production at the individual facilities for the periods the constraint(s) are applied. In the next screenshot, we look at the report which is filtered for the fourth scenario and only the records for Facility_01 are shown:
-The Actual Change column here reflects the difference in the quantity produced between the period and the referenced (previous) period. The first record tells us that in Period2 Facility_01 produced 4,092 units less than it produced in Period1, etc.
-Now, we will look at several graphs set up in the Analytics module. The names of the dashboards containing the graphs start with “Incremental Change - …”. The first one we will look at is the Production by Period graph found on the “Incremental Change – Production by Period” dashboard. Here we compare the first scenario (No Limit) with the most constrained scenario which is the second one (only 2% increase in production allowed in each subsequent month):
-The blue line and numbers represent the production quantities of the first scenario (no limit). Since there are no limits set on how much production can fluctuate, the production is equal to the demand in that period to avoid any pre-build inventory and its holding costs. Since the demand varies greatly between each period, so does the production. For example, in Period2 the quantity produced is 1.45M units and in Period3 this is 5.55M units, which is a 280% increase.
-The green line and numbers represent the production quantities of the second scenario (max 2% production increase). To even out the production and stay within the 2% increase restriction, we see that production in periods 1 and 2 is higher in this scenario as compared to the first one. We can deduce that inventory is being pre-built here in order to be able to fulfill the high demand in Period3. We will show the pre-build inventory levels by period in another upcoming dashboard.
-The next graph, from the "Incremental Change - Demand and Production" dashboard, compares the production by period for all 5 scenarios using a bar-chart:
-We see the same for scenarios 1 and 2 as we discussed for the previous graph: high fluctuations in scenario 1 and only slight increases period-over-period in scenario 2. Scenarios 3, 4, and 5 gradually allow higher increases in production (5%, 10%, and 20%), and we can see from the production outputs that in order to reduce cost of holding pre-build inventory in stock, the scenarios do show more fluctuations in the production quantity so that product is produced as close as possible in time to when the product is demanded, while adhering to the % increase limitations.
-We can also illustrate this by looking at the amount of pre-build inventory across the periods for each scenario, which is shown on the “Incremental Change – Pre-build Inventory” dashboard:
-We notice that the first scenario is not shown here as it does not have any pre-build inventory in any of the periods: the production in each period matches the demand in each period to avoid any pre-build holding costs. For the other scenarios, we see, as expected, that the more stringent the limitation on the fluctuation in production quantity is, the more pre-build inventory is being held. In scenarios 4 and 5 (10% and 20% increases allowed), there is no need to have pre-build inventory in Period4 for example, whereas this is needed in scenarios 2 and 3 (2% and 5% increases allowed).
-We can of course also look at the costs associated with each of the 5 scenarios, using the Optimization Network Summary output table:
-The costs are made up of transportation costs ($41.2M for all scenarios), in transit holding costs ($51k for all scenarios), production costs ($4.2M for all scenarios), outbound handling costs ($19.5M for all scenarios), and pre-build holding costs. Only the pre-build holding costs differ between the scenarios due to the timing of production being different because of the production increase incremental change constraints. As we saw above, no pre-build inventory was held in scenario 1, so the pre-build holding cost for this scenario is 0. Most pre-build inventory was held in the most stringent scenario, scenario #2, and therefore the pre-build holding costs are highest for this scenario, decreasing as the production increase change constraint is gradually loosened from 2 to 20%.
-Finally, we will have a look at a map to see the flows from the facilities to the customers:
-In this map we see all flows for all periods for scenario 3. We notice that customers source from their closest facility. Since this is a multi-period model, we can also configure the map to see the flows for just a single period or a subset of the periods, by using the fold-out periods toolbar located at the bottom-right in the screenshot.
-This example demonstrates how Incremental Change can be used to determine the optimal sequence of supplier changes when transitioning from a mixed supplier base to a single-region sourcing strategy.
-The model evaluates two potential transitions:
-Supplier onboarding is limited to two suppliers per quarter, reflecting operational onboarding limits.
-In addition, the model evaluates whether adding a new West Coast port and factory improves the network. These locations could realistically only become operational starting in 2028, which is modeled using incremental change constraints.
-This example model, "Incremental Change - Supplier Base Transition", can be copied from the Resource Library if you want to follow along.
-This example is based on the Global Supply Chain Strategy model from the Resource Library (here) and has been modified to demonstrate Incremental Change functionality.
-This model includes two supplier regions:
-Europe
-China
-The current supplier base consists of:
-The additional suppliers are included in the model but initially inactive.
-This screenshot shows the existing and potential suppliers in Europe:
-The next screenshot shows the existing and potential suppliers in China:
-Materials flow through the network as follows:
-The model also includes potential West Coast expansion locations:
-These facilities are evaluated in selected scenarios.
-The following screenshot shows the port, factory, DC, and customer locations in North America, with the port to factory and factory to DC flows showing too:
-First, we will cover the basic inputs in this model that were added / modified from the original Global Supply Chain Strategy model. After that we will explain the inputs that have been added to model the supplier base transition and those that enable consideration of using the new port and factory on the US west coast.
-Several changes were made to the base model to support the incremental change example:
-The model evaluates transitions to either an all-Europe or all-China supplier base under the following rules:
-This supplier base transition is visualized on the following timeline:
-After running scenarios with the above transition settings, we will also run 2 accelerated transition scenarios:
-This looks as follows on a timeline:
-Supplier availability is controlled using two input tables:
-Supplier Capabilities
-Supplier Capabilities Multi-Time Period
-Three configuration sets are included:
-Scenarios activate the appropriate configuration by switching the Status field to Include for the relevant records.
-In the following screenshot of the Supplier Capabilities table, we see 12 (of the 21) suppliers that can supply RM4. Since the Paris supplier is the one which currently supplies this raw material, we see that the Status for that record is set to Include, whereas it is set to Exclude for all others. This is similarly set up for the other 8 raw materials. In scenarios where the supplier base is being shifted, the Status of the other records is set to Include.
-The next screenshot shows the Supplier Capabilities Multi-Time Period table which is filtered for Supplier Name = Chengdu or Mainz and Product Name = RM3. Chengdu (China) is the original supplier for RM3, while Mainz (Europe) is not currently used at all and will be considered for supplying RM3 in scenarios that transition the supplier base to Europe:
-To ensure meaningful dual sourcing, each raw material must be supplied by two suppliers.
-To prevent trivial allocations (e.g., one supplier providing only a few units), conditional minimum flow constraints require that each active supplier provides approximately 35% of total supply. This ensures both suppliers meaningfully contribute to supply.
-The 2 screenshots below show the setup for RM6 on the Flow Constraints input table:
-Additional flow count constraints enforce the supplier structure:
-These 2 screenshots show the flow count constraints which are used (Status switched from Exclude to Include) in the scenarios where the supplier base is shifted; they are explained underneath the second screenshot:
-Incremental Change controls the rate of supplier onboarding.
-Two configurations are included:
-Additional constraints prevent supplier changes after the transition period.
-The first 2 constraints shown in the screenshot below are for the standard transition type (Budget = 2 during transition, 0 after) and are included (Status switched to Include) in the scenarios where the supplier base is shifted. The bottom 2 constraints are used together with the one in the second record for scenarios modeling the accelerated transition (Budget =3 during transition, 0 after):
-The model evaluates adding:
-These facilities:
-Facilities table:
-Records were added for Los Angeles Port and Reno Factory. As these are currently not existing locations and will be considered for inclusion, their Facility Status = Consider and Initial State = Potential:
-Facilities Multi-Time Period table:
-Since we only want to consider including the west coast locations from 2028 onwards, we need to make sure that at the beginning of the model horizon they are closed. This is done by adding 2 records for 2026_Q1 to the Facilities Multi-Time Period table setting the Status for both the Reno Factory and the Los Angeles Port to Closed, see screenshot below. For the remaining periods in the model the Incremental Change Constraints (see further below in this section) take care of when the factory and port are considered for opening.
-Production Policies table:
-Records are added for the Reno Factory so it can manufacture all 3 finished goods, using the existing BOMs:
-Transportation Policies table:
-Records are added so that Los Angeles Port can receive raw materials from the ports in Rotterdam and Shanghai, the Los Angeles Port can ship these to the factory in Reno, and Reno Factory can serve the finished goods to all 7 DCs:
-Incremental Change Constraints table:
-Here, 2 records are added to set up the desired behavior of allowing the Reno Factory and Los Angeles Port to be added to the network from 2028_Q1 onwards.
-The other 4 "Facilities Opened" records in this table are not used in this model. They were added in case users want to set up and run some scenarios themselves where the west coast port and factory are allowed to be added from 2029 (records 3 and 4) or from 2030 (records 5 and 6) onwards.
-The following table shows the scenarios that were run in this example model. Initially the first 5 were run and based on the results, number 6 and 7 were added and run too:
-The Scenarios module of this example model looks as follows:
-For running the scenarios, 2 of the technology parameters were changed from their defaults:
-After running all scenarios, it is time to examine the outputs. We will start by looking at the new Optimization Incremental Change Summary and Optimization Incremental Change Report output tables and then visualize the supplier base changes on maps and a timeline grid. For these, we will mostly focus on scenarios 4 and 5 which show all incremental change constructs we have used in the model. Finally, we will also have a look at the financial impact and compare all scenarios.
-The Optimization Incremental Change Summary table shows how much of each change budget is used in each period. Two screenshots of this output table are shown next; in both, the table is filtered for scenario number 5 (field not shown) where the supplier base is moved to Europe and adding the west coast locations to the network is considered:
-During each of the first 3 quarters of the transition period 2 suppliers were added, then there is a pause in adding suppliers, and towards the end of the transition period, another 9 suppliers are added, essentially as late as possible. We can interpret this as:
-The next screenshot shows the same table, still filtered for scenario 5, but now the records for the Facilities Opened change type constraints are shown:
-We see that the budget was 2 for each of the periods in the 2028 – 2031 timeframe, but the Actual Change column indicates that no change (0) happened in any of those periods. In this scenario, it is not beneficial to start using the west coast port and factory anytime from Q1 2028 onwards.
-Next, we will cover the Optimization Incremental Change Report output table. This table has a record for each incremental change that was made, including details on what the change was. This table is filtered for scenario 4 (field not shown) where the supplier base is moved to China and the west coast locations are considered (note that records beyond Q1 2029 are not shown here):
-From the first 4 records for Q1 of 2027, we can tell that suppliers in Hefei and Taiyuan were added to the supplier base, while suppliers in Lyon and Madrid were removed. Similarly, 2 suppliers are added and removed in each of the next 2 quarters. Then in Q1 of 2028, the Reno Factory and Los Angeles Port are opened, which is apparently beneficial to do as early as possible when moving the supplier base to China. This is due to the lower transportation costs because of the shorter distance from Shanghai to Los Angeles as compared to going to the Charleston or Altamira ports.
-In summary:
-The next map shows the final configuration of the supplier base for scenario 4 where it is moved entirely to China. Notice that we have used the Period selector bar (at the top of the map) to show the map for Q1 of 2030 when the transition is complete. You can use this period selector to step through the periods to see the gradual changes over time.
-The next map is also for scenario 4 but now showing the North American locations and flows (except for the DC – Customer flows) for the same period of Q1 2030. We see that the Los Angeles Port and Reno Factory are being used in this scenario.
-Similar to the first map shown above, the next map shows the final supplier configuration in Q1 2030 for scenario 5, where the whole base is moved to Europe:
-The next 2 timeline grids on the Supplier Transition Timeline dashboard (Analytics module) are generated from a custom table “timeline_rm_bysupplier_byperiod”, which in turn was generated from the Optimization Supply Summary output table. The appendix describes the steps to create the custom table and how to re-create it in case (new) scenarios are added / adjusted and run.
-The first screenshot is for scenario 4, the second for scenario 5. They show which supplier supplies which RM when. Note that Q1-Q3 of 2026 are not included as the supplier configuration is equal to the Q4 2026 configuration. Similarly, the timeframe of Q2 2030 through Q4 2031 is not included in this dashboard either, since the supplier configuration is equal to the Q1 2030 configuration. Not all suppliers and period columns are shown in the screenshots, users can scroll horizontally and vertically in the dashboard to examine the full timeline.
-Some things we notice here for scenario 4 are:
-Some things we notice examining the above grid for scenario 5 are:
-Since we are interested in looking at the impact of requiring the supplier base to be transitioned over sooner, scenarios 6 and 7 were run too where the budget for adding suppliers is set to 3 per quarter. We know from scenarios 4 and 5 that the west coast locations are only used when moving the supplier base to China, therefore we run scenario 6 (where we speed up the transition to the China supplier base) with these locations still considered. We do not consider them in scenario 7 where we speed up the transition to the Europe supplier base.
-We will now have a look at how the costs compare for all 7 scenarios that were run with the next 2 screenshots of the Optimization Network Summary output table and the screenshot of the “Financials: Scenario Cost Comparison” chart. The latter can be found on the Scenario Comparison dashboard in the Analytics module:
-Comparing all scenarios reveals:
-Finally, the following 4 charts for scenarios 4-7 which show the number of suppliers by region over time can be found in the “Suppliers by Region – Scenario Comparison” dashboard in the Analytics module:
-Please do not hesitate to contact Optilogic support at support@optilogic.com in case of questions or feedback.
-To create the timeline grid on the Supplier Transition Timeline dashboard, we first created a custom table named timeline_rm_bysupplier_byperiod, where we added columns for scenarioname, supplier, and 1 column for each period in the model. The latter we named q1_2026, q2_2026, etc. rather than 2026_Q1, 2026_Q2, etc. (which is how the periods in the model are named) as column names in custom tables cannot start with a digit.
-Next, this table was populated from the outputs in the Optimization Supply Summary output table, using a SQL Query, which is saved in the model and can be used to refresh the custom table if scenarios are modified/added and (re-)run. For this we use the SQL Editor application on the Optilogic platform:
-The following screenshot shows the central part and right-hand side panel of the SQL Editor application:
-Please note that this custom table, the Supplier Transition Timeline dashboard, and SQL Query to populate it are specific to how this model is set up. All three will need to be updated if the model is changed in certain ways. For example, when adding/removing/renaming periods or if it becomes possible for 1 supplier to supply more than 1 raw material within a period.
 
 
 ---
