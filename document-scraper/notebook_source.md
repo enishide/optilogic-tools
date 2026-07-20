@@ -1099,18 +1099,6 @@ There were no errors found, which can be seen from:
 The green checkmark icon as opposed to the red exclamation mark icon when errors have been found.
 Total errors and tables with errors both are 0.
 The text “No Validation Errors Found” in the lower part of the Integrity Checker.
-Integrity Checker and the Technology Filter
-It is helpful to use the Technology Filter in the top toolbar of Cosmic Frog when using the Integrity Checker. It ensures you only see problems identified in the Integrity Checker results that are pertinent to the technology/technologies you are building a model for:
-In this model, there is an incorrect value in the Product Name Group Behavior field on the Customer Demand table. Its value should be Enumerate or Aggregate, but is set to AllTogether. This field is only used by the Neo (network Optimization) engine, and not by any of the other 5.
-We are building a model that we want to use for both Neo and Triad (Greenfield) solves and therefore we have turned off the other 4 technologies in the Technology Filter (grey: turned off; colored: turned on).
-When running the Integrity Checker on the Customer Demand table, we see the tags for Neo and Triad at the bottom of the status area.
-In the results area, we see that 1 error has been identified in the Customer Demand table. Clicking here opens the Integrity Checker Errors table underneath the Customer Demand table.
-In the Integrity Checker Errors table, we see that the error is only for Neo in the Relevant Technology field.
-To illustrate how the Technology Filter affects the Integrity Checker, we now turn off Neo in the Technology Filter, so that Triad is the only enabled technology:
-Only the Triad technology is still enabled.
-The Neo tag has been removed and only the Triad tag is left in the Integrity Checker status area.
-No errors are reported, as the only one was a Neo-specific one, which is now not relevant to us anymore.
-In the Customer Demand table itself, we do not see the Product Name Group Behavior field anymore, as only Triad specific fields are now shown.
 Comparison with other Cosmic Frog Data Validation Tools
 There are additional tools in Cosmic Frog which can help with finding problems in the model’s data and overall construction, the table below gives an overview of how these tools compare to each other to help users choose the most suitable one for their situation:
 Tips & Tricks
@@ -1234,18 +1222,6 @@ There were no errors found, which can be seen from:
 The green checkmark icon as opposed to the red exclamation mark icon when errors have been found.
 Total errors and tables with errors both are 0.
 The text “No Validation Errors Found” in the lower part of the Integrity Checker.
-Integrity Checker and the Technology Filter
-It is helpful to use the Technology Filter in the top toolbar of Cosmic Frog when using the Integrity Checker. It ensures you only see problems identified in the Integrity Checker results that are pertinent to the technology/technologies you are building a model for:
-In this model, there is an incorrect value in the Product Name Group Behavior field on the Customer Demand table. Its value should be Enumerate or Aggregate, but is set to AllTogether. This field is only used by the Neo (network Optimization) engine, and not by any of the other 5.
-We are building a model that we want to use for both Neo and Triad (Greenfield) solves and therefore we have turned off the other 4 technologies in the Technology Filter (grey: turned off; colored: turned on).
-When running the Integrity Checker on the Customer Demand table, we see the tags for Neo and Triad at the bottom of the status area.
-In the results area, we see that 1 error has been identified in the Customer Demand table. Clicking here opens the Integrity Checker Errors table underneath the Customer Demand table.
-In the Integrity Checker Errors table, we see that the error is only for Neo in the Relevant Technology field.
-To illustrate how the Technology Filter affects the Integrity Checker, we now turn off Neo in the Technology Filter, so that Triad is the only enabled technology:
-Only the Triad technology is still enabled.
-The Neo tag has been removed and only the Triad tag is left in the Integrity Checker status area.
-No errors are reported, as the only one was a Neo-specific one, which is now not relevant to us anymore.
-In the Customer Demand table itself, we do not see the Product Name Group Behavior field anymore, as only Triad specific fields are now shown.
 Comparison with other Cosmic Frog Data Validation Tools
 There are additional tools in Cosmic Frog which can help with finding problems in the model’s data and overall construction, the table below gives an overview of how these tools compare to each other to help users choose the most suitable one for their situation:
 Tips & Tricks
@@ -12687,6 +12663,28 @@ Connect with Optilogic peers, exchange insights, and accelerate supply chain suc
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
+In this documentation we will first cover the Integrity Checker tool’s scope, how to run it, and how to review its results. Next, we will compare the Integrity Checker to other Cosmic Frog data validation tools, and we will wrap up with several tips & tricks to help users make optimal use of the tool.
+The Integrity Checker extends cell validation and data entry helper capabilities to support users identify a range of issues relating to referential integrity and data types before running a model. The following types of data and referential integrity issues are being checked for when the Integrity Checker is run:
+Here, we provide a high-level description for each of these 4 categories; in the appendix at the end of this help center article more details and examples for each type of check are given. From left to right:
+The Integrity Checker can be accessed in two ways while in Cosmic Frog’s Data module: from the pane on the right-hand side that also contains Model Assistant and Scenario Errors or from the Grid drop-down menu. The latter is shown in the next screenshot:
+*Please note that in this first version of the Integrity Checker, the Inventory Policies and Inventory Policies Multi-Time Period tables are not included in any checks the Integrity Checker performs. All other tables are.
+The second way to access the Integrity Checker is, as mentioned above, from the pane on the right-hand side in Cosmic Frog:
+If the Integrity Checker has been run previously on a model, opening it again will show the previous results and gives user the option to re-run it by clicking on a “Rerun Check” button which we will see in screenshots further below.
+After starting the Integrity Checker in one of the 2 ways described above, a message indicating it is starting will appear in the Integrity Checker pane on the right-hand side:
+While the Integrity Checker is running, the status of the run will be continuously updated, while results will be added underneath as checks on individual tables complete. Only tables which have errors in them will be listed in the results.
+Once the Integrity Checker run is finished, its status changes to Completed:
+Users can see the errors identified by the Integrity Checker by clicking on one of the table cards which will open the table and the Integrity Checker Errors table beneath it:
+Clicking on a record in the Integrity Checker Errors table will filter the table above (here the Transportation Policies table) down to the record(s) with that error:
+User can go through each record in the Integrity Checker Errors table at the bottom and filter out the associated records with the errors in the table above to review the errors and possibly fix them. In the next screenshot, user has moved onto the second record in the Integrity Checker Errors table:
+We will look at one more error, the one that was found on the Products table:
+Finally, the following screenshot shows what it looks like when the Integrity Checker was run on an individual table and in the case no errors are found:
+There are additional tools in Cosmic Frog which can help with finding problems in the model’s data and overall construction, the table below gives an overview of how these tools compare to each other to help users choose the most suitable one for their situation:
+Please take note of the following so you can make optimal use of the Integrity Checker capabilities:
+We saw the next diagram further above in the Integrity Checker Scope section. Here we will expand on each of these categories and provide examples.
+From left to right:
+Note that the numeric and data type checks sound similar, but they are different: a value in a field can pass the data type check (e.g. a double field contains the value -2000), but not the numeric check (a latitude field can only contain values between -90 and 90, so -2000 would be invalid).
+We hope you will find the Integrity Checker to be a helpful additional tool to facilitate your model building in Cosmic Frog! For any questions, please contact Optilogic support on support@optilogic.com.
 Once you have run a model, you can visualize your results using the Analytics module. A dashboard in the Analytics module is a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
 To access the Analytics module:
 Once in the Analytics module, the left-hand side panel looks as follows:
@@ -12715,30 +12713,6 @@ If bars are not showing in a chart this is likely due to the first column having
 As always, please reach out to our Support team at support@optilogic.com in case of any questions or feedback.
 To learn all about dashboards and visualizations within Cosmic Frog, please refer to the Getting Started with Analytics help center article, which contains the latest information.
 Watch the video to learn how to build dashboards to analyze scenarios and tell the stories behind your Cosmic Frog models. You can also refer to the Getting Started with Analytics help center article, which contains the latest information as of July 2026 in text + screenshot format.
-Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
-In this documentation we will first cover the Integrity Checker tool’s scope, how to run it, and how to review its results. Next, we will compare the Integrity Checker to other Cosmic Frog data validation tools, and we will wrap up with several tips & tricks to help users make optimal use of the tool.
-The Integrity Checker extends cell validation and data entry helper capabilities to support users identify a range of issues relating to referential integrity and data types before running a model. The following types of data and referential integrity issues are being checked for when the Integrity Checker is run:
-Here, we provide a high-level description for each of these 4 categories; in the appendix at the end of this help center article more details and examples for each type of check are given. From left to right:
-The Integrity Checker can be accessed in two ways while in Cosmic Frog’s Data module: from the pane on the right-hand side that also contains Model Assistant and Scenario Errors or from the Grid drop-down menu. The latter is shown in the next screenshot:
-*Please note that in this first version of the Integrity Checker, the Inventory Policies and Inventory Policies Multi-Time Period tables are not included in any checks the Integrity Checker performs. All other tables are.
-The second way to access the Integrity Checker is, as mentioned above, from the pane on the right-hand side in Cosmic Frog:
-If the Integrity Checker has been run previously on a model, opening it again will show the previous results and gives user the option to re-run it by clicking on a “Rerun Check” button which we will see in screenshots further below.
-After starting the Integrity Checker in one of the 2 ways described above, a message indicating it is starting will appear in the Integrity Checker pane on the right-hand side:
-While the Integrity Checker is running, the status of the run will be continuously updated, while results will be added underneath as checks on individual tables complete. Only tables which have errors in them will be listed in the results.
-Once the Integrity Checker run is finished, its status changes to Completed:
-Users can see the errors identified by the Integrity Checker by clicking on one of the table cards which will open the table and the Integrity Checker Errors table beneath it:
-Clicking on a record in the Integrity Checker Errors table will filter the table above (here the Transportation Policies table) down to the record(s) with that error:
-User can go through each record in the Integrity Checker Errors table at the bottom and filter out the associated records with the errors in the table above to review the errors and possibly fix them. In the next screenshot, user has moved onto the second record in the Integrity Checker Errors table:
-We will look at one more error, the one that was found on the Products table:
-Finally, the following screenshot shows what it looks like when the Integrity Checker was run on an individual table and in the case no errors are found:
-It is helpful to use the Technology Filter in the top toolbar of Cosmic Frog when using the Integrity Checker. It ensures you only see problems identified in the Integrity Checker results that are pertinent to the technology/technologies you are building a model for:
-To illustrate how the Technology Filter affects the Integrity Checker, we now turn off Neo in the Technology Filter, so that Triad is the only enabled technology:
-There are additional tools in Cosmic Frog which can help with finding problems in the model’s data and overall construction, the table below gives an overview of how these tools compare to each other to help users choose the most suitable one for their situation:
-Please take note of the following so you can make optimal use of the Integrity Checker capabilities:
-We saw the next diagram further above in the Integrity Checker Scope section. Here we will expand on each of these categories and provide examples.
-From left to right:
-Note that the numeric and data type checks sound similar, but they are different: a value in a field can pass the data type check (e.g. a double field contains the value -2000), but not the numeric check (a latitude field can only contain values between -90 and 90, so -2000 would be invalid).
-We hope you will find the Integrity Checker to be a helpful additional tool to facilitate your model building in Cosmic Frog! For any questions, please contact Optilogic support on support@optilogic.com.
 Cosmic Frog users can now perform additional quick analyses on their supply chain models’ input and output data through Cosmic Frog’s new grid features. This functionality enables users to easily apply different types of grouping and aggregation to their data, while also allowing users to view their data in a pivoted format. Think for example of the following use cases:
 In this documentation we will cover how grids can be configured to use these new features, show several additional examples, and conclude with a few pointers for effective use of these features.
 These new grid features can be accessed from the “Columns” section on the side bar on the right-hand side of input and output tables while in the Data module of Cosmic Frog:

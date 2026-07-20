@@ -3207,25 +3207,20 @@ Connect with Optilogic peers, exchange insights, and accelerate supply chain suc
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Once you have run a model, you can visualize your results using the Analytics module. A dashboard in the Analytics module is a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
-To access the Analytics module:
-Once in the Analytics module, the left-hand side panel looks as follows:
-When opening a dashboard it is shown in the central part of Cosmic Frog. This is the default Optimization Scenario Comparison dashboard shown for the Global Supply Chain Strategy model, which highlights some common analytics and metrics:
-Many dashboards are designed to be interacted with through a set of filters, like for example the Optimization Transportation Flows one (also shown for the Global Supply Chain Strategy model):
-In the screenshot directly above, the dashboard is shown for all products in the model, which includes raw materials and finished goods. Filtering for just the finished goods changes the shown chart on this dashboard as follows:
-We can hover over visualization elements to get more information, which will be shown in a tooltip. Here, we show the information for one of the facilities, Princeton Factory, in a chart named Facility Geographic Risk Metrics, which is part of the Optimization Facility Risk Summary dashboard. This is again in the Global Supply Chain Strategy model:
-The Analytics drop-down menu at the top of the module contains the following options:
-The context menu that comes up when right-clicking on a dashboard in the list has all the same options, except for the New Dashboard one:
-After you click on New Dashboard in the Analytics menu, the central part of Cosmic Frog will look as follows:
-After clicking on the + Visualization button, first we need to choose the source data we will use for the visualization:
-The form now looks similar to the following screenshot, where on the left-hand side the visualization can be configured and on the right-hand side the chart will be shown as it is being built:
-After dragging the fields we want on top of the Label, Values, and Category areas, our visualization configuration area looks as follows:
-Clicking on a field in any of the configuration areas (bullet 3 above) brings up the Field Settings form:
-The following screenshot shows an example of using conditional formatting in a grid visualization, where the background color for values less than 2M is orange and over 2M green:
-While the chart is being configured, its current state is shown on the right-hand side where several additional settings and options are available to the user:
-The chart configuration options available to the user under the Settings tab are shown in the next 2 screenshots; these specify what is shown on the chart and the formatting of the different chart items:
-Once you are happy with the visualization, click on the Save checkmark icon to save it and close the editor for this visualization. This will bring you back to the dashboard:
-When you choose a Dashboard Filter, you are fi
+Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
+In this documentation we will first cover the Integrity Checker tool’s scope, how to run it, and how to review its results. Next, we will compare the Integrity Checker to other Cosmic Frog data validation tools, and we will wrap up with several tips & tricks to help users make optimal use of the tool.
+The Integrity Checker extends cell validation and data entry helper capabilities to support users identify a range of issues relating to referential integrity and data types before running a model. The following types of data and referential integrity issues are being checked for when the Integrity Checker is run:
+Here, we provide a high-level description for each of these 4 categories; in the appendix at the end of this help center article more details and examples for each type of check are given. From left to right:
+The Integrity Checker can be accessed in two ways while in Cosmic Frog’s Data module: from the pane on the right-hand side that also contains Model Assistant and Scenario Errors or from the Grid drop-down menu. The latter is shown in the next screenshot:
+*Please note that in this first version of the Integrity Checker, the Inventory Policies and Inventory Policies Multi-Time Period tables are not included in any checks the Integrity Checker performs. All other tables are.
+The second way to access the Integrity Checker is, as mentioned above, from the pane on the right-hand side in Cosmic Frog:
+If the Integrity Checker has been run previously on a model, opening it again will show the previous results and gives user the option to re-run it by clicking on a “Rerun Check” button which we will see in screenshots further below.
+After starting the Integrity Checker in one of the 2 ways described above, a message indicating it is starting will appear in the Integrity Checker pane on the right-hand side:
+While the Integrity Checker is running, the status of the run will be continuously updated, while results will be added underneath as checks on individual tables complete. Only tables which have errors in them will be listed in the results.
+Once the Integrity Checker run is finished, its status changes to Completed:
+Users can see the errors identified by the Integrity Checker by clicking on one of the table cards which will open the table and the Integrity Checker Errors table beneath it:
+Clicking on a record in the Integrity Checker Errors table will filter the table above (here the Transportation Policies table) down to the record(s) with that error:
+User can go through each reco
 …（省略）
 
 
