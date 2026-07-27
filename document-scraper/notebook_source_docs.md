@@ -1355,6 +1355,7 @@ A typical Cosmic Frog for Excel Application will contain at least several worksh
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-cyclo-multi-echelon-inventory-optimization
 
 Cyclo is Optilogic’s new Multi Echelon Inventory Optimization (MEIO) engine within Cosmic Frog. It helps supply chain teams determine where safety stock should be held across a network, how much is needed at each stage, and how service levels impact total safety stock cost and responsiveness.
+This video gives a quick overview of how to use Cyclo; it uses the Demo Model described further down in this documentation:
 If you just want to get going with Cyclo as quick as possible, follow these steps:
 Multi Echelon Inventory Optimization (MEIO) is a planning approach used to optimize safety stock across an entire supply chain network.
 Cyclo, the MEIO engine, is designed to optimize safety stock placement across multi-stage supply chains that may include suppliers, manufacturing plants, distribution centers, and customer-facing locations. Instead of optimizing each node independently, Cyclo evaluates the entire network simultaneously so organizations can reduce total safety stock while maintaining desired service levels.
@@ -1374,7 +1375,7 @@ The effective time window over which demand uncertainty accumulates.
 In a Guaranteed Service Model (GSM), each facility commits to serving downstream nodes within a defined service time. The effective exposure to uncertainty is the Net Replenishment Time (NRT):
 NRT = Incoming Service Time + Fixed Lead Times − Outgoing Service Time
 As NRT increases, more uncertainty accumulates and more safety stock is typically required.
-Cyclo evaluates many combinations of incoming and outgoing service times across the network to find the lowest total safety stock holding cost, while reaching the target service level. The optimization is not
+Cyclo evaluates many combinations of incoming and outgoing service times across the 
 …（省略）
 
 
@@ -3207,20 +3208,28 @@ Connect with Optilogic peers, exchange insights, and accelerate supply chain suc
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
-In this documentation we will first cover the Integrity Checker tool’s scope, how to run it, and how to review its results. Next, we will compare the Integrity Checker to other Cosmic Frog data validation tools, and we will wrap up with several tips & tricks to help users make optimal use of the tool.
-The Integrity Checker extends cell validation and data entry helper capabilities to support users identify a range of issues relating to referential integrity and data types before running a model. The following types of data and referential integrity issues are being checked for when the Integrity Checker is run:
-Here, we provide a high-level description for each of these 4 categories; in the appendix at the end of this help center article more details and examples for each type of check are given. From left to right:
-The Integrity Checker can be accessed in two ways while in Cosmic Frog’s Data module: from the pane on the right-hand side that also contains Model Assistant and Scenario Errors or from the Grid drop-down menu. The latter is shown in the next screenshot:
-*Please note that in this first version of the Integrity Checker, the Inventory Policies and Inventory Policies Multi-Time Period tables are not included in any checks the Integrity Checker performs. All other tables are.
-The second way to access the Integrity Checker is, as mentioned above, from the pane on the right-hand side in Cosmic Frog:
-If the Integrity Checker has been run previously on a model, opening it again will show the previous results and gives user the option to re-run it by clicking on a “Rerun Check” button which we will see in screenshots further below.
-After starting the Integrity Checker in one of the 2 ways described above, a message indicating it is starting will appear in the Integrity Checker pane on the right-hand side:
-While the Integrity Checker is running, the status of the run will be continuously updated, while results will be added underneath as checks on individual tables complete. Only tables which have errors in them will be listed in the results.
-Once the Integrity Checker run is finished, its status changes to Completed:
-Users can see the errors identified by the Integrity Checker by clicking on one of the table cards which will open the table and the Integrity Checker Errors table beneath it:
-Clicking on a record in the Integrity Checker Errors table will filter the table above (here the Transportation Policies table) down to the record(s) with that error:
-User can go through each reco
+Cyclo is Optilogic’s new Multi Echelon Inventory Optimization (MEIO) engine within Cosmic Frog. It helps supply chain teams determine where safety stock should be held across a network, how much is needed at each stage, and how service levels impact total safety stock cost and responsiveness.
+This video gives a quick overview of how to use Cyclo; it uses the Demo Model described further down in this documentation:
+If you just want to get going with Cyclo as quick as possible, follow these steps:
+Multi Echelon Inventory Optimization (MEIO) is a planning approach used to optimize safety stock across an entire supply chain network.
+Cyclo, the MEIO engine, is designed to optimize safety stock placement across multi-stage supply chains that may include suppliers, manufacturing plants, distribution centers, and customer-facing locations. Instead of optimizing each node independently, Cyclo evaluates the entire network simultaneously so organizations can reduce total safety stock while maintaining desired service levels.
+Cyclo uses a Guaranteed Service Model (GSM) approach to optimize service-time relationships between facilities and derive recommended safety stock levels.
+Cyclo helps organizations answer key supply chain questions such as:
+By optimizing safety stock placement across the entire network, Cyclo can help organizations:
+Cyclo is especially valuable for:
+Both Cyclo and Dendro support inventory optimization workflows in Cosmic Frog, but they are designed for different planning problems.
+In practice both can be used together:
+Cyclo uses a Guaranteed Service Model (GSM) approach. Rather than directly optimizing safety stock quantities, Cyclo optimizes service-time commitments between facilities. Those service-time decisions are then translated into safety stock requirements.
+Represents your risk tolerance – balancing the cost of holding extra buffer inventory against the risk and cost of lost sales. This is a user input. Two risk measures are available:
+Service Type 1 is a stricter measure than Type 2 and will in most cases lead to more safety stock.
+Time a facility expects upstream suppliers to deliver material. This is a decision variable in the optimization
+Time a facility needs to replenish – typically transport time from the upstream location to the facility and/or production/processing time at the facility. These are model inputs.
+Time a facility promises to deliver to downstream customers. This is a decision variable in the optimization.
+The effective time window over which demand uncertainty accumulates.
+In a Guaranteed Service Model (GSM), each facility commits to serving downstream nodes within a defined service time. The effective exposure to uncertainty is the Net Replenishment Time (NRT):
+NRT = Incoming Service Time + Fixed Lead Times − Outgoing Service Time
+As NRT increases, more uncertainty accumulates and more safety stock is typically required.
+Cyclo evaluates many combinations of incoming and outgoing service times across the 
 …（省略）
 
 
