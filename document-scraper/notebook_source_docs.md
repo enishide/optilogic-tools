@@ -1829,6 +1829,33 @@ Scenario - the whole scenario is copied into a new scenario which can be named b
 
 
 ---
+## Getting Started with the Ada Claude Connector
+**URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-ada-claude-connector
+
+The Ada Claude Connector links Claude to Ada, Optilogic's agentic AI for supply chain modeling. Once connected, Claude can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases to that conversation, and relay prompts and responses back and forth — all from inside Claude.
+In practice, this means Ada continues to do what it does best — reasoning over your supply chain data, running analyses, and answering modeling questions. Claude adds a complementary layer on top: turning Ada's answers into polished executive summaries, spreadsheets, slide decks, and interactive dashboards, and combining them with web research or other connected tools in a single workflow.
+The Big Idea
+Ada knows your models and is the supply chain modeling expert; Claude knows everything else. Use Ada for model truth, and Claude to complement and shape that truth into analysis, documents, and decisions.
+Quick Start
+Add the Optilogic Ada connector in Claude (Settings > Connectors) and authenticate with your Optilogic account. You can either (A) search for the connector in the Claude Connector Directory, or (B) add the Optilogic Ada Connector as a custom connector – for this, follow the Claude help center guide on custom connectors to add a new custom connector; when prompted for the URL, enter: https://mcp.optilogic.app/mcp
+In a Claude chat, ask Claude to list the databases in your Optilogic account to confirm the connection.
+Tell Claude which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name.
+Ask your question or describe your task in plain language. Claude will start an Ada session, attach the right database(s), and relay your prompt.
+Review Ada's answer, ask follow-up questions, and — when you are ready — ask Claude to turn the findings into a document, spreadsheet, deck, or living dashboard.
+Revisit or continue conversations anytime in Claude, plus you can see (and continue) these interactions with Ada and any work done by her in the Optilogic platform.
+Understanding the Ada Claude Connector
+What Is It?
+The Ada Claude Connector is a Custom Connector for Claude built on the Model Context Protocol (MCP). It gives Claude a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
+It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives Claude a way to ask it questions and receive answers.
+A useful mental model: Claude is the orchestrator and communicator; Ada is the subject-matter expert on your models.
+What Should I Use It For?
+Teams are using the Ada Claude Connector for tasks like:
+Interrogating scenario outputs — cost drivers, service-level trade-offs, which facilities open or close
+Comparing multiple models or scenarios side by 
+…（省略）
+
+
+---
 ## Getting Started with the Cosmic Frog for Excel App Builder
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-cosmic-frog-for-excel-app-builder
 
@@ -2266,10 +2293,10 @@ Data is mapped from CSV/Excel files based on matching column names and table nam
 Data (both CSV or Excel) to be imported into an input table in a Cosmic Frog model needs to have column names which match the names of the columns in the Cosmic Frog table that will be imported to exactly.
 If you create a custom column in your import file, you must create the same name column in the input table to avoid import failures. There is no set limit as to the number of custom columns you can create.
 The name(s) of the CSV file(s) and of the Excel worksheet(s) to be imported need to exactly match the name(s) of the Cosmic Frog input table(s) the data will be imported into. The name of the Excel workbook containing the worksheets to be imported does not need to match anything in Cosmic Frog. We do, however, recommend using descriptive names for these workbooks which will often include the model’s name, and an indication of the version/changes.
-An exception to this is when importing 1 CSV file at a time, then the name of the file does not have to match the name of the table to be imported to.
+An exception to this is when importing 1 CSV file or an Excel file with just 1 worksheet at a time, then the name of the file/worksheet does not have to match the name of the table to be imported to.
 Data preparation tips:
 Export the table(s) to be updated to CSV or Excel first to generate a template (see the “Exporting to CSV/Excel Files” section further below on how to do this). Then populate the template with the relevant data before importing the file back in.
-There is no need to have all columns that are present in the table in Cosmic Frog in the CSV/Excel data, just at least one of the table’s key columns, plus any other columns that have data in them is sufficient. Key columns can be recognized in the Cosmic Frog input tables by the key icon to the left of the column name and their column names are i
+There is no need to have all columns that are present in the table in Cosmic Frog in the CSV/Excel data, just at least one of the table’s key columns, plus any other columns that have data in them is sufficient. Key columns can be recognized in the Cosmic Frog input tables by the key icon to the lef
 …（省略）
 
 
