@@ -2361,13 +2361,13 @@ Watch the video for an introduction to the features and functions of the Optilog
 
 When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
 In short, using DOS lets users be flexible with policy parameters; it is a good starting point for estimating/making assumptions about how inventory is managed in practice.
-The following screenshot shows the fields that set the simulation inventory policy and its parameters:
+The following 2 screenshots show the fields that set the simulation inventory policy and its parameters on the Inventory Policies table:
 This inventory policy for product P1 at facility DC_1 is set to (s,S) which is often referred to as a minimum/maximum policy. When the inventory falls to the value of reorder point s or below, a replenishment order is placed to bring the inventory back up to the order up to value of S.
 The reorder point s is set to 5 days of supply by setting the Simulation Policy Value 1 field to 5 and its UOM field to DOS.
 The order up to quantity S is set to 10 days of supply by setting the Simulation Policy Value 2 field to 10 and its UOM field to DOS.
-For the same inventory policy, the next screenshot shows the DOS-related fields on the Inventory Policies table; note that the UOM fields are omitted in this screenshot:
+For the same inventory policy, the next 2 screenshots show the DOS-related fields on the Inventory Policies table; note that the UOM fields are omitted in these screenshots:
 DOS Window and its UOM field – the number of days of (forecasted) demand that are used to calculate the 1 day of supply equivalent in units. Note that the default for the UOM field is hours, so it needs to be set to DAY if wanting to fill out a number in the DOS Window field that means days. In this example, the DOS Window is set to 10 days (the UOM field that is not shown is set to DAY). In practice, a DOS Window needs to be short enough to capture changes in order trends, but also long enough so that replenishments can keep up with customer orders.
-DOS Leadtime and its UOM field – when using forecasted demand to calculate the 1 DOS equivalent, a lead-time can be set using these fields, so that the calculation of 1 DOS will not use the forecasted demand for the current day and immediately following days but is offset by this lead-time. This can account for the time it takes to get a replenishment order in, so the amount to reorder depends on future demand that will occur from whe
+DOS Leadtime and its UOM field – when using forecasted demand to calculate the 1 DOS equivalent, a lead-time can be set using these fields, so that the calculation of 1 DOS will not use the forecasted demand for the current day and immediately following days but is offset by this lead-time. This can account for the time it takes to get a replenishment order in, so the amount to reorder depends on 
 …（省略）
 
 
@@ -3876,25 +3876,15 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-The Ada Claude Connector links Claude to Ada, Optilogic's agentic AI for supply chain modeling. Once connected, Claude can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases to that conversation, and relay prompts and responses back and forth — all from inside Claude.
-In practice, this means Ada continues to do what it does best — reasoning over your supply chain data, running analyses, and answering modeling questions. Claude adds a complementary layer on top: turning Ada's answers into polished executive summaries, spreadsheets, slide decks, and interactive dashboards, and combining them with web research or other connected tools in a single workflow.
-The Ada Claude Connector is a Custom Connector for Claude built on the Model Context Protocol (MCP). It gives Claude a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
-It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives Claude a way to ask it questions and receive answers.
-A useful mental model: Claude is the orchestrator and communicator; Ada is the subject-matter expert on your models.
-Teams are using the Ada Claude Connector for tasks like:
-The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and Claude handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
-*To learn more about using Optilogic Teams, please see this Getting Started with Optilogic Teams Help Center article.
-**To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
-Before you set up and start working with the Ada Claude connector, please take note of following:
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
-In Claude, go to your Account > Settings > Connectors, or navigate directly to claude.ai/customize/connectors:
-Click on Connectors and then on Add in the top right corner. Select “Add custom connector” from the drop-down:
-Fill in the fields and click Add:
-You can skip the Advanced settings.
-Click on Connect in the next screen that comes up:
-Clicking Connect redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Once signed in, you are connected. In your Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
-When Claude requests permission 
+When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
+In short, using DOS lets users be flexible with policy parameters; it is a good starting point for estimating/making assumptions about how inventory is managed in practice.
+Note that it is recommended you are familiar with the Inventory Policies table in Cosmic Frog already before diving into the details of this help article.
+The following 2 screenshots show the fields that set the simulation inventory policy and its parameters on the Inventory Policies table:
+For the same inventory policy, the next 2 screenshots show the DOS-related fields on the Inventory Policies table; note that the UOM fields are omitted in these screenshots:
+As mentioned above, when using forecasted demand for the DOS calculations, this forecasted demand needs to be specified in the User Defined Forecasts Data and User Defined Forecasts tables, which we will discuss here. This next screenshot shows the first 15 example records in the User Defined Forecasts Table:
+Next, the User Defined Forecasts table lets a user configure the time-period to which a forecast is aggregated:
+Let us now explain how the DOS calculations work for different DOS settings through the examples shown in the next screenshot. Note that for all these examples the DOS Review Period First Time field has been left blank, meaning that the first 1 DOS equivalent calculation occurs at the start of this model (on January 1st) for each of these examples:
+Now that we know how to calculate the value of 1 DOS, we can apply this to inventory policies which use DOS as their UOM for the simulation policy value fields. We will do a numbers example with the one shown in the screenshot above (in the Days of Supply Settings section) where reorder point s is 5 DOS and order up to quantity S is 10 DOS. Let us assume the same settings as in the last example for the 1 DOS calculations in the screenshot above, explained in bullet #6 above: forecasted demand is used with a 10 day DOS Window, a 5 day DOS Leadtime, and a 5 day DOS Revi
 …（省略）
 
 
