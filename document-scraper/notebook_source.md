@@ -13751,307 +13751,43 @@ Happy scenario modeling! As always, please contact our Support team on support@o
 
 
 ---
-## Getting Started with the Ada Claude Connector
+## Getting Started with the Optilogic MCP Connector in Claude
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-ada-claude-connector
 
-The Ada Claude Connector links Claude to Ada, Optilogic's agentic AI for supply chain modeling. Once connected, Claude can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases to that conversation, and relay prompts and responses back and forth — all from inside Claude.
-In practice, this means Ada continues to do what it does best — reasoning over your supply chain data, running analyses, and answering modeling questions. Claude adds a complementary layer on top: turning Ada's answers into polished executive summaries, spreadsheets, slide decks, and interactive dashboards, and combining them with web research or other connected tools in a single workflow.
-The Big Idea
-Ada knows your models and is the supply chain modeling expert; Claude knows everything else. Use Ada for model truth, and Claude to complement and shape that truth into analysis, documents, and decisions.
-Quick Start
-Add the Optilogic Ada connector in Claude (Settings > Connectors) and authenticate with your Optilogic account. You can either (A) search for the connector in the Claude Connector Directory, or (B) add the Optilogic Ada Connector as a custom connector – for this, follow the Claude help center guide on custom connectors to add a new custom connector; when prompted for the URL, enter: https://mcp.optilogic.app/mcp
-In a Claude chat, ask Claude to list the databases in your Optilogic account to confirm the connection.
-Tell Claude which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name.
-Ask your question or describe your task in plain language. Claude will start an Ada session, attach the right database(s), and relay your prompt.
-Review Ada's answer, ask follow-up questions, and — when you are ready — ask Claude to turn the findings into a document, spreadsheet, deck, or living dashboard.
-Revisit or continue conversations anytime in Claude, plus you can see (and continue) these interactions with Ada and any work done by her in the Optilogic platform.
-Understanding the Ada Claude Connector
-What Is It?
-The Ada Claude Connector is a Custom Connector for Claude built on the Model Context Protocol (MCP). It gives Claude a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
-It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives Claude a way to ask it questions and receive answers.
-A useful mental model: Claude is the orchestrator and communicator; Ada is the subject-matter expert on your models.
-What Should I Use It For?
-Teams are using the Ada Claude Connector for tasks like:
-Interrogating scenario outputs — cost drivers, service-level trade-offs, which facilities open or close
-Comparing multiple models or scenarios side by side
-Sanity-checking model data for missing values, outliers, or duplicates before a solve
-Turning Ada's analysis into executive summaries, board-ready briefs, and slide decks
-Building scenario-comparison workbooks and interactive dashboards from model outputs
-Filling gaps in a model with outside context — for example, pulling real-world wage or tariff data to round out a scenario
-The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and Claude handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
-**To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
-Prior to Setting Up
-Before you set up and start working with the Ada Claude connector, please take note of following:
-To use the Ada Claude connector, you need to have an Optilogic user account and a Claude user account.
-You can create an Optilogic account on the Create a Free Account page (step-by-step instructions are here)
-Claude is a third-party service governed by your terms with Anthropic (consumer, commercial).
-The connector is available on the web, desktop, and mobile versions of Claude.
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
 Setting Up the Connector
 Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
-Click on Connect in the next screen that comes up:
-Step 4: Log In to Optilogic
-Clicking Connect redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Step 5: Confirm the Connection
-Once signed in, you are connected. In your Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
-Step 6: Allow Access
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
+Step 2: Log In to Optilogic
+Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
+Step 3: Confirm the Connection
+Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
+Step 4: Allow Access
 When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
 Pro tip — Review your access settings
-Go back into Settings > Connectors to control which actions Claude can take without asking each time. A good rule of thumb: leave read-only tools (like listing databases) on Always Allow, and keep anything closer to write or delete on Needs Approval — so Claude can freely look things up, but cannot change or remove anything without your sign-off.
-Tools and Descriptions
-The following tools are available to the connector:
-Agent Lifecycle
-Past Conversations
-Artifacts
-Workspace Files
-Heads up
-It is recommended for all write/delete tools to be set to “Needs Approval”. This is especially true for the Delete Folder tool, as it can lead to many deleted folders and their files when (accidentally) used recursively.
-Sharing
-Account / Teams
-Data
-Reminder
-A database can be any Cosmic Frog model, DataStar project, or other Postgres database present in the user’s Optilogic account.
-Example Prompts by Use Case
-The prompts below are starting points — swap in your own model names, regions, priorities, etc.
-Getting Oriented
-Inventory your models: “Using the Ada connector, list all the models in my Optilogic account and group them by what they appear to be for (production models, tests, training exercises).”
-Profile a model before diving in: “Start an Ada session with my ‘[MODEL NAME]’ model attached. Ask her to summarize the model: what tables it has, how many customers/facilities/products, what scenarios exist, and whether there are solved outputs.”
-Analysis & Insights
-Interrogate scenario outputs: “Ask Ada (with ‘[MODEL NAME]’ attached): which scenario has the lowest total cost, what drives the difference vs. baseline, and which facilities open or close in each scenario? Then summarize her answer as a comparison table.”
-Compare across models: “Start an Ada session with both ‘[MODEL A]’ and ‘[MODEL B]’ attached. Ask her how the two models differ in network structure, demand, and assumptions, and which is more current.”
-Sanity-check model data: “Ask Ada to profile the data in ‘[MODEL NAME]’: missing values, orphaned records, duplicate names, suspicious outliers in demand or costs. Have her rank issues by severity, then give me a cleanup checklist.”
-Deliverables — Where Claude Shines
-Executive summary from model outputs: “Ask Ada about the scenario results in ‘[MODEL NAME]’ (costs, service levels, key network changes). Then write a 1-page executive summary as a Word doc for leadership — plain language, decision-focused.”
-Scenario comparison workbook: “Get scenario-by-scenario cost and flow summaries from Ada for ‘[MODEL NAME]’, then build an Excel workbook: one tab per scenario, plus a comparison tab with deltas vs. baseline and a chart.”
-Results readout deck: “Interview Ada about ‘[MODEL NAME]’ — objectives, scenarios tested, key results, recommendation. Then build a 5-slide PowerPoint readout: context, approach, results, tradeoffs, recommendation.”
-Broader Supply-Chain Scenarios to Try
-Network redesign trade-offs — build several distribution network scenarios and summarize cost, service-level, and risk trade-offs for the board
-Cost-to-serve diagnosis — run a cost-to-serve analysis by segment/channel and flag unprofitable segments
-Disruption stress test — simulate a supplier or port disruption and write an executive risk memo
-Greenfield site selection — weigh candidate sites against strategic priorities and draft a siting recommendation
-Reshoring / nearshoring business case — model a production shift and produce a cost-benefit summary
-Tariff shock scenario — re-run sourcing with a tariff increase and quantify the cost impact
-Demand shift scenario — model a demand shift and recommend how to rebalance the network
-Heads up: Always review AI-generated output
-Like any AI system, both Ada and Claude can occasionally produce incorrect or incomplete answers. Validate assumptions, generated figures, and recommendations before using them in production or customer-facing work.
-Best Practices
-Name the Model Explicitly: Ada only sees databases attached to the conversation. Telling Claude the exact model name(s) ensures the right one(s) get attached the first time. If you are unsure of which database to use, ask Claude and you can pick from a list.
-Chain, Do Not Cram: Ask Ada focused questions in sequence rather than one giant prompt. Because sessions keep context, follow-up questions are cheap — you do not need to restate everything each time.
-Let Each Side Do Its Job: Use Ada for anything touching model data, and Claude for formatting, synthesis, web research, and file creation. Trying to get Claude to reason about model internals directly, without Ada, will produce weaker answers.
-Capture the Raw and the Polished: Before you ask Claude to build a polished deliverable, ask it to show you Ada's raw answer first. This makes it easy to catch a misreading early, before it propagates into a document or deck.
-Multi-Attach for Comparisons: When you need cross-model answers, one Ada session with two databases attached beats juggling two separate sessions.
-Give Context Before the Task: As with Ada directly, better prompts include business context, constraints, and the specific task — not just the task alone.
-Start Fresh for a New Topic: If you are switching to an unrelated model or question, start a new Claude conversation rather than overloading one thread.
-Ask for Multiple Options: Instead of one recommendation, ask Ada (via Claude) for several approaches and their trade-offs.
-Supplement Missing Data: If Ada flags gaps in the model, ask Claude to search the web for relevant proxy data to round out the story — and to cite where it came from.
-Example
-Instead of “Build scenarios for this model,” try: “This model evaluates manufacturing diversification risk across LATAM and EMEA. The goal is to reduce China dependency while minimizing transportation cost increases. Using Ada, create several realistic diversification scenarios.”
-Data Handling and Privacy
-When you use the Ada Claude Connector, prompts and the data Ada returns pass through Claude in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
-Data users share with Claude is governed by Anthropic's privacy policy; Optilogic's privacy policy applies once data reaches Ada on the Optilogic platform.
-As with any connector, only attach the database(s) you intend to discuss in a given conversation.
-Avoid including sensitive information (PII, credentials, etc.) in prompts, table names, or column names, since these may be passed to the underlying AI systems on both sides of the connection.
-What the MCP Server Collects and How it is Used
-The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
-The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from Claude is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
-Debugging: MCP request/response data and associated logs may be reviewed to investigate errors and user-reported quality issues.
-Analytics: Optilogic collects usage data (such as prompt counts, session activity, token consumption, timestamps) associated with the user account to understand adoption and improve the service.
-For clarity, Optilogic does not use logs for model training.
-Disconnecting the Connector on the Claude settings tells Claude to stop using and refreshing your Optilogic tokens — that is the immediate effect.
-After disconnecting, the historical chats that were had through the connector are still accessible to the user, just no follow-up prompts that require accessing Ada can be added.
-Visibility on the Optilogic Platform
-Please note that users have visibility into the Claude Connector conversations and actions on the Optilogic platform in following places:
-Users can view the calls made by the MCP Server to Ada in their Optilogic account Chat history; they are tagged as MCP.
-Users can view model run activity from the MCP in their Optilogic account as a part of their broader account usage under the Account > Usage screen.
-Example Conversation Walk-through
-Example Overview
-In this example, we will:
-Connect to a Hopper model named Territory Planning
-We made 1 change: removed the Distance Cost of $1/MI in the Transportation Rates table
-Inventory what is in the model in terms of inputs and scenarios
-Identify any missing data and potentially useful scenarios to add
-Fill the data gap using publicly available sources
-Add several scenarios based on the recommendation
-Run all scenarios
-Generate a summary of the outputs, including an interactive map showing the routes by scenario
-Summary of Prompts and Responses
-The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
-Prompt 1: Using the Optilogic Ada connector, can you review the inputs of the Territory Planning model? Please give me a summary and also check which costs are being modeled.
-Response:
-High-level description of the type of model and its scenarios
-Summary of the model inputs, including row counts and notes on the data in the tables
-Overview of costs populated and those available but not populated
-The only cost used is fixed cost per route, and no variable transportation cost is included
-Summary of findings
-Prompt 2: Can you find what the average per mile cost for trucks in the Atlanta region is and add this to the model?
-Response:
-Found national spot dry van rates at about $2.30-2.70/mile
-Atlanta region runs above national average at about $3.20/mile
-Flags that these are long-haul, full-truckload linehaul rates, whereas the model is a local delivery/routing model where cost drivers are different and a per mile cost is harder to find
-Suggests 2 reasonable choices for Distance Cost. The user chooses $3.20/mile, the Southeast regional spot freight rate.
-Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios that would be interesting to run, based on the expected value / insights they may provide?
-Response: lists 3 sets of suggested scenarios to add and the reasoning:
-Time cost + stop cost added, re-run across territory counts
-Territory count sensitivity – sweep beyond 3 and 5
-Truck capacity/fleet size stress test
-Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
-Response:
-After some time working on the request, the user is asked to confirm the logic for the minimum delivery locations per territory for the new scenarios and the scenario naming. The user approves.
-The result is a downloadable interactive html file which contains Route Map and Cost Curve tabs. Users can switch between the scenarios and hover over the map / chart to bring up a tooltip with information about the route / scenario.
+Go back into Settings > Connectors > Optilogic and scroll down to Tool Permissions to control which actions Claude can take without asking each time. A good rule of thumb: leave read-only tools (like listing databases) on Always Allow, and keep anything closer to write or delete on Needs Approval — so Claude can freely look things up, but cannot change or remove anything without your sign-off.
 Disconnecting or Removing the Connector
-Should you need to disconnect or remove the Ada Claude Connector, please take following steps:
-In Claude, go to your Account > Settings > Connectors and click on the Ada Claude Connector (named Optilogic Ada here).
-To disconnect without removing the connector, click on the Disconnect button – you will not have access to Ada from your Claude chats anymore, but you can re-connect without having to configure the connector again.
-To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Ada Claude connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again.
-Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in Claude to send feedback directly to Anthropic on any specific response.
-The Ada Claude Connector links Claude to Ada, Optilogic's agentic AI for supply chain modeling. Once connected, Claude can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases to that conversation, and relay prompts and responses back and forth — all from inside Claude.
-In practice, this means Ada continues to do what it does best — reasoning over your supply chain data, running analyses, and answering modeling questions. Claude adds a complementary layer on top: turning Ada's answers into polished executive summaries, spreadsheets, slide decks, and interactive dashboards, and combining them with web research or other connected tools in a single workflow.
-The Big Idea
-Ada knows your models and is the supply chain modeling expert; Claude knows everything else. Use Ada for model truth, and Claude to complement and shape that truth into analysis, documents, and decisions.
-Quick Start
-Add the Optilogic Ada connector in Claude (Settings > Connectors) and authenticate with your Optilogic account. You can either (A) search for the connector in the Claude Connector Directory, or (B) add the Optilogic Ada Connector as a custom connector – for this, follow the Claude help center guide on custom connectors to add a new custom connector; when prompted for the URL, enter: https://mcp.optilogic.app/mcp
-In a Claude chat, ask Claude to list the databases in your Optilogic account to confirm the connection.
-Tell Claude which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name.
-Ask your question or describe your task in plain language. Claude will start an Ada session, attach the right database(s), and relay your prompt.
-Review Ada's answer, ask follow-up questions, and — when you are ready — ask Claude to turn the findings into a document, spreadsheet, deck, or living dashboard.
-Revisit or continue conversations anytime in Claude, plus you can see (and continue) these interactions with Ada and any work done by her in the Optilogic platform.
-Understanding the Ada Claude Connector
-What Is It?
-The Ada Claude Connector is a Custom Connector for Claude built on the Model Context Protocol (MCP). It gives Claude a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
-It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives Claude a way to ask it questions and receive answers.
-A useful mental model: Claude is the orchestrator and communicator; Ada is the subject-matter expert on your models.
-What Should I Use It For?
-Teams are using the Ada Claude Connector for tasks like:
-Interrogating scenario outputs — cost drivers, service-level trade-offs, which facilities open or close
-Comparing multiple models or scenarios side by side
-Sanity-checking model data for missing values, outliers, or duplicates before a solve
-Turning Ada's analysis into executive summaries, board-ready briefs, and slide decks
-Building scenario-comparison workbooks and interactive dashboards from model outputs
-Filling gaps in a model with outside context — for example, pulling real-world wage or tariff data to round out a scenario
-The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and Claude handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
-**To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
-Prior to Setting Up
-Before you set up and start working with the Ada Claude connector, please take note of following:
-To use the Ada Claude connector, you need to have an Optilogic user account and a Claude user account.
-You can create an Optilogic account on the Create a Free Account page (step-by-step instructions are here)
-Claude is a third-party service governed by your terms with Anthropic (consumer, commercial).
-The connector is available on the web, desktop, and mobile versions of Claude.
+Should you need to disconnect or remove the Optilogic Connector, please take following steps:
+In Claude, go to your Account > Settings > Connectors and click on the Optilogic connector.
+To disconnect without removing the connector, click on the Disconnect button – you will not have access to Ada from your Claude chats anymore, but you can easily re-connect when desired.
+To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Optilogic connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again.
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
 Setting Up the Connector
 Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
-Click on Connect in the next screen that comes up:
-Step 4: Log In to Optilogic
-Clicking Connect redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Step 5: Confirm the Connection
-Once signed in, you are connected. In your Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
-Step 6: Allow Access
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
+Step 2: Log In to Optilogic
+Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
+Step 3: Confirm the Connection
+Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
+Step 4: Allow Access
 When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
 Pro tip — Review your access settings
-Go back into Settings > Connectors to control which actions Claude can take without asking each time. A good rule of thumb: leave read-only tools (like listing databases) on Always Allow, and keep anything closer to write or delete on Needs Approval — so Claude can freely look things up, but cannot change or remove anything without your sign-off.
-Tools and Descriptions
-The following tools are available to the connector:
-Agent Lifecycle
-Past Conversations
-Artifacts
-Workspace Files
-Heads up
-It is recommended for all write/delete tools to be set to “Needs Approval”. This is especially true for the Delete Folder tool, as it can lead to many deleted folders and their files when (accidentally) used recursively.
-Sharing
-Account / Teams
-Data
-Reminder
-A database can be any Cosmic Frog model, DataStar project, or other Postgres database present in the user’s Optilogic account.
-Example Prompts by Use Case
-The prompts below are starting points — swap in your own model names, regions, priorities, etc.
-Getting Oriented
-Inventory your models: “Using the Ada connector, list all the models in my Optilogic account and group them by what they appear to be for (production models, tests, training exercises).”
-Profile a model before diving in: “Start an Ada session with my ‘[MODEL NAME]’ model attached. Ask her to summarize the model: what tables it has, how many customers/facilities/products, what scenarios exist, and whether there are solved outputs.”
-Analysis & Insights
-Interrogate scenario outputs: “Ask Ada (with ‘[MODEL NAME]’ attached): which scenario has the lowest total cost, what drives the difference vs. baseline, and which facilities open or close in each scenario? Then summarize her answer as a comparison table.”
-Compare across models: “Start an Ada session with both ‘[MODEL A]’ and ‘[MODEL B]’ attached. Ask her how the two models differ in network structure, demand, and assumptions, and which is more current.”
-Sanity-check model data: “Ask Ada to profile the data in ‘[MODEL NAME]’: missing values, orphaned records, duplicate names, suspicious outliers in demand or costs. Have her rank issues by severity, then give me a cleanup checklist.”
-Deliverables — Where Claude Shines
-Executive summary from model outputs: “Ask Ada about the scenario results in ‘[MODEL NAME]’ (costs, service levels, key network changes). Then write a 1-page executive summary as a Word doc for leadership — plain language, decision-focused.”
-Scenario comparison workbook: “Get scenario-by-scenario cost and flow summaries from Ada for ‘[MODEL NAME]’, then build an Excel workbook: one tab per scenario, plus a comparison tab with deltas vs. baseline and a chart.”
-Results readout deck: “Interview Ada about ‘[MODEL NAME]’ — objectives, scenarios tested, key results, recommendation. Then build a 5-slide PowerPoint readout: context, approach, results, tradeoffs, recommendation.”
-Broader Supply-Chain Scenarios to Try
-Network redesign trade-offs — build several distribution network scenarios and summarize cost, service-level, and risk trade-offs for the board
-Cost-to-serve diagnosis — run a cost-to-serve analysis by segment/channel and flag unprofitable segments
-Disruption stress test — simulate a supplier or port disruption and write an executive risk memo
-Greenfield site selection — weigh candidate sites against strategic priorities and draft a siting recommendation
-Reshoring / nearshoring business case — model a production shift and produce a cost-benefit summary
-Tariff shock scenario — re-run sourcing with a tariff increase and quantify the cost impact
-Demand shift scenario — model a demand shift and recommend how to rebalance the network
-Heads up: Always review AI-generated output
-Like any AI system, both Ada and Claude can occasionally produce incorrect or incomplete answers. Validate assumptions, generated figures, and recommendations before using them in production or customer-facing work.
-Best Practices
-Name the Model Explicitly: Ada only sees databases attached to the conversation. Telling Claude the exact model name(s) ensures the right one(s) get attached the first time. If you are unsure of which database to use, ask Claude and you can pick from a list.
-Chain, Do Not Cram: Ask Ada focused questions in sequence rather than one giant prompt. Because sessions keep context, follow-up questions are cheap — you do not need to restate everything each time.
-Let Each Side Do Its Job: Use Ada for anything touching model data, and Claude for formatting, synthesis, web research, and file creation. Trying to get Claude to reason about model internals directly, without Ada, will produce weaker answers.
-Capture the Raw and the Polished: Before you ask Claude to build a polished deliverable, ask it to show you Ada's raw answer first. This makes it easy to catch a misreading early, before it propagates into a document or deck.
-Multi-Attach for Comparisons: When you need cross-model answers, one Ada session with two databases attached beats juggling two separate sessions.
-Give Context Before the Task: As with Ada directly, better prompts include business context, constraints, and the specific task — not just the task alone.
-Start Fresh for a New Topic: If you are switching to an unrelated model or question, start a new Claude conversation rather than overloading one thread.
-Ask for Multiple Options: Instead of one recommendation, ask Ada (via Claude) for several approaches and their trade-offs.
-Supplement Missing Data: If Ada flags gaps in the model, ask Claude to search the web for relevant proxy data to round out the story — and to cite where it came from.
-Example
-Instead of “Build scenarios for this model,” try: “This model evaluates manufacturing diversification risk across LATAM and EMEA. The goal is to reduce China dependency while minimizing transportation cost increases. Using Ada, create several realistic diversification scenarios.”
-Data Handling and Privacy
-When you use the Ada Claude Connector, prompts and the data Ada returns pass through Claude in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
-Data users share with Claude is governed by Anthropic's privacy policy; Optilogic's privacy policy applies once data reaches Ada on the Optilogic platform.
-As with any connector, only attach the database(s) you intend to discuss in a given conversation.
-Avoid including sensitive information (PII, credentials, etc.) in prompts, table names, or column names, since these may be passed to the underlying AI systems on both sides of the connection.
-What the MCP Server Collects and How it is Used
-The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
-The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from Claude is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
-Debugging: MCP request/response data and associated logs may be reviewed to investigate errors and user-reported quality issues.
-Analytics: Optilogic collects usage data (such as prompt counts, session activity, token consumption, timestamps) associated with the user account to understand adoption and improve the service.
-For clarity, Optilogic does not use logs for model training.
-Disconnecting the Connector on the Claude settings tells Claude to stop using and refreshing your Optilogic tokens — that is the immediate effect.
-After disconnecting, the historical chats that were had through the connector are still accessible to the user, just no follow-up prompts that require accessing Ada can be added.
-Visibility on the Optilogic Platform
-Please note that users have visibility into the Claude Connector conversations and actions on the Optilogic platform in following places:
-Users can view the calls made by the MCP Server to Ada in their Optilogic account Chat history; they are tagged as MCP.
-Users can view model run activity from the MCP in their Optilogic account as a part of their broader account usage under the Account > Usage screen.
-Example Conversation Walk-through
-Example Overview
-In this example, we will:
-Connect to a Hopper model named Territory Planning
-We made 1 change: removed the Distance Cost of $1/MI in the Transportation Rates table
-Inventory what is in the model in terms of inputs and scenarios
-Identify any missing data and potentially useful scenarios to add
-Fill the data gap using publicly available sources
-Add several scenarios based on the recommendation
-Run all scenarios
-Generate a summary of the outputs, including an interactive map showing the routes by scenario
-Summary of Prompts and Responses
-The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
-Prompt 1: Using the Optilogic Ada connector, can you review the inputs of the Territory Planning model? Please give me a summary and also check which costs are being modeled.
-Response:
-High-level description of the type of model and its scenarios
-Summary of the model inputs, including row counts and notes on the data in the tables
-Overview of costs populated and those available but not populated
-The only cost used is fixed cost per route, and no variable transportation cost is included
-Summary of findings
-Prompt 2: Can you find what the average per mile cost for trucks in the Atlanta region is and add this to the model?
-Response:
-Found national spot dry van rates at about $2.30-2.70/mile
-Atlanta region runs above national average at about $3.20/mile
-Flags that these are long-haul, full-truckload linehaul rates, whereas the model is a local delivery/routing model where cost drivers are different and a per mile cost is harder to find
-Suggests 2 reasonable choices for Distance Cost. The user chooses $3.20/mile, the Southeast regional spot freight rate.
-Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios that would be interesting to run, based on the expected value / insights they may provide?
-Response: lists 3 sets of suggested scenarios to add and the reasoning:
-Time cost + stop cost added, re-run across territory counts
-Territory count sensitivity – sweep beyond 3 and 5
-Truck capacity/fleet size stress test
-Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
-Response:
-After some time working on the request, the user is asked to confirm the logic for the minimum delivery locations per territory for the new scenarios and the scenario naming. The user approves.
-The result is a downloadable interactive html file which contains Route Map and Cost Curve tabs. Users can switch between the scenarios and hover over the map / chart to bring up a tooltip with information about the route / scenario.
+Go back into Settings > Connectors > Optilogic and scroll down to Tool Permissions to control which actions Claude can take without asking each time. A good rule of thumb: leave read-only tools (like listing databases) on Always Allow, and keep anything closer to write or delete on Needs Approval — so Claude can freely look things up, but cannot change or remove anything without your sign-off.
 Disconnecting or Removing the Connector
-Should you need to disconnect or remove the Ada Claude Connector, please take following steps:
-In Claude, go to your Account > Settings > Connectors and click on the Ada Claude Connector (named Optilogic Ada here).
-To disconnect without removing the connector, click on the Disconnect button – you will not have access to Ada from your Claude chats anymore, but you can re-connect without having to configure the connector again.
-To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Ada Claude connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again.
-Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in Claude to send feedback directly to Anthropic on any specific response.
+Should you need to disconnect or remove the Optilogic Connector, please take following steps:
+In Claude, go to your Account > Settings > Connectors and click on the Optilogic connector.
+To disconnect without removing the connector, click on the Disconnect button – you will not have access to Ada from your Claude chats anymore, but you can easily re-connect when desired.
+To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Optilogic connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again.
 
 
 ---
@@ -14904,6 +14640,50 @@ Other text-based files, such as those with extensions of .csv, .txt, .md and .ht
 Other Files Context Menu
 Other files, such as those with extensions of .pdf, .xls, .xlsx, .xlsm, .png, .jpg, .twb and .yxmd, have the same options from their context menus as Python scripts, minus the Compare and Run Module options. The following screenshot shows the context menu of a .pdf file:
 As always, please feel free to let us know of any questions or feedback by contacting Optilogic support on support@optilogic.com.
+
+
+---
+## Getting Started with the Optilogic MCP Connector in ChatGPT
+**URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-mcp-connector-in-chatgpt
+
+This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Setting Up the Connector
+Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
+Step 1: Turn on Developer Mode
+In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
+Elevated Risk Setting
+This step turns on ChatGPT's Developer mode, which allows unverified/custom MCP connectors. OpenAI flags this because such connectors could modify or erase data — only add servers you trust, like Optilogic's official endpoint covered here.
+Step 2: Start a New Plugin Connection
+Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
+Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
+Complete the login with your Optilogic credentials:
+Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
+Step 5: Verify the Connection
+In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
+Uninstalling the Connector
+Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
+Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
+Please note that the connector will be uninstalled immediately without asking to confirm.
+Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
+This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Setting Up the Connector
+Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
+Step 1: Turn on Developer Mode
+In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
+Elevated Risk Setting
+This step turns on ChatGPT's Developer mode, which allows unverified/custom MCP connectors. OpenAI flags this because such connectors could modify or erase data — only add servers you trust, like Optilogic's official endpoint covered here.
+Step 2: Start a New Plugin Connection
+Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
+Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
+Complete the login with your Optilogic credentials:
+Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
+Step 5: Verify the Connection
+In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
+Uninstalling the Connector
+Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
+Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
+Please note that the connector will be uninstalled immediately without asking to confirm.
+Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
 
 
 ---
@@ -22375,6 +22155,298 @@ Compare multiple territory configurations and their costs
 
 
 ---
+## The Optilogic MCP Connector
+**URL:** https://optilogic.com/resources/help-center/docs/the-optilogic-mcp-connector
+
+The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
+Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
+In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Grok (SpaceXAI), and Vibe (Mistral AI).
+The Big Idea
+Ada knows your models and is the supply chain modeling expert; the AI Agent knows everything else. Use Ada for model truth, and the agent to complement and shape that truth into analysis, documents, and decisions.
+Quick Start
+Add the Optilogic connector to the AI Agent you are using and authenticate with your Optilogic account. When prompted for the MCP Connector URL, enter: https://mcp.optilogic.app/mcp. Direct links to set up a (custom) connector for the AI Agents that currently support the Optilogic MCP Connector are:
+In a chat with your AI Agent, ask it to list the databases in your Optilogic account to confirm the connection.
+Tell the agent which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name. If you are unsure, just state your question and the agent can help you identify which database(s) will help answer.
+Ask your question or describe your task in plain language. The agent will start an Ada session, attach the right database(s), and relay your prompt.
+Review Ada's answer, ask follow-up questions, and — when you are ready — ask to turn the findings into a document, spreadsheet, deck, or living dashboard.
+Revisit or continue conversations anytime, plus you can see (and continue) these interactions with Ada and any work done by Ada on the Optilogic platform.
+Detailed step-by-step instructions for Claude and ChatGPT, including screenshots to (dis)connect, can be found here:
+The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
+It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
+A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
+What Should I Use It For?
+Teams are using the Optilogic MCP Connector for tasks like:
+Interrogating scenario outputs — cost drivers, service-level trade-offs, which facilities open or close
+Comparing multiple models or scenarios side by side
+Sanity-checking model data for missing values, outliers, or duplicates before a solve
+Turning Ada's analysis into executive summaries, board-ready briefs, and slide decks
+Building scenario-comparison workbooks and interactive dashboards from model outputs
+Filling gaps in a model with outside context — for example, pulling real-world wage or tariff data to round out a scenario
+The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and the agent handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
+What the Optilogic MCP Connector Can and Cannot Do
+**To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
+Prior to Setting Up
+Before you set up and start working with the Optilogic MCP connector, please take note of following:
+To use the connector, you need to have an Optilogic user account and a user account on the AI Agent you want to use the connector in.
+You can create an Optilogic account on the Create a Free Account page (step-by-step instructions are here)
+The AI Agents are third-party services governed by your terms with the AI Agent’s company.
+The following tools are available to the connector:
+Agent Lifecycle
+Past Conversations
+Artifacts
+Workspace Files
+Heads up
+It is recommended for all write/delete tools to be set to “Needs Approval”. This is especially true for the Delete Folder tool, as it can lead to many deleted folders and their files when (accidentally) used recursively.
+Sharing
+Account / Teams
+Data
+Reminder
+A database can be any Cosmic Frog model, DataStar project, or other Postgres database present in the user’s Optilogic account.
+Example Prompts by Use Case
+The prompts below are starting points — swap in your own model names, regions, priorities, etc.
+Getting Oriented
+Inventory your models: “Using the Ada connector, list all the models in my Optilogic account and group them by what they appear to be for (production models, tests, training exercises).”
+Profile a model before diving in: “Start an Ada session with my ‘[MODEL NAME]’ model attached. Ask her to summarize the model: what tables it has, how many customers/facilities/products, what scenarios exist, and whether there are solved outputs.”
+Analysis & Insights
+Interrogate scenario outputs: “Ask Ada (with ‘[MODEL NAME]’ attached): which scenario has the lowest total cost, what drives the difference vs. baseline, and which facilities open or close in each scenario? Then summarize her answer as a comparison table.”
+Compare across models: “Start an Ada session with both ‘[MODEL A]’ and ‘[MODEL B]’ attached. Ask her how the two models differ in network structure, demand, and assumptions, and which is more current.”
+Sanity-check model data: “Ask Ada to profile the data in ‘[MODEL NAME]’: missing values, orphaned records, duplicate names, suspicious outliers in demand or costs. Have her rank issues by severity, then give me a cleanup checklist.”
+Deliverables — Where AI Agents Shine
+Executive summary from model outputs: “Ask Ada about the scenario results in ‘[MODEL NAME]’ (costs, service levels, key network changes). Then write a 1-page executive summary as a Word doc for leadership — plain language, decision-focused.”
+Scenario comparison workbook: “Get scenario-by-scenario cost and flow summaries from Ada for ‘[MODEL NAME]’, then build an Excel workbook: one tab per scenario, plus a comparison tab with deltas vs. baseline and a chart.”
+Results readout deck: “Interview Ada about ‘[MODEL NAME]’ — objectives, scenarios tested, key results, recommendation. Then build a 5-slide PowerPoint readout: context, approach, results, tradeoffs, recommendation.”
+Broader Supply-Chain Scenarios to Try
+Network redesign trade-offs — build several distribution network scenarios and summarize cost, service-level, and risk trade-offs for the board
+Cost-to-serve diagnosis — run a cost-to-serve analysis by segment/channel and flag unprofitable segments
+Disruption stress test — simulate a supplier or port disruption and write an executive risk memo
+Greenfield site selection — weigh candidate sites against strategic priorities and draft a siting recommendation
+Reshoring / nearshoring business case — model a production shift and produce a cost-benefit summary
+Tariff shock scenario — re-run sourcing with a tariff increase and quantify the cost impact
+Demand shift scenario — model a demand shift and recommend how to rebalance the network
+Heads up: Always review AI-generated output
+Like any AI system, both Ada and AI Agents can occasionally produce incorrect or incomplete answers. Validate assumptions, generated figures, and recommendations before using them in production or customer-facing work.
+Best Practices
+Name the Model Explicitly: Ada only sees databases attached to the conversation. Telling the agent the exact model name(s) ensures the right one(s) get attached the first time. If you are unsure of which database to use, ask the agent and you can pick from a list.
+Chain, Do Not Cram: Ask Ada focused questions in sequence rather than one giant prompt. Because sessions keep context, follow-up questions are cheap — you do not need to restate everything each time.
+Let Each Side Do Its Job: Use Ada for anything touching model data, and the agent for formatting, synthesis, web research, and file creation. Trying to get the agent to reason about model internals directly, without Ada, will produce weaker answers.
+Capture the Raw and the Polished: Before you ask the agent to build a polished deliverable, ask it to show you Ada's raw answer first. This makes it easy to catch a misreading early, before it propagates into a document or deck.
+Multi-Attach for Comparisons: When you need cross-model answers, one Ada session with two databases attached beats juggling two separate sessions.
+Give Context Before the Task: As with Ada directly, better prompts include business context, constraints, and the specific task — not just the task alone.
+Start Fresh for a New Topic: If you are switching to an unrelated model or question, start a new conversation rather than overloading one thread.
+Ask for Multiple Options: Instead of one recommendation, ask Ada (via the agent) for several approaches and their trade-offs.
+Supplement Missing Data: If Ada flags gaps in the model, ask the agent to search the web for relevant proxy data to round out the story — and to cite where it came from.
+Example
+Instead of “Build scenarios for this model,” try: “This model evaluates manufacturing diversification risk across LATAM and EMEA. The goal is to reduce China dependency while minimizing transportation cost increases. Using Ada, create several realistic diversification scenarios.”
+Data Handling and Privacy
+When you use the Optilogic MCP Connector, prompts and the data Ada returns pass through the agent in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
+Data users share with the AI Agent is governed by the AI Agent company’s privacy policy; Optilogic's privacy policy applies once data reaches Ada on the Optilogic platform.
+As with any connector, only attach the database(s) you intend to discuss in a given conversation.
+Avoid including sensitive information (PII, credentials, etc.) in prompts, table names, or column names, since these may be passed to the underlying AI systems on both sides of the connection.
+What the MCP Server Collects and How it is Used
+The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
+The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from the agent is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
+Debugging: MCP request/response data and associated logs may be reviewed to investigate errors and user-reported quality issues.
+Analytics: Optilogic collects usage data (such as prompt counts, session activity, token consumption, timestamps) associated with the user account to understand adoption and improve the service.
+For clarity, Optilogic does not use logs for model training.
+Disconnecting the Connector on the AI Agent’s settings tells the agent to stop using and refreshing your Optilogic tokens — that is the immediate effect.
+After disconnecting, the historical chats that were had through the connector are still accessible to the user, just no follow-up prompts that require accessing Ada can be added.
+Visibility on the Optilogic Platform
+Please note that users have visibility into the MCP Connector conversations and actions on the Optilogic platform in following places:
+Users can view the calls made by the MCP Server to Ada in their Optilogic account Chat history; they are tagged as MCP.
+Users can view model run activity from the MCP in their Optilogic account as a part of their broader account usage under the Account > Usage screen.
+Troubleshooting
+If the conversation with Ada through the AI Agent seems to go off track, e.g., gives no response or odd/incorrect responses, please follow these troubleshooting steps:
+Ensure you are logged into the correct Optilogic account (in case you have multiple Optilogic accounts) and are working in the correct workspace (My Account vs a Team account). You can test this by asking the agent which Optilogic account and which workspace it is logged into. If logged into the wrong Optilogic account, go to bullet #5; if working within the wrong workspace, ask the agent to switch to the correct workspace. If not resolved, then:
+Double-check the data you are trying to access exists in the logged in account and workspace on the Optilogic platform itself. If not resolved, then:
+Start a new conversation – this is always recommended when switching between Optilogic accounts / workspaces / databases / major tasks. If not resolved, then:
+Do a hard refresh of your browser (Ctrl +Shift + R on Windows, Cmd + Shift + R on Mac) / restart your desktop application – this may be needed when a newer version of the connector becomes available. If not resolved, then:
+Disconnect and reconnect the Optilogic MCP Connector.
+Note that this is required when switching between Optilogic accounts.
+If you are still having trouble, please contact the Optilogic support team on support@optilogic.com.
+Example Conversation Walk-through
+Example Overview
+In this example, we will:
+Connect to a Hopper model named Territory Planning
+We made 1 change: removed the Distance Cost of $1/MI in the Transportation Rates table
+Inventory what is in the model in terms of inputs and scenarios
+Identify any missing data and potentially useful scenarios to add
+Fill the data gap using publicly available sources
+Add several scenarios based on the recommendation
+Run all scenarios
+Generate a summary of the outputs, including an interactive map showing the routes by scenario
+Claude was used in this example; using the same prompts in another AI Agent will result in similar responses.
+Summary of Prompts and Responses
+The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the some of the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
+Prompt 1: Using the Optilogic Ada connector, can you review the inputs of the Territory Planning model? Please give me a summary and also check which costs are being modeled.
+Response:
+High-level description of the type of model and its scenarios
+Summary of the model inputs, including row counts and notes on the data in the tables
+Overview of costs populated and those available but not populated
+The only cost used is fixed cost per route, and no variable transportation cost is included
+Summary of findings
+Prompt 2: Can you find what the average per mile cost for trucks in the Atlanta region is and add this to the model?
+Response:
+Found national spot dry van rates at about $2.30-2.70/mile
+Atlanta region runs above national average at about $3.20/mile
+Flags that these are long-haul, full-truckload linehaul rates, whereas the model is a local delivery/routing model where cost drivers are different and a per mile cost is harder to find
+Suggests 2 reasonable choices for Distance Cost. The user chooses $3.20/mile, the Southeast regional spot freight rate.
+Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios that would be interesting to run, based on the expected value / insights they may provide?
+Response: lists 3 sets of suggested scenarios to add and the reasoning:
+Time cost + stop cost added, re-run across territory counts
+Territory count sensitivity – sweep beyond 3 and 5
+Truck capacity/fleet size stress test
+Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
+Response:
+After some time working on the request, the user is asked to confirm the logic for the minimum delivery locations per territory for the new scenarios and the scenario naming. The user approves.
+The result is a downloadable interactive html file which contains Route Map and Cost Curve tabs. Users can switch between the scenarios and hover over the map / chart to bring up a tooltip with information about the route / scenario.
+Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
+The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
+Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
+In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Grok (SpaceXAI), and Vibe (Mistral AI).
+The Big Idea
+Ada knows your models and is the supply chain modeling expert; the AI Agent knows everything else. Use Ada for model truth, and the agent to complement and shape that truth into analysis, documents, and decisions.
+Quick Start
+Add the Optilogic connector to the AI Agent you are using and authenticate with your Optilogic account. When prompted for the MCP Connector URL, enter: https://mcp.optilogic.app/mcp. Direct links to set up a (custom) connector for the AI Agents that currently support the Optilogic MCP Connector are:
+In a chat with your AI Agent, ask it to list the databases in your Optilogic account to confirm the connection.
+Tell the agent which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name. If you are unsure, just state your question and the agent can help you identify which database(s) will help answer.
+Ask your question or describe your task in plain language. The agent will start an Ada session, attach the right database(s), and relay your prompt.
+Review Ada's answer, ask follow-up questions, and — when you are ready — ask to turn the findings into a document, spreadsheet, deck, or living dashboard.
+Revisit or continue conversations anytime, plus you can see (and continue) these interactions with Ada and any work done by Ada on the Optilogic platform.
+Detailed step-by-step instructions for Claude and ChatGPT, including screenshots to (dis)connect, can be found here:
+The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
+It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
+A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
+What Should I Use It For?
+Teams are using the Optilogic MCP Connector for tasks like:
+Interrogating scenario outputs — cost drivers, service-level trade-offs, which facilities open or close
+Comparing multiple models or scenarios side by side
+Sanity-checking model data for missing values, outliers, or duplicates before a solve
+Turning Ada's analysis into executive summaries, board-ready briefs, and slide decks
+Building scenario-comparison workbooks and interactive dashboards from model outputs
+Filling gaps in a model with outside context — for example, pulling real-world wage or tariff data to round out a scenario
+The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and the agent handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
+What the Optilogic MCP Connector Can and Cannot Do
+**To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
+Prior to Setting Up
+Before you set up and start working with the Optilogic MCP connector, please take note of following:
+To use the connector, you need to have an Optilogic user account and a user account on the AI Agent you want to use the connector in.
+You can create an Optilogic account on the Create a Free Account page (step-by-step instructions are here)
+The AI Agents are third-party services governed by your terms with the AI Agent’s company.
+The following tools are available to the connector:
+Agent Lifecycle
+Past Conversations
+Artifacts
+Workspace Files
+Heads up
+It is recommended for all write/delete tools to be set to “Needs Approval”. This is especially true for the Delete Folder tool, as it can lead to many deleted folders and their files when (accidentally) used recursively.
+Sharing
+Account / Teams
+Data
+Reminder
+A database can be any Cosmic Frog model, DataStar project, or other Postgres database present in the user’s Optilogic account.
+Example Prompts by Use Case
+The prompts below are starting points — swap in your own model names, regions, priorities, etc.
+Getting Oriented
+Inventory your models: “Using the Ada connector, list all the models in my Optilogic account and group them by what they appear to be for (production models, tests, training exercises).”
+Profile a model before diving in: “Start an Ada session with my ‘[MODEL NAME]’ model attached. Ask her to summarize the model: what tables it has, how many customers/facilities/products, what scenarios exist, and whether there are solved outputs.”
+Analysis & Insights
+Interrogate scenario outputs: “Ask Ada (with ‘[MODEL NAME]’ attached): which scenario has the lowest total cost, what drives the difference vs. baseline, and which facilities open or close in each scenario? Then summarize her answer as a comparison table.”
+Compare across models: “Start an Ada session with both ‘[MODEL A]’ and ‘[MODEL B]’ attached. Ask her how the two models differ in network structure, demand, and assumptions, and which is more current.”
+Sanity-check model data: “Ask Ada to profile the data in ‘[MODEL NAME]’: missing values, orphaned records, duplicate names, suspicious outliers in demand or costs. Have her rank issues by severity, then give me a cleanup checklist.”
+Deliverables — Where AI Agents Shine
+Executive summary from model outputs: “Ask Ada about the scenario results in ‘[MODEL NAME]’ (costs, service levels, key network changes). Then write a 1-page executive summary as a Word doc for leadership — plain language, decision-focused.”
+Scenario comparison workbook: “Get scenario-by-scenario cost and flow summaries from Ada for ‘[MODEL NAME]’, then build an Excel workbook: one tab per scenario, plus a comparison tab with deltas vs. baseline and a chart.”
+Results readout deck: “Interview Ada about ‘[MODEL NAME]’ — objectives, scenarios tested, key results, recommendation. Then build a 5-slide PowerPoint readout: context, approach, results, tradeoffs, recommendation.”
+Broader Supply-Chain Scenarios to Try
+Network redesign trade-offs — build several distribution network scenarios and summarize cost, service-level, and risk trade-offs for the board
+Cost-to-serve diagnosis — run a cost-to-serve analysis by segment/channel and flag unprofitable segments
+Disruption stress test — simulate a supplier or port disruption and write an executive risk memo
+Greenfield site selection — weigh candidate sites against strategic priorities and draft a siting recommendation
+Reshoring / nearshoring business case — model a production shift and produce a cost-benefit summary
+Tariff shock scenario — re-run sourcing with a tariff increase and quantify the cost impact
+Demand shift scenario — model a demand shift and recommend how to rebalance the network
+Heads up: Always review AI-generated output
+Like any AI system, both Ada and AI Agents can occasionally produce incorrect or incomplete answers. Validate assumptions, generated figures, and recommendations before using them in production or customer-facing work.
+Best Practices
+Name the Model Explicitly: Ada only sees databases attached to the conversation. Telling the agent the exact model name(s) ensures the right one(s) get attached the first time. If you are unsure of which database to use, ask the agent and you can pick from a list.
+Chain, Do Not Cram: Ask Ada focused questions in sequence rather than one giant prompt. Because sessions keep context, follow-up questions are cheap — you do not need to restate everything each time.
+Let Each Side Do Its Job: Use Ada for anything touching model data, and the agent for formatting, synthesis, web research, and file creation. Trying to get the agent to reason about model internals directly, without Ada, will produce weaker answers.
+Capture the Raw and the Polished: Before you ask the agent to build a polished deliverable, ask it to show you Ada's raw answer first. This makes it easy to catch a misreading early, before it propagates into a document or deck.
+Multi-Attach for Comparisons: When you need cross-model answers, one Ada session with two databases attached beats juggling two separate sessions.
+Give Context Before the Task: As with Ada directly, better prompts include business context, constraints, and the specific task — not just the task alone.
+Start Fresh for a New Topic: If you are switching to an unrelated model or question, start a new conversation rather than overloading one thread.
+Ask for Multiple Options: Instead of one recommendation, ask Ada (via the agent) for several approaches and their trade-offs.
+Supplement Missing Data: If Ada flags gaps in the model, ask the agent to search the web for relevant proxy data to round out the story — and to cite where it came from.
+Example
+Instead of “Build scenarios for this model,” try: “This model evaluates manufacturing diversification risk across LATAM and EMEA. The goal is to reduce China dependency while minimizing transportation cost increases. Using Ada, create several realistic diversification scenarios.”
+Data Handling and Privacy
+When you use the Optilogic MCP Connector, prompts and the data Ada returns pass through the agent in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
+Data users share with the AI Agent is governed by the AI Agent company’s privacy policy; Optilogic's privacy policy applies once data reaches Ada on the Optilogic platform.
+As with any connector, only attach the database(s) you intend to discuss in a given conversation.
+Avoid including sensitive information (PII, credentials, etc.) in prompts, table names, or column names, since these may be passed to the underlying AI systems on both sides of the connection.
+What the MCP Server Collects and How it is Used
+The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
+The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from the agent is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
+Debugging: MCP request/response data and associated logs may be reviewed to investigate errors and user-reported quality issues.
+Analytics: Optilogic collects usage data (such as prompt counts, session activity, token consumption, timestamps) associated with the user account to understand adoption and improve the service.
+For clarity, Optilogic does not use logs for model training.
+Disconnecting the Connector on the AI Agent’s settings tells the agent to stop using and refreshing your Optilogic tokens — that is the immediate effect.
+After disconnecting, the historical chats that were had through the connector are still accessible to the user, just no follow-up prompts that require accessing Ada can be added.
+Visibility on the Optilogic Platform
+Please note that users have visibility into the MCP Connector conversations and actions on the Optilogic platform in following places:
+Users can view the calls made by the MCP Server to Ada in their Optilogic account Chat history; they are tagged as MCP.
+Users can view model run activity from the MCP in their Optilogic account as a part of their broader account usage under the Account > Usage screen.
+Troubleshooting
+If the conversation with Ada through the AI Agent seems to go off track, e.g., gives no response or odd/incorrect responses, please follow these troubleshooting steps:
+Ensure you are logged into the correct Optilogic account (in case you have multiple Optilogic accounts) and are working in the correct workspace (My Account vs a Team account). You can test this by asking the agent which Optilogic account and which workspace it is logged into. If logged into the wrong Optilogic account, go to bullet #5; if working within the wrong workspace, ask the agent to switch to the correct workspace. If not resolved, then:
+Double-check the data you are trying to access exists in the logged in account and workspace on the Optilogic platform itself. If not resolved, then:
+Start a new conversation – this is always recommended when switching between Optilogic accounts / workspaces / databases / major tasks. If not resolved, then:
+Do a hard refresh of your browser (Ctrl +Shift + R on Windows, Cmd + Shift + R on Mac) / restart your desktop application – this may be needed when a newer version of the connector becomes available. If not resolved, then:
+Disconnect and reconnect the Optilogic MCP Connector.
+Note that this is required when switching between Optilogic accounts.
+If you are still having trouble, please contact the Optilogic support team on support@optilogic.com.
+Example Conversation Walk-through
+Example Overview
+In this example, we will:
+Connect to a Hopper model named Territory Planning
+We made 1 change: removed the Distance Cost of $1/MI in the Transportation Rates table
+Inventory what is in the model in terms of inputs and scenarios
+Identify any missing data and potentially useful scenarios to add
+Fill the data gap using publicly available sources
+Add several scenarios based on the recommendation
+Run all scenarios
+Generate a summary of the outputs, including an interactive map showing the routes by scenario
+Claude was used in this example; using the same prompts in another AI Agent will result in similar responses.
+Summary of Prompts and Responses
+The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the some of the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
+Prompt 1: Using the Optilogic Ada connector, can you review the inputs of the Territory Planning model? Please give me a summary and also check which costs are being modeled.
+Response:
+High-level description of the type of model and its scenarios
+Summary of the model inputs, including row counts and notes on the data in the tables
+Overview of costs populated and those available but not populated
+The only cost used is fixed cost per route, and no variable transportation cost is included
+Summary of findings
+Prompt 2: Can you find what the average per mile cost for trucks in the Atlanta region is and add this to the model?
+Response:
+Found national spot dry van rates at about $2.30-2.70/mile
+Atlanta region runs above national average at about $3.20/mile
+Flags that these are long-haul, full-truckload linehaul rates, whereas the model is a local delivery/routing model where cost drivers are different and a per mile cost is harder to find
+Suggests 2 reasonable choices for Distance Cost. The user chooses $3.20/mile, the Southeast regional spot freight rate.
+Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios that would be interesting to run, based on the expected value / insights they may provide?
+Response: lists 3 sets of suggested scenarios to add and the reasoning:
+Time cost + stop cost added, re-run across territory counts
+Territory count sensitivity – sweep beyond 3 and 5
+Truck capacity/fleet size stress test
+Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
+Response:
+After some time working on the request, the user is asked to confirm the logic for the minimum delivery locations per territory for the new scenarios and the scenario naming. The user approves.
+The result is a downloadable interactive html file which contains Route Map and Cost Curve tabs. Users can switch between the scenarios and hover over the map / chart to bring up a tooltip with information about the route / scenario.
+Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
+
+
+---
 ## Throg – Simulation Distribution Syntax
 **URL:** https://optilogic.com/resources/help-center/docs/throg---simulation-distribution-syntax
 
@@ -23791,34 +23863,40 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
-In short, using DOS lets users be flexible with policy parameters; it is a good starting point for estimating/making assumptions about how inventory is managed in practice.
-Note that it is recommended you are familiar with the Inventory Policies table in Cosmic Frog already before diving into the details of this help article.
-The following 2 screenshots show the fields that set the simulation inventory policy and its parameters on the Inventory Policies table:
-For the same inventory policy, the next 2 screenshots show the DOS-related fields on the Inventory Policies table; note that the UOM fields are omitted in these screenshots:
-As mentioned above, when using forecasted demand for the DOS calculations, this forecasted demand needs to be specified in the User Defined Forecasts Data and User Defined Forecasts tables, which we will discuss here. This next screenshot shows the first 15 example records in the User Defined Forecasts Table:
-Next, the User Defined Forecasts table lets a user configure the time-period to which a forecast is aggregated:
-Let us now explain how the DOS calculations work for different DOS settings through the examples shown in the next screenshot. Note that for all these examples the DOS Review Period First Time field has been left blank, meaning that the first 1 DOS equivalent calculation occurs at the start of this model (on January 1st) for each of these examples:
-Now that we know how to calculate the value of 1 DOS, we can apply this to inventory policies which use DOS as their UOM for the simulation policy value fields. We will do a numbers example with the one shown in the screenshot above (in the Days of Supply Settings section) where reorder point s is 5 DOS and order up to quantity S is 10 DOS. Let us assume the same settings as in the last example for the 1 DOS calculations in the screenshot above, explained in bullet #6 above: forecasted demand is used with a 10 day DOS Window, a 5 day DOS Leadtime, and a 5 day DOS Review Period, so the calculations for the equivalent of 1 DOS are the numbers in the last row shown in the screenshot, which we will use in our example below. In addition to this, we will assume a 2 day Review Period for the inventory policy, meaning inventory levels are checked every other day to see if a replenishment order needs to be placed. DC_1 also has 1,000 units of P1 on hand at the start of the simulation (specified in the Initial Inventory field):
-The Ada Claude Connector links Claude to Ada, Optilogic's agentic AI for supply chain modeling. Once connected, Claude can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases to that conversation, and relay prompts and responses back and forth — all from inside Claude.
-In practice, this means Ada continues to do what it does best — reasoning over your supply chain data, running analyses, and answering modeling questions. Claude adds a complementary layer on top: turning Ada's answers into polished executive summaries, spreadsheets, slide decks, and interactive dashboards, and combining them with web research or other connected tools in a single workflow.
-The Ada Claude Connector is a Custom Connector for Claude built on the Model Context Protocol (MCP). It gives Claude a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
-It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives Claude a way to ask it questions and receive answers.
-A useful mental model: Claude is the orchestrator and communicator; Ada is the subject-matter expert on your models.
-Teams are using the Ada Claude Connector for tasks like:
-The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and Claude handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
+This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
+In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
+Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
+Complete the New Plugin form as follows:
+Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
+Complete the login with your Optilogic credentials:
+Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
+In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
+Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
+Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
+Please note that the connector will be uninstalled immediately without asking to confirm.
+Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
+Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
+Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
+Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
+When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
+Should you need to disconnect or remove the Optilogic Connector, please take following steps:
+The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
+Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
+In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Grok (SpaceXAI), and Vibe (Mistral AI).
+Detailed step-by-step instructions for Claude and ChatGPT, including screenshots to (dis)connect, can be found here:
+The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
+It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
+A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
+Teams are using the Optilogic MCP Connector for tasks like:
+The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and the agent handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
 *To learn more about using Optilogic Teams, please see this Getting Started with Optilogic Teams Help Center article.
 **To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
-Before you set up and start working with the Ada Claude connector, please take note of following:
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
-In Claude, go to your Account > Settings > Connectors, or navigate directly to claude.ai/customize/connectors:
-Click on Connectors and then on Add in the top right corner. Select “Add custom connector” from the drop-down:
-Fill in the fields and click Add:
-You can skip the Advanced settings.
-Click on Connect in the next screen that comes up:
-Clicking Connect redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Once signed in, you are connected. In your Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
-When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
+Before you set up and start working with the Optilogic MCP connector, please take note of following:
 The following tools are available to the connector:
 Agent Lifecycle
 Past Conversations
@@ -23828,24 +23906,34 @@ Sharing
 Account / Teams
 Data
 The prompts below are starting points — swap in your own model names, regions, priorities, etc.
-When you use the Ada Claude Connector, prompts and the data Ada returns pass through Claude in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
+When you use the Optilogic MCP Connector, prompts and the data Ada returns pass through the agent in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
 The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
-The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from Claude is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
+The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from the agent is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
 For clarity, Optilogic does not use logs for model training.
 MCP request/response data and associated logs are stored in accordance with Optilogic's Data Retention Policy. You can learn more here -- How We Safeguard Your Data: Backups & Retention Explained.
-Disconnecting the Connector on the Claude settings tells Claude to stop using and refreshing your Optilogic tokens — that is the immediate effect.
+Disconnecting the Connector on the AI Agent’s settings tells the agent to stop using and refreshing your Optilogic tokens — that is the immediate effect.
 After disconnecting, the historical chats that were had through the connector are still accessible to the user, just no follow-up prompts that require accessing Ada can be added.
-Please note that users have visibility into the Claude Connector conversations and actions on the Optilogic platform in following places:
+Please note that users have visibility into the MCP Connector conversations and actions on the Optilogic platform in following places:
+If the conversation with Ada through the AI Agent seems to go off track, e.g., gives no response or odd/incorrect responses, please follow these troubleshooting steps:
 In this example, we will:
-The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
+Claude was used in this example; using the same prompts in another AI Agent will result in similar responses.
+The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the some of the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
 Prompt 1: Using the Optilogic Ada connector, can you review the inputs of the Territory Planning model? Please give me a summary and also check which costs are being modeled.
 Response:
 Prompt 2: Can you find what the average per mile cost for trucks in the Atlanta region is and add this to the model?
 Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios that would be interesting to run, based on the expected value / insights they may provide?
 Response: lists 3 sets of suggested scenarios to add and the reasoning:
 Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
-Should you need to disconnect or remove the Ada Claude Connector, please take following steps:
-Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in Claude to send feedback directly to Anthropic on any specific response.
+Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
+When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
+In short, using DOS lets users be flexible with policy parameters; it is a good starting point for estimating/making assumptions about how inventory is managed in practice.
+Note that it is recommended you are familiar with the Inventory Policies table in Cosmic Frog already before diving into the details of this help article.
+The following 2 screenshots show the fields that set the simulation inventory policy and its parameters on the Inventory Policies table:
+For the same inventory policy, the next 2 screenshots show the DOS-related fields on the Inventory Policies table; note that the UOM fields are omitted in these screenshots:
+As mentioned above, when using forecasted demand for the DOS calculations, this forecasted demand needs to be specified in the User Defined Forecasts Data and User Defined Forecasts tables, which we will discuss here. This next screenshot shows the first 15 example records in the User Defined Forecasts Table:
+Next, the User Defined Forecasts table lets a user configure the time-period to which a forecast is aggregated:
+Let us now explain how the DOS calculations work for different DOS settings through the examples shown in the next screenshot. Note that for all these examples the DOS Review Period First Time field has been left blank, meaning that the first 1 DOS equivalent calculation occurs at the start of this model (on January 1st) for each of these examples:
+Now that we know how to calculate the value of 1 DOS, we can apply this to inventory policies which use DOS as their UOM for the simulation policy value fields. We will do a numbers example with the one shown in the screenshot above (in the Days of Supply Settings section) where reorder point s is 5 DOS and order up to quantity S is 10 DOS. Let us assume the same settings as in the last example for the 1 DOS calculations in the screenshot above, explained in bullet #6 above: forecasted demand is used with a 10 day DOS Window, a 5 day DOS Leadtime, and a 5 day DOS Review Period, so the calculations for the equivalent of 1 DOS are the numbers in the last row shown in the screenshot, which we will use in our example below. In addition to this, we will assume a 2 day Review Period for the inventory policy, meaning inventory levels are checked every other day to see if a replenishment order needs to be placed. DC_1 also has 1,000 units of P1 on hand at the start of the simulation (specified in the Initial Inventory field):
 Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
 In this documentation we will cover how users can import and export data into and out of Cosmic Frog, and illustrate this with multiple examples.
 There are 2 methods of importing Excel/CSV data into Cosmic Frog’s input tables available to users:
@@ -24597,47 +24685,6 @@ Below is a simple workflow showing how different components work together. For s
 Skills are packaged capabilities that combine one or more tools with guidance on when and how to use them. Think of a skill as a trained procedure or technique.
 Tools are the specific actions an AI agent can perform. They are specialized and do one specific thing reliably. They don't make decisions - they just execute when called.
 As an AI Agent works, it produces the logs which include steps that the agent takes, tools it calls, as well as a work summary. The AI Response sections are typically the most useful as they explain the exploration plan, the work it has done, and the results after exploration. This is generally a response to the user. While all others are more for internal processes.
-Exciting tools that drastically shorten the time spent wrangling data, building supply chain models for Cosmic Frog, and analyzing outputs of these models are now available on the Optilogic platform.
-Collectively, the Optilogic agentic AI tools are called Ada. This is after Ada Lovelace, widely regarded as the world’s first computer programmer and one of the earliest visionaries to recognize the potential of computational systems beyond pure calculation.
-This documentation briefly explains how to access these AI Agents and Utilities, lists the available tools with a short description of each, and provides links to detailed documentation for several of these tools.
-Before we dive into how to access the AI Agents & Utilities, here are a few links you may find helpful:
-Four of the available agents can be accessed by chatting with Ada and all of them can be accessed by using Run AI Agent tasks in DataStar.
-When chatting with Ada on the next generation Optilogic platform, users can select the agent they want to use for their prompt:
-Please refer to the detailed documentation on the individual agents and the getting started with Ada & Agentic AI article to learn more about using these when chatting with Ada.
-At a high level, the steps in DatsStar are as follows (screenshots follow beneath):
-Your macro canvas will look similar to the following screenshot after step #4:
-After adding a task, its configuration tab is automatically shown on the right-hand side. Give the task a name, and then select the Agent you want to use from the list of available Agents in the Select Utility section. You can also use the Search box to quickly find any Agent that contains certain text in its name or description. Hover over the description of an Agent to see the full description in case it is not entirely visible:
-Once an Agent has been selected by clicking on it, the Configure Utility section becomes available. The inputs here will differ based on the Agent/Utility that has been selected. In the next screenshot the Configure Utility section of the Modeler Agent is shown:
-Provide the inputs for at least the required parameters, and if desired for any optional ones. Note that hovering over a blue question mark icon will bring up a hover box with a description of the parameter.
-Using Utilities works in the same way as using AI Agents, just through the Run Utility task instead of the Run AI Agent task. The following 3 screenshots show 1) a Run Utility task added to a Macro, 2) its Select Utility section, and 3) the Configure Utility section of the Duplicate Macro utility:
-Resource Size for both Run AI Agent and Run Utility tasks can be set in the Run Configuration section, which is indicated as optional. However, for most agents and utilities, the default 3XS Resource Size is not sufficient. It is recommended to update this to XS:
-The folloing AI Agents and Utilities are currently available. More are being added as they come available. For each a short description is given and for those that have more detailed documentation to go with them, a link to this documentation is included.
-At Optilogic, we have built the next generation (next-gen) platform to complement our AI. It is a modern, unified workspace where users:
-While the next-gen platform is still in development, there is plenty available already for users to start working with it. Especially the AI-first approach will be a gamechanger for many. This documentation gives a high-level overview of the new platform. Please see the separate Getting Started with Ada & Agentic AI documentation for in-depth documentation on Ada, your supply chain modeling partner.
-Optilogic users can log into the next-gen platform at https://ai.optilogic.app, using the same credentials as those used to log into the current platform (on https://optilogic.app).
-Once logged in, you are walked through 3 setup windows, shown in the following screenshots.
-It is recommended to take the quick tour to learn about the platform. After it completes, you can follow another walkthrough, this one centered around using Ada through the chat UI. If you want to return to either of these tours later, you can find these in the Actions results part of Global Search (Ctrl + Space) after typing “introduction tour” or “Ada tour” in the search textbox.
-Your Home page will look similar to this:
-Clicking anywhere in the sidebar will expand it:
-When an application has been opened, it is added to the taskbar. If multiple instances of it are active, we can see that too:
-A context-menu is also available when right-clicking on applications added to the taskbar:
-The following modal comes up when clicking on the Apps Launcher in the sidebar:
-When clicking on Notifications in the sidebar, the notifications list will open up on the right-hand side of the platform, next to the Home page or active chat with Ada:
-It is not shown in the screenshot, but hovering over a Notification card will bring up a checkmark icon and an x icon which can be used to mark the notification as read and to close it.
-Clicking on Help & Support in the sidebar brings up the following modal:
-If your organization uses the Teams set of features, you can easily switch teams by clicking on the Switch Teams button:
-Configure your account by using the options found when clicking on your profile picture:
-As mentioned under bullet 3d just above, by default, applications will be opened on the right-hand side of the screen next to either the homepage or chat with Ada page:
-When you enter side by side mode, the second application will be shown to the left of the first, taking the place of home/chat. Here, first DataStar was opened and then Lightning Editor by using the Side by Side option:
-Whilst Cosmic Frog is not yet entirely integrated into the next-gen platform, users can open it, see their model list, and run scenarios from here:
-When clicking on Run Model for one of the available models, the following modal comes up:
-DataStar is also not yet entirely integrated, but projects, macros, and connections can be viewed and macros can be run:
-The user clicks on the New Retail NA Stores project card to open it:
-We have clicked on the Import New NA Customers to open it:
-The Next Gen UI Agent is one of Ada’s agents and can be accessed through the chat UI. It can help you with anything UI/platform related, like finding things within the platform, creating charts/tables, reporting on KPIs, and guidance on widget creation/removal.
-The response to the prompt is as follows, where at the top the asked for bar chart is shown and the agent proactively added the data used for the chart in a table underneath the chart:
-Here are a few example prompts you can try using the Next Gen UI Agent:
-As always, please reach out to Optilogic Support (support@optilogic.com) in case of questions or feedback.
 
 
 ---

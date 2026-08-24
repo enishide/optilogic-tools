@@ -1829,29 +1829,30 @@ Scenario - the whole scenario is copied into a new scenario which can be named b
 
 
 ---
-## Getting Started with the Ada Claude Connector
+## Getting Started with the Optilogic MCP Connector in Claude
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-ada-claude-connector
 
-The Ada Claude Connector links Claude to Ada, Optilogic's agentic AI for supply chain modeling. Once connected, Claude can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases to that conversation, and relay prompts and responses back and forth — all from inside Claude.
-In practice, this means Ada continues to do what it does best — reasoning over your supply chain data, running analyses, and answering modeling questions. Claude adds a complementary layer on top: turning Ada's answers into polished executive summaries, spreadsheets, slide decks, and interactive dashboards, and combining them with web research or other connected tools in a single workflow.
-The Big Idea
-Ada knows your models and is the supply chain modeling expert; Claude knows everything else. Use Ada for model truth, and Claude to complement and shape that truth into analysis, documents, and decisions.
-Quick Start
-Add the Optilogic Ada connector in Claude (Settings > Connectors) and authenticate with your Optilogic account. You can either (A) search for the connector in the Claude Connector Directory, or (B) add the Optilogic Ada Connector as a custom connector – for this, follow the Claude help center guide on custom connectors to add a new custom connector; when prompted for the URL, enter: https://mcp.optilogic.app/mcp
-In a Claude chat, ask Claude to list the databases in your Optilogic account to confirm the connection.
-Tell Claude which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name.
-Ask your question or describe your task in plain language. Claude will start an Ada session, attach the right database(s), and relay your prompt.
-Review Ada's answer, ask follow-up questions, and — when you are ready — ask Claude to turn the findings into a document, spreadsheet, deck, or living dashboard.
-Revisit or continue conversations anytime in Claude, plus you can see (and continue) these interactions with Ada and any work done by her in the Optilogic platform.
-Understanding the Ada Claude Connector
-What Is It?
-The Ada Claude Connector is a Custom Connector for Claude built on the Model Context Protocol (MCP). It gives Claude a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
-It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives Claude a way to ask it questions and receive answers.
-A useful mental model: Claude is the orchestrator and communicator; Ada is the subject-matter expert on your models.
-What Should I Use It For?
-Teams are using the Ada Claude Connector for tasks like:
-Interrogating scenario outputs — cost drivers, service-level trade-offs, which facilities open or close
-Comparing multiple models or scenarios side by 
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Setting Up the Connector
+Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
+Step 2: Log In to Optilogic
+Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
+Step 3: Confirm the Connection
+Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
+Step 4: Allow Access
+When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
+Pro tip — Review your access settings
+Go back into Settings > Connectors > Optilogic and scroll down to Tool Permissions to control which actions Claude can take without asking each time. A good rule of thumb: leave read-only tools (like listing databases) on Always Allow, and keep anything closer to write or delete on Needs Approval — so Claude can freely look things up, but cannot change or remove anything without your sign-off.
+Disconnecting or Removing the Connector
+Should you need to disconnect or remove the Optilogic Connector, please take following steps:
+In Claude, go to your Account > Settings > Connectors and click on the Optilogic connector.
+To disconnect without removing the connector, click on the Disconnect button – you will not have access to Ada from your Claude chats anymore, but you can easily re-connect when desired.
+To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Optilogic connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again.
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Setting Up the Connector
+Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic
 …（省略）
 
 
@@ -1892,6 +1893,37 @@ To open the Explorer, click on the chevron icon at the top of the applications l
 Once the Explorer is open, your screen will look similar to the following screenshot:
 The chevron icon has changed from pointing right to now pointing left; when clicking on it, the Explorer will be closed again.
 The Explorer is now open in the left part of the screen. At the top, the application name (Explorer) is shown, and if the user is working within the workspace of a team they are part of, the team’s name will be added here too (see next screenshot). Currently, the user is working within their My 
+…（省略）
+
+
+---
+## Getting Started with the Optilogic MCP Connector in ChatGPT
+**URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-mcp-connector-in-chatgpt
+
+This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Setting Up the Connector
+Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
+Step 1: Turn on Developer Mode
+In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
+Elevated Risk Setting
+This step turns on ChatGPT's Developer mode, which allows unverified/custom MCP connectors. OpenAI flags this because such connectors could modify or erase data — only add servers you trust, like Optilogic's official endpoint covered here.
+Step 2: Start a New Plugin Connection
+Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
+Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
+Complete the login with your Optilogic credentials:
+Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
+Step 5: Verify the Connection
+In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
+Uninstalling the Connector
+Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
+Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
+Please note that the connector will be uninstalled immediately without asking to confirm.
+Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
+This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Setting Up the Connector
+Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
+Step 1: Turn on Developer Mode
+In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt
 …（省略）
 
 
@@ -3157,6 +3189,28 @@ Constraint Fields: Define limits for each territory.
 
 
 ---
+## The Optilogic MCP Connector
+**URL:** https://optilogic.com/resources/help-center/docs/the-optilogic-mcp-connector
+
+The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
+Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
+In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Grok (SpaceXAI), and Vibe (Mistral AI).
+The Big Idea
+Ada knows your models and is the supply chain modeling expert; the AI Agent knows everything else. Use Ada for model truth, and the agent to complement and shape that truth into analysis, documents, and decisions.
+Quick Start
+Add the Optilogic connector to the AI Agent you are using and authenticate with your Optilogic account. When prompted for the MCP Connector URL, enter: https://mcp.optilogic.app/mcp. Direct links to set up a (custom) connector for the AI Agents that currently support the Optilogic MCP Connector are:
+In a chat with your AI Agent, ask it to list the databases in your Optilogic account to confirm the connection.
+Tell the agent which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name. If you are unsure, just state your question and the agent can help you identify which database(s) will help answer.
+Ask your question or describe your task in plain language. The agent will start an Ada session, attach the right database(s), and relay your prompt.
+Review Ada's answer, ask follow-up questions, and — when you are ready — ask to turn the findings into a document, spreadsheet, deck, or living dashboard.
+Revisit or continue conversations anytime, plus you can see (and continue) these interactions with Ada and any work done by Ada on the Optilogic platform.
+Detailed step-by-step instructions for Claude and ChatGPT, including screenshots to (dis)connect, can be found here:
+The Optilogic MCP C
+…（省略）
+
+
+---
 ## Throg – Simulation Distribution Syntax
 **URL:** https://optilogic.com/resources/help-center/docs/throg---simulation-distribution-syntax
 
@@ -3876,15 +3930,25 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
-In short, using DOS lets users be flexible with policy parameters; it is a good starting point for estimating/making assumptions about how inventory is managed in practice.
-Note that it is recommended you are familiar with the Inventory Policies table in Cosmic Frog already before diving into the details of this help article.
-The following 2 screenshots show the fields that set the simulation inventory policy and its parameters on the Inventory Policies table:
-For the same inventory policy, the next 2 screenshots show the DOS-related fields on the Inventory Policies table; note that the UOM fields are omitted in these screenshots:
-As mentioned above, when using forecasted demand for the DOS calculations, this forecasted demand needs to be specified in the User Defined Forecasts Data and User Defined Forecasts tables, which we will discuss here. This next screenshot shows the first 15 example records in the User Defined Forecasts Table:
-Next, the User Defined Forecasts table lets a user configure the time-period to which a forecast is aggregated:
-Let us now explain how the DOS calculations work for different DOS settings through the examples shown in the next screenshot. Note that for all these examples the DOS Review Period First Time field has been left blank, meaning that the first 1 DOS equivalent calculation occurs at the start of this model (on January 1st) for each of these examples:
-Now that we know how to calculate the value of 1 DOS, we can apply this to inventory policies which use DOS as their UOM for the simulation policy value fields. We will do a numbers example with the one shown in the screenshot above (in the Days of Supply Settings section) where reorder point s is 5 DOS and order up to quantity S is 10 DOS. Let us assume the same settings as in the last example for the 1 DOS calculations in the screenshot above, explained in bullet #6 above: forecasted demand is used with a 10 day DOS Window, a 5 day DOS Leadtime, and a 5 day DOS Revi
+This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
+In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
+Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
+Complete the New Plugin form as follows:
+Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
+Complete the login with your Optilogic credentials:
+Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
+In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
+Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
+Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
+Please note that the connector will be uninstalled immediately without asking to confirm.
+Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
+Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
+Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
+Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a te
 …（省略）
 
 
