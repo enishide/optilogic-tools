@@ -3432,6 +3432,45 @@ We cou
 
 
 ---
+## Understanding Ada Credits
+**URL:** https://optilogic.com/resources/help-center/docs/understanding-ada-credits
+
+Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
+This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
+Quick Answers
+How Ada Credits relate to Tokens
+Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
+Tokens are what the underlying LLM uses to process information and generate responses.
+Ada Credits are an Optilogic-specific measure used to account for Ada usage.
+Token usage is one component of the overall calculation used to determine Ada Credit consumption.
+Ada Credits are therefore not a one-to-one representation of tokens used by the LLM.
+MCP Connectors and Ada Credits Usage
+When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
+MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
+How Ada Credits are Provisioned
+Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
+All eligible users in your organization draw from the same pool.
+When you use Ada, your usage comes from the organization’s available credits.
+You do not have a separate personal allocation of Ada Credits.
+Your organization’s credit balance and usage are visible to all organization members.
+If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
+Viewing Ada Credits Usage
+You can view your organization’s Ada Credit balance from your profile settings.
+At the top of the page, locate the Shared Ada Credits section.
+Review the credits available to your organization and how much has been consumed.
+Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
+Example screenshot showing the details of how many Ada Credits have been used of the total available across the organization.
+Usage Notifications
+Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
+You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
+The banner that will be shown when 85% of Ada Credits have been used up.
+The banner that will be shown when 95% of Ada Credits have been used up.
+When Credits are Exhausted
+Once your orga
+…（省略）
+
+
+---
 ## Understanding Anura: the Cosmic Frog Data Structure
 **URL:** https://optilogic.com/resources/help-center/docs/understanding-anura-the-cosmic-frog-data-structure
 
@@ -3930,25 +3969,24 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
-In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
-Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
-Complete the New Plugin form as follows:
-Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
-Complete the login with your Optilogic credentials:
-Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
-In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
-Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
-Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
-Please note that the connector will be uninstalled immediately without asking to confirm.
-Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
-This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
-Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
-Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
-Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a te
+Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
+This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
+Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
+When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
+MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
+Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
+If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
+You can view your organization’s Ada Credit balance from your profile settings.
+Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
+Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
+You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
+Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
+The following features are affected when Ada Credits are exhausted:
+Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
+If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
+Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
+Additional credits cannot currently be purchased or added directly within the platform.
+The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, com
 …（省略）
 
 

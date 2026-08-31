@@ -22687,6 +22687,98 @@ The OutputValidationErrorReport table is often very useful, even if a model “s
 
 
 ---
+## Understanding Ada Credits
+**URL:** https://optilogic.com/resources/help-center/docs/understanding-ada-credits
+
+Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
+This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
+Quick Answers
+How Ada Credits relate to Tokens
+Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
+Tokens are what the underlying LLM uses to process information and generate responses.
+Ada Credits are an Optilogic-specific measure used to account for Ada usage.
+Token usage is one component of the overall calculation used to determine Ada Credit consumption.
+Ada Credits are therefore not a one-to-one representation of tokens used by the LLM.
+MCP Connectors and Ada Credits Usage
+When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
+MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
+How Ada Credits are Provisioned
+Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
+All eligible users in your organization draw from the same pool.
+When you use Ada, your usage comes from the organization’s available credits.
+You do not have a separate personal allocation of Ada Credits.
+Your organization’s credit balance and usage are visible to all organization members.
+If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
+Viewing Ada Credits Usage
+You can view your organization’s Ada Credit balance from your profile settings.
+At the top of the page, locate the Shared Ada Credits section.
+Review the credits available to your organization and how much has been consumed.
+Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
+Example screenshot showing the details of how many Ada Credits have been used of the total available across the organization.
+Usage Notifications
+Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
+You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
+The banner that will be shown when 85% of Ada Credits have been used up.
+The banner that will be shown when 95% of Ada Credits have been used up.
+When Credits are Exhausted
+Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
+The banner that will be shown when all Ada Credits have been used up. Click on the Contact Support link to open the Contact Support form. You can use it to start the process of purchasing additional credits.
+The following features are affected when Ada Credits are exhausted:
+Ada is no longer available for chat.
+AI Agents using the Optilogic MCP Connector can no longer chat with Ada.
+DataStar Run AI Agent tasks cannot be run anymore.
+Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
+The message shown in the Ada Chat UI when no Ada Credits are available.
+Getting additional Ada Credits
+If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
+Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
+Additional credits cannot currently be purchased or added directly within the platform.
+Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
+This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
+Quick Answers
+How Ada Credits relate to Tokens
+Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
+Tokens are what the underlying LLM uses to process information and generate responses.
+Ada Credits are an Optilogic-specific measure used to account for Ada usage.
+Token usage is one component of the overall calculation used to determine Ada Credit consumption.
+Ada Credits are therefore not a one-to-one representation of tokens used by the LLM.
+MCP Connectors and Ada Credits Usage
+When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
+MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
+How Ada Credits are Provisioned
+Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
+All eligible users in your organization draw from the same pool.
+When you use Ada, your usage comes from the organization’s available credits.
+You do not have a separate personal allocation of Ada Credits.
+Your organization’s credit balance and usage are visible to all organization members.
+If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
+Viewing Ada Credits Usage
+You can view your organization’s Ada Credit balance from your profile settings.
+At the top of the page, locate the Shared Ada Credits section.
+Review the credits available to your organization and how much has been consumed.
+Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
+Example screenshot showing the details of how many Ada Credits have been used of the total available across the organization.
+Usage Notifications
+Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
+You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
+The banner that will be shown when 85% of Ada Credits have been used up.
+The banner that will be shown when 95% of Ada Credits have been used up.
+When Credits are Exhausted
+Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
+The banner that will be shown when all Ada Credits have been used up. Click on the Contact Support link to open the Contact Support form. You can use it to start the process of purchasing additional credits.
+The following features are affected when Ada Credits are exhausted:
+Ada is no longer available for chat.
+AI Agents using the Optilogic MCP Connector can no longer chat with Ada.
+DataStar Run AI Agent tasks cannot be run anymore.
+Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
+The message shown in the Ada Chat UI when no Ada Credits are available.
+Getting additional Ada Credits
+If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
+Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
+Additional credits cannot currently be purchased or added directly within the platform.
+
+
+---
 ## Understanding Anura: the Cosmic Frog Data Structure
 **URL:** https://optilogic.com/resources/help-center/docs/understanding-anura-the-cosmic-frog-data-structure
 
@@ -23863,27 +23955,23 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
-In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
-Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
-Complete the New Plugin form as follows:
-Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
-Complete the login with your Optilogic credentials:
-Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
-In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
-Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
-Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
-Please note that the connector will be uninstalled immediately without asking to confirm.
-Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
-This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
-Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
-Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
-Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
-When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
-Should you need to disconnect or remove the Optilogic Connector, please take following steps:
+Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
+This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
+Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
+When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
+MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
+Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
+If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
+You can view your organization’s Ada Credit balance from your profile settings.
+Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
+Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
+You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
+Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
+The following features are affected when Ada Credits are exhausted:
+Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
+If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
+Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
+Additional credits cannot currently be purchased or added directly within the platform.
 The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
 Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
 In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
@@ -23925,6 +24013,136 @@ Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios tha
 Response: lists 3 sets of suggested scenarios to add and the reasoning:
 Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
 Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
+Ada is Optilogic’s next-generation agentic AI, enabling supply chain teams to work faster and with greater confidence across the full modeling lifecycle — from raw data preparation to optimization runs to executive reporting — all through natural language interactions.
+Unlike traditional UI chat assistants, it deploys purpose-built agents that can pursue multi-step goals, use specialized skills, maintain conversational context, and coordinate with each other to complete workflows that previously required significant manual effort. This dramatically reduces the time required to move from raw data to recommendations.
+As a core part of Optilogic’s Next Generation User InterfacePlatform, Ada provides a more intelligent and conversational approach to supply chain design work.
+Ada is named after Ada Lovelace, widely regarded as the world’s first computer programmer and one of the earliest visionaries to recognize the potential of computational systems beyond pure calculation. The name reflects Optilogic’s goal of building intelligent systems that help people solve complex problems through collaboration between human expertise and advanced computing.
+Ada is your AI-first supply chain modeling partner, designed specifically for the Optilogic platform. Through a conversational interface, Ada helps users build, validate, analyze, and improve supply chain models.
+You can think of Ada as a chat agent like for example Claude and ChatGPT. But, unlike general-purpose AI chat tools, Ada is trained around supply chain modelling workflows and has access to Optilogic-specific tools, applications, databases, schemas, and platform capabilities.
+Today, Ada includes three specialized AI Agents:
+The Select the AI Agent part of the Create Your First Prompt section further below includes guidance on which agent to use for what type of question/task.
+For a deeper technical explanation of how AI agents, tools, and skills work together, see the AI Agents: Architecture and Components help center article.
+Teams commonly use Ada for:
+Ada works best for:
+Ada is less suited for:
+Ada is best thought of as:
+Ada does not automatically understand:
+The clearer the context you provide, the better the results typically become.
+Ada can connect to:
+Ada operates entirely within the Optilogic platform and your connected databases. It does not access the internet or any data or systems outside of the Optilogic environment. It does not send your data to third parties beyond what is required by the underlying GPT family model API (see AI Data Security & Privacy).
+Ada may:
+To start using Ada, log into the next generation Optilogic platform at https://ai.optilogic.app or navigate there by clicking on the Ada icon in the navigation sidebar while on the current Optilogic platform (https://optilogic.app):
+Besides this documentation, you can also get a guided tour on how to use Ada from within the platform itself. In the sidebar on the left, click on the Apps Launcher icon:
+Then search for “Start Ada chat” and click on the Start Ada Chat Walkthrough item in the Actions list to start the tour:
+When logged into the next-gen platform at https://ai.optilogic.app, there are 2 main ways to start using Ada:
+In a new conversation, you first need to configure chat style (optional), select your database(s), choose your agent, and then enter your question/task for Ada.
+Note that for any further questions within the same conversation, the chat style, database(s), and agent do not need to be configured again – they will remain as they were set for the first prompt.
+To guide you on choosing the best agent for the task, here is an overview of what each is good at.
+Modeler Agent:
+Data Cleanser:
+Next Gen UI Agent:
+Once a prompt has been submitted, Ada will process it and formulate a response. Responses can have different formats, here we will see a text only result, while other response types are covered in the next section.
+Once Ada is done processing the prompt, the response will be displayed:
+The full response for this prompt is shown in the next 2 screenshots:
+Besides responses that are purely text-based, you will come across other types too. For example, when your input is needed, Ada will pause the response and ask you for feedback:
+When Ada modifies a Cosmic Frog model or a DataStar project sandbox, users can verify these in the respective applications on the current platform (https://optilogic.app). Here, we are checking if the data cleaning step indeed created the clean_ tables in the sandbox of the connected DataStar project:
+Responses can also contain files:
+When saving an artifact to your workspace, the following modal will come up where you can choose the location to save it and indicate if any pre-existing files with the same name at the chosen location should be overwritten or not:
+When choosing to open the report in Lightning Editor, it does so in the new platform, to the right of the conversation with Ada so users do not need to change context:
+The Next Gen UI Agent can help you for example with changing the look and feel of the platform’s UI. In this example it created a tour on how to customize the UI where the user can click on the buttons in the response to be taken directly to that part of the UI. Note that only part of Ada's response is shown in the screenshot:
+Conversations with Ada are by default saved and users can return to them to review, audit, or continue the conversation.
+Keep Conversations Focused
+Ada performs best when conversations stay centered on a single task or workflow. Avoid mixing unrelated activities — such as model building, reporting, and data cleansing — in the same chat.
+Focused conversations improve response quality, reduce confusion, and make it easier for Ada to maintain context.
+Give Context Before the Task
+Provide business context, objectives, constraints, and relevant background before asking Ada to perform work.
+Better prompts typically include:
+Example: Instead of: “Build scenarios for this model.”
+Try: “This model evaluates manufacturing diversification risk across LATAM and EMEA. The goal is to reduce China dependency while minimizing transportation cost increases. Create several realistic diversification scenarios.”
+Ask Ada to Explore Before Acting
+For complex workflows, first ask Ada to explore, profile, summarize, or analyze the environment before making changes.
+Examples:
+This gives both you and Ada better shared context before execution and reduces downstream errors.
+Plan First for Multi-Step Workflows
+For larger workflows, ask Ada to propose a plan before executing actions.
+Example: “Before making changes, provide a step-by-step plan for how you would approach this workflow.”
+This allows you to:
+Be Explicit About Constraints
+Clearly state any important rules or limitations.
+Explicit constraints improve consistency and reduce unintended actions.
+Ask Ada Clarifying Questions
+If a workflow is complex or ambiguous, invite Ada to ask clarifying questions before proceeding.
+Example: “Before executing, ask any clarifying questions needed to complete this task correctly.”
+This often improves first-pass accuracy significantly.
+Start a New Conversation When Switching Contexts
+Create a new conversation when:
+Long conversations can dilute context and reduce response quality over time.
+Ask for Multiple Options
+Instead of requesting a single recommendation, ask Ada for multiple approaches and trade-offs.
+Example: “Provide three approaches for supplier diversification and explain the trade-offs of each.”
+This helps surface alternatives and improves decision-making.
+Re-State Important Constraints During Long Workflows
+In long conversations, periodically remind Ada about key requirements.
+This helps reduce context drift.
+Generate a Summary Before Starting a New Chat
+If a conversation becomes long or complex, ask Ada to summarize:
+You can paste this summary into a new conversation to preserve context without carrying forward unnecessary noise.
+Helpful prompt: “Summarize this conversation into a clean handoff document including goals, technical decisions, constraints, and next steps.”
+Avoid Overloading Prompts
+More information is not always better.
+Instead:
+Focused prompts generally produce better results than overly large or unstructured requests.
+Ask Ada What It Can Do
+If you are unsure how to approach a task, ask Ada directly.
+Ada can often suggest workflows, prompts, and capabilities you may not know are available.
+Ada is evolving rapidly, and some platform capabilities are still in active development.
+File Attachments in Chat
+Files cannot currently be uploaded directly into Ada conversations.
+File Explorer Data Access
+Data stored in your account (accessible through the Explorer application) is not directly accessible in chat workflows. Data first needs to be imported into a DataStar project or connected database.
+DataStar and Cosmic Frog Integration
+The Next Gen platform does not yet provide fully seamless integration of the DataStar and Cosmic Frog applications. For some processes, users will need to open these in the current platform (https://optilogic.app).
+UI Rendering Requires the Next Gen UI Agent
+Advanced inline visualizations and UI rendering features currently require selecting the Next Gen UI Agent explicitly.
+Long Conversations Can Degrade Performance
+As conversations grow longer, Ada may lose context, become repetitive, or produce less reliable responses.
+Starting a fresh conversation for new workflows or projects generally improves results.
+AI Responses Should Always Be Reviewed
+Like all AI systems, Ada can occasionally produce incorrect or misleading outputs.
+Always validate:
+before using outputs in production or customer-facing work.
+Session Stability
+Leaving the platform idle for extended periods can interrupt workflows or produce unexpected behavior.
+If the platform becomes unstable:
+We hope you are going to have many productive conversations with Ada! Please do not hesitate to contact our Support team via support@optilogic.com if you have any questions or concerns.
+Applies to all Optilogic AI systems.
+No confidential client information will be used as inputs or part of model training and validation datasets. In addition:
+Data Minimization: The amount of data shared with the AI provider depends on the task being performed. Optilogic's agents are engineered to query and pass only the minimum data required for each specific operation — ranging from structural metadata (table and column names, data types, statistical summaries) for schema-level tasks, to slices of actual data values for operations that require it, such as data cleansing, outlier detection, or name matching.
+Optilogic does not transmit your entire dataset to the AI provider in a single operation. However, over the course of a session, the AI provider may process portions of your data as needed to complete the tasks you request.
+No Model Training: Optilogic does not use your data to train AI models. Optilogic’s current AI provider (OpenAI) does not use API-submitted data for model training under their enterprise API terms. Refer to OpenAI policies here: https://openai.com/policies/.
+Built-in Agent Safety Instructions: Optilogic agents include standing safety instructions in their core configuration to guard against prompt injection — attempts to manipulate agent behavior through user messages or data the agent processes. These instructions:
+Best Practices: Users should avoid including sensitive information (PII, credentials, etc.) in table/column names or prompts, as these are shared with the AI provider.
+This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
+In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
+Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
+Complete the New Plugin form as follows:
+Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
+Complete the login with your Optilogic credentials:
+Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
+In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
+Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
+Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
+Please note that the connector will be uninstalled immediately without asking to confirm.
+Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
+Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
+Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
+Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
+When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
+Should you need to disconnect or remove the Optilogic Connector, please take following steps:
 When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
 In short, using DOS lets users be flexible with policy parameters; it is a good starting point for estimating/making assumptions about how inventory is managed in practice.
 Note that it is recommended you are familiar with the Inventory Policies table in Cosmic Frog already before diving into the details of this help article.
@@ -24472,115 +24690,6 @@ A Named Filter can be deleted by using one of three methods:
 After choosing to delete a named filter, the following message comes up to ask the user for confirmation. In this example we are deleting the filter named "New York and New Jersey" which is a filter on the Customers input table:
 The message will let the user know if the named filter that is about to be deleted was used in any Map Layers and/or Scenario Items. If so, it lists the names of these layers/items in the "See where used" section which can be expanded and collapsed by clicking on the caret symbol. Note that currently this message does not indicate if the named filter is used in any input tables.
 The results of deleting a Named Filter that was used are as follows:
-Ada is Optilogic’s next-generation agentic AI, enabling supply chain teams to work faster and with greater confidence across the full modeling lifecycle — from raw data preparation to optimization runs to executive reporting — all through natural language interactions.
-Unlike traditional UI chat assistants, it deploys purpose-built agents that can pursue multi-step goals, use specialized skills, maintain conversational context, and coordinate with each other to complete workflows that previously required significant manual effort. This dramatically reduces the time required to move from raw data to recommendations.
-As a core part of Optilogic’s Next Generation User InterfacePlatform, Ada provides a more intelligent and conversational approach to supply chain design work.
-Ada is named after Ada Lovelace, widely regarded as the world’s first computer programmer and one of the earliest visionaries to recognize the potential of computational systems beyond pure calculation. The name reflects Optilogic’s goal of building intelligent systems that help people solve complex problems through collaboration between human expertise and advanced computing.
-Ada is your AI-first supply chain modeling partner, designed specifically for the Optilogic platform. Through a conversational interface, Ada helps users build, validate, analyze, and improve supply chain models.
-You can think of Ada as a chat agent like for example Claude and ChatGPT. But, unlike general-purpose AI chat tools, Ada is trained around supply chain modelling workflows and has access to Optilogic-specific tools, applications, databases, schemas, and platform capabilities.
-Today, Ada includes three specialized AI Agents:
-The Select the AI Agent part of the Create Your First Prompt section further below includes guidance on which agent to use for what type of question/task.
-For a deeper technical explanation of how AI agents, tools, and skills work together, see the AI Agents: Architecture and Components help center article.
-Teams commonly use Ada for:
-Ada works best for:
-Ada is less suited for:
-Ada is best thought of as:
-Ada does not automatically understand:
-The clearer the context you provide, the better the results typically become.
-Ada can connect to:
-Ada operates entirely within the Optilogic platform and your connected databases. It does not access the internet or any data or systems outside of the Optilogic environment. It does not send your data to third parties beyond what is required by the underlying GPT family model API (see AI Data Security & Privacy).
-Ada may:
-To start using Ada, log into the next generation Optilogic platform at https://ai.optilogic.app or navigate there by clicking on the Ada icon in the navigation sidebar while on the current Optilogic platform (https://optilogic.app):
-Besides this documentation, you can also get a guided tour on how to use Ada from within the platform itself. In the sidebar on the left, click on the Apps Launcher icon:
-Then search for “Start Ada chat” and click on the Start Ada Chat Walkthrough item in the Actions list to start the tour:
-When logged into the next-gen platform at https://ai.optilogic.app, there are 2 main ways to start using Ada:
-In a new conversation, you first need to configure chat style (optional), select your database(s), choose your agent, and then enter your question/task for Ada.
-Note that for any further questions within the same conversation, the chat style, database(s), and agent do not need to be configured again – they will remain as they were set for the first prompt.
-To guide you on choosing the best agent for the task, here is an overview of what each is good at.
-Modeler Agent:
-Data Cleanser:
-Next Gen UI Agent:
-Once a prompt has been submitted, Ada will process it and formulate a response. Responses can have different formats, here we will see a text only result, while other response types are covered in the next section.
-Once Ada is done processing the prompt, the response will be displayed:
-The full response for this prompt is shown in the next 2 screenshots:
-Besides responses that are purely text-based, you will come across other types too. For example, when your input is needed, Ada will pause the response and ask you for feedback:
-When Ada modifies a Cosmic Frog model or a DataStar project sandbox, users can verify these in the respective applications on the current platform (https://optilogic.app). Here, we are checking if the data cleaning step indeed created the clean_ tables in the sandbox of the connected DataStar project:
-Responses can also contain files:
-When saving an artifact to your workspace, the following modal will come up where you can choose the location to save it and indicate if any pre-existing files with the same name at the chosen location should be overwritten or not:
-When choosing to open the report in Lightning Editor, it does so in the new platform, to the right of the conversation with Ada so users do not need to change context:
-The Next Gen UI Agent can help you for example with changing the look and feel of the platform’s UI. In this example it created a tour on how to customize the UI where the user can click on the buttons in the response to be taken directly to that part of the UI. Note that only part of Ada's response is shown in the screenshot:
-Conversations with Ada are by default saved and users can return to them to review, audit, or continue the conversation.
-Keep Conversations Focused
-Ada performs best when conversations stay centered on a single task or workflow. Avoid mixing unrelated activities — such as model building, reporting, and data cleansing — in the same chat.
-Focused conversations improve response quality, reduce confusion, and make it easier for Ada to maintain context.
-Give Context Before the Task
-Provide business context, objectives, constraints, and relevant background before asking Ada to perform work.
-Better prompts typically include:
-Example: Instead of: “Build scenarios for this model.”
-Try: “This model evaluates manufacturing diversification risk across LATAM and EMEA. The goal is to reduce China dependency while minimizing transportation cost increases. Create several realistic diversification scenarios.”
-Ask Ada to Explore Before Acting
-For complex workflows, first ask Ada to explore, profile, summarize, or analyze the environment before making changes.
-Examples:
-This gives both you and Ada better shared context before execution and reduces downstream errors.
-Plan First for Multi-Step Workflows
-For larger workflows, ask Ada to propose a plan before executing actions.
-Example: “Before making changes, provide a step-by-step plan for how you would approach this workflow.”
-This allows you to:
-Be Explicit About Constraints
-Clearly state any important rules or limitations.
-Explicit constraints improve consistency and reduce unintended actions.
-Ask Ada Clarifying Questions
-If a workflow is complex or ambiguous, invite Ada to ask clarifying questions before proceeding.
-Example: “Before executing, ask any clarifying questions needed to complete this task correctly.”
-This often improves first-pass accuracy significantly.
-Start a New Conversation When Switching Contexts
-Create a new conversation when:
-Long conversations can dilute context and reduce response quality over time.
-Ask for Multiple Options
-Instead of requesting a single recommendation, ask Ada for multiple approaches and trade-offs.
-Example: “Provide three approaches for supplier diversification and explain the trade-offs of each.”
-This helps surface alternatives and improves decision-making.
-Re-State Important Constraints During Long Workflows
-In long conversations, periodically remind Ada about key requirements.
-This helps reduce context drift.
-Generate a Summary Before Starting a New Chat
-If a conversation becomes long or complex, ask Ada to summarize:
-You can paste this summary into a new conversation to preserve context without carrying forward unnecessary noise.
-Helpful prompt: “Summarize this conversation into a clean handoff document including goals, technical decisions, constraints, and next steps.”
-Avoid Overloading Prompts
-More information is not always better.
-Instead:
-Focused prompts generally produce better results than overly large or unstructured requests.
-Ask Ada What It Can Do
-If you are unsure how to approach a task, ask Ada directly.
-Ada can often suggest workflows, prompts, and capabilities you may not know are available.
-Ada is evolving rapidly, and some platform capabilities are still in active development.
-File Attachments in Chat
-Files cannot currently be uploaded directly into Ada conversations.
-File Explorer Data Access
-Data stored in your account (accessible through the Explorer application) is not directly accessible in chat workflows. Data first needs to be imported into a DataStar project or connected database.
-DataStar and Cosmic Frog Integration
-The Next Gen platform does not yet provide fully seamless integration of the DataStar and Cosmic Frog applications. For some processes, users will need to open these in the current platform (https://optilogic.app).
-UI Rendering Requires the Next Gen UI Agent
-Advanced inline visualizations and UI rendering features currently require selecting the Next Gen UI Agent explicitly.
-Long Conversations Can Degrade Performance
-As conversations grow longer, Ada may lose context, become repetitive, or produce less reliable responses.
-Starting a fresh conversation for new workflows or projects generally improves results.
-AI Responses Should Always Be Reviewed
-Like all AI systems, Ada can occasionally produce incorrect or misleading outputs.
-Always validate:
-before using outputs in production or customer-facing work.
-Session Stability
-Leaving the platform idle for extended periods can interrupt workflows or produce unexpected behavior.
-If the platform becomes unstable:
-We hope you are going to have many productive conversations with Ada! Please do not hesitate to contact our Support team via support@optilogic.com if you have any questions or concerns.
-Applies to all Optilogic AI systems.
-No confidential client information will be used as inputs or part of model training and validation datasets. In addition:
-Data Minimization: The amount of data shared with the AI provider depends on the task being performed. Optilogic's agents are engineered to query and pass only the minimum data required for each specific operation — ranging from structural metadata (table and column names, data types, statistical summaries) for schema-level tasks, to slices of actual data values for operations that require it, such as data cleansing, outlier detection, or name matching.
-Optilogic does not transmit your entire dataset to the AI provider in a single operation. However, over the course of a session, the AI provider may process portions of your data as needed to complete the tasks you request.
-No Model Training: Optilogic does not use your data to train AI models. Optilogic’s current AI provider (OpenAI) does not use API-submitted data for model training under their enterprise API terms. Refer to OpenAI policies here: https://openai.com/policies/.
-Built-in Agent Safety Instructions: Optilogic agents include standing safety instructions in their core configuration to guard against prompt injection — attempts to manipulate agent behavior through user messages or data the agent processes. These instructions:
-Best Practices: Users should avoid including sensitive information (PII, credentials, etc.) in table/column names or prompts, as these are shared with the AI provider.
 The Modeler Agent is one of Ada’s AI-powered supply chain modeling specialists. It helps users build, validate, troubleshoot, run, analyze, and automate Cosmic Frog network optimization (Neo) and transportation optimization (Hopper) models. The Modeler Agent accelerates the entire modeling lifecycle – from raw operational data to optimization-ready model construction and scenario analysis – while improving model quality, traceability, and reproducibility. By combining supply chain domain knowledge with direct platform capabilities, it helps teams move from messy source data to solver-ready models faster and with fewer manual hand-offs.
 Users get leverage in these main areas:
 Data → Model mapping
@@ -24653,38 +24762,6 @@ The Modeler Agent helps supply chain modeleres avoid common modeling mistakes su
 Many optimization issues originate during preprocessing rather than inside the solver itself. Preprocessing typically:
 Common preprocessing-related symptoms include:
 The Modeler Agent is designed to diagnose these issues before expensive solves are executed whenever possible.
-Ada, Optilogic's Agentic AI, is a suite of specialized AI agents designed to help supply chain teams work faster and with greater confidence across the full modeling lifecycle. Each agent is tailored to a specific part of the supply chain workflow.
-In this documentation we will cover what AI agents and their components are.
-AI agents are software systems that use a large language model (LLM) as a reasoning engine but go beyond chat by taking actions in an environment. Instead of only generating text, an agent can interpret a goal, decide what to do next, call external capabilities (tools), observe the results, and iterate until the objective is achieved.
-In practice, an "agent" is not a single model call - it is a control system wrapped around an LLM:
-This architecture matters because it turns the LLM from a passive text generator into an adaptive problem-solver that can:
-An agent is not just a chat model. A chat model produces responses; an agent operates - it can run commands, fetch data, write artifacts, and iterate autonomously within defined constraints. Think of an AI agent as a smart assistant that can:
-Agents are most useful when tasks are multi-step, partially specified, and feedback-driven, for example:
-If a task is single-shot and fully specified (e.g., "summarize this paragraph"), a non-agent LLM call is often simpler and cheaper.
-Most agents follow a ReAct-style loop (Reason + Act), sometimes with explicit planning:
-A useful way to think about the loop is that each iteration should:
-Well-behaved agents stop for explicit reasons, such as:
-An agent is the intelligent layer that decides what to do. It's like a project manager who understands the goal, plans the approach, and uses available skills and tools to get the job done.
-Note that not all these agents are exposed to users, in which case they are available as skills for other agents to use under the hood.
-The Ada ecosystem includes many specialized agents (some of which are shown in the image above), each designed for specific analytical and reporting tasks.
-Why specialization helps:
-The agent toolkit is built on four foundational concepts that enable flexible and powerful agent development:
-The core reasoning component - a large language model equipped with specialized skills and capabilities.
-In addition to the model itself, an agent definition typically includes:
-A versatile building block that packages how to do something. This modularity allows agents to be composed and extended dynamically.
-A skill may:
-A mechanism for injecting domain-specific expertise into agents at runtime, enabling them to operate effectively in specialized fields without requiring model retraining.
-An intelligent storage system that helps agents overcome context-management challenges by preserving important information for future use, enabling continuity across interactions.
-Current implementation supports several advanced capabilities enabled by the agent toolkit:
-Agents can build structured plans that improve the accuracy and quality of final outputs through systematic decomposition of complex tasks.
-The system supports custom tools provided by users, allowing agents to integrate with existing workflows and data infrastructure.
-Persistent memory enables agents to maintain context and track important information across extended work sessions.
-Complex tasks can be delegated to specialized sub-agents, allowing for efficient division of labor and expertise application.
-The system intelligently manages context to ensure agents have access to relevant information while avoiding context window limitations.
-Below is a simple workflow showing how different components work together. For simplicity, not all components are included here.
-Skills are packaged capabilities that combine one or more tools with guidance on when and how to use them. Think of a skill as a trained procedure or technique.
-Tools are the specific actions an AI agent can perform. They are specialized and do one specific thing reliably. They don't make decisions - they just execute when called.
-As an AI Agent works, it produces the logs which include steps that the agent takes, tools it calls, as well as a work summary. The AI Response sections are typically the most useful as they explain the exploration plan, the work it has done, and the results after exploration. This is generally a response to the user. While all others are more for internal processes.
 
 
 ---
