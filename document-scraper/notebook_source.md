@@ -14687,6 +14687,34 @@ Use the steps outlined in the “Setting up the Connector” section above to re
 
 
 ---
+## Getting Started with the Optilogic MCP Connector in Copilot
+**URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-mcp-connector-in-copilot
+
+This documentation details how to connect and disconnect the Optilogic MCP connector using Copilot. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+The steps to take when connecting to the Optilogic MCP Connector in Copilot are as follows:
+These steps are covered in detail in the next sections.
+The following steps to create an MCP agent need to be completed by an IT administrator.
+Navigate to Copilot Studio (https://copilotstudio.microsoft.com/), and Open the Agents page. Then, choose New Agent:
+Provide a name for your agent, for example, Optilogic MCP.
+Choose a model to leverage from the drop-down list. As of August 2026, GPT 5.6 Reasoning works well; other models may work fine too. Once you have chosen your model, open the Tools menu by clicking on the plus button to the right:
+In the Tools menu, click on the Add button, then select Model Context Protocol (MCP):
+In the Add MCP server form that comes up, enter the following: 
+Once added, provide some basic instructions for the agent such as “You are an agent designed to assist with Ada in the Optilogic platform.”.
+Save and publish the agent. The Save button is just left of the publish button; next, click on Publish. Upon publishing a window will pop up with final settings. Be sure to check the box to make the agent available in Microsoft 365 Copilot:
+Still on the same form, click on the Availability options button, scroll to the bottom of the menu, and click on the Share Agent button to choose which users can access the agent. Alternatively, you can select the Share Agent button and enable end-user access for all users in the organization:
+Finally, you will need to associate a Microsoft Power Platform billing profile to agents created in Copilot Studio for the agent to function. Copilot agents require credits separate from end-user Copilot licensing. To explore current offerings from Microsoft and manage billing profiles, please see this webpage.
+Once IT creates the agent on your company’s Copilot account, they can share a link with you to the new agent, which will look similar to the next screenshot. Click on the Open button.
+The agent will be added to your Copilot account to chat with – notice it under Agents in the left pane:
+Start a chat with the agent and prompt it to connect to your Optilogic account. When you see the card for Connection Required, click on Set up connection:
+A browser window will open. Click on Connect under Actions:
+In the Connection drop-down list, select Create new connection:
+Enter a display name and click on Create:
+When prompted, sign in to your Optilogic account:
+The connection is complete! You will see the checkmark for confirmation:
+Go back to your Copilot chat window and test it out with a first prompt, such as: I just connected Optilogic. Give me a summary of what you can do with Optilogic, what you see in my Optilogic account and highlight one useful insight that you recommend I dig in to. Also, what sort of “what if” questions can you answer based on what you see in my account?.
+
+
+---
 ## Getting Started with the Optilogic Risk Engine
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-risk-engine
 
@@ -21601,23 +21629,26 @@ DataStar: learn more about DataStar and its capabilities from these articles on 
 
 
 ---
-## Shelf Life and Maturation Time (Network Optimization)
+## Product Shelf Life, Maturation Time, and Disposal (Network Optimization)
 **URL:** https://optilogic.com/resources/help-center/docs/shelf-life-and-maturation-time-network-optimization
 
-Shelf Life and Maturation Time (Network Optimization)
-Cosmic Frog’s network optimization engine (Neo) can now account for shelf life and maturation time of products out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is now also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
+Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
 In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
-Shelf Life and Maturation Time – Overview
+Overview
 The new feature set consists of:
-Two new fields (and their accompanying UoM fields) on the Products input table:
+Four new fields (3 with their accompanying UoM fields) on the Products input table:
 Shelf Life – use this field to model product expiry. The value entered indicates how long from when the product is produced it is available to fulfill demand. A product will expire once its shelf life runs out. Setting a shelf life will essentially add a constraint to the model on how long a product can be produced in advance of when it is served to the end-customer.
 Maturation Time – use this field to set how long it takes from when the product is produced before it can be used to fulfill demand. Think for example of cheese that will take up space in inventory while ripening and cannot be sold before it has reached a certain age. Setting a maturation time also adds a constraint to the model of how long it needs to be in the network before it can be consumed.
+Disposal Cost - specify the cost associated with taking expired product out of inventory.
+Disposal Behavior - indicate when expired product is removed from inventory. There are 2 options which can be chosen from a drop-down list:
+OnExpiry (the default) - expired product is removed from inventory at the end of the period it expired in.
+EndOfHorizon - expired product is removed from inventory in the last period of the model.
 Three new output tables:
 Optimization Production Age Summary – reports the age of product consumed by a BOM during production.
 Optimization Flow Age Summary – details the age of product of each flow.
-Optimization Inventory Age Summary – shows the age of product kept in inventory.
+Optimization Inventory Age Summary – shows the age of product kept in inventory and captures disposals.
 Please note that:
-Shelf Life and Maturation Time will only have an impact in multi-period models; if set in a single-period model, they will be ignored. If periods of different lengths are used in a model, the most frequently occurring period length will be used for shelf life and maturation time calculations.
+Shelf Life, Maturation Time, and Disposal will only have an impact in multi-period models; if set in a single-period model, they will be ignored. If periods of different lengths are used in a model, the most frequently occurring period length will be used for shelf life and maturation time calculations.
 Users can enter Shelf Life and Maturation Time using any time-based unit of measure, e.g. days, weeks, months, etc. Based on the length of the periods in the model, shelf life and maturation time are converted to an integer multiple of periods. Fractional numbers are rounded to the nearest integer. For example:
 The length of the periods in a model is weeks, and shelf life is set to 33 days. This results in a shelf life of 33/7 = 4.71 weeks, which will be rounded to 5 weeks (= 5 periods).
 The length of the periods in a model is months, and maturation time is set to 9 weeks. This results in a shelf life of 9*7 days / 30 days = 2.1 months, which will be rounded to 2 months (= 2 periods).
@@ -21627,8 +21658,8 @@ In a monthly model, a product’s maturation time is set to 5 months. If it is p
 Products can have both shelf life and maturation time set. If this is the case, then shelf life has to be greater than or equal to the maturation time, otherwise the product expires before it is mature and cannot be consumed, resulting in an infeasible model run.
 If there is initial inventory > 0 for any product-facility combination entered on the Inventory Policies table, the age of this product will be 1 in the first period of the model. If it has a shelf life of 5 days in a model with daily periods it can be consumed in periods 1,2, 3, 4, and 5; it will expire from period 6 onwards.
 For products with a maturation time specified, they need to have at least 1 inventory policy with Stocking Site = True set up, either at the facility they are produced at or at a down-stream location it can be moved to (appropriate transportation policies need to be in place), so they can stay in stock until they are mature (or longer, shelf life allowing).
-Products with a shelf life also need to have at least 1 inventory policy with Stocking Site = True set up in order for the product to be allowed to be consumed later than the period it has been produced in (from production until before its expiry).
-Expired product can stay in inventory at the location it expired at if there is an inventory policy with Stocking Site =True set up for the product at this facility. It could also be moved elsewhere, if optimal to do so and the correct model structure is in place. This model structure would need to consist of:
+Products with a shelf life also need to have at least 1 inventory policy with Stocking Site = True set up if the product is allowed to be consumed later than the period it has been produced in (from production until before its expiry).
+Product that can stay in inventory after expiry (Disposal Behavior = EndOfHorizon), can stay in inventory at the location it expired at if there is an inventory policy with Stocking Site =True set up for the product at this facility. It could also be moved elsewhere, if optimal to do so and the correct model structure is in place. This model structure would need to consist of:
 Transportation policies from this location to other facilities.
 Inventory policies with Stocking Site = True at the destination facility/facilities if the expired product is to stay there.
 If Bills of Materials are used in the modelling and components have shelf life and / or maturation time set, these need to be respected before being used in the BOM: a component cannot be consumed by a BOM before it is mature, and it also cannot be used by a BOM after it has expired.
@@ -21707,20 +21738,23 @@ As we have mentioned several times before, Product_2 is produced in different pe
 In the Baseline and Increased Shelf Life scenarios, the age of Product_2 when delivered to the customer in Period_6 is at its maximum shelf life (4 in Baseline and 5 in Increased Shelf Life).
 In contrast, in the Product Value Doubled scenario, the age of Product_2 when fulfilling demand in Period_6 is 2, which is the minimum it needs to be due to its maturation time.
 For any questions on these new features, please do not hesitate to contact Optilogic support on support@optilogic.com.
-Shelf Life and Maturation Time (Network Optimization)
-Cosmic Frog’s network optimization engine (Neo) can now account for shelf life and maturation time of products out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is now also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
+Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
 In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
-Shelf Life and Maturation Time – Overview
+Overview
 The new feature set consists of:
-Two new fields (and their accompanying UoM fields) on the Products input table:
+Four new fields (3 with their accompanying UoM fields) on the Products input table:
 Shelf Life – use this field to model product expiry. The value entered indicates how long from when the product is produced it is available to fulfill demand. A product will expire once its shelf life runs out. Setting a shelf life will essentially add a constraint to the model on how long a product can be produced in advance of when it is served to the end-customer.
 Maturation Time – use this field to set how long it takes from when the product is produced before it can be used to fulfill demand. Think for example of cheese that will take up space in inventory while ripening and cannot be sold before it has reached a certain age. Setting a maturation time also adds a constraint to the model of how long it needs to be in the network before it can be consumed.
+Disposal Cost - specify the cost associated with taking expired product out of inventory.
+Disposal Behavior - indicate when expired product is removed from inventory. There are 2 options which can be chosen from a drop-down list:
+OnExpiry (the default) - expired product is removed from inventory at the end of the period it expired in.
+EndOfHorizon - expired product is removed from inventory in the last period of the model.
 Three new output tables:
 Optimization Production Age Summary – reports the age of product consumed by a BOM during production.
 Optimization Flow Age Summary – details the age of product of each flow.
-Optimization Inventory Age Summary – shows the age of product kept in inventory.
+Optimization Inventory Age Summary – shows the age of product kept in inventory and captures disposals.
 Please note that:
-Shelf Life and Maturation Time will only have an impact in multi-period models; if set in a single-period model, they will be ignored. If periods of different lengths are used in a model, the most frequently occurring period length will be used for shelf life and maturation time calculations.
+Shelf Life, Maturation Time, and Disposal will only have an impact in multi-period models; if set in a single-period model, they will be ignored. If periods of different lengths are used in a model, the most frequently occurring period length will be used for shelf life and maturation time calculations.
 Users can enter Shelf Life and Maturation Time using any time-based unit of measure, e.g. days, weeks, months, etc. Based on the length of the periods in the model, shelf life and maturation time are converted to an integer multiple of periods. Fractional numbers are rounded to the nearest integer. For example:
 The length of the periods in a model is weeks, and shelf life is set to 33 days. This results in a shelf life of 33/7 = 4.71 weeks, which will be rounded to 5 weeks (= 5 periods).
 The length of the periods in a model is months, and maturation time is set to 9 weeks. This results in a shelf life of 9*7 days / 30 days = 2.1 months, which will be rounded to 2 months (= 2 periods).
@@ -21730,8 +21764,8 @@ In a monthly model, a product’s maturation time is set to 5 months. If it is p
 Products can have both shelf life and maturation time set. If this is the case, then shelf life has to be greater than or equal to the maturation time, otherwise the product expires before it is mature and cannot be consumed, resulting in an infeasible model run.
 If there is initial inventory > 0 for any product-facility combination entered on the Inventory Policies table, the age of this product will be 1 in the first period of the model. If it has a shelf life of 5 days in a model with daily periods it can be consumed in periods 1,2, 3, 4, and 5; it will expire from period 6 onwards.
 For products with a maturation time specified, they need to have at least 1 inventory policy with Stocking Site = True set up, either at the facility they are produced at or at a down-stream location it can be moved to (appropriate transportation policies need to be in place), so they can stay in stock until they are mature (or longer, shelf life allowing).
-Products with a shelf life also need to have at least 1 inventory policy with Stocking Site = True set up in order for the product to be allowed to be consumed later than the period it has been produced in (from production until before its expiry).
-Expired product can stay in inventory at the location it expired at if there is an inventory policy with Stocking Site =True set up for the product at this facility. It could also be moved elsewhere, if optimal to do so and the correct model structure is in place. This model structure would need to consist of:
+Products with a shelf life also need to have at least 1 inventory policy with Stocking Site = True set up if the product is allowed to be consumed later than the period it has been produced in (from production until before its expiry).
+Product that can stay in inventory after expiry (Disposal Behavior = EndOfHorizon), can stay in inventory at the location it expired at if there is an inventory policy with Stocking Site =True set up for the product at this facility. It could also be moved elsewhere, if optimal to do so and the correct model structure is in place. This model structure would need to consist of:
 Transportation policies from this location to other facilities.
 Inventory policies with Stocking Site = True at the destination facility/facilities if the expired product is to stay there.
 If Bills of Materials are used in the modelling and components have shelf life and / or maturation time set, these need to be respected before being used in the BOM: a component cannot be consumed by a BOM before it is mature, and it also cannot be used by a BOM after it has expired.
@@ -22161,17 +22195,18 @@ Compare multiple territory configurations and their costs
 The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
 Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
 In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
-The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Grok (SpaceXAI), and Vibe (Mistral AI).
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Grok (SpaceXAI), and Vibe (Mistral AI).
 The Big Idea
 Ada knows your models and is the supply chain modeling expert; the AI Agent knows everything else. Use Ada for model truth, and the agent to complement and shape that truth into analysis, documents, and decisions.
 Quick Start
 Add the Optilogic connector to the AI Agent you are using and authenticate with your Optilogic account. When prompted for the MCP Connector URL, enter: https://mcp.optilogic.app/mcp. Direct links to set up a (custom) connector for the AI Agents that currently support the Optilogic MCP Connector are:
+Copilot: receive link from your IT Administrator, see detailed instructions here
 In a chat with your AI Agent, ask it to list the databases in your Optilogic account to confirm the connection.
 Tell the agent which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name. If you are unsure, just state your question and the agent can help you identify which database(s) will help answer.
 Ask your question or describe your task in plain language. The agent will start an Ada session, attach the right database(s), and relay your prompt.
 Review Ada's answer, ask follow-up questions, and — when you are ready — ask to turn the findings into a document, spreadsheet, deck, or living dashboard.
 Revisit or continue conversations anytime, plus you can see (and continue) these interactions with Ada and any work done by Ada on the Optilogic platform.
-Detailed step-by-step instructions for Claude and ChatGPT, including screenshots to (dis)connect, can be found here:
+Detailed step-by-step instructions for Claude, ChatGPT, and Copilot, including screenshots, can be found here:
 The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
 It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
 A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
@@ -22304,17 +22339,18 @@ Questions or feedback on the connector? Reach out to the Optilogic Support team 
 The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
 Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
 In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
-The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Grok (SpaceXAI), and Vibe (Mistral AI).
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Grok (SpaceXAI), and Vibe (Mistral AI).
 The Big Idea
 Ada knows your models and is the supply chain modeling expert; the AI Agent knows everything else. Use Ada for model truth, and the agent to complement and shape that truth into analysis, documents, and decisions.
 Quick Start
 Add the Optilogic connector to the AI Agent you are using and authenticate with your Optilogic account. When prompted for the MCP Connector URL, enter: https://mcp.optilogic.app/mcp. Direct links to set up a (custom) connector for the AI Agents that currently support the Optilogic MCP Connector are:
+Copilot: receive link from your IT Administrator, see detailed instructions here
 In a chat with your AI Agent, ask it to list the databases in your Optilogic account to confirm the connection.
 Tell the agent which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name. If you are unsure, just state your question and the agent can help you identify which database(s) will help answer.
 Ask your question or describe your task in plain language. The agent will start an Ada session, attach the right database(s), and relay your prompt.
 Review Ada's answer, ask follow-up questions, and — when you are ready — ask to turn the findings into a document, spreadsheet, deck, or living dashboard.
 Revisit or continue conversations anytime, plus you can see (and continue) these interactions with Ada and any work done by Ada on the Optilogic platform.
-Detailed step-by-step instructions for Claude and ChatGPT, including screenshots to (dis)connect, can be found here:
+Detailed step-by-step instructions for Claude, ChatGPT, and Copilot, including screenshots, can be found here:
 The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
 It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
 A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
@@ -23955,28 +23991,38 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
-This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
-Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
-When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
-MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
-Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
-If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
-You can view your organization’s Ada Credit balance from your profile settings.
-Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
-Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
-You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
-Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
-The following features are affected when Ada Credits are exhausted:
-Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
-If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
-Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
-Additional credits cannot currently be purchased or added directly within the platform.
+Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
+In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
+The new feature set consists of:
+Please note that:
+We will now showcase the use of both Shelf Life and Maturation Time in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
+It is a multi-period model with 6 periods, which are each 1 week long (the Model End Date is set to February 12, 2025, on the Model Settings input table, not shown):
+There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in the screenshots after this one.
+As mentioned above, a bill of materials is used to produce finished good Product_1:
+This bill of materials is named BOM_1 and it specifies that 10 units of the product named Component are used as an input (product type = Component) of this bill of materials. Note that the bill of materials does not indicate the end product that is produced with it. This is specified by associating production policies with a BOM. To learn more about detailed production modelling using the Neo engine, please see this Help Center article.
+In the next screenshot of the production policies table, we see that the plant can produce all 3 products, and that for the production of Product_1, the bill of materials shown in the previous screenshot, BOM_1, is used. The cost per unit is set to 1 here for each product:
+For purposes of showing how Shelf Life and Maturation Time work, we will use the Production Policies Multi-Time Period input table too. In here we override the production cost per unit that we just saw in the above screenshot to become increasingly expensive in later periods for all products, adding $1 per unit for each next period. So, to produce a unit of Product_1 in Period_1 costs $1, in Period_2 it costs $2, in Period_3 $3, etc. Same for Component and Product_2:
+The production cost is increased here to encourage the model to produce product as early as possible, so that it incurs the lowest possible production cost. It will also still need to respect the shelf life and maturation time requirements. Note that this is also weighed against the increased inventory holding costs for producing earlier than possibly needed, as product will sit in inventory longer if produced earlier. So, the cost differential for production in different periods needs to be sufficiently big as compared to the increased inventory holding cost to see this behavior. We will explore this more through the scenarios that are run in this demo model.
+Since products will be spending some time in inventory, we need to have at least 1 inventory policy per product with Stocking Site = True. At the plant, all 3 products can be held in inventory, and there is an initial inventory of 750 units of the Component. At the DC, both finished goods can be held in inventory. The carrying cost percentage to calculate the inventory holding costs is set to 10% for all policies:
+Lastly, we will show the demand that has been entered into the Customer Demand table. The customer demands 1,000 units each of the finished goods in period #6:
+Other input tables that have populated records which have not been shown in a screenshot above are: Customers, Facilities, and Transportation Policies. The latter specifies that the plant can ship both finished goods to the DC, and the DC can ship both to the customer. The cost of transportation is set to 0.01 per unit per mile on both lanes.
+The 3 costs that are modelled are therefore:
+There are 3 scenarios run in this model, see also the screenshot below:
+The screenshot shows the 3 scenarios on the left, where we see that the Increased Shelf Life and Product Value Doubled scenarios both contain 1 scenario item, whereas the Baseline does not contain any. On the right-hand side, the scenario item of the Increased Shelf Life scenario is shown where we can see that the Shelf Life value of Product_2 is set to 34. See the following Help Center articles for more details on Scenario building and syntax:
+Two notes upfront about the outputs before we dive into details as follows:
+Now let us first look at when which product is produced through the Optimization Production Summary output table:
+The next screenshot shows the Optimization Inventory Summary filtered for Product_2. Since we know it is produced in different periods for each of the 3 scenarios and that the demand occurs in Period_6, we expect to see the product sitting in inventory for a different number of periods in the different scenarios:
+In the Optimization Network Summary output table, we can check the total cost by scenario and how the 3 costs modelled contribute to this total cost:
+Next, we will take a look at the 3 new output tables, which detail the age of products that are used in production, of products that are transported, and of products that are sitting in inventory. We will start with the Optimization Production Age Summary output table:
+Next, we will look at the age of Product_2 when it is shipped between locations:
+Lastly, we will look at 2 screenshots of the new Optimization Inventory Age Summary output table. This first one only looks at the ages of Product_1 and Component at Plant_1 in the Baseline scenario. The values for their inventory levels and ages are the same in the other 2 scenarios as the production of these 2 products occurs during the same periods for all 3 scenarios:
+In the next screenshot, we look at the same output table, Optimization Inventory Age Summary, but now filtered for Product_2 and for all 3 scenarios:
+For any questions on these new features, please do not hesitate to contact Optilogic support on support@optilogic.com.
 The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
 Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
 In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
-The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Grok (SpaceXAI), and Vibe (Mistral AI).
-Detailed step-by-step instructions for Claude and ChatGPT, including screenshots to (dis)connect, can be found here:
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Grok (SpaceXAI), and Vibe (Mistral AI).
+Detailed step-by-step instructions for Claude, ChatGPT, and Copilot, including screenshots, can be found here:
 The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
 It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
 A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
@@ -24013,6 +24059,45 @@ Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios tha
 Response: lists 3 sets of suggested scenarios to add and the reasoning:
 Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
 Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
+This documentation details how to connect and disconnect the Optilogic MCP connector using Copilot. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+The steps to take when connecting to the Optilogic MCP Connector in Copilot are as follows:
+These steps are covered in detail in the next sections.
+The following steps to create an MCP agent need to be completed by an IT administrator.
+Navigate to Copilot Studio (https://copilotstudio.microsoft.com/), and Open the Agents page. Then, choose New Agent:
+Provide a name for your agent, for example, Optilogic MCP.
+Choose a model to leverage from the drop-down list. As of August 2026, GPT 5.6 Reasoning works well; other models may work fine too. Once you have chosen your model, open the Tools menu by clicking on the plus button to the right:
+In the Tools menu, click on the Add button, then select Model Context Protocol (MCP):
+In the Add MCP server form that comes up, enter the following: 
+Once added, provide some basic instructions for the agent such as “You are an agent designed to assist with Ada in the Optilogic platform.”.
+Save and publish the agent. The Save button is just left of the publish button; next, click on Publish. Upon publishing a window will pop up with final settings. Be sure to check the box to make the agent available in Microsoft 365 Copilot:
+Still on the same form, click on the Availability options button, scroll to the bottom of the menu, and click on the Share Agent button to choose which users can access the agent. Alternatively, you can select the Share Agent button and enable end-user access for all users in the organization:
+Finally, you will need to associate a Microsoft Power Platform billing profile to agents created in Copilot Studio for the agent to function. Copilot agents require credits separate from end-user Copilot licensing. To explore current offerings from Microsoft and manage billing profiles, please see this webpage.
+Once IT creates the agent on your company’s Copilot account, they can share a link with you to the new agent, which will look similar to the next screenshot. Click on the Open button.
+The agent will be added to your Copilot account to chat with – notice it under Agents in the left pane:
+Start a chat with the agent and prompt it to connect to your Optilogic account. When you see the card for Connection Required, click on Set up connection:
+A browser window will open. Click on Connect under Actions:
+In the Connection drop-down list, select Create new connection:
+Enter a display name and click on Create:
+When prompted, sign in to your Optilogic account:
+The connection is complete! You will see the checkmark for confirmation:
+Go back to your Copilot chat window and test it out with a first prompt, such as: I just connected Optilogic. Give me a summary of what you can do with Optilogic, what you see in my Optilogic account and highlight one useful insight that you recommend I dig in to. Also, what sort of “what if” questions can you answer based on what you see in my account?.
+Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
+This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
+Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
+When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
+MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
+Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
+If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
+You can view your organization’s Ada Credit balance from your profile settings.
+Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
+Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
+You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
+Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
+The following features are affected when Ada Credits are exhausted:
+Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
+If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
+Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
+Additional credits cannot currently be purchased or added directly within the platform.
 Ada is Optilogic’s next-generation agentic AI, enabling supply chain teams to work faster and with greater confidence across the full modeling lifecycle — from raw data preparation to optimization runs to executive reporting — all through natural language interactions.
 Unlike traditional UI chat assistants, it deploys purpose-built agents that can pursue multi-step goals, use specialized skills, maintain conversational context, and coordinate with each other to complete workflows that previously required significant manual effort. This dramatically reduces the time required to move from raw data to recommendations.
 As a core part of Optilogic’s Next Generation User InterfacePlatform, Ada provides a more intelligent and conversational approach to supply chain design work.
@@ -24606,7 +24691,6 @@ We will move on to covering the 2 tabs on the right-hand side pane, starting wit
 From top to bottom:
 Users can click on a task in the tasks list and then drag and drop it onto the macro canvas to incorporate it into a macro. Once added to a macro, a task needs to be configured; this will be covered in the next section.
 When adding a new task, it needs to be configured, which can be done on the Configuration tab. When a task is newly dropped onto the Macro Canvas its Configuration tab is automatically opened on the right-hand side pane. To make the configuration tab of an already existing task active, click on the task in the Macros tab on the left-hand side pane or click on the task in the Macro Canvas. The configuration options will differ by type of task, here the Configuration tab of an Import task is shown as an example:
-Please note that:
 The following table provides an overview of what connection type(s) can be used as the source / destination / target connection by which task(s), where PG is short for a PostgreSQL database connection and CF for a Cosmic Frog model connection:
 Leapfrog in DataStar (aka D* AI) is an AI-powered feature that transforms natural language requests into executable DataStar Update and Run SQL tasks. Users can describe what they want to accomplish in plain language, and Leapfrog automatically generates the corresponding task query without requiring technical coding skills or manual inputs for task details. This capability enables both technical and non-technical users to efficiently manipulate data, build Cosmic Frog models, and extract insights through conversational interactions with Leapfrog within DataStar.
 Note that there are 2 appendices at the end of this documentation where 1) details around Leapfrog in DataStar's current features & limitations are covered and 2) Leapfrog's data usage and security policies are summarized.
@@ -24647,121 +24731,6 @@ Leapfrog's brainpower comes from:
 All training processes are owned and managed by Optilogic — no outside data is used.
 When you ask Leapfrog a question:
 Your conversations (prompts, answers, feedback) are stored securely at the user level.
-Named Filters are an exciting new feature which allows users to create and save specific filters directly on grid views, to then be utilized seamlessly across all policies tables, scenario items and map layers. For example, if you create a filter named “DCs” in the Facilities table to capture all entries with “DC” in their designation, this Named Filter can then be applied in a policy table, providing a dynamic alternative to the traditional Group function.
-Unlike Groups, named filters automatically update: adding or removing a DC record in the Facilities table will instantly reflect in the Named Filter, streamlining the workflow and eliminating the need for manual updates. Additionally, when creating Scenario Items or defining Map Layers, users can easily select Named Filters to represent specific conditions, easily previewing the data, making the process much quicker and simpler.
-In this help article, how Named Filters are created will be covered first. In the sections after, we will discuss how Named Filters can be used on input tables, in scenario items, and on map layers, while the final section contains a few notes on deleting Named Filters.
-Named Filters can be set up and saved on any Cosmic Frog table: input tables, output tables, and custom tables. These tables are found in the Data module of a Cosmic Frog model:
-A quick description of each of the options available in the Filter drop-down menu follows here, we will cover most of these in more detail in the remainder of this Help Article:
-Note that an additional Save Filter option becomes available in this menu in case a filter has been created (added) and next changes have been made to the table's filter conditions. The Save Filter option can then be used to update the existing named filter to reflect these changes.
-Let’s walk through setting up a filter on the Facilities table that filters out records where the Facility Name ends in “DC” and save it as a named filter called “DCs”:
-There are 3 buttons below the list of filters as follows (these were obscured by the hover text in the previous screenshot):
-There is a right-click context menu available for filters listed in the Named Filters pane, which allows the user to perform some of the same actions as those in the main Filter menu shown above:
-Named Filters can use filtering conditions that are applied to multiple fields in a table. The next example shows a Named Filter called “CZ2* Space Suit demand >6k” on the Customer Demand input table which uses filtering conditions on three fields:
-Conditions were applied to 3 fields in the Customer Demand table, as follows: 1) Customer Name Begins With “CZ2”, 2) Product Name Contains “Space”, and 3) Quantity Greater Than “6000”. The resulting filter was saved as a Named Filter with the name “CZ2* Space Suit demand >6k” which is applied in the screenshot above. When hovering over this Named Filter, we indeed see the 3 fields and that they each have a single condition on them.
-Besides being able to create Named Filters on input tables, they can also be created on output and custom tables. On output tables this can for example expedite the review of results after running additional scenarios where one can apply a pre-saved set of Named Filters one after the other once the runs are done instead of having to re-type each filter that shows the outputs of interest each time. This example shows a Named Filter on the Optimization Facility Summary output table to show records where the Throughput Utilization is greater than 0.8:
-Next, we will see how multiple Named Filters can be applied to a table. In the example we will use, there are 4 Named Filters set up on the Facilities table:
-Next, we will apply another Named Filter in addition to this first one ("USA locations"). How the Named Filters work together depends on if they are filtering on the same field or on different fields:
-Now, if we want to filter out only Ports located in the USA, we can apply 2 of the Named Filters simultaneously:
-To show an example of how multiple named filters that filter on the same field work, we will add a third Named Filter:
-To alter an existing filter, we can change the criteria of this existing filter, and then save the resulting filter, replacing the original Named Filter. Let’s illustrate this through an example: in a model with about 1.3k customers in the US, we have created a Named Filter “New York and New Jersey”, but later on realize that this filter also includes customers in New Hampshire and New Mexico:
-In reality, this filter also filters out customers located in the regions (states) of New Hampshire and New Mexico in addition to those in New York and New Jersey. So, the next step is to update the filter to only filter out the New York and New Jersey customers:
-Next, we can use the Save Filter option from either the Filter menu drop-down list or the context menu after right-clicking on the filter in the Named Filters pane to update the existing "New York and New Jersey" named filter to use the updated condition. The following screenshot shows the latter method:
-After choosing Save Filter from the context menu, the following message is shown for the user to confirm they want to overwrite the original named filter using the current filter conditions:
-After clicking Save, the existing named filter has been updated:
-So far, the only examples were of filters applied to one field in an input table. The next example shows a Named Filter called “CZ2* Space Suit demand >6k” on the Customer Demand input table which uses filtering conditions on multiple fields:
-The last option of Show Input Data Errors in the Filter menu creates a special filter named ERRORS and filters out records in the input table it is used on that have errors in the input data. This can be very helpful as records with input errors may have these in different fields and the types of errors may be different, so a user is not able to create 1 single filter that would capture multiple different types of errors. When this filter is applied, any record that has 1 or multiple fields with a red outline will be filtered out and shown. Hovering over the field gives a short description of the problem with the value in the field.
-Named Filters for certain model elements (i.e. Customers, Facilities, Suppliers, Products, Periods, Modes, Shipments, Transportation Assets, Processes, Bills Of Materials, Work Centers, and Work Resources) can be used in other input tables, very similar to how Groups work in Cosmic Frog: instead of setting up multiple records for individual elements, for example a transportation policy from A to B for each finished good, a Named Filter that filters out all finished goods on the Products table can be used to set up 1 transportation policy for these finished goods from A to B (which at run-time will be expanded into a policy for each finished good). The advantage of using Named Filters instead of Groups is that Named Filters are dynamic. If records are added to tables containing model elements and they match the conditions of any Named Filters, they are automatically added to those Named Filters. Think for example of Products with the pre-fix FG_ to indicate they are finished goods and a Named Filter “Finished Goods” that filters the Product Name on Begins With “FG_”. If a new product is added where the Product Name starts with FG_, it is automatically added to the Finished Goods Named Filter and anywhere this filter is used this new finished good is now included too. We will look at 2 examples in the next few screenshots.
-The completed transportation policy record uses Named Filters for the Origin Name, Destination Name, and Product Name, making this record flexible as long as the naming conventions of the factories, ports, and raw materials keep following the same rules.
-The next example is on one of the Constraints tables, Production Constraints. On the Constraints tables, the Group Behavior fields dictate how an element name that is a Group or a Named Filter should be used. When set to Enumerate, the constraint is applied to each individual member of the group or named filter. If it is set to Aggregate, the constraint applies to all members of the group or named filter together. This Production Constraint states that at each factory a maximum amount of 150,000 units over all finished goods together can be produced:
-When setting up a scenario item, previously, the records that the scenario item’s change needed to be applied to could be set by using the Condition Builder. Now users have the added option to use a saved Named Filter instead, which makes it easier as the user does not need to know the syntax for building a condition, and it also makes it more flexible as Named Filters are dynamic as was discussed in the previous section. In addition, users can preview the records that the change will be made to so the chance of mistakes is reduced.
-Please note that a maximum of 1 Named Filter can be used on a scenario item.
-The following example changes the Suppliers table of a model which has around 70 suppliers, about half of these are in Europe and the other half in China:
-The Named Filters drop-down collapses after choosing the China Suppliers Named Filter as the condition, and now we see the Preview of the filtered grid. This is the Suppliers table with the Named Filter China Suppliers applied. At the right top of the grid the name of the applied Named Filter(s) is shown, and we can see that in the preview we indeed only see Suppliers for which the Country is China. So these are the records the change (setting Status = Exclude) will be made to in scenarios that use this scenario item.
-A few notes on the Filter Grid Preview:
-Besides using Named Filters on other input tables and for setting up conditions for scenario items, they can also be used as conditions for Map Layers, which will be covered in this final section of this Help Article. Like for scenario items, there is also a Filter Grid Preview for Map Layers to double-check which records will be filtered out when applying the condition(s) of 1 or multiple Named Filters.
-In this first example, a Named Filter on the Facilities table filters out only the Facilities that are located in the USA:
-Another example of the same model is to use a different Named Filter from the Facilities table to show only Factories on the map:
-Applying multiple Named Filters on maps works the same way as for tables:
-For example, applying the Ports and Factories filters will show all Ports (4 in total, 2 not shown in the screenshot as they are in Europe and China) and all Factories (2) - these are 2 filters on the same field (facility name) and are therefore OR-ed:
-Now, when we also enable the US Locations filter in addition, only the Port and Factory in the US are shown on the map - the US Locations filter applies to a different field (country) and is therefore AND-ed with the other 2:
-The same notes that were listed for the Filter Grid Preview for scenario items apply to the Filter Grid Preview for Map Layers too: columns with conditions have the filter icon on them, users can resize and (multi-)sort the columns, however, re-ordering the columns is not possible.
-Named Filters can be deleted, and this affects other input tables, scenario items, and map layers that used the now deleted Named Filter(s). This will be explained further in this final section of the Help Article on Named Filters.
-A Named Filter can be deleted by using one of three methods:
-After choosing to delete a named filter, the following message comes up to ask the user for confirmation. In this example we are deleting the filter named "New York and New Jersey" which is a filter on the Customers input table:
-The message will let the user know if the named filter that is about to be deleted was used in any Map Layers and/or Scenario Items. If so, it lists the names of these layers/items in the "See where used" section which can be expanded and collapsed by clicking on the caret symbol. Note that currently this message does not indicate if the named filter is used in any input tables.
-The results of deleting a Named Filter that was used are as follows:
-The Modeler Agent is one of Ada’s AI-powered supply chain modeling specialists. It helps users build, validate, troubleshoot, run, analyze, and automate Cosmic Frog network optimization (Neo) and transportation optimization (Hopper) models. The Modeler Agent accelerates the entire modeling lifecycle – from raw operational data to optimization-ready model construction and scenario analysis – while improving model quality, traceability, and reproducibility. By combining supply chain domain knowledge with direct platform capabilities, it helps teams move from messy source data to solver-ready models faster and with fewer manual hand-offs.
-Users get leverage in these main areas:
-Data → Model mapping
-Validation & feasibility checks
-Scenario & policy authoring (conceptual + implementation guidance)
-Engine execution support
-Workflow automation (DataStar)
-Reporting and documentation
-There are two ways to access the Modeler Agent:
-Both ways will be explained: via chat first, then the DataStar workflow, followed by an overview of the main differences between the 2 methods.
-Once logged into the next generation Optilogic platform at https://ai.optilogic.app, you can start chatting with Ada leveraging the Modeler Agent right away from the central part of the Home page.
-Here, our example is of a new modeler who inherited a work in progress model to evaluate and optimize their company's manufacturing footprint. They have the Cosmic Frog model which is partially built and a DataStar project with both raw historical and master data, and a set of previously cleaned tables.
-Our 2 connected databases are shown in this screenshot:
-After submitting a prompt, the Modeler Agent will start processing and formulating a response; the following 3 screenshots show the full response:
-We now understand there are several issues that need to be addressed before we can attempt a first model run. First, the user decides to focus on the product name problem identified in the Customer Demand table. To understand the problem, we first have a look at the Customer Demand table in the Cosmic Frog model and notice that whereas all finished goods should follow the naming convention of FGXXX, many do not:
-Since we are not familiar with the data in the DataStar project, we ask the Modeler Agent if there are tables that can help resolve the product naming problem:
-We then have a look at the mentioned tables in the DataStar project and identify the 2 we think can be used as lookups to fix the incorrect product names:
-The response does not yet make any changes, but summarizes what they will be and asks us to confirm before making the changes:
-After submitting the confirmation, the changes are made:
-And checking the Customer Demand table in Cosmic Frog, we see the product naming is now consistent. The names outlined in green were incorrect previously (see screenshot above):
-Accessing the Modeler Agent through DataStar is done via a Run AI Agent task:
-Next, configure the other parts of the task:
-After running a Run AI Agent task, the Task Logs tab located underneath the Macro canvas will show the log that contains the Modeler Agent’s response:
-There are a few differences to keep in mind when running the Modeler Agent either via the chat with Ada UI or from within DataStar:
-The general Best Practices, Tips & Tricks, and Current Limitations and Known Behaviors included in the Getting Started with Ada documentation also apply to the Modeler Agent. In addition, we recommend providing the Modeler Agent with structured context. The more structured context provided, the faster and more accurately it can help.
-Specify the engine and objective
-Better: 
-“Using Neo, minimize total landed cost while meeting all customer demand.” 
-Worse: 
-“Optimize my supply chain.” 
-Specify grain and keys
-Better: 
-“Demand is customer-product-month keyed by (customer_id, sku, month).” 
-Worse: 
-“Here’s demand data.” 
-Clarify constraints and assumptions
-Separate staging from ANURA model tables
-Transform and cleanse data in staging layers whenever possible and export finalized structures into ANURA.
-Ask for evidence
-Request:
-rather than only asking: 
-“Is it valid?” 
-Prefer incremental changes
-Better: 
-“Fix these 3 fields.” 
-Worse: 
-“Rebuild the whole model.” 
-Inspect an existing model
-“Inspect my model {database name}: what ANURA tables are populated, and what are row counts by table?”
-Identify minimum required inputs
-“I want to run {Neo|Hopper} for {problem statement}. What are the minimum ANURA input tables and critical required fields?”
-Map raw source data into ANURA
-“Here are my source tables {table list} with keys {keys}. Propose a mapping into ANURA tables for {engine} and list assumptions and gaps.”
-Validate referential integrity
-“Check that all {demand table} references exist in {Customers, Products} and show missing keys.”
-Diagnose empty outputs
-“My run completed but outputs are (partially) empty. Walk me through the most likely causes and the checks to confirm each.”
-Troubleshoot Infeasibility (Neo) / Unrouted Shipments (Hopper)
-“My model is infeasible. Help me troubleshoot.”
-“About 60% of shipments in scenarios 2 and 3 are unrouted. Diagnose why.”
-Create scenarios
-“Create a set of scenarios where the 5 currently excluded DCs are set to Consider and demand is increased by 10%, 30%, and 50%.”
-Configure Hopper inputs
-“I have shipments at the weekly level and 5 different types of assets. What ANURA tables do I need for Hopper?”
-Build a DataStar workflow
-“Design a DataStar macro that builds Cosmic Frog model-ready Facilities and Products tables from the clean_DC_Master, clean_MFG_Master and clean_SKU_Master tables in this DataStar project’s sandbox and exports them into the EMEA Neo Cosmic Frog model.”
-Output analysis and reporting
-“Analyze the outputs of the Neo scenarios in the Global Supply Chain Strategy model. Generate a report for the leadership team which compares the scenarios and focuses on the biggest shifts and main KPIs.”
-The Modeler Agent helps supply chain modeleres avoid common modeling mistakes such as:
-Many optimization issues originate during preprocessing rather than inside the solver itself. Preprocessing typically:
-Common preprocessing-related symptoms include:
-The Modeler Agent is designed to diagnose these issues before expensive solves are executed whenever possible.
 
 
 ---

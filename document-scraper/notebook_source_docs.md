@@ -1928,6 +1928,35 @@ In ChatGPT, go to your Account > Settings > Security and login, or navigate dire
 
 
 ---
+## Getting Started with the Optilogic MCP Connector in Copilot
+**URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-mcp-connector-in-copilot
+
+This documentation details how to connect and disconnect the Optilogic MCP connector using Copilot. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+The steps to take when connecting to the Optilogic MCP Connector in Copilot are as follows:
+These steps are covered in detail in the next sections.
+The following steps to create an MCP agent need to be completed by an IT administrator.
+Navigate to Copilot Studio (https://copilotstudio.microsoft.com/), and Open the Agents page. Then, choose New Agent:
+Provide a name for your agent, for example, Optilogic MCP.
+Choose a model to leverage from the drop-down list. As of August 2026, GPT 5.6 Reasoning works well; other models may work fine too. Once you have chosen your model, open the Tools menu by clicking on the plus button to the right:
+In the Tools menu, click on the Add button, then select Model Context Protocol (MCP):
+In the Add MCP server form that comes up, enter the following: 
+Once added, provide some basic instructions for the agent such as “You are an agent designed to assist with Ada in the Optilogic platform.”.
+Save and publish the agent. The Save button is just left of the publish button; next, click on Publish. Upon publishing a window will pop up with final settings. Be sure to check the box to make the agent available in Microsoft 365 Copilot:
+Still on the same form, click on the Availability options button, scroll to the bottom of the menu, and click on the Share Agent button to choose which users can access the agent. Alternatively, you can select the Share Agent button and enable end-user access for all users in the organization:
+Finally, you will need to associate a Microsoft Power Platform billing profile to agents created in Copilot Studio for the agent to function. Copilot agents require credits separate from end-user Copilot licensing. To explore current offerings from Microsoft and manage billing profiles, please see this webpage.
+Once IT creates the agent on your company’s Copilot account, they can share a link with you to the new agent, which will look similar to the next screenshot. Click on the Open button.
+The agent will be added to your Copilot account to chat with – notice it under Agents in the left pane:
+Start a chat with the agent and prompt it to connect to your Optilogic account. When you see the card for Connection Required, click on Set up connection:
+A browser window will open. Click on Connect under Actions:
+In the Connection drop-down list, select Create new connection:
+Enter a display name and click on Create:
+When prompted, sign in to your Optilogic account:
+The connection is complete! You will see the checkmark for confirmation:
+Go back to your Copilot chat window and test it out with a first prompt, such as: I just connected Optil
+…（省略）
+
+
+---
 ## Getting Started with the Optilogic Risk Engine
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-risk-engine
 
@@ -3090,27 +3119,28 @@ Once you are set up locally and are starting to work with Python scripts in Visu
 
 
 ---
-## Shelf Life and Maturation Time (Network Optimization)
+## Product Shelf Life, Maturation Time, and Disposal (Network Optimization)
 **URL:** https://optilogic.com/resources/help-center/docs/shelf-life-and-maturation-time-network-optimization
 
-Shelf Life and Maturation Time (Network Optimization)
-Cosmic Frog’s network optimization engine (Neo) can now account for shelf life and maturation time of products out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is now also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
+Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
 In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
-Shelf Life and Maturation Time – Overview
+Overview
 The new feature set consists of:
-Two new fields (and their accompanying UoM fields) on the Products input table:
+Four new fields (3 with their accompanying UoM fields) on the Products input table:
 Shelf Life – use this field to model product expiry. The value entered indicates how long from when the product is produced it is available to fulfill demand. A product will expire once its shelf life runs out. Setting a shelf life will essentially add a constraint to the model on how long a product can be produced in advance of when it is served to the end-customer.
 Maturation Time – use this field to set how long it takes from when the product is produced before it can be used to fulfill demand. Think for example of cheese that will take up space in inventory while ripening and cannot be sold before it has reached a certain age. Setting a maturation time also adds a constraint to the model of how long it needs to be in the network before it can be consumed.
+Disposal Cost - specify the cost associated with taking expired product out of inventory.
+Disposal Behavior - indicate when expired product is removed from inventory. There are 2 options which can be chosen from a drop-down list:
+OnExpiry (the default) - expired product is removed from inventory at the end of the period it expired in.
+EndOfHorizon - expired product is removed from inventory in the last period of the model.
 Three new output tables:
 Optimization Production Age Summary – reports the age of product consumed by a BOM during production.
 Optimization Flow Age Summary – details the age of product of each flow.
-Optimization Inventory Age Summary – shows the age of product kept in inventory.
+Optimization Inventory Age Summary – shows the age of product kept in inventory and captures disposals.
 Please note that:
-Shelf Life and Maturation Time will only have an impact in multi-period models; if set in a single-period model, they will be ignored. If periods of different lengths are used in a model, the most frequently occurring period length will be used for shelf life and maturation time calculations.
+Shelf Life, Maturation Time, and Disposal will only have an impact in multi-period models; if set in a single-period model, they will be ignored. If periods of different lengths are used in a model, the most frequently occurring period length will be used for shelf life and maturation time calculations.
 Users can enter Shelf Life and Maturation Time using any time-based unit of measure, e.g. days, weeks, months, etc. Based on the length of the periods in the model, shelf life and maturation time are converted to an integer multiple of periods. Fractional numbers are rounded to the nearest integer. For example:
-The length of the periods in a model is weeks, and shelf life is set to 33 days. This results in a shelf life of 33/7 = 4.71 weeks, which will be rounded to 5 weeks (= 5 periods).
-The length of the periods in a model is months, and maturation time is set to 9 weeks. This results in a shelf life of 9*7 days / 30 days = 2.1 months, which will be rounded to 2 months (= 2 periods).
-The period in which a product is produced counts towards both t
+The length of the periods in a model is weeks, and shelf life i
 …（省略）
 
 
@@ -3195,18 +3225,18 @@ Constraint Fields: Define limits for each territory.
 The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
 Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
 In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
-The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Grok (SpaceXAI), and Vibe (Mistral AI).
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Grok (SpaceXAI), and Vibe (Mistral AI).
 The Big Idea
 Ada knows your models and is the supply chain modeling expert; the AI Agent knows everything else. Use Ada for model truth, and the agent to complement and shape that truth into analysis, documents, and decisions.
 Quick Start
 Add the Optilogic connector to the AI Agent you are using and authenticate with your Optilogic account. When prompted for the MCP Connector URL, enter: https://mcp.optilogic.app/mcp. Direct links to set up a (custom) connector for the AI Agents that currently support the Optilogic MCP Connector are:
+Copilot: receive link from your IT Administrator, see detailed instructions here
 In a chat with your AI Agent, ask it to list the databases in your Optilogic account to confirm the connection.
 Tell the agent which database(s) (Cosmic Frog models, DataStar projects, or other Postgres databases) you want to work with, by name. If you are unsure, just state your question and the agent can help you identify which database(s) will help answer.
 Ask your question or describe your task in plain language. The agent will start an Ada session, attach the right database(s), and relay your prompt.
 Review Ada's answer, ask follow-up questions, and — when you are ready — ask to turn the findings into a document, spreadsheet, deck, or living dashboard.
 Revisit or continue conversations anytime, plus you can see (and continue) these interactions with Ada and any work done by Ada on the Optilogic platform.
-Detailed step-by-step instructions for Claude and ChatGPT, including screenshots to (dis)connect, can be found here:
-The Optilogic MCP C
+Detailed step-by-step instructions
 …（省略）
 
 
@@ -3969,24 +3999,18 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
-This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
-Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
-When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
-MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
-Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
-If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
-You can view your organization’s Ada Credit balance from your profile settings.
-Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
-Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
-You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
-Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
-The following features are affected when Ada Credits are exhausted:
-Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
-If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
-Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
-Additional credits cannot currently be purchased or added directly within the platform.
-The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, com
+Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
+In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
+The new feature set consists of:
+Please note that:
+We will now showcase the use of both Shelf Life and Maturation Time in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
+It is a multi-period model with 6 periods, which are each 1 week long (the Model End Date is set to February 12, 2025, on the Model Settings input table, not shown):
+There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in the screenshots after this one.
+As mentioned above, a bill of materials is used to produce finished good Product_1:
+This bill of materials is named BOM_1 and it specifies that 10 units of the product named Component are used as an input (product type = Component) of this bill of materials. Note that the bill of materials does not indicate the end product that is produced with it. This is specified by associating production policies with a BOM. To learn more about detailed production modelling using the Neo engine, please see this Help Center article.
+In the next screenshot of the production policies table, we see that the plant can produce all 3 products, and that for the production of Product_1, the bill of materials shown in the previous screenshot, BOM_1, is used. The cost per unit is set to 1 here for each product:
+For purposes of showing how Shelf Life and Maturation Time work, we will use the Production Policies Multi-Time Period input table too. In here we override the production cost per unit that we just saw in the above screenshot to become increasingly expensive in later periods for all products, adding $1 per unit for each next period. So, to produce a unit of Product_1 in Period_1 costs $1, in Period_2 it costs $2, in Period_3 $3, etc. Same for Component and Product_2:
+The production cost is increased here to encourage the model to produce product as early as possible, so that it incurs the lowest possible production cost. It will also still need to respect the shelf life and maturation time requirements. Note that this is also weighed against the increased inv
 …（省略）
 
 
