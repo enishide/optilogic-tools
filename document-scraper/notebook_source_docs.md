@@ -1120,6 +1120,39 @@ You can clear output data from all model output tables in one quick action. Navi
 
 
 ---
+## Demand Modeling using the Pulsar Engine
+**URL:** https://optilogic.com/resources/help-center/docs/demand-modeling-using-the-pulsar-engine
+
+Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
+Quick Start
+Follow these steps to get up and running with the Pulsar demand engine quickly.
+Prepare your input data. You need at minimum three tables: Demand (historical SKU-location data, ideally 2–3 years), Product Hierarchy, and Location Hierarchy. Column names must match the schema exactly (all lowercase, no spaces). See the appendix for full details on the schema.
+Choose how you want to run Pulsar. Use the Demand Modeling App for a streamlined experience with rich visualizations, or DataStar when demand modeling is part of a larger workflow.
+Import your data. In DataStar, create Data Connections and import tables into the project sandbox. In the App, upload CSV or Excel files directly from the Inputs screen.
+Configure the run. Select All Forecast Workflow (recommended default). Set the forecast frequency (e.g., month) and horizon (e.g., 12 months). Leave all other settings at their defaults for a first run.
+Run and review outputs. Click Run and monitor progress in the task logs (DataStar) or the job status indicator (App). When complete, review the Reconciled Forecasts table and, if growth projections were enabled, the Growth Projections table and HTML Growth Report.
+Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
+What Pulsar Does and Why It Matters
+The Pulsar demand engine generates granular, hierarchy-consistent forecasts.
+Traditional approaches rely on historical averages or fixed proportions. These often break when demand shifts, new products launch, or channels grow unevenly.
+Pulsar improves this by:
+Forecasting demand at every level (aggregate → SKU × Store)
+Ensuring all forecasts align across the hierarchy
+Supporting scenario modeling and uncertainty analysis
+Result: A single, reliable demand signal used across different teams and functions: network design & facility investment, inventory & replenishment planning, transportation & logistics, capacity planning, and strategic planning.
+1. Network Design & Facility Investment
+The engine enables scenario-based network planning using granular growth forecasts (product × location), rather than blanket assumptions.
+Supports base, upside, and downside scenarios with targeted adjustments
+Hierarchical modeling ensures consistency from regional down to SKU/site level
+Outputs can be directly used in network optimization
+2. Inventory & Replenishment Planning
+It shifts planning from reactive to forward-looking:
+Uses projected growth to recalculate safety stock and reorder points
+Enables targeted inventory investment, increasing stock where demand
+…（省略）
+
+
+---
 ## Dendro: Genetic Algorithm Guide
 **URL:** https://optilogic.com/resources/help-center/docs/dendro-genetic-algorithm-guide
 
@@ -3999,18 +4032,47 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
-In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
-The new feature set consists of:
-Please note that:
-We will now showcase the use of both Shelf Life and Maturation Time in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
-It is a multi-period model with 6 periods, which are each 1 week long (the Model End Date is set to February 12, 2025, on the Model Settings input table, not shown):
-There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in the screenshots after this one.
-As mentioned above, a bill of materials is used to produce finished good Product_1:
-This bill of materials is named BOM_1 and it specifies that 10 units of the product named Component are used as an input (product type = Component) of this bill of materials. Note that the bill of materials does not indicate the end product that is produced with it. This is specified by associating production policies with a BOM. To learn more about detailed production modelling using the Neo engine, please see this Help Center article.
-In the next screenshot of the production policies table, we see that the plant can produce all 3 products, and that for the production of Product_1, the bill of materials shown in the previous screenshot, BOM_1, is used. The cost per unit is set to 1 here for each product:
-For purposes of showing how Shelf Life and Maturation Time work, we will use the Production Policies Multi-Time Period input table too. In here we override the production cost per unit that we just saw in the above screenshot to become increasingly expensive in later periods for all products, adding $1 per unit for each next period. So, to produce a unit of Product_1 in Period_1 costs $1, in Period_2 it costs $2, in Period_3 $3, etc. Same for Component and Product_2:
-The production cost is increased here to encourage the model to produce product as early as possible, so that it incurs the lowest possible production cost. It will also still need to respect the shelf life and maturation time requirements. Note that this is also weighed against the increased inv
+Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
+Follow these steps to get up and running with the Pulsar demand engine quickly.
+Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
+The Pulsar demand engine generates granular, hierarchy-consistent forecasts.
+Traditional approaches rely on historical averages or fixed proportions. These often break when demand shifts, new products launch, or channels grow unevenly.
+Pulsar improves this by:
+Result:
+A single, reliable demand signal used across different teams and functions: network design & facility investment, inventory & replenishment planning, transportation & logistics, capacity planning, and strategic planning.
+1. Network Design & Facility Investment
+The engine enables scenario-based network planning using granular growth forecasts (product × location), rather than blanket assumptions.
+2. Inventory & Replenishment Planning
+It shifts planning from reactive to forward-looking:
+3. Transportation & Logistics
+The engine improves logistics planning with predictive insights:
+4. Capacity Planning
+It strengthens long-term infrastructure decisions:
+5. Strategic Planning
+The outputs align decision-making across the business:
+Bottom line
+The engine replaces broad, assumption-driven planning with granular, statistically grounded, and aligned forecasts, improving decision quality across operational and strategic levels.
+The following table provides an overview of problems commonly encountered when modeling demand and how Pulsar addresses these.
+After running the Pulsar engine, the outputs include:
+The table-based outputs can be used directly in downstream models.
+These are the workflow tasks available in the Pulsar Engine:
+*Uses the Generate Forecasts task and not the Generate Probabilistic Forecasts task.
+If unsure, use the All Forecast Workflow.
+Run this utility after:
+Outputs feed into:
+This makes Pulsar a core upstream step in supply chain decision-making.
+The Pulsar engine handles complex forecasting tasks for you:
+Keeps forecasts consistent across all levels
+Adapts to each demand pattern
+Provides multiple models so users can choose the best one(s) for their needs
+Uses statistical and machine/deep learning models such as:
+Learns across products when useful
+Quantifies uncertainty
+Generates scenario-ready growth rates
+When you run the full workflow, the Pulsar engine executes a structured pipeline:
+This process is fully automated within the engine.
+The following diagram shows the required and optional inputs into the Pulsar engine on the left, while the outputs are listed on the right-hand side:
+Note that 
 …（省略）
 
 
