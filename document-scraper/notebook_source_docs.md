@@ -2369,7 +2369,7 @@ There are four main methods for adding data to Atlas:
 
 
 ---
-## Importing Data to Cosmic Frog
+## Cosmic Frog - Importing and Exporting Data
 **URL:** https://optilogic.com/resources/help-center/docs/importing-data-to-cosmic-frog
 
 Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
@@ -3500,36 +3500,23 @@ We cou
 
 Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
 This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
-Quick Answers
-How Ada Credits relate to Tokens
 Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
-Tokens are what the underlying LLM uses to process information and generate responses.
-Ada Credits are an Optilogic-specific measure used to account for Ada usage.
-Token usage is one component of the overall calculation used to determine Ada Credit consumption.
-Ada Credits are therefore not a one-to-one representation of tokens used by the LLM.
-MCP Connectors and Ada Credits Usage
+Any conversation with Ada — whether in the Ada chat interface, through an AI Agent via the Optilogic MCP Connector, or as a DataStar Run AI Agent task — consumes Ada Credits. This applies to the entire interaction, not select messages within it. Attaching a database or file to a conversation does not carry any additional cost on its own.
+Does not consume Ada Credits:
+Consumes Ada Credits:
+Ada Credit consumption is calculated per response, not per conversation as a whole. The number of credits a response consumes depends on:
+Because of this, credit consumption varies from response to response, even for requests that look similar on the surface. This is expected behavior, not an error — the same way token usage varies by LLM request. Optilogic does not publish a fixed credit cost per response or per task, since it depends on the nature of the work being done.
 When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
 MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
-How Ada Credits are Provisioned
 Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
-All eligible users in your organization draw from the same pool.
-When you use Ada, your usage comes from the organization’s available credits.
-You do not have a separate personal allocation of Ada Credits.
-Your organization’s credit balance and usage are visible to all organization members.
 If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
-Viewing Ada Credits Usage
 You can view your organization’s Ada Credit balance from your profile settings.
-At the top of the page, locate the Shared Ada Credits section.
-Review the credits available to your organization and how much has been consumed.
 Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
-Example screenshot showing the details of how many Ada Credits have been used of the total available across the organization.
-Usage Notifications
 Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
 You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
-The banner that will be shown when 85% of Ada Credits have been used up.
-The banner that will be shown when 95% of Ada Credits have been used up.
-When Credits are Exhausted
-Once your orga
+Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
+The following features are affected when Ada Credits are exhausted:
+Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataS
 …（省略）
 
 
@@ -4032,47 +4019,25 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
-Follow these steps to get up and running with the Pulsar demand engine quickly.
-Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
-The Pulsar demand engine generates granular, hierarchy-consistent forecasts.
-Traditional approaches rely on historical averages or fixed proportions. These often break when demand shifts, new products launch, or channels grow unevenly.
-Pulsar improves this by:
-Result:
-A single, reliable demand signal used across different teams and functions: network design & facility investment, inventory & replenishment planning, transportation & logistics, capacity planning, and strategic planning.
-1. Network Design & Facility Investment
-The engine enables scenario-based network planning using granular growth forecasts (product × location), rather than blanket assumptions.
-2. Inventory & Replenishment Planning
-It shifts planning from reactive to forward-looking:
-3. Transportation & Logistics
-The engine improves logistics planning with predictive insights:
-4. Capacity Planning
-It strengthens long-term infrastructure decisions:
-5. Strategic Planning
-The outputs align decision-making across the business:
-Bottom line
-The engine replaces broad, assumption-driven planning with granular, statistically grounded, and aligned forecasts, improving decision quality across operational and strategic levels.
-The following table provides an overview of problems commonly encountered when modeling demand and how Pulsar addresses these.
-After running the Pulsar engine, the outputs include:
-The table-based outputs can be used directly in downstream models.
-These are the workflow tasks available in the Pulsar Engine:
-*Uses the Generate Forecasts task and not the Generate Probabilistic Forecasts task.
-If unsure, use the All Forecast Workflow.
-Run this utility after:
-Outputs feed into:
-This makes Pulsar a core upstream step in supply chain decision-making.
-The Pulsar engine handles complex forecasting tasks for you:
-Keeps forecasts consistent across all levels
-Adapts to each demand pattern
-Provides multiple models so users can choose the best one(s) for their needs
-Uses statistical and machine/deep learning models such as:
-Learns across products when useful
-Quantifies uncertainty
-Generates scenario-ready growth rates
-When you run the full workflow, the Pulsar engine executes a structured pipeline:
-This process is fully automated within the engine.
-The following diagram shows the required and optional inputs into the Pulsar engine on the left, while the outputs are listed on the right-hand side:
-Note that 
+Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
+In this documentation we will cover how users can import and export data into and out of Cosmic Frog, and illustrate this with multiple examples.
+There are 2 methods of importing Excel/CSV data into Cosmic Frog’s input tables available to users:
+Pointers on how data to be imported needs to be formatted will be covered first, including some tips and call outs of specifics to keep in mind when using the upsert import method. Next, the steps to import a CSV/Excel file will be walked through step by step.
+Data is mapped from CSV/Excel files based on matching column names and table names matching to the file name (CSV) or worksheet name (Excel):
+Data preparation tips:
+CSV vs Excel: CSV files only have 1 “worksheet”, so it can only contain data to be imported into 1 table, whereas Excel files can have multiple worksheets with data to be imported to different tables in Cosmic Frog.
+Please take note of how existing records are treated when using the upsert import method to import to a table which already has some data in it:
+We will illustrate these behaviors through several examples too.
+Users can import 1 or multiple CSV or Excel files simultaneously, please take note of how the import will work for following situations:
+Once ready to import the prepared CSV/Excel file(s), users have 2 ways of accessing the import and export methods: from the File menu in the toolbar and from the right-click context menu of an input table. It looks like this from the File menu to import a file:
+And when using the right-click context menu the steps to import a file are as follows:
+When using the replace import method, a confirmation message will now be shown on which the user can click Import to continue the import or Cancel to abort.
+Next, a file explorer window opens in which the user can browse to and select the CSV/Excel file(s) to import:
+Once the import starts, a status message shows at the top of the active table:
+The Model Activity log will also have an entry for each import action:
+Users can see the results of the import by opening and inspecting the affected input table(s), and by looking at the row counts for the tables in the input tables list, outlined in green in this screenshot:
+A common way to start building a new model in Cosmic Frog is to make use of the replace import method to populate multiple tables simultaneously with data from Excel or CSV files. These files have typically been prepared from ERP extracts which have been manipulated to match the Cosmic Frog table and column names. This way, users do not need to enter data manually into the Cosmic Frog input tables, which would be very laborious. Note that it can be helpful to first export empty tables from a new, empty Cosmic Frog model to have a template to start filling out (see the “Exporting to CSV/Excel Files” section further below on how to do this).
+Star
 …（省略）
 
 

@@ -16431,7 +16431,7 @@ There are four main methods for adding data to Atlas:
 
 
 ---
-## Importing Data to Cosmic Frog
+## Cosmic Frog - Importing and Exporting Data
 **URL:** https://optilogic.com/resources/help-center/docs/importing-data-to-cosmic-frog
 
 Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
@@ -22397,12 +22397,12 @@ Inventory policies with Stocking Site = True at the destination facility/facilit
 If Bills of Materials are used in the modelling and components have shelf life and / or maturation time set, these need to be respected before being used in the BOM: a component cannot be consumed by a BOM before it is mature, and it also cannot be used by a BOM after it has expired.
 Customers often require that there is a certain minimum period of shelf life left on a product when it is delivered to them. For example, say that a specific beverage has a shelf life of 6 months, and the customer requires that when this beverage is delivered to them it still has at least 4 months of shelf life left. In this case, the shelf life to be entered into the model should be 6 – 4 = 2 months, to ensure that the product is used to fulfill the customer’s demand no longer than 2 months after it is produced.
 Demo Model – Inputs
-We will now showcase the use of both Shelf Life and Maturation Time in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
+We will now showcase the use of product Shelf Life, Maturation Time, and Disposal in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
 A manufacturing facility, Plant_1, in Saltillo, Mexico. The 2 finished goods and 1 component included in the model are produced here.
 A distribution center, DC_1, in Detroit, MI,USA. The plant ships the finished goods to this DC.
 One customer, located in Erie, PA, USA. The customer has demand for both finished goods.
 It is a multi-period model with 6 periods, which are each 1 week long (the Model End Date is set to February 12, 2025, on the Model Settings input table, not shown):
-There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in the screenshots after this one.
+There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in a screenshot a bit further below. The new shelf life and maturation fields are shown in the next screenshot and the disposal ones in the screenshot after:
 Each product has a unit value set for inventory holding calculation purposes (= # units in inventory * product unit value * carrying cost percentage * period length / 365 days).
 Both the Component and Product_1 have Shelf Life and Maturation Time set, and the values are all set as 3 weeks. Since Shelf Life = Maturation Time for both, it means that both need to be consumed when their age is 3: it cannot be sooner since they are not mature then, and it cannot be later as they will have expired.
 WK in the UOM fields is the symbol used for the unit of measure with Type = Time to indicate a week. See the Units of Measure input table for other units of measure of Type = Time and their Symbols.
@@ -22410,28 +22410,32 @@ For Product_2:
 Shelf Life = 27 days. Since it is a model with weekly periods, this means that the shelf life equates to 4 periods (rounding of 27 / 7 = 3.86 to the nearest integer).
 Maturation Time = 13 days, which equals 2 periods (rounding of 13 / 7 = 1.86 to the nearest integer).
 If Product_2 is for example produced in period #3, it will be mature in period #4, and it can be consumed in periods 4, 5, 6, and 7. It will be expired from period 8 onwards.
+Both the finished goods and the component have a disposal cost set; $12 per unit for the finished goods and $1 per unit for the component.
+All products are disposed of as soon as they expire, since Disposal Behavior is set to On Expiry for all 3.
 As mentioned above, a bill of materials is used to produce finished good Product_1:
 This bill of materials is named BOM_1 and it specifies that 10 units of the product named Component are used as an input (product type = Component) of this bill of materials. Note that the bill of materials does not indicate the end product that is produced with it. This is specified by associating production policies with a BOM. To learn more about detailed production modelling using the Neo engine, please see this Help Center article.
+Pro tip
+When working with bills of materials and product disposal, it's important to set disposal costs appropriately for both components and finished goods. For example, suppose 10 units of Component are required to make 1 unit of Product_1, and disposal cost is set at $10 per unit for both. Disposing of 100 units of Component would cost $10 × 100 = $1,000, while disposing of the equivalent 10 units of finished Product_1 would cost only $10 × 10 = $100. Because it is cheaper from a modeling standpoint, the model may convert soon-to-expire components into finished goods just to reduce disposal costs — even though that may not reflect real-world intent. (Other factors, like production and inventory holding costs, also influence this behavior.) To avoid this distortion, set disposal costs proportionally to the material content of each item.
 In the next screenshot of the production policies table, we see that the plant can produce all 3 products, and that for the production of Product_1, the bill of materials shown in the previous screenshot, BOM_1, is used. The cost per unit is set to 1 here for each product:
 For purposes of showing how Shelf Life and Maturation Time work, we will use the Production Policies Multi-Time Period input table too. In here we override the production cost per unit that we just saw in the above screenshot to become increasingly expensive in later periods for all products, adding $1 per unit for each next period. So, to produce a unit of Product_1 in Period_1 costs $1, in Period_2 it costs $2, in Period_3 $3, etc. Same for Component and Product_2:
 The production cost is increased here to encourage the model to produce product as early as possible, so that it incurs the lowest possible production cost. It will also still need to respect the shelf life and maturation time requirements. Note that this is also weighed against the increased inventory holding costs for producing earlier than possibly needed, as product will sit in inventory longer if produced earlier. So, the cost differential for production in different periods needs to be sufficiently big as compared to the increased inventory holding cost to see this behavior. We will explore this more through the scenarios that are run in this demo model.
-Since products will be spending some time in inventory, we need to have at least 1 inventory policy per product with Stocking Site = True. At the plant, all 3 products can be held in inventory, and there is an initial inventory of 750 units of the Component. At the DC, both finished goods can be held in inventory. The carrying cost percentage to calculate the inventory holding costs is set to 10% for all policies:
+Since products will be spending some time in inventory, we need to have at least 1 inventory policy per product with Stocking Site = True. At the plant, all 3 products can be held in inventory, and there is an initial inventory of 750 units of the Component. At the DC, both finished goods can be held in inventory. The carrying cost percentage to calculate the inventory holding costs is set to 12% at the DC and 10% at the plant; this ensures the model holds product further upstream until it is needed at the DC to fulfill demand:
 Lastly, we will show the demand that has been entered into the Customer Demand table. The customer demands 1,000 units each of the finished goods in period #6:
 Other input tables that have populated records which have not been shown in a screenshot above are: Customers, Facilities, and Transportation Policies. The latter specifies that the plant can ship both finished goods to the DC, and the DC can ship both to the customer. The cost of transportation is set to 0.01 per unit per mile on both lanes.
-The 3 costs that are modelled are therefore:
+The 4 costs that are modelled are therefore:
 Production cost – Unit Cost field on the Production Policies Multi-Time Period table.
 Transportation cost – Unit Cost field on the Transportation Policies table.
 Inventory Holding cost – calculated based on the Unit Value field on the Products table and the Carrying Cost Percentage field on the Inventory Policies table.
+Disposal Cost - Disposal Cost field on the Products table.
 Demo Model – Scenarios
-There are 3 scenarios run in this model, see also the screenshot below:
+There are 4 scenarios run in this model, see also the screenshot below:
 Baseline – this scenario uses the inputs as they are in the input tables without any changes. See the screenshots above in the “Demo Model – Inputs” section. We will examine when the Component and Product_1 are produced so that their Shelf Life = Maturation Time = 3 weeks constraints are adhered to and explore how far in advance Product_2 is produced, weighing higher inventory carrying cost versus lower production cost when producing early.
 Increased Shelf Life – in this scenario we make one change as compared to the Baseline: increase the Shelf Life of Product_2 to 34 days (from 30 days), which means it goes from 4 weeks to 5 weeks. The results will tell us if it is indeed beneficial to produce even earlier (lower production cost) as compared to the Baseline now that Product_2 can be available for consumption 1 period longer than before.
 Product Value Doubled – this scenario also has 1 change as compared to the Baseline: the product value of all products is doubled. Now producing Product_2 as far in advance as possible will be less desirable as the inventory carrying cost will be double as compared to before, which may not outweigh the lower production cost in earlier periods anymore.
-The screenshot shows the 3 scenarios on the left, where we see that the Increased Shelf Life and Product Value Doubled scenarios both contain 1 scenario item, whereas the Baseline does not contain any. On the right-hand side, the scenario item of the Increased Shelf Life scenario is shown where we can see that the Shelf Life value of Product_2 is set to 34. See the following Help Center articles for more details on Scenario building and syntax:
-Two notes upfront about the outputs before we dive into details as follows:
-Since the transportation lanes and their costs are fixed, and we keep demand the same across the 3 scenarios, transportation costs play no factor in the optimization of these scenarios and are the same for all 3 scenarios.
-Both finished goods can be held in inventory at both Plant_1 and DC_1. Since this would incur the same cost (same product unit value and carrying cost percentage), we can see that sometimes a product is held in inventory at the plant whereas at other times it is held at the DC, these are equivalent solutions as the costs are the same.
-Now let us first look at when which product is produced through the Optimization Production Summary output table:
+Disposal End of Horizon - in this scenario, the Disposal Behavior field of all 3 products is switched to End of Horizon. In the outputs we will see the cost and inventory impact of this change.
+The screenshot shows the 4 scenarios on the left, where we see that the Increased Shelf Life, Product Value Doubled, and Disposal End of Horizon scenarios each contain 1 scenario item, whereas the Baseline does not contain any. On the right-hand side, the scenario item of the Increased Shelf Life scenario is shown where we can see that the Shelf Life value of Product_2 is set to 34. See the following Help Center articles for more details on Scenario building and syntax:
+One note upfront about the outputs before we dive into details as follows: since the transportation lanes and their costs are fixed, and we keep demand the same across the scenarios, transportation costs play no factor in the optimization of these scenarios and are the same for all 4 scenarios.
+Now let us first look at when which product is produced through the Optimization Production Summary output table for the first 3 scenarios:
 Looking at the Component and Product_1 (remember 10 units of Component are used to make 1 unit of Product_1), we see that in all 3 scenarios, 10,000 units of Component are produced in Period_2 and 1,000 units of Product_1 are produced in Period_4. Since the demand for Product_1 occurs in Period_6 and the Component and Product_1 both have their shelf life and maturation time both set to 3 weeks, this is the only option for the model. Component and Product_1 both need to be 3 periods old when they are consumed: it cannot be later because they will have expired by then, and it cannot be sooner as they will not be mature yet. Working backwards:
 Needing Product_1 to be delivered to the customer in Period_6 means it needs to be produced in Period_4, so that its age is 3 in Period_6. 1,000 units are therefore produced in Period_4, using BOM_1.
 Because Product_1 needs to be produced in Period_4 and the Component needs to be consumed for this production process (as specified by BOM_1 and connected to Product_1 in the Production Policies table), the Component needs to be 3 periods old in Period_4. Therefore, it must be produced in Period_2. 10,000 units are produced, since 1,000 units of Product_1 are demanded and 10 units of Component are used to produce 1 unit of Product_1.
@@ -22439,36 +22443,55 @@ For Product_2, we see that it is produced indifferent periods for all 3 scenario
 Baseline – produced in Period_3. Since Product_2’s maturation time is 2 weeks and it is demanded in Period_6, it can be produced in Period_5 at the latest. As its shelf life is 4 weeks, it can be produced in Period_3 at the earliest; its age will be 4 in Period_6 in that case. The model chooses to produce the product in Period_3 indicating that the lower production cost of producing earlier outweighs the increased inventory holding cost for holding the product in stock for longer than strictly needed based on shelf life and maturation time. As also noted above, the transportation costs are always the same in this demo model, so they do not figure into this equation.
 Increased Shelf Life – produced in Period_2. Product_2’s shelf life was increased from 4 to 5 weeks in this scenario and as a result the earliest it can be produced is now Period_2. The model does choose to produce it in Period_2, so again the lower production cost (from $3,000 to$2,000) outweighs the increase in inventory holding costs for holding 1,000 units of Product_2 in stock for 1 week longer.
 Product Value Doubled – produced in Period_5. Based on the shelf life (4 weeks) and maturation time (2 weeks), same as in the Baseline, Product_2 could have been produced in periods 3, 4, or 5. The model now chooses to produce it as late as possible, adding $2,000 to the production costs as compared to the Baseline. Because the doubled product value doubles the inventory holding costs for Product_2, the increase in production costs due to producing it later must be less than the increase in inventory holding costs would have been had Product_2 still been produced in Period_3, which we will see in the next screenshot.
-The next screenshot shows the Optimization Inventory Summary filtered for Product_2. Since we know it is produced in different periods for each of the 3 scenarios and that the demand occurs in Period_6, we expect to see the product sitting in inventory for a different number of periods in the different scenarios:
+The outputs of the Disposal End of Horizon scenario are not shown in the above, they are the same as for the Baseline scenario.
+The next screenshot shows the Optimization Inventory Summary filtered for Product_2. Since we know it is produced in different periods for each of the first 3 scenarios and that the demand occurs in Period_6, we expect to see the product sitting in inventory for a different number of periods in the different scenarios:
 In the Baseline, Product_2 is produced in Period_3, so the prebuild inventory in that period increases from 0 to 1,000. Therefore, the average prebuild inventory is calculated as (0 + 1,000) / 2 =500 for Period_3 (not shown in the screenshot). The prebuild holding cost for Period_3 is then calculated as follows: 500 units * 10% carrying cost percentage* $300 product unit value * 7 days (period length) / 365 days = $287.67. Since the product stays in inventory until it is sold in Period_6, the average prebuild inventory in periods 4 and 5 is 1,000 and the prebuild holding cost is double as compared to Period_3. In Period_6 the average prebuild inventory is again 500 since the starting prebuild inventory is 1,000 and the ending prebuild inventory 0, so the prebuild holding costs in this period are the same as in Period_3.
 In the Increased Shelf Life scenario, Product_2is produced 1 period earlier (in Period_2) as compared to the Baseline, so it sits in inventory for 1 more period. This adds $575.34 to the overall prebuild holding cost. We saw however that producing 1 period earlier reduced the production cost by $1,000, so the total cost is decreased by $425.
 In the Product Value Doubled scenario, Product_2is produced in Period_5 and sold in Period_6, leading to prebuild holding costs for 2 periods that both have average prebuild inventory of 500 units. Since the product value is doubled, this leads to a total of 2 * $ 575.34 = $1,150.68 prebuild inventory holding cost. Comparing to the Baseline where Product_2 was produced in Period_3:
 Producing in Period_5 instead increases the production cost by $2,000 ($5,000 vs $3,000).
 Had Product_2 been produced in Period_3 in the Product Value Doubled scenario too, the doubled prebuild holding costs (due to the double product value) would have resulted in a total prebuild holding cost of 2 * 2 * $287.67 + 2 * 2 * $575.34 = $3,452.04, which is more than $2,000 higher than the total prebuild holding cost for producing in Period_5: $3,452.04 - $1,150.68 = $2,301.36. Therefore, producing Product_2 in Period_5 rather than in Period_3 keeps the increase in total cost as small as possible.
-In the Optimization Network Summary output table, we can check the total cost by scenario and how the 3 costs modelled contribute to this total cost:
-As mentioned before, the transportation costs are constant across all 3 scenarios: the same amount is moved from Plant_1 toDC_1 and from DC_1 to Customer_1 at the same cost.
-The differences we see in the production costs are due to producing Product_2 in different periods in all 3 scenarios.
-The different prebuild holding costs for all 3 scenarios are due to:
-Holding Product_2 in inventory for a different number of periods.
+Again, the results of the Disposal End of Horizon scenario are the same as for the Baseline.
+In the Optimization Network Summary output table, we can check the total cost by scenario and how the 4 included costs contribute to this total cost:
+As mentioned before, the transportation costs are constant across all 4 scenarios: the same amount is moved from Plant_1 toDC_1 and from DC_1 to Customer_1 at the same cost.
+The differences we see in the production costs are due to producing Product_2 in different periods in the Increased Shelf Life and Product Value Doubles scenarios as compared to the Baseline; the Disposal End of Horizon scenario produces Product_
+The different prebuild holding costs for all 4 scenarios are due to a combination of factors:
+Product_2 is held in inventory for a different number of periods.
 The doubled product value for all products in the last scenario increasing the prebuild holding cost of all 3 products.
+750 units of component are disposed of as soon as they expire in the Baseline, Increased Shelf Life, and Product Value Doubled scenarios; they are disposed of in the last period in the Disposal End of Horizon scenario.
+The disposal costs are the same for all scenarios as in each 750 units of component are disposed of, the timing of this just varies between the scenarios.
+As compared to the baseline:
+If product were disposed of at the end of the horizon rather than immediately upon expiry, the overall cost increases by about $101.
 If the shelf life of Product_2 could be increased from 4 weeks to 5 weeks, this would lead to an overall reduction in costs by about $425.
-If the product value of all products was doubled, this would lead to an increase in total costs of about $4.6k.
+If the product value of all products was doubled, this would lead to an increase in total costs of about $4.5k.
 Next, we will take a look at the 3 new output tables, which detail the age of products that are used in production, of products that are transported, and of products that are sitting in inventory. We will start with the Optimization Production Age Summary output table:
 This table will only contain data if BOMs are used where products that are used as inputs (components) can have different ages. In our small demo model, only the Component product is used as an input into BOM_1 to produce Product_1, so we only see records for the Component product in this table.
-As explained above, the model had no choice for when to produce Product_1 due to the shelf life and maturation time values of Product_1 and Component it had to be during Period_4 when the age of the Component was 3 weeks.
+As explained above, the model had no choice for when to produce Product_1: due to the shelf life and maturation time values of Product_1 and Component it had to be during Period_4 when the age of the Component was 3 weeks.
 Next, we will look at the age of Product_2 when it is shipped between locations:
-In the Baseline scenario, Product_2 is produced as early as possible due to the lower production cost outweighing higher inventory holding costs, and therefore its age when it is shipped to the customer is the maximum shelf life of 4 weeks.
+In the Baseline and Disposal End of Horizon scenarios, Product_2 is produced as early as possible due to the lower production cost outweighing higher inventory holding costs, and therefore its age when it is shipped to the customer is the maximum shelf life of 4 weeks.
 Similarly, in the Increased Shelf Life scenario, where Product_2 now has a shelf life of 5 weeks, it is still produced as early as possible. Again, its age is the maximum shelf life of 5 weeks when shipped to the customer to fulfill its demand in Period_6.
 Finally, in the Product Value Doubled scenario, Product_2’s shelf life is 4 weeks (same as in the Baseline). Because the prebuild holding costs would increase more when producing the product as early as possible in Period_3 as compared to the increase in production costs when producing it as late as possible in Period_5, it is produced in Period_5. This leads to an age of 2 weeks when fulfilling the customer demand in Period_6.
-You may notice that in the first 2 scenarios Plant_1 ships to DC_1 in the same period as the DC ships to the customer, whereas in the last scenario Plant_1 ships to DC_1 in the period prior to the DC shipping to the customer. Since the transportation costs are the same regardless of when a product is shipped between these locations, and because the inventory holding costs at Plant_1 and DC_1 are the same, Product_2 could be shipped from the plant anytime from when it was produced up until Period_6 when it needs to be used to fulfill the customer’s demand; those solutions would all lead to the same total cost and are considered equivalent solutions.
-Lastly, we will look at 2 screenshots of the new Optimization Inventory Age Summary output table. This first one only looks at the ages of Product_1 and Component at Plant_1 in the Baseline scenario. The values for their inventory levels and ages are the same in the other 2 scenarios as the production of these 2 products occurs during the same periods for all 3 scenarios:
-Remember that Plant_1 had an initial inventory of 750 units of the Component. The age of these units will be 1 during the first period of the model, 2 in Period_2, and 3 in Period_3. Since its shelf life is 3 weeks, it is expired in Period_4 and cannot be used for producing Product_1 in Period_4. It then stays in inventory as expired product for the rest of the model horizon.
+Lastly, we will look at 2 screenshots of the new Optimization Inventory Age Summary output table. This first one only looks at the ages of Product_1 and Component at Plant_1 in the Baseline and Disposal End of Horizon scenarios. For the other 2 scenarios, the values for inventory levels and ages are the same as in the Baseline scenario, since the production of these 2 products occurs during the same periods:
+Remember that Plant_1 had an initial inventory of 750 units of the Component. The age of these units will be 1 during the first period of the model, 2 in Period_2, and 3 in Period_3. Since its shelf life is 3 weeks, it is expired in Period_4 and cannot be used for producing Product_1 in Period_4.
+In the Baseline scenario, it is disposed of in Period_4, since the Disposal Behavior is set to On Expiry. This incurs a disposal cost of $1 per unit, so $750 total.
+In the Disposal End of Horizon scenario, it stays in inventory as expired product until it is disposed of in the last period, Period_6, due to the Disposal Behavior setting of End of Horizon. This disposal also incurs a $750 disposal cost. Since these 750 units of Component have been sitting in inventory for 2 additional periods, as compared to the Baseline scenario, the inventory holding costs for this scenario are higher.
 In addition to the 750 units of Component in all periods of the model, we also see entries for Component in Period_2 and Period_3 for 10,000 units. These are the units that are produced in Period_2 to be used to produce 1,000 units of Product_1 in Period_4. Since they are produced in Period_2, their age is 1 in Period_2, and 2 in Period_3. There is no record for Period_4 as the inventory has gone down to 0 due to consuming all units in Period_4.
 As 1,000 units of Product_1 are produced in Period_4, their age is 1 during this period, and 2 in Period_5. When their age is 3 in Period_6, they are used to fulfill demand at the customer, and therefore there is no entry in this table for them in Period_6, since the inventory has gone down to 0.
-In the next screenshot, we look at the same output table, Optimization Inventory Age Summary, but now filtered for Product_2 and for all 3 scenarios:
-As we have mentioned several times before, Product_2 is produced in different periods in the 3 scenarios but always used to fulfill demand in Period_6. We see the age increasing from 1 in the period when it is produced, and no entries for Period_6 as it is used to fulfill demand in that period.
+In the next screenshot, we look at the same output table, Optimization Inventory Age Summary, but now filtered for Product_2 and for all the Baseline, Increased Shelf Life and Product Value Doubles scenarios (outputs of the Disposal End of Horizon scenario are the same as the Baseline):
+As we have mentioned several times before, Product_2 is produced in different periods in these 3 scenarios but always used to fulfill demand in Period_6. We see the age increasing from 1 in the period when it is produced, and no entries for Period_6 as it is used to fulfill demand in that period.
 In the Baseline and Increased Shelf Life scenarios, the age of Product_2 when delivered to the customer in Period_6 is at its maximum shelf life (4 in Baseline and 5 in Increased Shelf Life).
 In contrast, in the Product Value Doubled scenario, the age of Product_2 when fulfilling demand in Period_6 is 2, which is the minimum it needs to be due to its maturation time.
+In the Optimization Network Summary output table, we can check the total cost for each scenario and how the 4 included costs contribute to this total:
+As mentioned above, the transportation costs are constant across all 4 scenarios: the same amount is moved from Plant_1 toDC_1 and from DC_1 to Customer_1 at the same cost.
+The differences we see in the production costs are due to producing Product_2 in different periods in the Increased Shelf Life and Product Value Doubles scenarios as compared to the Baseline; the Disposal End of Horizon scenario produces Product_2 in the same period as the Baseline scenario.
+The different prebuild holding costs for all 4 scenarios are due to a combination of factors:
+Product_2 is held in inventory for a different number of periods.
+The doubled product value for all products in the last scenario increases the prebuild holding cost of all 3 products.
+750 units of component are disposed of as soon as they expire in the Baseline, Increased Shelf Life, and Product Value Doubled scenarios; they are disposed of in the last period in the Disposal End of Horizon scenario.
+The disposal costs are the same for all scenarios, since each disposes of 750 units of component.
+As compared to the baseline:
+If product were disposed of at the end of the horizon rather than immediately upon expiry, the overall cost increases by about $101, due to the increased prebuild holding costs of keeping the component in inventory for 2 additional periods after it expires.
+If the shelf life of Product_2 could be increased from 4 weeks to 5 weeks, this would lead to an overall reduction in costs by about $425 due to the lower production costs of producing earlier outweighing the increased prebuild holding costs for holding product longer in inventory.
+If the product value of all products was doubled, this would lead to an increase in total costs of about $4.5k, which is a combination of increased production costs for producing later and increased prebuild holding costs based on the products' values.
 For any questions on these new features, please do not hesitate to contact Optilogic support on support@optilogic.com.
 Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
 In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
@@ -22503,12 +22526,12 @@ Inventory policies with Stocking Site = True at the destination facility/facilit
 If Bills of Materials are used in the modelling and components have shelf life and / or maturation time set, these need to be respected before being used in the BOM: a component cannot be consumed by a BOM before it is mature, and it also cannot be used by a BOM after it has expired.
 Customers often require that there is a certain minimum period of shelf life left on a product when it is delivered to them. For example, say that a specific beverage has a shelf life of 6 months, and the customer requires that when this beverage is delivered to them it still has at least 4 months of shelf life left. In this case, the shelf life to be entered into the model should be 6 – 4 = 2 months, to ensure that the product is used to fulfill the customer’s demand no longer than 2 months after it is produced.
 Demo Model – Inputs
-We will now showcase the use of both Shelf Life and Maturation Time in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
+We will now showcase the use of product Shelf Life, Maturation Time, and Disposal in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
 A manufacturing facility, Plant_1, in Saltillo, Mexico. The 2 finished goods and 1 component included in the model are produced here.
 A distribution center, DC_1, in Detroit, MI,USA. The plant ships the finished goods to this DC.
 One customer, located in Erie, PA, USA. The customer has demand for both finished goods.
 It is a multi-period model with 6 periods, which are each 1 week long (the Model End Date is set to February 12, 2025, on the Model Settings input table, not shown):
-There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in the screenshots after this one.
+There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in a screenshot a bit further below. The new shelf life and maturation fields are shown in the next screenshot and the disposal ones in the screenshot after:
 Each product has a unit value set for inventory holding calculation purposes (= # units in inventory * product unit value * carrying cost percentage * period length / 365 days).
 Both the Component and Product_1 have Shelf Life and Maturation Time set, and the values are all set as 3 weeks. Since Shelf Life = Maturation Time for both, it means that both need to be consumed when their age is 3: it cannot be sooner since they are not mature then, and it cannot be later as they will have expired.
 WK in the UOM fields is the symbol used for the unit of measure with Type = Time to indicate a week. See the Units of Measure input table for other units of measure of Type = Time and their Symbols.
@@ -22516,28 +22539,32 @@ For Product_2:
 Shelf Life = 27 days. Since it is a model with weekly periods, this means that the shelf life equates to 4 periods (rounding of 27 / 7 = 3.86 to the nearest integer).
 Maturation Time = 13 days, which equals 2 periods (rounding of 13 / 7 = 1.86 to the nearest integer).
 If Product_2 is for example produced in period #3, it will be mature in period #4, and it can be consumed in periods 4, 5, 6, and 7. It will be expired from period 8 onwards.
+Both the finished goods and the component have a disposal cost set; $12 per unit for the finished goods and $1 per unit for the component.
+All products are disposed of as soon as they expire, since Disposal Behavior is set to On Expiry for all 3.
 As mentioned above, a bill of materials is used to produce finished good Product_1:
 This bill of materials is named BOM_1 and it specifies that 10 units of the product named Component are used as an input (product type = Component) of this bill of materials. Note that the bill of materials does not indicate the end product that is produced with it. This is specified by associating production policies with a BOM. To learn more about detailed production modelling using the Neo engine, please see this Help Center article.
+Pro tip
+When working with bills of materials and product disposal, it's important to set disposal costs appropriately for both components and finished goods. For example, suppose 10 units of Component are required to make 1 unit of Product_1, and disposal cost is set at $10 per unit for both. Disposing of 100 units of Component would cost $10 × 100 = $1,000, while disposing of the equivalent 10 units of finished Product_1 would cost only $10 × 10 = $100. Because it is cheaper from a modeling standpoint, the model may convert soon-to-expire components into finished goods just to reduce disposal costs — even though that may not reflect real-world intent. (Other factors, like production and inventory holding costs, also influence this behavior.) To avoid this distortion, set disposal costs proportionally to the material content of each item.
 In the next screenshot of the production policies table, we see that the plant can produce all 3 products, and that for the production of Product_1, the bill of materials shown in the previous screenshot, BOM_1, is used. The cost per unit is set to 1 here for each product:
 For purposes of showing how Shelf Life and Maturation Time work, we will use the Production Policies Multi-Time Period input table too. In here we override the production cost per unit that we just saw in the above screenshot to become increasingly expensive in later periods for all products, adding $1 per unit for each next period. So, to produce a unit of Product_1 in Period_1 costs $1, in Period_2 it costs $2, in Period_3 $3, etc. Same for Component and Product_2:
 The production cost is increased here to encourage the model to produce product as early as possible, so that it incurs the lowest possible production cost. It will also still need to respect the shelf life and maturation time requirements. Note that this is also weighed against the increased inventory holding costs for producing earlier than possibly needed, as product will sit in inventory longer if produced earlier. So, the cost differential for production in different periods needs to be sufficiently big as compared to the increased inventory holding cost to see this behavior. We will explore this more through the scenarios that are run in this demo model.
-Since products will be spending some time in inventory, we need to have at least 1 inventory policy per product with Stocking Site = True. At the plant, all 3 products can be held in inventory, and there is an initial inventory of 750 units of the Component. At the DC, both finished goods can be held in inventory. The carrying cost percentage to calculate the inventory holding costs is set to 10% for all policies:
+Since products will be spending some time in inventory, we need to have at least 1 inventory policy per product with Stocking Site = True. At the plant, all 3 products can be held in inventory, and there is an initial inventory of 750 units of the Component. At the DC, both finished goods can be held in inventory. The carrying cost percentage to calculate the inventory holding costs is set to 12% at the DC and 10% at the plant; this ensures the model holds product further upstream until it is needed at the DC to fulfill demand:
 Lastly, we will show the demand that has been entered into the Customer Demand table. The customer demands 1,000 units each of the finished goods in period #6:
 Other input tables that have populated records which have not been shown in a screenshot above are: Customers, Facilities, and Transportation Policies. The latter specifies that the plant can ship both finished goods to the DC, and the DC can ship both to the customer. The cost of transportation is set to 0.01 per unit per mile on both lanes.
-The 3 costs that are modelled are therefore:
+The 4 costs that are modelled are therefore:
 Production cost – Unit Cost field on the Production Policies Multi-Time Period table.
 Transportation cost – Unit Cost field on the Transportation Policies table.
 Inventory Holding cost – calculated based on the Unit Value field on the Products table and the Carrying Cost Percentage field on the Inventory Policies table.
+Disposal Cost - Disposal Cost field on the Products table.
 Demo Model – Scenarios
-There are 3 scenarios run in this model, see also the screenshot below:
+There are 4 scenarios run in this model, see also the screenshot below:
 Baseline – this scenario uses the inputs as they are in the input tables without any changes. See the screenshots above in the “Demo Model – Inputs” section. We will examine when the Component and Product_1 are produced so that their Shelf Life = Maturation Time = 3 weeks constraints are adhered to and explore how far in advance Product_2 is produced, weighing higher inventory carrying cost versus lower production cost when producing early.
 Increased Shelf Life – in this scenario we make one change as compared to the Baseline: increase the Shelf Life of Product_2 to 34 days (from 30 days), which means it goes from 4 weeks to 5 weeks. The results will tell us if it is indeed beneficial to produce even earlier (lower production cost) as compared to the Baseline now that Product_2 can be available for consumption 1 period longer than before.
 Product Value Doubled – this scenario also has 1 change as compared to the Baseline: the product value of all products is doubled. Now producing Product_2 as far in advance as possible will be less desirable as the inventory carrying cost will be double as compared to before, which may not outweigh the lower production cost in earlier periods anymore.
-The screenshot shows the 3 scenarios on the left, where we see that the Increased Shelf Life and Product Value Doubled scenarios both contain 1 scenario item, whereas the Baseline does not contain any. On the right-hand side, the scenario item of the Increased Shelf Life scenario is shown where we can see that the Shelf Life value of Product_2 is set to 34. See the following Help Center articles for more details on Scenario building and syntax:
-Two notes upfront about the outputs before we dive into details as follows:
-Since the transportation lanes and their costs are fixed, and we keep demand the same across the 3 scenarios, transportation costs play no factor in the optimization of these scenarios and are the same for all 3 scenarios.
-Both finished goods can be held in inventory at both Plant_1 and DC_1. Since this would incur the same cost (same product unit value and carrying cost percentage), we can see that sometimes a product is held in inventory at the plant whereas at other times it is held at the DC, these are equivalent solutions as the costs are the same.
-Now let us first look at when which product is produced through the Optimization Production Summary output table:
+Disposal End of Horizon - in this scenario, the Disposal Behavior field of all 3 products is switched to End of Horizon. In the outputs we will see the cost and inventory impact of this change.
+The screenshot shows the 4 scenarios on the left, where we see that the Increased Shelf Life, Product Value Doubled, and Disposal End of Horizon scenarios each contain 1 scenario item, whereas the Baseline does not contain any. On the right-hand side, the scenario item of the Increased Shelf Life scenario is shown where we can see that the Shelf Life value of Product_2 is set to 34. See the following Help Center articles for more details on Scenario building and syntax:
+One note upfront about the outputs before we dive into details as follows: since the transportation lanes and their costs are fixed, and we keep demand the same across the scenarios, transportation costs play no factor in the optimization of these scenarios and are the same for all 4 scenarios.
+Now let us first look at when which product is produced through the Optimization Production Summary output table for the first 3 scenarios:
 Looking at the Component and Product_1 (remember 10 units of Component are used to make 1 unit of Product_1), we see that in all 3 scenarios, 10,000 units of Component are produced in Period_2 and 1,000 units of Product_1 are produced in Period_4. Since the demand for Product_1 occurs in Period_6 and the Component and Product_1 both have their shelf life and maturation time both set to 3 weeks, this is the only option for the model. Component and Product_1 both need to be 3 periods old when they are consumed: it cannot be later because they will have expired by then, and it cannot be sooner as they will not be mature yet. Working backwards:
 Needing Product_1 to be delivered to the customer in Period_6 means it needs to be produced in Period_4, so that its age is 3 in Period_6. 1,000 units are therefore produced in Period_4, using BOM_1.
 Because Product_1 needs to be produced in Period_4 and the Component needs to be consumed for this production process (as specified by BOM_1 and connected to Product_1 in the Production Policies table), the Component needs to be 3 periods old in Period_4. Therefore, it must be produced in Period_2. 10,000 units are produced, since 1,000 units of Product_1 are demanded and 10 units of Component are used to produce 1 unit of Product_1.
@@ -22545,36 +22572,55 @@ For Product_2, we see that it is produced indifferent periods for all 3 scenario
 Baseline – produced in Period_3. Since Product_2’s maturation time is 2 weeks and it is demanded in Period_6, it can be produced in Period_5 at the latest. As its shelf life is 4 weeks, it can be produced in Period_3 at the earliest; its age will be 4 in Period_6 in that case. The model chooses to produce the product in Period_3 indicating that the lower production cost of producing earlier outweighs the increased inventory holding cost for holding the product in stock for longer than strictly needed based on shelf life and maturation time. As also noted above, the transportation costs are always the same in this demo model, so they do not figure into this equation.
 Increased Shelf Life – produced in Period_2. Product_2’s shelf life was increased from 4 to 5 weeks in this scenario and as a result the earliest it can be produced is now Period_2. The model does choose to produce it in Period_2, so again the lower production cost (from $3,000 to$2,000) outweighs the increase in inventory holding costs for holding 1,000 units of Product_2 in stock for 1 week longer.
 Product Value Doubled – produced in Period_5. Based on the shelf life (4 weeks) and maturation time (2 weeks), same as in the Baseline, Product_2 could have been produced in periods 3, 4, or 5. The model now chooses to produce it as late as possible, adding $2,000 to the production costs as compared to the Baseline. Because the doubled product value doubles the inventory holding costs for Product_2, the increase in production costs due to producing it later must be less than the increase in inventory holding costs would have been had Product_2 still been produced in Period_3, which we will see in the next screenshot.
-The next screenshot shows the Optimization Inventory Summary filtered for Product_2. Since we know it is produced in different periods for each of the 3 scenarios and that the demand occurs in Period_6, we expect to see the product sitting in inventory for a different number of periods in the different scenarios:
+The outputs of the Disposal End of Horizon scenario are not shown in the above, they are the same as for the Baseline scenario.
+The next screenshot shows the Optimization Inventory Summary filtered for Product_2. Since we know it is produced in different periods for each of the first 3 scenarios and that the demand occurs in Period_6, we expect to see the product sitting in inventory for a different number of periods in the different scenarios:
 In the Baseline, Product_2 is produced in Period_3, so the prebuild inventory in that period increases from 0 to 1,000. Therefore, the average prebuild inventory is calculated as (0 + 1,000) / 2 =500 for Period_3 (not shown in the screenshot). The prebuild holding cost for Period_3 is then calculated as follows: 500 units * 10% carrying cost percentage* $300 product unit value * 7 days (period length) / 365 days = $287.67. Since the product stays in inventory until it is sold in Period_6, the average prebuild inventory in periods 4 and 5 is 1,000 and the prebuild holding cost is double as compared to Period_3. In Period_6 the average prebuild inventory is again 500 since the starting prebuild inventory is 1,000 and the ending prebuild inventory 0, so the prebuild holding costs in this period are the same as in Period_3.
 In the Increased Shelf Life scenario, Product_2is produced 1 period earlier (in Period_2) as compared to the Baseline, so it sits in inventory for 1 more period. This adds $575.34 to the overall prebuild holding cost. We saw however that producing 1 period earlier reduced the production cost by $1,000, so the total cost is decreased by $425.
 In the Product Value Doubled scenario, Product_2is produced in Period_5 and sold in Period_6, leading to prebuild holding costs for 2 periods that both have average prebuild inventory of 500 units. Since the product value is doubled, this leads to a total of 2 * $ 575.34 = $1,150.68 prebuild inventory holding cost. Comparing to the Baseline where Product_2 was produced in Period_3:
 Producing in Period_5 instead increases the production cost by $2,000 ($5,000 vs $3,000).
 Had Product_2 been produced in Period_3 in the Product Value Doubled scenario too, the doubled prebuild holding costs (due to the double product value) would have resulted in a total prebuild holding cost of 2 * 2 * $287.67 + 2 * 2 * $575.34 = $3,452.04, which is more than $2,000 higher than the total prebuild holding cost for producing in Period_5: $3,452.04 - $1,150.68 = $2,301.36. Therefore, producing Product_2 in Period_5 rather than in Period_3 keeps the increase in total cost as small as possible.
-In the Optimization Network Summary output table, we can check the total cost by scenario and how the 3 costs modelled contribute to this total cost:
-As mentioned before, the transportation costs are constant across all 3 scenarios: the same amount is moved from Plant_1 toDC_1 and from DC_1 to Customer_1 at the same cost.
-The differences we see in the production costs are due to producing Product_2 in different periods in all 3 scenarios.
-The different prebuild holding costs for all 3 scenarios are due to:
-Holding Product_2 in inventory for a different number of periods.
+Again, the results of the Disposal End of Horizon scenario are the same as for the Baseline.
+In the Optimization Network Summary output table, we can check the total cost by scenario and how the 4 included costs contribute to this total cost:
+As mentioned before, the transportation costs are constant across all 4 scenarios: the same amount is moved from Plant_1 toDC_1 and from DC_1 to Customer_1 at the same cost.
+The differences we see in the production costs are due to producing Product_2 in different periods in the Increased Shelf Life and Product Value Doubles scenarios as compared to the Baseline; the Disposal End of Horizon scenario produces Product_
+The different prebuild holding costs for all 4 scenarios are due to a combination of factors:
+Product_2 is held in inventory for a different number of periods.
 The doubled product value for all products in the last scenario increasing the prebuild holding cost of all 3 products.
+750 units of component are disposed of as soon as they expire in the Baseline, Increased Shelf Life, and Product Value Doubled scenarios; they are disposed of in the last period in the Disposal End of Horizon scenario.
+The disposal costs are the same for all scenarios as in each 750 units of component are disposed of, the timing of this just varies between the scenarios.
+As compared to the baseline:
+If product were disposed of at the end of the horizon rather than immediately upon expiry, the overall cost increases by about $101.
 If the shelf life of Product_2 could be increased from 4 weeks to 5 weeks, this would lead to an overall reduction in costs by about $425.
-If the product value of all products was doubled, this would lead to an increase in total costs of about $4.6k.
+If the product value of all products was doubled, this would lead to an increase in total costs of about $4.5k.
 Next, we will take a look at the 3 new output tables, which detail the age of products that are used in production, of products that are transported, and of products that are sitting in inventory. We will start with the Optimization Production Age Summary output table:
 This table will only contain data if BOMs are used where products that are used as inputs (components) can have different ages. In our small demo model, only the Component product is used as an input into BOM_1 to produce Product_1, so we only see records for the Component product in this table.
-As explained above, the model had no choice for when to produce Product_1 due to the shelf life and maturation time values of Product_1 and Component it had to be during Period_4 when the age of the Component was 3 weeks.
+As explained above, the model had no choice for when to produce Product_1: due to the shelf life and maturation time values of Product_1 and Component it had to be during Period_4 when the age of the Component was 3 weeks.
 Next, we will look at the age of Product_2 when it is shipped between locations:
-In the Baseline scenario, Product_2 is produced as early as possible due to the lower production cost outweighing higher inventory holding costs, and therefore its age when it is shipped to the customer is the maximum shelf life of 4 weeks.
+In the Baseline and Disposal End of Horizon scenarios, Product_2 is produced as early as possible due to the lower production cost outweighing higher inventory holding costs, and therefore its age when it is shipped to the customer is the maximum shelf life of 4 weeks.
 Similarly, in the Increased Shelf Life scenario, where Product_2 now has a shelf life of 5 weeks, it is still produced as early as possible. Again, its age is the maximum shelf life of 5 weeks when shipped to the customer to fulfill its demand in Period_6.
 Finally, in the Product Value Doubled scenario, Product_2’s shelf life is 4 weeks (same as in the Baseline). Because the prebuild holding costs would increase more when producing the product as early as possible in Period_3 as compared to the increase in production costs when producing it as late as possible in Period_5, it is produced in Period_5. This leads to an age of 2 weeks when fulfilling the customer demand in Period_6.
-You may notice that in the first 2 scenarios Plant_1 ships to DC_1 in the same period as the DC ships to the customer, whereas in the last scenario Plant_1 ships to DC_1 in the period prior to the DC shipping to the customer. Since the transportation costs are the same regardless of when a product is shipped between these locations, and because the inventory holding costs at Plant_1 and DC_1 are the same, Product_2 could be shipped from the plant anytime from when it was produced up until Period_6 when it needs to be used to fulfill the customer’s demand; those solutions would all lead to the same total cost and are considered equivalent solutions.
-Lastly, we will look at 2 screenshots of the new Optimization Inventory Age Summary output table. This first one only looks at the ages of Product_1 and Component at Plant_1 in the Baseline scenario. The values for their inventory levels and ages are the same in the other 2 scenarios as the production of these 2 products occurs during the same periods for all 3 scenarios:
-Remember that Plant_1 had an initial inventory of 750 units of the Component. The age of these units will be 1 during the first period of the model, 2 in Period_2, and 3 in Period_3. Since its shelf life is 3 weeks, it is expired in Period_4 and cannot be used for producing Product_1 in Period_4. It then stays in inventory as expired product for the rest of the model horizon.
+Lastly, we will look at 2 screenshots of the new Optimization Inventory Age Summary output table. This first one only looks at the ages of Product_1 and Component at Plant_1 in the Baseline and Disposal End of Horizon scenarios. For the other 2 scenarios, the values for inventory levels and ages are the same as in the Baseline scenario, since the production of these 2 products occurs during the same periods:
+Remember that Plant_1 had an initial inventory of 750 units of the Component. The age of these units will be 1 during the first period of the model, 2 in Period_2, and 3 in Period_3. Since its shelf life is 3 weeks, it is expired in Period_4 and cannot be used for producing Product_1 in Period_4.
+In the Baseline scenario, it is disposed of in Period_4, since the Disposal Behavior is set to On Expiry. This incurs a disposal cost of $1 per unit, so $750 total.
+In the Disposal End of Horizon scenario, it stays in inventory as expired product until it is disposed of in the last period, Period_6, due to the Disposal Behavior setting of End of Horizon. This disposal also incurs a $750 disposal cost. Since these 750 units of Component have been sitting in inventory for 2 additional periods, as compared to the Baseline scenario, the inventory holding costs for this scenario are higher.
 In addition to the 750 units of Component in all periods of the model, we also see entries for Component in Period_2 and Period_3 for 10,000 units. These are the units that are produced in Period_2 to be used to produce 1,000 units of Product_1 in Period_4. Since they are produced in Period_2, their age is 1 in Period_2, and 2 in Period_3. There is no record for Period_4 as the inventory has gone down to 0 due to consuming all units in Period_4.
 As 1,000 units of Product_1 are produced in Period_4, their age is 1 during this period, and 2 in Period_5. When their age is 3 in Period_6, they are used to fulfill demand at the customer, and therefore there is no entry in this table for them in Period_6, since the inventory has gone down to 0.
-In the next screenshot, we look at the same output table, Optimization Inventory Age Summary, but now filtered for Product_2 and for all 3 scenarios:
-As we have mentioned several times before, Product_2 is produced in different periods in the 3 scenarios but always used to fulfill demand in Period_6. We see the age increasing from 1 in the period when it is produced, and no entries for Period_6 as it is used to fulfill demand in that period.
+In the next screenshot, we look at the same output table, Optimization Inventory Age Summary, but now filtered for Product_2 and for all the Baseline, Increased Shelf Life and Product Value Doubles scenarios (outputs of the Disposal End of Horizon scenario are the same as the Baseline):
+As we have mentioned several times before, Product_2 is produced in different periods in these 3 scenarios but always used to fulfill demand in Period_6. We see the age increasing from 1 in the period when it is produced, and no entries for Period_6 as it is used to fulfill demand in that period.
 In the Baseline and Increased Shelf Life scenarios, the age of Product_2 when delivered to the customer in Period_6 is at its maximum shelf life (4 in Baseline and 5 in Increased Shelf Life).
 In contrast, in the Product Value Doubled scenario, the age of Product_2 when fulfilling demand in Period_6 is 2, which is the minimum it needs to be due to its maturation time.
+In the Optimization Network Summary output table, we can check the total cost for each scenario and how the 4 included costs contribute to this total:
+As mentioned above, the transportation costs are constant across all 4 scenarios: the same amount is moved from Plant_1 toDC_1 and from DC_1 to Customer_1 at the same cost.
+The differences we see in the production costs are due to producing Product_2 in different periods in the Increased Shelf Life and Product Value Doubles scenarios as compared to the Baseline; the Disposal End of Horizon scenario produces Product_2 in the same period as the Baseline scenario.
+The different prebuild holding costs for all 4 scenarios are due to a combination of factors:
+Product_2 is held in inventory for a different number of periods.
+The doubled product value for all products in the last scenario increases the prebuild holding cost of all 3 products.
+750 units of component are disposed of as soon as they expire in the Baseline, Increased Shelf Life, and Product Value Doubled scenarios; they are disposed of in the last period in the Disposal End of Horizon scenario.
+The disposal costs are the same for all scenarios, since each disposes of 750 units of component.
+As compared to the baseline:
+If product were disposed of at the end of the horizon rather than immediately upon expiry, the overall cost increases by about $101, due to the increased prebuild holding costs of keeping the component in inventory for 2 additional periods after it expires.
+If the shelf life of Product_2 could be increased from 4 weeks to 5 weeks, this would lead to an overall reduction in costs by about $425 due to the lower production costs of producing earlier outweighing the increased prebuild holding costs for holding product longer in inventory.
+If the product value of all products was doubled, this would lead to an increase in total costs of about $4.5k, which is a combination of increased production costs for producing later and increased prebuild holding costs based on the products' values.
 For any questions on these new features, please do not hesitate to contact Optilogic support on support@optilogic.com.
 
 
@@ -23010,6 +23056,11 @@ When you use the Optilogic MCP Connector, prompts and the data Ada returns pass 
 Data users share with the AI Agent is governed by the AI Agent company’s privacy policy; Optilogic's privacy policy applies once data reaches Ada on the Optilogic platform.
 As with any connector, only attach the database(s) you intend to discuss in a given conversation.
 Avoid including sensitive information (PII, credentials, etc.) in prompts, table names, or column names, since these may be passed to the underlying AI systems on both sides of the connection.
+Security and Authorizations
+Please note that when you connect to the MCP connector:
+Your own Optilogic credentials are required to connect.
+These credentials are never shared with or visible to the AI Agent.
+Your authorizations in the Optilogic platform are inherited - the connector cannot do more than what you are permitted to do on the platform.
 What the MCP Server Collects and How it is Used
 The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
 The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from the agent is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
@@ -23154,6 +23205,11 @@ When you use the Optilogic MCP Connector, prompts and the data Ada returns pass 
 Data users share with the AI Agent is governed by the AI Agent company’s privacy policy; Optilogic's privacy policy applies once data reaches Ada on the Optilogic platform.
 As with any connector, only attach the database(s) you intend to discuss in a given conversation.
 Avoid including sensitive information (PII, credentials, etc.) in prompts, table names, or column names, since these may be passed to the underlying AI systems on both sides of the connection.
+Security and Authorizations
+Please note that when you connect to the MCP connector:
+Your own Optilogic credentials are required to connect.
+These credentials are never shared with or visible to the AI Agent.
+Your authorizations in the Optilogic platform are inherited - the connector cannot do more than what you are permitted to do on the platform.
 What the MCP Server Collects and How it is Used
 The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
 The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from the agent is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
@@ -23460,87 +23516,23 @@ The OutputValidationErrorReport table is often very useful, even if a model “s
 
 Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
 This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
-Quick Answers
-How Ada Credits relate to Tokens
 Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
-Tokens are what the underlying LLM uses to process information and generate responses.
-Ada Credits are an Optilogic-specific measure used to account for Ada usage.
-Token usage is one component of the overall calculation used to determine Ada Credit consumption.
-Ada Credits are therefore not a one-to-one representation of tokens used by the LLM.
-MCP Connectors and Ada Credits Usage
+Any conversation with Ada — whether in the Ada chat interface, through an AI Agent via the Optilogic MCP Connector, or as a DataStar Run AI Agent task — consumes Ada Credits. This applies to the entire interaction, not select messages within it. Attaching a database or file to a conversation does not carry any additional cost on its own.
+Does not consume Ada Credits:
+Consumes Ada Credits:
+Ada Credit consumption is calculated per response, not per conversation as a whole. The number of credits a response consumes depends on:
+Because of this, credit consumption varies from response to response, even for requests that look similar on the surface. This is expected behavior, not an error — the same way token usage varies by LLM request. Optilogic does not publish a fixed credit cost per response or per task, since it depends on the nature of the work being done.
 When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
 MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
-How Ada Credits are Provisioned
 Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
-All eligible users in your organization draw from the same pool.
-When you use Ada, your usage comes from the organization’s available credits.
-You do not have a separate personal allocation of Ada Credits.
-Your organization’s credit balance and usage are visible to all organization members.
 If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
-Viewing Ada Credits Usage
 You can view your organization’s Ada Credit balance from your profile settings.
-At the top of the page, locate the Shared Ada Credits section.
-Review the credits available to your organization and how much has been consumed.
 Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
-Example screenshot showing the details of how many Ada Credits have been used of the total available across the organization.
-Usage Notifications
 Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
 You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
-The banner that will be shown when 85% of Ada Credits have been used up.
-The banner that will be shown when 95% of Ada Credits have been used up.
-When Credits are Exhausted
 Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
-The banner that will be shown when all Ada Credits have been used up. Click on the Contact Support link to open the Contact Support form. You can use it to start the process of purchasing additional credits.
 The following features are affected when Ada Credits are exhausted:
-Ada is no longer available for chat.
-AI Agents using the Optilogic MCP Connector can no longer chat with Ada.
-DataStar Run AI Agent tasks cannot be run anymore.
 Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
-The message shown in the Ada Chat UI when no Ada Credits are available.
-Getting additional Ada Credits
-If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
-Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
-Additional credits cannot currently be purchased or added directly within the platform.
-Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
-This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
-Quick Answers
-How Ada Credits relate to Tokens
-Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
-Tokens are what the underlying LLM uses to process information and generate responses.
-Ada Credits are an Optilogic-specific measure used to account for Ada usage.
-Token usage is one component of the overall calculation used to determine Ada Credit consumption.
-Ada Credits are therefore not a one-to-one representation of tokens used by the LLM.
-MCP Connectors and Ada Credits Usage
-When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
-MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
-How Ada Credits are Provisioned
-Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
-All eligible users in your organization draw from the same pool.
-When you use Ada, your usage comes from the organization’s available credits.
-You do not have a separate personal allocation of Ada Credits.
-Your organization’s credit balance and usage are visible to all organization members.
-If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
-Viewing Ada Credits Usage
-You can view your organization’s Ada Credit balance from your profile settings.
-At the top of the page, locate the Shared Ada Credits section.
-Review the credits available to your organization and how much has been consumed.
-Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
-Example screenshot showing the details of how many Ada Credits have been used of the total available across the organization.
-Usage Notifications
-Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
-You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
-The banner that will be shown when 85% of Ada Credits have been used up.
-The banner that will be shown when 95% of Ada Credits have been used up.
-When Credits are Exhausted
-Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
-The banner that will be shown when all Ada Credits have been used up. Click on the Contact Support link to open the Contact Support form. You can use it to start the process of purchasing additional credits.
-The following features are affected when Ada Credits are exhausted:
-Ada is no longer available for chat.
-AI Agents using the Optilogic MCP Connector can no longer chat with Ada.
-DataStar Run AI Agent tasks cannot be run anymore.
-Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
-The message shown in the Ada Chat UI when no Ada Credits are available.
-Getting additional Ada Credits
 If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
 Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
 Additional credits cannot currently be purchased or added directly within the platform.
@@ -24723,6 +24715,154 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
+In this documentation we will cover how users can import and export data into and out of Cosmic Frog, and illustrate this with multiple examples.
+There are 2 methods of importing Excel/CSV data into Cosmic Frog’s input tables available to users:
+Pointers on how data to be imported needs to be formatted will be covered first, including some tips and call outs of specifics to keep in mind when using the upsert import method. Next, the steps to import a CSV/Excel file will be walked through step by step.
+Data is mapped from CSV/Excel files based on matching column names and table names matching to the file name (CSV) or worksheet name (Excel):
+Data preparation tips:
+CSV vs Excel: CSV files only have 1 “worksheet”, so it can only contain data to be imported into 1 table, whereas Excel files can have multiple worksheets with data to be imported to different tables in Cosmic Frog.
+Please take note of how existing records are treated when using the upsert import method to import to a table which already has some data in it:
+We will illustrate these behaviors through several examples too.
+Users can import 1 or multiple CSV or Excel files simultaneously, please take note of how the import will work for following situations:
+Once ready to import the prepared CSV/Excel file(s), users have 2 ways of accessing the import and export methods: from the File menu in the toolbar and from the right-click context menu of an input table. It looks like this from the File menu to import a file:
+And when using the right-click context menu the steps to import a file are as follows:
+When using the replace import method, a confirmation message will now be shown on which the user can click Import to continue the import or Cancel to abort.
+Next, a file explorer window opens in which the user can browse to and select the CSV/Excel file(s) to import:
+Once the import starts, a status message shows at the top of the active table:
+The Model Activity log will also have an entry for each import action:
+Users can see the results of the import by opening and inspecting the affected input table(s), and by looking at the row counts for the tables in the input tables list, outlined in green in this screenshot:
+A common way to start building a new model in Cosmic Frog is to make use of the replace import method to populate multiple tables simultaneously with data from Excel or CSV files. These files have typically been prepared from ERP extracts which have been manipulated to match the Cosmic Frog table and column names. This way, users do not need to enter data manually into the Cosmic Frog input tables, which would be very laborious. Note that it can be helpful to first export empty tables from a new, empty Cosmic Frog model to have a template to start filling out (see the “Exporting to CSV/Excel Files” section further below on how to do this).
+Starting with an empty new model in Cosmic Frog:
+The user has prepared the following Excel .xlsx file:
+After importing this file into Cosmic Frog, we notice that the Customers, Facilities and Products tables now have row counts that match the number of records we had in the Excel file that was used for the import, and we can open the individual tables to see the imported records:
+Consider a user who is modelling a sports equipment company and has populated the Products table of a Cosmic Frog model with 8 products as follows:
+After working with the model for a while, the user realizes a few things:
+As item number 1 will change the product names, a column that is part of the primary key of the Products table, the user will need to use the replace import method to make these changes as the upsert method does not change the values of columns that are part of the primary key. Following is the .xlsx file the user prepares to replace the data in the Products table with:
+After importing the file using the replace method, the Products table looks like this:
+We see the records are the exact same as what was contained in the Products.xlsx file that was imported, and the row count for the Products table has correctly gone up to 10 with the 2 new products added.
+Continuing from the Products table in the last screenshot above, the user now wants to make a few additional changes as follows:
+To make these changes to the Products table, the user prepares the following Products file to be upserted to the Products table, where the green numbers in the screenshot below match the items described in the bullet point list directly above:
+After using the upsert import method for this file into the Products table, it contains following records. The ones changed / added are listed at the bottom:
+In the boxes outlined in green we see that all the expected changes and the insertion of the 1 new record have been made.
+Let us also illustrate what will happen when files with invalid / missing data are imported. We will use the replace import method for the example here, but similar results will be seen when using the upsert method. Following screenshot shows a Products table that has been prepared in Excel, where we can see several issues already: a blank Product Name, a negative value for Unit Price, etc.
+After this file is imported to the Products table using the replace method, the Products table will look as follows:
+The cells that are outlined in red contain invalid values. Hovering over each cell will show a tooltip message describing the problem.
+For tables with many records, it may be hard to find the fields in red outline manually. To help with this, there is a standard filter users can apply that will show all records that have 1 or multiple input data errors:
+In conclusion, Cosmic Frog will let a user import invalid data, and then help identify the data issues with the red outlines, hover over tooltips, and the Show Input Data Errors filter.
+Consider following Transportation Policies table:
+There is now a change where from MFG_1 all Racket products need to be shipped by Parcel for a fixed cost of $50. The user creates 2 Named Filters (see the Named Filters in Cosmic Frog help center article) in the Products table: 1 that filters out all racket products (those products that have a product name that start with FG_Racket) which is named Rackets and 1 that filters out all non-racket products (those products that do not contain racket in the product name) which is named AllExceptRackets. Next, the user prepares following TransportationPolicies.csv file to upsert into the Transportation policies table with the intention to update the first 2 records in the existing table to be specific for the AllExceptRackets products and add 2 new ones for the Rackets products:
+The result of using this file to upsert to the Transportation Policies table is as follows:
+This example shows that users need to be mindful of which fields are part of the table’s primary key and remember that values of primary key fields cannot be changed by the upsert import method. An example workflow that will achieve the desired changes to the Transportation Policies table is as follows:
+It is possible to export a single table or multiple tables (input and output tables) to CSV or Excel from Cosmic Frog. Similar to importing data from CSV/Excel, users can access the export options in 2 ways: from the File menu in the toolbar and from the context menus that come up when right-clicking on tables in the input/output/custom tables lists.
+Please note:
+The steps to export multiple tables to an Excel file are as follows:
+Once the export starts, following message appears at the top of the active table:
+Once the export is complete, the exported file can be found in the folder where the user’s downloaded files are saved:
+When exporting multiple tables to Excel or CSV, the downloaded file will be a .zip file with an automatically generated name based on the model’s Cosmic Frog ID. Extracting the zip-file will show an .xlsx file of the same name, which can be opened in Excel:
+These are the steps to export multiple tables to CSV:
+When the export starts, the same “File is exporting…” message as shown in the previous section will be showing at the top of the active table. Once the export process is finished, the exported file can again be found in the folder where the user’s downloaded files are saved:
+The file is again a zip-file, and it has the same name based on the model’s Cosmic Frog ID, just appended with (1), as there is already a zip-file of the same name in the Downloads folder from the previous export to Excel. Unzipping the file creates a new sub-folder of the same name in the Downloads folder:
+Exporting a single table to Excel can also be done from the File menu, in the same way as multiple tables are exported to Excel, which was shown above in the “Export Multiple Tables to Excel” section. Now, we will show the second way of doing this by using the context menu that comes up when right-clicking on a table:
+When the export starts, the same “File is exporting…” message as shown above will be showing at the top of the active table. Once the export process is finished, the exported file can again be found in the folder where user’s downloaded files are saved:
+The name of the exported CSV file matches that of the table that was exported.
+Exporting a single table to CSV can also be done from the File menu, in the same way as multiple tables are exported to CSV, which was shown above in the “Export Multiple Tables to CSV” section. Now, we will show the second way of doing this by using the context menu that comes up when right-clicking on a table:
+For single tables exported to CSV, the name of the file is the same as the name of the exported table. If the Cosmic Frog table was filtered, the file name is appended with “_filtered” like it is here to remind the user that only the filtered rows are contained in this exported file.
+Questions or feedback? Please feel free to contact the Optilogic support team on support@optilogic.com.
+Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
+This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
+Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
+Any conversation with Ada — whether in the Ada chat interface, through an AI Agent via the Optilogic MCP Connector, or as a DataStar Run AI Agent task — consumes Ada Credits. This applies to the entire interaction, not select messages within it. Attaching a database or file to a conversation does not carry any additional cost on its own.
+Does not consume Ada Credits:
+Consumes Ada Credits:
+Ada Credit consumption is calculated per response, not per conversation as a whole. The number of credits a response consumes depends on:
+Because of this, credit consumption varies from response to response, even for requests that look similar on the surface. This is expected behavior, not an error — the same way token usage varies by LLM request. Optilogic does not publish a fixed credit cost per response or per task, since it depends on the nature of the work being done.
+When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
+MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
+Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
+If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
+You can view your organization’s Ada Credit balance from your profile settings.
+Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
+Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
+You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
+Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
+The following features are affected when Ada Credits are exhausted:
+Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
+If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
+Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
+Additional credits cannot currently be purchased or added directly within the platform.
+Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
+In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
+The new feature set consists of:
+Please note that:
+We will now showcase the use of product Shelf Life, Maturation Time, and Disposal in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
+It is a multi-period model with 6 periods, which are each 1 week long (the Model End Date is set to February 12, 2025, on the Model Settings input table, not shown):
+There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in a screenshot a bit further below. The new shelf life and maturation fields are shown in the next screenshot and the disposal ones in the screenshot after:
+As mentioned above, a bill of materials is used to produce finished good Product_1:
+This bill of materials is named BOM_1 and it specifies that 10 units of the product named Component are used as an input (product type = Component) of this bill of materials. Note that the bill of materials does not indicate the end product that is produced with it. This is specified by associating production policies with a BOM. To learn more about detailed production modelling using the Neo engine, please see this Help Center article.
+In the next screenshot of the production policies table, we see that the plant can produce all 3 products, and that for the production of Product_1, the bill of materials shown in the previous screenshot, BOM_1, is used. The cost per unit is set to 1 here for each product:
+For purposes of showing how Shelf Life and Maturation Time work, we will use the Production Policies Multi-Time Period input table too. In here we override the production cost per unit that we just saw in the above screenshot to become increasingly expensive in later periods for all products, adding $1 per unit for each next period. So, to produce a unit of Product_1 in Period_1 costs $1, in Period_2 it costs $2, in Period_3 $3, etc. Same for Component and Product_2:
+The production cost is increased here to encourage the model to produce product as early as possible, so that it incurs the lowest possible production cost. It will also still need to respect the shelf life and maturation time requirements. Note that this is also weighed against the increased inventory holding costs for producing earlier than possibly needed, as product will sit in inventory longer if produced earlier. So, the cost differential for production in different periods needs to be sufficiently big as compared to the increased inventory holding cost to see this behavior. We will explore this more through the scenarios that are run in this demo model.
+Since products will be spending some time in inventory, we need to have at least 1 inventory policy per product with Stocking Site = True. At the plant, all 3 products can be held in inventory, and there is an initial inventory of 750 units of the Component. At the DC, both finished goods can be held in inventory. The carrying cost percentage to calculate the inventory holding costs is set to 12% at the DC and 10% at the plant; this ensures the model holds product further upstream until it is needed at the DC to fulfill demand:
+Lastly, we will show the demand that has been entered into the Customer Demand table. The customer demands 1,000 units each of the finished goods in period #6:
+Other input tables that have populated records which have not been shown in a screenshot above are: Customers, Facilities, and Transportation Policies. The latter specifies that the plant can ship both finished goods to the DC, and the DC can ship both to the customer. The cost of transportation is set to 0.01 per unit per mile on both lanes.
+The 4 costs that are modelled are therefore:
+There are 4 scenarios run in this model, see also the screenshot below:
+The screenshot shows the 4 scenarios on the left, where we see that the Increased Shelf Life, Product Value Doubled, and Disposal End of Horizon scenarios each contain 1 scenario item, whereas the Baseline does not contain any. On the right-hand side, the scenario item of the Increased Shelf Life scenario is shown where we can see that the Shelf Life value of Product_2 is set to 34. See the following Help Center articles for more details on Scenario building and syntax:
+One note upfront about the outputs before we dive into details as follows: since the transportation lanes and their costs are fixed, and we keep demand the same across the scenarios, transportation costs play no factor in the optimization of these scenarios and are the same for all 4 scenarios.
+Now let us first look at when which product is produced through the Optimization Production Summary output table for the first 3 scenarios:
+The outputs of the Disposal End of Horizon scenario are not shown in the above, they are the same as for the Baseline scenario.
+The next screenshot shows the Optimization Inventory Summary filtered for Product_2. Since we know it is produced in different periods for each of the first 3 scenarios and that the demand occurs in Period_6, we expect to see the product sitting in inventory for a different number of periods in the different scenarios:
+Again, the results of the Disposal End of Horizon scenario are the same as for the Baseline.
+In the Optimization Network Summary output table, we can check the total cost by scenario and how the 4 included costs contribute to this total cost:
+Next, we will take a look at the 3 new output tables, which detail the age of products that are used in production, of products that are transported, and of products that are sitting in inventory. We will start with the Optimization Production Age Summary output table:
+Next, we will look at the age of Product_2 when it is shipped between locations:
+Lastly, we will look at 2 screenshots of the new Optimization Inventory Age Summary output table. This first one only looks at the ages of Product_1 and Component at Plant_1 in the Baseline and Disposal End of Horizon scenarios. For the other 2 scenarios, the values for inventory levels and ages are the same as in the Baseline scenario, since the production of these 2 products occurs during the same periods:
+In the next screenshot, we look at the same output table, Optimization Inventory Age Summary, but now filtered for Product_2 and for all the Baseline, Increased Shelf Life and Product Value Doubles scenarios (outputs of the Disposal End of Horizon scenario are the same as the Baseline):
+In the Optimization Network Summary output table, we can check the total cost for each scenario and how the 4 included costs contribute to this total:
+For any questions on these new features, please do not hesitate to contact Optilogic support on support@optilogic.com.
+The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
+Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
+In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
+The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Grok (SpaceXAI), and Vibe (Mistral AI).
+Detailed step-by-step instructions for Claude, ChatGPT, and Copilot, including screenshots, can be found here:
+The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
+It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
+A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
+Teams are using the Optilogic MCP Connector for tasks like:
+The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and the agent handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
+*To learn more about using Optilogic Teams, please see this Getting Started with Optilogic Teams Help Center article.
+**To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
+Before you set up and start working with the Optilogic MCP connector, please take note of following:
+The following tools are available to the connector:
+Agent Lifecycle
+Past Conversations
+Artifacts
+Workspace Files
+Sharing
+Account / Teams
+Data
+The prompts below are starting points — swap in your own model names, regions, priorities, etc.
+When you use the Optilogic MCP Connector, prompts and the data Ada returns pass through the agent in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
+Please note that when you connect to the MCP connector:
+The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
+The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from the agent is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
+For clarity, Optilogic does not use logs for model training.
+MCP request/response data and associated logs are stored in accordance with Optilogic's Data Retention Policy. You can learn more here -- How We Safeguard Your Data: Backups & Retention Explained.
+Disconnecting the Connector on the AI Agent’s settings tells the agent to stop using and refreshing your Optilogic tokens — that is the immediate effect.
+After disconnecting, the historical chats that were had through the connector are still accessible to the user, just no follow-up prompts that require accessing Ada can be added.
+Please note that users have visibility into the MCP Connector conversations and actions on the Optilogic platform in following places:
+If the conversation with Ada through the AI Agent seems to go off track, e.g., gives no response or odd/incorrect responses, please follow these troubleshooting steps:
+In this example, we will:
+Claude was used in this example; using the same prompts in another AI Agent will result in similar responses.
+The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the some of the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
+Prompt 1: Using the Optilogic Ada connector, can you review the inputs of the Territory Planning model? Please give me a summary and also check which costs are being modeled.
+Response:
+Prompt 2: Can you find what the average per mile cost for trucks in the Atlanta region is and add this to the model?
+Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios that would be interesting to run, based on the expected value / insights they may provide?
+Response: lists 3 sets of suggested scenarios to add and the reasoning:
+Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
+Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
 Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
 Follow these steps to get up and running with the Pulsar demand engine quickly.
 Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
@@ -24858,74 +24998,6 @@ The grid further below shows all growth projections at all forecasted levels. Li
 As always, please feel free to contact our Support team on support@optilogic.com in case of any questions or feedback. Happy demand modeling!
 The following zip-file contains an Excel file named DemandModeling_DatabaseSchema_August2026.xlsx in which the schema of all input and output tables of the Pulsar engine can be found: Demand Modeling Schema download (download this zip-file and then extract it). The tables are colored like they are in the diagram in the Inputs and Outputs Overview section:
 The column master output table is one of the metadata output tables. It is the first table in the file as it shows the schema: it contains a list of all the columns and their descriptions used across the input and output tables. Some columns are used in multiple tables and their values need to be internally consistent.
-Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
-In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
-The new feature set consists of:
-Please note that:
-We will now showcase the use of both Shelf Life and Maturation Time in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
-It is a multi-period model with 6 periods, which are each 1 week long (the Model End Date is set to February 12, 2025, on the Model Settings input table, not shown):
-There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in the screenshots after this one.
-As mentioned above, a bill of materials is used to produce finished good Product_1:
-This bill of materials is named BOM_1 and it specifies that 10 units of the product named Component are used as an input (product type = Component) of this bill of materials. Note that the bill of materials does not indicate the end product that is produced with it. This is specified by associating production policies with a BOM. To learn more about detailed production modelling using the Neo engine, please see this Help Center article.
-In the next screenshot of the production policies table, we see that the plant can produce all 3 products, and that for the production of Product_1, the bill of materials shown in the previous screenshot, BOM_1, is used. The cost per unit is set to 1 here for each product:
-For purposes of showing how Shelf Life and Maturation Time work, we will use the Production Policies Multi-Time Period input table too. In here we override the production cost per unit that we just saw in the above screenshot to become increasingly expensive in later periods for all products, adding $1 per unit for each next period. So, to produce a unit of Product_1 in Period_1 costs $1, in Period_2 it costs $2, in Period_3 $3, etc. Same for Component and Product_2:
-The production cost is increased here to encourage the model to produce product as early as possible, so that it incurs the lowest possible production cost. It will also still need to respect the shelf life and maturation time requirements. Note that this is also weighed against the increased inventory holding costs for producing earlier than possibly needed, as product will sit in inventory longer if produced earlier. So, the cost differential for production in different periods needs to be sufficiently big as compared to the increased inventory holding cost to see this behavior. We will explore this more through the scenarios that are run in this demo model.
-Since products will be spending some time in inventory, we need to have at least 1 inventory policy per product with Stocking Site = True. At the plant, all 3 products can be held in inventory, and there is an initial inventory of 750 units of the Component. At the DC, both finished goods can be held in inventory. The carrying cost percentage to calculate the inventory holding costs is set to 10% for all policies:
-Lastly, we will show the demand that has been entered into the Customer Demand table. The customer demands 1,000 units each of the finished goods in period #6:
-Other input tables that have populated records which have not been shown in a screenshot above are: Customers, Facilities, and Transportation Policies. The latter specifies that the plant can ship both finished goods to the DC, and the DC can ship both to the customer. The cost of transportation is set to 0.01 per unit per mile on both lanes.
-The 3 costs that are modelled are therefore:
-There are 3 scenarios run in this model, see also the screenshot below:
-The screenshot shows the 3 scenarios on the left, where we see that the Increased Shelf Life and Product Value Doubled scenarios both contain 1 scenario item, whereas the Baseline does not contain any. On the right-hand side, the scenario item of the Increased Shelf Life scenario is shown where we can see that the Shelf Life value of Product_2 is set to 34. See the following Help Center articles for more details on Scenario building and syntax:
-Two notes upfront about the outputs before we dive into details as follows:
-Now let us first look at when which product is produced through the Optimization Production Summary output table:
-The next screenshot shows the Optimization Inventory Summary filtered for Product_2. Since we know it is produced in different periods for each of the 3 scenarios and that the demand occurs in Period_6, we expect to see the product sitting in inventory for a different number of periods in the different scenarios:
-In the Optimization Network Summary output table, we can check the total cost by scenario and how the 3 costs modelled contribute to this total cost:
-Next, we will take a look at the 3 new output tables, which detail the age of products that are used in production, of products that are transported, and of products that are sitting in inventory. We will start with the Optimization Production Age Summary output table:
-Next, we will look at the age of Product_2 when it is shipped between locations:
-Lastly, we will look at 2 screenshots of the new Optimization Inventory Age Summary output table. This first one only looks at the ages of Product_1 and Component at Plant_1 in the Baseline scenario. The values for their inventory levels and ages are the same in the other 2 scenarios as the production of these 2 products occurs during the same periods for all 3 scenarios:
-In the next screenshot, we look at the same output table, Optimization Inventory Age Summary, but now filtered for Product_2 and for all 3 scenarios:
-For any questions on these new features, please do not hesitate to contact Optilogic support on support@optilogic.com.
-The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
-Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
-In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
-The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Grok (SpaceXAI), and Vibe (Mistral AI).
-Detailed step-by-step instructions for Claude, ChatGPT, and Copilot, including screenshots, can be found here:
-The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
-It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
-A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
-Teams are using the Optilogic MCP Connector for tasks like:
-The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and the agent handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
-*To learn more about using Optilogic Teams, please see this Getting Started with Optilogic Teams Help Center article.
-**To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
-Before you set up and start working with the Optilogic MCP connector, please take note of following:
-The following tools are available to the connector:
-Agent Lifecycle
-Past Conversations
-Artifacts
-Workspace Files
-Sharing
-Account / Teams
-Data
-The prompts below are starting points — swap in your own model names, regions, priorities, etc.
-When you use the Optilogic MCP Connector, prompts and the data Ada returns pass through the agent in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
-The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
-The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from the agent is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
-For clarity, Optilogic does not use logs for model training.
-MCP request/response data and associated logs are stored in accordance with Optilogic's Data Retention Policy. You can learn more here -- How We Safeguard Your Data: Backups & Retention Explained.
-Disconnecting the Connector on the AI Agent’s settings tells the agent to stop using and refreshing your Optilogic tokens — that is the immediate effect.
-After disconnecting, the historical chats that were had through the connector are still accessible to the user, just no follow-up prompts that require accessing Ada can be added.
-Please note that users have visibility into the MCP Connector conversations and actions on the Optilogic platform in following places:
-If the conversation with Ada through the AI Agent seems to go off track, e.g., gives no response or odd/incorrect responses, please follow these troubleshooting steps:
-In this example, we will:
-Claude was used in this example; using the same prompts in another AI Agent will result in similar responses.
-The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the some of the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
-Prompt 1: Using the Optilogic Ada connector, can you review the inputs of the Territory Planning model? Please give me a summary and also check which costs are being modeled.
-Response:
-Prompt 2: Can you find what the average per mile cost for trucks in the Atlanta region is and add this to the model?
-Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios that would be interesting to run, based on the expected value / insights they may provide?
-Response: lists 3 sets of suggested scenarios to add and the reasoning:
-Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
-Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
 This documentation details how to connect and disconnect the Optilogic MCP connector using Copilot. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
 The steps to take when connecting to the Optilogic MCP Connector in Copilot are as follows:
 These steps are covered in detail in the next sections.
@@ -24948,23 +25020,6 @@ Enter a display name and click on Create:
 When prompted, sign in to your Optilogic account:
 The connection is complete! You will see the checkmark for confirmation:
 Go back to your Copilot chat window and test it out with a first prompt, such as: I just connected Optilogic. Give me a summary of what you can do with Optilogic, what you see in my Optilogic account and highlight one useful insight that you recommend I dig in to. Also, what sort of “what if” questions can you answer based on what you see in my account?.
-Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
-This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
-Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
-When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
-MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
-Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
-If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
-You can view your organization’s Ada Credit balance from your profile settings.
-Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
-Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
-You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
-Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
-The following features are affected when Ada Credits are exhausted:
-Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
-If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
-Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
-Additional credits cannot currently be purchased or added directly within the platform.
 Ada is Optilogic’s next-generation agentic AI, enabling supply chain teams to work faster and with greater confidence across the full modeling lifecycle — from raw data preparation to optimization runs to executive reporting — all through natural language interactions.
 Unlike traditional UI chat assistants, it deploys purpose-built agents that can pursue multi-step goals, use specialized skills, maintain conversational context, and coordinate with each other to complete workflows that previously required significant manual effort. This dramatically reduces the time required to move from raw data to recommendations.
 As a core part of Optilogic’s Next Generation User InterfacePlatform, Ada provides a more intelligent and conversational approach to supply chain design work.
@@ -25104,60 +25159,6 @@ As mentioned above, when using forecasted demand for the DOS calculations, this 
 Next, the User Defined Forecasts table lets a user configure the time-period to which a forecast is aggregated:
 Let us now explain how the DOS calculations work for different DOS settings through the examples shown in the next screenshot. Note that for all these examples the DOS Review Period First Time field has been left blank, meaning that the first 1 DOS equivalent calculation occurs at the start of this model (on January 1st) for each of these examples:
 Now that we know how to calculate the value of 1 DOS, we can apply this to inventory policies which use DOS as their UOM for the simulation policy value fields. We will do a numbers example with the one shown in the screenshot above (in the Days of Supply Settings section) where reorder point s is 5 DOS and order up to quantity S is 10 DOS. Let us assume the same settings as in the last example for the 1 DOS calculations in the screenshot above, explained in bullet #6 above: forecasted demand is used with a 10 day DOS Window, a 5 day DOS Leadtime, and a 5 day DOS Review Period, so the calculations for the equivalent of 1 DOS are the numbers in the last row shown in the screenshot, which we will use in our example below. In addition to this, we will assume a 2 day Review Period for the inventory policy, meaning inventory levels are checked every other day to see if a replenishment order needs to be placed. DC_1 also has 1,000 units of P1 on hand at the start of the simulation (specified in the Initial Inventory field):
-Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
-In this documentation we will cover how users can import and export data into and out of Cosmic Frog, and illustrate this with multiple examples.
-There are 2 methods of importing Excel/CSV data into Cosmic Frog’s input tables available to users:
-Pointers on how data to be imported needs to be formatted will be covered first, including some tips and call outs of specifics to keep in mind when using the upsert import method. Next, the steps to import a CSV/Excel file will be walked through step by step.
-Data is mapped from CSV/Excel files based on matching column names and table names matching to the file name (CSV) or worksheet name (Excel):
-Data preparation tips:
-CSV vs Excel: CSV files only have 1 “worksheet”, so it can only contain data to be imported into 1 table, whereas Excel files can have multiple worksheets with data to be imported to different tables in Cosmic Frog.
-Please take note of how existing records are treated when using the upsert import method to import to a table which already has some data in it:
-We will illustrate these behaviors through several examples too.
-Users can import 1 or multiple CSV or Excel files simultaneously, please take note of how the import will work for following situations:
-Once ready to import the prepared CSV/Excel file(s), users have 2 ways of accessing the import and export methods: from the File menu in the toolbar and from the right-click context menu of an input table. It looks like this from the File menu to import a file:
-And when using the right-click context menu the steps to import a file are as follows:
-When using the replace import method, a confirmation message will now be shown on which the user can click Import to continue the import or Cancel to abort.
-Next, a file explorer window opens in which the user can browse to and select the CSV/Excel file(s) to import:
-Once the import starts, a status message shows at the top of the active table:
-The Model Activity log will also have an entry for each import action:
-Users can see the results of the import by opening and inspecting the affected input table(s), and by looking at the row counts for the tables in the input tables list, outlined in green in this screenshot:
-A common way to start building a new model in Cosmic Frog is to make use of the replace import method to populate multiple tables simultaneously with data from Excel or CSV files. These files have typically been prepared from ERP extracts which have been manipulated to match the Cosmic Frog table and column names. This way, users do not need to enter data manually into the Cosmic Frog input tables, which would be very laborious. Note that it can be helpful to first export empty tables from a new, empty Cosmic Frog model to have a template to start filling out (see the “Exporting to CSV/Excel Files” section further below on how to do this).
-Starting with an empty new model in Cosmic Frog:
-The user has prepared the following Excel .xlsx file:
-After importing this file into Cosmic Frog, we notice that the Customers, Facilities and Products tables now have row counts that match the number of records we had in the Excel file that was used for the import, and we can open the individual tables to see the imported records:
-Consider a user who is modelling a sports equipment company and has populated the Products table of a Cosmic Frog model with 8 products as follows:
-After working with the model for a while, the user realizes a few things:
-As item number 1 will change the product names, a column that is part of the primary key of the Products table, the user will need to use the replace import method to make these changes as the upsert method does not change the values of columns that are part of the primary key. Following is the .xlsx file the user prepares to replace the data in the Products table with:
-After importing the file using the replace method, the Products table looks like this:
-We see the records are the exact same as what was contained in the Products.xlsx file that was imported, and the row count for the Products table has correctly gone up to 10 with the 2 new products added.
-Continuing from the Products table in the last screenshot above, the user now wants to make a few additional changes as follows:
-To make these changes to the Products table, the user prepares the following Products file to be upserted to the Products table, where the green numbers in the screenshot below match the items described in the bullet point list directly above:
-After using the upsert import method for this file into the Products table, it contains following records. The ones changed / added are listed at the bottom:
-In the boxes outlined in green we see that all the expected changes and the insertion of the 1 new record have been made.
-Let us also illustrate what will happen when files with invalid / missing data are imported. We will use the replace import method for the example here, but similar results will be seen when using the upsert method. Following screenshot shows a Products table that has been prepared in Excel, where we can see several issues already: a blank Product Name, a negative value for Unit Price, etc.
-After this file is imported to the Products table using the replace method, the Products table will look as follows:
-The cells that are outlined in red contain invalid values. Hovering over each cell will show a tooltip message describing the problem.
-For tables with many records, it may be hard to find the fields in red outline manually. To help with this, there is a standard filter users can apply that will show all records that have 1 or multiple input data errors:
-In conclusion, Cosmic Frog will let a user import invalid data, and then help identify the data issues with the red outlines, hover over tooltips, and the Show Input Data Errors filter.
-Consider following Transportation Policies table:
-There is now a change where from MFG_1 all Racket products need to be shipped by Parcel for a fixed cost of $50. The user creates 2 Named Filters (see the Named Filters in Cosmic Frog help center article) in the Products table: 1 that filters out all racket products (those products that have a product name that start with FG_Racket) which is named Rackets and 1 that filters out all non-racket products (those products that do not contain racket in the product name) which is named AllExceptRackets. Next, the user prepares following TransportationPolicies.csv file to upsert into the Transportation policies table with the intention to update the first 2 records in the existing table to be specific for the AllExceptRackets products and add 2 new ones for the Rackets products:
-The result of using this file to upsert to the Transportation Policies table is as follows:
-This example shows that users need to be mindful of which fields are part of the table’s primary key and remember that values of primary key fields cannot be changed by the upsert import method. An example workflow that will achieve the desired changes to the Transportation Policies table is as follows:
-It is possible to export a single table or multiple tables (input and output tables) to CSV or Excel from Cosmic Frog. Similar to importing data from CSV/Excel, users can access the export options in 2 ways: from the File menu in the toolbar and from the context menus that come up when right-clicking on tables in the input/output/custom tables lists.
-Please note:
-The steps to export multiple tables to an Excel file are as follows:
-Once the export starts, following message appears at the top of the active table:
-Once the export is complete, the exported file can be found in the folder where the user’s downloaded files are saved:
-When exporting multiple tables to Excel or CSV, the downloaded file will be a .zip file with an automatically generated name based on the model’s Cosmic Frog ID. Extracting the zip-file will show an .xlsx file of the same name, which can be opened in Excel:
-These are the steps to export multiple tables to CSV:
-When the export starts, the same “File is exporting…” message as shown in the previous section will be showing at the top of the active table. Once the export process is finished, the exported file can again be found in the folder where the user’s downloaded files are saved:
-The file is again a zip-file, and it has the same name based on the model’s Cosmic Frog ID, just appended with (1), as there is already a zip-file of the same name in the Downloads folder from the previous export to Excel. Unzipping the file creates a new sub-folder of the same name in the Downloads folder:
-Exporting a single table to Excel can also be done from the File menu, in the same way as multiple tables are exported to Excel, which was shown above in the “Export Multiple Tables to Excel” section. Now, we will show the second way of doing this by using the context menu that comes up when right-clicking on a table:
-When the export starts, the same “File is exporting…” message as shown above will be showing at the top of the active table. Once the export process is finished, the exported file can again be found in the folder where user’s downloaded files are saved:
-The name of the exported CSV file matches that of the table that was exported.
-Exporting a single table to CSV can also be done from the File menu, in the same way as multiple tables are exported to CSV, which was shown above in the “Export Multiple Tables to CSV” section. Now, we will show the second way of doing this by using the context menu that comes up when right-clicking on a table:
-For single tables exported to CSV, the name of the file is the same as the name of the exported table. If the Cosmic Frog table was filtered, the file name is appended with “_filtered” like it is here to remind the user that only the filtered rows are contained in this exported file.
-Questions or feedback? Please feel free to contact the Optilogic support team on support@optilogic.com.
 Cyclo is Optilogic’s new Multi Echelon Inventory Optimization (MEIO) engine within Cosmic Frog. It helps supply chain teams determine where safety stock should be held across a network, how much is needed at each stage, and how service levels impact total safety stock cost and responsiveness.
 This video gives a quick overview of how to use Cyclo; it uses the Demo Model described further down in this documentation:
 If you just want to get going with Cyclo as quick as possible, follow these steps:
