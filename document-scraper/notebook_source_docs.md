@@ -1866,8 +1866,9 @@ Scenario - the whole scenario is copied into a new scenario which can be named b
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-ada-claude-connector
 
 This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Setting Up the Connector
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
+The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
+Individual Claude Account - Setting Up the Connector
+Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
 Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
 Step 2: Log In to Optilogic
 Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
@@ -1877,15 +1878,19 @@ Step 4: Allow Access
 When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
 Pro tip — Review your access settings
 Go back into Settings > Connectors > Optilogic and scroll down to Tool Permissions to control which actions Claude can take without asking each time. A good rule of thumb: leave read-only tools (like listing databases) on Always Allow, and keep anything closer to write or delete on Needs Approval — so Claude can freely look things up, but cannot change or remove anything without your sign-off.
-Disconnecting or Removing the Connector
-Should you need to disconnect or remove the Optilogic Connector, please take following steps:
-In Claude, go to your Account > Settings > Connectors and click on the Optilogic connector.
-To disconnect without removing the connector, click on the Disconnect button – you will not have access to Ada from your Claude chats anymore, but you can easily re-connect when desired.
-To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Optilogic connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again.
-This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Setting Up the Connector
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
-Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic
+Claude Enterprise Plan - Setting up the Connector
+To connect when on an Enterprise plan, your organization's IT department needs to take steps 1-4 below before individual users on the plan can start using the Optilogic connector (step 5 below).
+Step 1: Open Organization Settings
+As an administrator of the Claude Enterprise plan, click on your username at the left bottom, and choose "Organization settings":
+Step 2: Open the Connector Directory
+Navigate to Connectors in the Settings screen, then click on the "Add" button, and choose "All Available" to open the Connector Directory modal:
+Step 3: Select the Optilogic Connector
+Search the directory for Optilogic and click on it to select it and see the listing details:
+Step 4: Connect the Connector
+Press the "Connect for your team" button to add it:
+Step 5: Users on the Enterprise Plan Connect
+A user on the organization's Claude Enterprise plan can now connect by going to Settings > Connectors, and pressing the "Connect" button of the Optilogic connector:
+Should you need to disconnect or remove the Optilogic Connector, p
 …（省略）
 
 
@@ -4019,25 +4024,33 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
+Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
+Step 1: Add the Connector
+Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
+Step 2: Log In to Optilogic
+Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
+Step 3: Confirm the Connection
+Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
+Step 4: Allow Access
+When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
+To connect when on an Enterprise plan, your organization's IT department needs to take steps 1-4 below before individual users on the plan can start using the Optilogic connector (step 5 below).
+Step 1: Open Organization Settings
+As an administrator of the Claude Enterprise plan, click on your username at the left bottom, and choose "Organization settings":
+Step 2: Open the Connector Directory
+Navigate to Connectors in the Settings screen, then click on the "Add" button, and choose "All Available" to open the Connector Directory modal:
+Step 3: Select the Optilogic Connector
+Search the directory for Optilogic and click on it to select it and see the listing details:
+Step 4: Connect the Connector
+Press the "Connect for your team" button to add it:
+Step 5: Users on the Enterprise Plan Connect
+A user on the organization's Claude Enterprise plan can now connect by going to Settings > Connectors, and pressing the "Connect" button of the Optilogic connector:
+You will be prompted to authenticate with your Optilogic credentials, see also step 2 and onwards in the Individual Claude Account - Setting up the Connector section above.
+Should you need to disconnect or remove the Optilogic Connector, please take following steps:
 Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
-In this documentation we will cover how users can import and export data into and out of Cosmic Frog, and illustrate this with multiple examples.
-There are 2 methods of importing Excel/CSV data into Cosmic Frog’s input tables available to users:
-Pointers on how data to be imported needs to be formatted will be covered first, including some tips and call outs of specifics to keep in mind when using the upsert import method. Next, the steps to import a CSV/Excel file will be walked through step by step.
-Data is mapped from CSV/Excel files based on matching column names and table names matching to the file name (CSV) or worksheet name (Excel):
-Data preparation tips:
-CSV vs Excel: CSV files only have 1 “worksheet”, so it can only contain data to be imported into 1 table, whereas Excel files can have multiple worksheets with data to be imported to different tables in Cosmic Frog.
-Please take note of how existing records are treated when using the upsert import method to import to a table which already has some data in it:
-We will illustrate these behaviors through several examples too.
-Users can import 1 or multiple CSV or Excel files simultaneously, please take note of how the import will work for following situations:
-Once ready to import the prepared CSV/Excel file(s), users have 2 ways of accessing the import and export methods: from the File menu in the toolbar and from the right-click context menu of an input table. It looks like this from the File menu to import a file:
-And when using the right-click context menu the steps to import a file are as follows:
-When using the replace import method, a confirmation message will now be shown on which the user can click Import to continue the import or Cancel to abort.
-Next, a file explorer window opens in which the user can browse to and select the CSV/Excel file(s) to import:
-Once the import starts, a status message shows at the top of the active table:
-The Model Activity log will also have an entry for each import action:
-Users can see the results of the import by opening and inspecting the affected input table(s), and by looking at the row counts for the tables in the input tables list, outlined in green in this screenshot:
-A common way to start building a new model in Cosmic Frog is to make use of the replace import method to populate multiple tables simultaneously with data from Excel or CSV files. These files have typically been prepared from ERP extracts which have been manipulated to match the Cosmic Frog table and column names. This way, users do not need to enter data manually into the Cosmic Frog input tables, which would be very laborious. Note that it can be helpful to first export empty tables from a new, empty Cosmic Frog model to have a template to start filling out (see the “Exporting to CSV/Excel Files” section further below on how to do this).
-Star
+In this documentation we will cover how users can import and export d
 …（省略）
 
 

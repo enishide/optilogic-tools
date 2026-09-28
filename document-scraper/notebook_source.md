@@ -14487,8 +14487,9 @@ Happy scenario modeling! As always, please contact our Support team on support@o
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-ada-claude-connector
 
 This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Setting Up the Connector
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
+The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
+Individual Claude Account - Setting Up the Connector
+Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
 Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
 Step 2: Log In to Optilogic
 Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
@@ -14498,14 +14499,26 @@ Step 4: Allow Access
 When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
 Pro tip — Review your access settings
 Go back into Settings > Connectors > Optilogic and scroll down to Tool Permissions to control which actions Claude can take without asking each time. A good rule of thumb: leave read-only tools (like listing databases) on Always Allow, and keep anything closer to write or delete on Needs Approval — so Claude can freely look things up, but cannot change or remove anything without your sign-off.
-Disconnecting or Removing the Connector
+Claude Enterprise Plan - Setting up the Connector
+To connect when on an Enterprise plan, your organization's IT department needs to take steps 1-4 below before individual users on the plan can start using the Optilogic connector (step 5 below).
+Step 1: Open Organization Settings
+As an administrator of the Claude Enterprise plan, click on your username at the left bottom, and choose "Organization settings":
+Step 2: Open the Connector Directory
+Navigate to Connectors in the Settings screen, then click on the "Add" button, and choose "All Available" to open the Connector Directory modal:
+Step 3: Select the Optilogic Connector
+Search the directory for Optilogic and click on it to select it and see the listing details:
+Step 4: Connect the Connector
+Press the "Connect for your team" button to add it:
+Step 5: Users on the Enterprise Plan Connect
+A user on the organization's Claude Enterprise plan can now connect by going to Settings > Connectors, and pressing the "Connect" button of the Optilogic connector:
 Should you need to disconnect or remove the Optilogic Connector, please take following steps:
 In Claude, go to your Account > Settings > Connectors and click on the Optilogic connector.
 To disconnect without removing the connector, click on the Disconnect button – you will not have access to Ada from your Claude chats anymore, but you can easily re-connect when desired.
-To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Optilogic connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again.
+To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Optilogic connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again. Note that when on a Claude Enterprise plan, individual users cannot remove the Optilogic connector as this is managed by the organization's IT department.
 This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Setting Up the Connector
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
+The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
+Individual Claude Account - Setting Up the Connector
+Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
 Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
 Step 2: Log In to Optilogic
 Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
@@ -14515,11 +14528,22 @@ Step 4: Allow Access
 When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
 Pro tip — Review your access settings
 Go back into Settings > Connectors > Optilogic and scroll down to Tool Permissions to control which actions Claude can take without asking each time. A good rule of thumb: leave read-only tools (like listing databases) on Always Allow, and keep anything closer to write or delete on Needs Approval — so Claude can freely look things up, but cannot change or remove anything without your sign-off.
-Disconnecting or Removing the Connector
+Claude Enterprise Plan - Setting up the Connector
+To connect when on an Enterprise plan, your organization's IT department needs to take steps 1-4 below before individual users on the plan can start using the Optilogic connector (step 5 below).
+Step 1: Open Organization Settings
+As an administrator of the Claude Enterprise plan, click on your username at the left bottom, and choose "Organization settings":
+Step 2: Open the Connector Directory
+Navigate to Connectors in the Settings screen, then click on the "Add" button, and choose "All Available" to open the Connector Directory modal:
+Step 3: Select the Optilogic Connector
+Search the directory for Optilogic and click on it to select it and see the listing details:
+Step 4: Connect the Connector
+Press the "Connect for your team" button to add it:
+Step 5: Users on the Enterprise Plan Connect
+A user on the organization's Claude Enterprise plan can now connect by going to Settings > Connectors, and pressing the "Connect" button of the Optilogic connector:
 Should you need to disconnect or remove the Optilogic Connector, please take following steps:
 In Claude, go to your Account > Settings > Connectors and click on the Optilogic connector.
 To disconnect without removing the connector, click on the Disconnect button – you will not have access to Ada from your Claude chats anymore, but you can easily re-connect when desired.
-To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Optilogic connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again.
+To completely remove the connector, click on the button with the 3 vertical dots and choose Remove. If you want to use the Optilogic connector again in future, you will need to go through the steps of the “Setting up the Connector” section above again. Note that when on a Claude Enterprise plan, individual users cannot remove the Optilogic connector as this is managed by the organization's IT department.
 
 
 ---
@@ -24715,6 +24739,31 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
+The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
+Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
+Step 1: Add the Connector
+Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
+Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
+Step 2: Log In to Optilogic
+Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
+Step 3: Confirm the Connection
+Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
+Step 4: Allow Access
+When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
+To connect when on an Enterprise plan, your organization's IT department needs to take steps 1-4 below before individual users on the plan can start using the Optilogic connector (step 5 below).
+Step 1: Open Organization Settings
+As an administrator of the Claude Enterprise plan, click on your username at the left bottom, and choose "Organization settings":
+Step 2: Open the Connector Directory
+Navigate to Connectors in the Settings screen, then click on the "Add" button, and choose "All Available" to open the Connector Directory modal:
+Step 3: Select the Optilogic Connector
+Search the directory for Optilogic and click on it to select it and see the listing details:
+Step 4: Connect the Connector
+Press the "Connect for your team" button to add it:
+Step 5: Users on the Enterprise Plan Connect
+A user on the organization's Claude Enterprise plan can now connect by going to Settings > Connectors, and pressing the "Connect" button of the Optilogic connector:
+You will be prompted to authenticate with your Optilogic credentials, see also step 2 and onwards in the Individual Claude Account - Setting up the Connector section above.
+Should you need to disconnect or remove the Optilogic Connector, please take following steps:
 Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
 In this documentation we will cover how users can import and export data into and out of Cosmic Frog, and illustrate this with multiple examples.
 There are 2 methods of importing Excel/CSV data into Cosmic Frog’s input tables available to users:
@@ -25142,14 +25191,6 @@ Should you need to disconnect from the Optilogic Connector, go to Plugins and cl
 Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
 Please note that the connector will be uninstalled immediately without asking to confirm.
 Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
-This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Any user can add the connector to their own Claude account and authenticate with Optilogic directly — no admin setup required.
-Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
-Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
-Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
-When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
-Should you need to disconnect or remove the Optilogic Connector, please take following steps:
 When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
 In short, using DOS lets users be flexible with policy parameters; it is a good starting point for estimating/making assumptions about how inventory is managed in practice.
 Note that it is recommended you are familiar with the Inventory Policies table in Cosmic Frog already before diving into the details of this help article.
