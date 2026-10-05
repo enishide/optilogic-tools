@@ -920,7 +920,8 @@ Other
 - Utility Curves for easily specifying Dendro parameters
 - Improvements to plotting road networks in Cosmic Frog
 Model Run Options
-- New Neo MRO: MaxNumberOfSourcesToConsiderForMultiStopRoutes  - When Hopper is called inside NEO, it creates multi-stop routes for shipments from a source to multiple destinations. This option limits the top closest sources for each customer that Hopper will consider when creating these multi-stop routes. A higher number of sources may lead to better optimization of routes but can also increase computational time and resource usage.
+- New Neo MRO: MaxNumberOfSourcesToConsiderForMultiStopRoutes
+  - When Hopper is called inside NEO, it creates multi-stop routes for shipments from a source to multiple destinations. This option limits the top closest sources for each customer that Hopper will consider when creating these multi-stop routes. A higher number of sources may lead to better optimization of routes but can also increase computational time and resource usage.
 - New Dendro MRO: DendroTimeout
   - Time in seconds after which the system will cancel a Dendro generated simulation. This is helpful in case runs get stuck to prevent blocking the next generation. Best practice is to set the time at 1.25-1.5 X the time it takes to simulate the Baseline.
 CYCLO - Multi-Echelon Inventory Optimization
@@ -6756,7 +6757,7 @@ For a brief review of how to use the template file, please watch the following v
 **URL:** https://optilogic.com/resources/help-center/docs/downloadable-anura-data-structure---outputs
 
 The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
-Anura 2.8 is the current schema.
+Anura 2.8.21 is the current schema.
 A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
 
 
@@ -24739,6 +24740,12 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
+Anura 2.8.21 is the current schema.
+A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
+The best way to understand modeling in Cosmic Frog is to understand the data model and structure. The following link provides a downloadable (Excel) template with the documentation and explanation for every input table and field in the modeling schema.
+A downloadable template describing the fields in the output tables can be downloaded from the Downloadable Anura Data Structure - Outputs Help Center article.
+For a brief review of how to use the template file, please watch the following video.
 This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
 The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
 Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
@@ -25550,22 +25557,6 @@ After selecting the database to profile (here a DataStar project named Dairy End
 This prompt results in running the full Data Profiler Agent's pipeline and the __pq_ tables can be found in the sandbox of the connected DataStar project.
 The following table summarizes the most common use cases for the 2 ways of accessing the Data Profiler Agent:
 You point the Data Profiler AI Agent at a database, walk away, and come back a few minutes later to a queryable catalogue of every table — what each column means, what type it should be, where the data is broken, how the tables relate, and a single quality score per table to triage what needs cleaning first.
-The Full Truckload Costing utility solves the common problem of missing transportation cost data when building supply chain models. Rather than requiring users to manually research rates for every lane, this workflow automatically derives costs from a company's existing shipment history. The utility expects two input tables: a lanes-to-cost table containing the origin-destination pairs that need pricing, and an optional historical shipments table containing preprocessed cost data. After running the utility, users receive a fully costed lanes table with confidence levels for each estimate.
-The Full Truckload Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
-Screenshots of the steps:
-The utility produces an output table containing all lanes from the input with the following additional columns populated:
-The utility processes lanes through a sequential pipeline, with each step only processing lanes that still have NULL costs:
-The Less Than Truckload Costing utility solves the challenge of pricing less-than-truckload (LTL) shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
-The Less Than Truckload Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
-LTL costs are calculated as a three-component sum:
-Each component is calculated independently using the formula:
-Where:
-FedEx Freight zones (101–150) represent the transit distance and pricing tier between an origin and destination. Zones are assigned by FedEx based on origin and destination ZIP codes. You can determine the correct zone for a lane using the FedEx Freight zone chart or a zone lookup tool.
-Higher zone numbers generally correspond to longer distances and higher rates.
-The utility supports the following standard NMFC freight classes:
-Freight class values are case-insensitive and will be normalized automatically. Common formats such as "60", "60.0", and "60.00" are all accepted and treated as equivalent.
-Service level values are normalized to lowercase automatically, so "Economy", "ECONOMY", and "economy" are all accepted.
-If a lane cannot be costed, the failure_reasons column will contain one or more of the following:
 
 
 ---

@@ -350,7 +350,8 @@ Other
 - Utility Curves for easily specifying Dendro parameters
 - Improvements to plotting road networks in Cosmic Frog
 Model Run Options
-- New Neo MRO: MaxNumberOfSourcesToConsiderForMultiStopRoutes  - When Hopper is called inside NEO, it creates multi-stop routes for shipments from a source to multiple destinations. This option limits the top closest sources for each customer that Hopper will consider when creating these multi-stop routes. A higher number of sources may lead to better optimization of routes but can also increase computational time and resource usage.
+- New Neo MRO: MaxNumberOfSourcesToConsiderForMultiStopRoutes
+  - When Hopper is called inside NEO, it creates multi-stop routes for shipments from a source to multiple destinations. This option limits the top closest sources for each customer that Hopper will consider when creating these multi-stop routes. A higher number of sources may lead to better optimization of routes but can also increase computational time and resource usage.
 - New Dendro MRO: DendroTimeout
   - Time in seconds after which the system will cancel a Dendro generated simulation. This is helpful in case runs get stuck to prevent blocking the next generation. Best practice is to set the time at 1.25-1.5 X the time it takes to simulate the Baseline.
 CYCLO - Multi-Echelon Inventory Optimization
@@ -1302,7 +1303,7 @@ For a brief review of how to use the template file, please watch the following v
 **URL:** https://optilogic.com/resources/help-center/docs/downloadable-anura-data-structure---outputs
 
 The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
-Anura 2.8 is the current schema.
+Anura 2.8.21 is the current schema.
 A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
 
 
@@ -4024,6 +4025,12 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
+Anura 2.8.21 is the current schema.
+A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
+The best way to understand modeling in Cosmic Frog is to understand the data model and structure. The following link provides a downloadable (Excel) template with the documentation and explanation for every input table and field in the modeling schema.
+A downloadable template describing the fields in the output tables can be downloaded from the Downloadable Anura Data Structure - Outputs Help Center article.
+For a brief review of how to use the template file, please watch the following video.
 This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
 The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
 Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
@@ -4041,16 +4048,7 @@ Step 1: Open Organization Settings
 As an administrator of the Claude Enterprise plan, click on your username at the left bottom, and choose "Organization settings":
 Step 2: Open the Connector Directory
 Navigate to Connectors in the Settings screen, then click on the "Add" button, and choose "All Available" to open the Connector Directory modal:
-Step 3: Select the Optilogic Connector
-Search the directory for Optilogic and click on it to select it and see the listing details:
-Step 4: Connect the Connector
-Press the "Connect for your team" button to add it:
-Step 5: Users on the Enterprise Plan Connect
-A user on the organization's Claude Enterprise plan can now connect by going to Settings > Connectors, and pressing the "Connect" button of the Optilogic connector:
-You will be prompted to authenticate with your Optilogic credentials, see also step 2 and onwards in the Individual Claude Account - Setting up the Connector section above.
-Should you need to disconnect or remove the Optilogic Connector, please take following steps:
-Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
-In this documentation we will cover how users can import and export d
+Step 3: Se
 …（省略）
 
 
