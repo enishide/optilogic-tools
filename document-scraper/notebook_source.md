@@ -4143,6 +4143,7 @@ You can clear output data from all model output tables in one quick action. Navi
 **URL:** https://optilogic.com/resources/help-center/docs/demand-modeling-using-the-pulsar-engine
 
 Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
+This video gives an overview of demand modeling in the Demand Modeling App, basic inputs and outputs, and how the app interacts with the core Optilogic platform:
 Quick Start
 Follow these steps to get up and running with the Pulsar demand engine quickly.
 Prepare your input data. You need at minimum three tables: Demand (historical SKU-location data, ideally 2–3 years), Product Hierarchy, and Location Hierarchy. Column names must match the schema exactly (all lowercase, no spaces). See the appendix for full details on the schema.
@@ -4506,6 +4507,7 @@ Light blue: early pipeline output tables
 Gray: metadata/diagnostics output tables
 The column master output table is one of the metadata output tables. It is the first table in the file as it shows the schema: it contains a list of all the columns and their descriptions used across the input and output tables. Some columns are used in multiple tables and their values need to be internally consistent.
 Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
+This video gives an overview of demand modeling in the Demand Modeling App, basic inputs and outputs, and how the app interacts with the core Optilogic platform:
 Quick Start
 Follow these steps to get up and running with the Pulsar demand engine quickly.
 Prepare your input data. You need at minimum three tables: Demand (historical SKU-location data, ideally 2–3 years), Product Hierarchy, and Location Hierarchy. Column names must match the schema exactly (all lowercase, no spaces). See the appendix for full details on the schema.
@@ -24740,6 +24742,142 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
+Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
+This video gives an overview of demand modeling in the Demand Modeling App, basic inputs and outputs, and how the app interacts with the core Optilogic platform:
+Follow these steps to get up and running with the Pulsar demand engine quickly.
+Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
+The Pulsar demand engine generates granular, hierarchy-consistent forecasts.
+Traditional approaches rely on historical averages or fixed proportions. These often break when demand shifts, new products launch, or channels grow unevenly.
+Pulsar improves this by:
+Result:
+A single, reliable demand signal used across different teams and functions: network design & facility investment, inventory & replenishment planning, transportation & logistics, capacity planning, and strategic planning.
+1. Network Design & Facility Investment
+The engine enables scenario-based network planning using granular growth forecasts (product × location), rather than blanket assumptions.
+2. Inventory & Replenishment Planning
+It shifts planning from reactive to forward-looking:
+3. Transportation & Logistics
+The engine improves logistics planning with predictive insights:
+4. Capacity Planning
+It strengthens long-term infrastructure decisions:
+5. Strategic Planning
+The outputs align decision-making across the business:
+Bottom line
+The engine replaces broad, assumption-driven planning with granular, statistically grounded, and aligned forecasts, improving decision quality across operational and strategic levels.
+The following table provides an overview of problems commonly encountered when modeling demand and how Pulsar addresses these.
+After running the Pulsar engine, the outputs include:
+The table-based outputs can be used directly in downstream models.
+These are the workflow tasks available in the Pulsar Engine:
+*Uses the Generate Forecasts task and not the Generate Probabilistic Forecasts task.
+If unsure, use the All Forecast Workflow.
+Run this utility after:
+Outputs feed into:
+This makes Pulsar a core upstream step in supply chain decision-making.
+The Pulsar engine handles complex forecasting tasks for you:
+Keeps forecasts consistent across all levels
+Adapts to each demand pattern
+Provides multiple models so users can choose the best one(s) for their needs
+Uses statistical and machine/deep learning models such as:
+Learns across products when useful
+Quantifies uncertainty
+Generates scenario-ready growth rates
+When you run the full workflow, the Pulsar engine executes a structured pipeline:
+This process is fully automated within the engine.
+The following diagram shows the required and optional inputs into the Pulsar engine on the left, while the outputs are listed on the right-hand side:
+Note that optionally, an HTML Growth Report can be generated too when growth projections are turned on.
+Full details on table and column names and their descriptions can be found in the appendix.
+The Pulsar engine can be accessed and run from 2 locations:
+This table compares using the Pulsar engine through DataStar versus using it in the App:
+Next, we walk through using the Pulsar engine through the Run Utility task in DataStar. After, we will cover the steps when using the Demand Modeling App.
+Note that this workflow assumes users use the Project Sandbox of a DataStar project to contain the inputs to be used by the Pulsar engine.
+Should you want to use the same data as used in this walk-through while following along, then please download this PulsarDemandModelingDemoData zip-file and unzip it after download. Use the 6 csv-files as your input tables.
+The following data is used as input for the demand modelling engine and needs to be imported into a DataStar project before running the Pulsar engine.
+Required
+Optional
+The appendix contains complete details on the table and column names – your input data needs to match this schema exactly, including being all lower case and not containing any spaces.
+Once the data is prepared, for example in CSV or Excel format, users can create Data Connections in DataStar to make the data visible inside any DataStar project. See the How to Create a New Data Connection section in the DataStar Overview help center article for more details.
+This data from the connections then needs to be imported into the project sandbox of the project. Users can use an Import task for each table they are importing, see this Quick Start Guide for a walk-through on how to import data from a CSV data connection.
+From the Workflow Task dropdown in the Configure Utility section, choose the desired workflow. As discussed above in the Workflow Tasks You Can Run section, the All Forecast Workflow is recommended in most cases.
+Choose how data is provided from the IO Adapter Type dropdown:
+Several forecasting and growth projection related settings can be configured next. The settings shown in the screenshot are the defaults (except where noted) and it is recommended to use these as a starting point.
+5.1 Skip Bottom Level Forecasting
+5.2 Generate Growth Projections
+5.3 Number of Strategies
+The number of hierarchical strategies that will be generated. Outputs can be found in the hierarchystrategies table.
+5.4 Maximum Number of Forecast Levels
+5.5 Required Hierarchy Levels
+If a forecast at a specific combination of product and location levels is required, for example for a certain supply chain function, this can be added in this setting. The format is comma-separated tuples. For example, if you require forecasts at the product - location_l3 and product_l4 - location_l2 levels, you enter: (product,location_l3),(product_l4,location_l2).
+5.6 Smooth Bottom Forecast Proportions
+5.7 Forecast Source (if Generate Growth Projections = ON)
+5.8 Generate HTML Growth Report (if Generate Growth Projections = ON)
+5.9 Growth Calculation Method (if Generate Growth Projections = ON)
+Currently only year-over-year (YoY) is available as the method for calculating growth. More to come.
+These options configure what data is used for forecasting, plus the interval and length required for the forecasted demand.
+6.1 Data End Date
+Controls how much historical data is used.
+6.2 Forecast Horizon
+6.3 Frequency
+6.4 Test Length (Model Validation)
+What happens:
+This is how users gain confidence in the engine’s performance.
+Here, users can overwrite the automatic selection of algorithms.
+7.1 Advanced Algorithms
+7.2 Statistical Algorithms
+7.3 Enable Ensemble
+Options for more advanced users and applications can optionally be configured. If not configured, their defaults will be used under the hood.
+8.1 Show Advanced Options
+8.2 Model Selection Metric
+The error metric used for selecting the best model for a series. Options are:
+8.3 Number of Validation Splits
+The number of times the model is tested on different unseen slices of historical data during cross-validation. An example with 3 folds:
+8.4 Enable Differencing
+8.5 Lag Periods
+Defines how the data needs to be shifted backwards in time to predict future demand. Options are:
+8.6 Rolling Window Periods
+Defines the period used to calculate an aggregated average over; this acts as a moving block of time. Options are:
+8.7 Enable Standardization
+8.8 Enable Calendar Features
+8.9 Enable Exogenous Variables
+8.10 Enable Seasonality Extraction
+8.11 Enable Time Decay Weights
+8.12 Demand Job Config
+Optionally, users can adjust Run Configuration settings, located underneath the Configure Utility section:
+Click on the play button on the task that is shown when hovering over the task to start running the Pulsar engine:
+You can monitor the progress of the run in the Macro & Task Logs below the macro canvas:
+Example outputs found in the most used output tables are shown here with a short explanation.
+Hierarchy Strategies
+This table shows at which levels forecasts will be generated. The Pulsar engine has determined at which combination of product-location levels the demand signal the richest is.
+We see that one strategy is generated (per the Number of Strategies input) and it contains 4 levels to forecast at (per the Maximum Number of Forecast Levels input):
+Reconciled Forecasts
+This table contains the demand forecasts after reconciliation has been performed. It contains the forecast at all 4 levels from Strategy_1.
+Growth Projections
+The forecasts are turned into growth projections which can be found in this output table; this is again done for all 4 levels of Strategy_1:
+Please note there are 2 more columns in this table which are not shown in the screenshot:
+HTML Growth Report
+When growth projections are being generated and the Generate HTML Report option is turned on, a growth_report.html file is created. It contains an overview of what the growth projections tell us and users can drill into details.
+After logging into the Demand Modeling App at https://demand-modeling.apps.optilogic.app, users will see a screen similar to the following:
+When you switch between accounts or projects, a Switch Team? / Switch Project? confirmation message will come up:
+Create a new project as follows:
+After creating a new project, first a toast message comes up at the right top of the app saying that you will be notified when the new project is ready:
+While the project is being created, we see the status of “1 job running” in the toolbar of the App, to the left of the Team selector:
+A short while later the following toast message lets us know that the project has been created successfully. You can then select it from the Project drop-down list to start working with it.
+If input data is already present in the project, it can be viewed and otherwise it can be directly added by uploading CSV or Excel (.xlsx) files.
+To upload files to populate the input tables, click on the ‘+ Upload’ button at the right top which brings up the following Upload Demand Files form:
+After clicking on the Upload button, the Status of both files will show a spinner indicating the upload is in progress.
+Should an upload fail, an error status icon appears, and users can hover over the icon to show a tooltip which displays the error message. The following screenshot shows an example where the column names are incorrect:
+Once your project contains demand data, you can configure the inputs for running the demand modeling engine. The configuration options are mostly the same as what we have seen for the DataStar workflow as covered in the previous section, but somewhat simplified. The Demand Model Configuration section is found on the Inputs page, below the grid showing the selected table:
+Following advanced options can be configured if desired. The numbers on the options refer to the part of section Step 8: Advanced Options where they are explained:
+Click on the Generate Forecast button at the right top of the Demand Model Configuration area once ready to run the Pulsar engine. First, a toast message saying that the job was submitted comes up at the right-top of the App:
+While the Pulsar engine is running, we see the status of “1 job running” in the toolbar of the App, to the left of the Team selector:
+Once a run completes, another toast message stating so comes up in the right-top corner of the App:
+Once the job has finished, outputs can be reviewed in the Detailed, Hierarchical, and Growth Projections (if generated) parts of the App. Switch to them using the navigation on the left hand-side.
+In the Detailed outputs section, you can look at the historical and forecasted demand, at the bottom product-location level. Features from the causals tables can be overlayed as well.
+In the Hierarchical part of the App, outputs can be viewed at the different levels that were forecast at:
+Note that similar to the Detailed outputs chart, you can also hover over the graphs here to show a tooltip with date and values of the historical demand / forecast(s) and use the slider beneath to zoom in/out of the chart.
+If Growth Projections generation was turned on for the Pulsar engine run, results at the table level and summarized into a risk quadrant and growth distribution bar chart can be found in the Growth Projections part of the App.
+The grid further below shows all growth projections at all forecasted levels. Like the grids showing the input tables, in this one the columns can be re-ordered, resized, sorted on, and filtered too. At the bottom of the grid, the number of records per page can be set and if there are multiple pages they can be stepped through using the controls here. Positive growth rates are shown in green and negative ones in red. Where confidence is greater than 80%, it is shown in green:
+As always, please feel free to contact our Support team on support@optilogic.com in case of any questions or feedback. Happy demand modeling!
+The following zip-file contains an Excel file named DemandModeling_DatabaseSchema_August2026.xlsx in which the schema of all input and output tables of the Pulsar engine can be found: Demand Modeling Schema download (download this zip-file and then extract it). The tables are colored like they are in the diagram in the Inputs and Outputs Overview section:
+The column master output table is one of the metadata output tables. It is the first table in the file as it shows the schema: it contains a list of all the columns and their descriptions used across the input and output tables. Some columns are used in multiple tables and their values need to be internally consistent.
 The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
 Anura 2.8.21 is the current schema.
 A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
@@ -24919,141 +25057,6 @@ Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios tha
 Response: lists 3 sets of suggested scenarios to add and the reasoning:
 Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
 Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
-Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
-Follow these steps to get up and running with the Pulsar demand engine quickly.
-Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
-The Pulsar demand engine generates granular, hierarchy-consistent forecasts.
-Traditional approaches rely on historical averages or fixed proportions. These often break when demand shifts, new products launch, or channels grow unevenly.
-Pulsar improves this by:
-Result:
-A single, reliable demand signal used across different teams and functions: network design & facility investment, inventory & replenishment planning, transportation & logistics, capacity planning, and strategic planning.
-1. Network Design & Facility Investment
-The engine enables scenario-based network planning using granular growth forecasts (product × location), rather than blanket assumptions.
-2. Inventory & Replenishment Planning
-It shifts planning from reactive to forward-looking:
-3. Transportation & Logistics
-The engine improves logistics planning with predictive insights:
-4. Capacity Planning
-It strengthens long-term infrastructure decisions:
-5. Strategic Planning
-The outputs align decision-making across the business:
-Bottom line
-The engine replaces broad, assumption-driven planning with granular, statistically grounded, and aligned forecasts, improving decision quality across operational and strategic levels.
-The following table provides an overview of problems commonly encountered when modeling demand and how Pulsar addresses these.
-After running the Pulsar engine, the outputs include:
-The table-based outputs can be used directly in downstream models.
-These are the workflow tasks available in the Pulsar Engine:
-*Uses the Generate Forecasts task and not the Generate Probabilistic Forecasts task.
-If unsure, use the All Forecast Workflow.
-Run this utility after:
-Outputs feed into:
-This makes Pulsar a core upstream step in supply chain decision-making.
-The Pulsar engine handles complex forecasting tasks for you:
-Keeps forecasts consistent across all levels
-Adapts to each demand pattern
-Provides multiple models so users can choose the best one(s) for their needs
-Uses statistical and machine/deep learning models such as:
-Learns across products when useful
-Quantifies uncertainty
-Generates scenario-ready growth rates
-When you run the full workflow, the Pulsar engine executes a structured pipeline:
-This process is fully automated within the engine.
-The following diagram shows the required and optional inputs into the Pulsar engine on the left, while the outputs are listed on the right-hand side:
-Note that optionally, an HTML Growth Report can be generated too when growth projections are turned on.
-Full details on table and column names and their descriptions can be found in the appendix.
-The Pulsar engine can be accessed and run from 2 locations:
-This table compares using the Pulsar engine through DataStar versus using it in the App:
-Next, we walk through using the Pulsar engine through the Run Utility task in DataStar. After, we will cover the steps when using the Demand Modeling App.
-Note that this workflow assumes users use the Project Sandbox of a DataStar project to contain the inputs to be used by the Pulsar engine.
-Should you want to use the same data as used in this walk-through while following along, then please download this PulsarDemandModelingDemoData zip-file and unzip it after download. Use the 6 csv-files as your input tables.
-The following data is used as input for the demand modelling engine and needs to be imported into a DataStar project before running the Pulsar engine.
-Required
-Optional
-The appendix contains complete details on the table and column names – your input data needs to match this schema exactly, including being all lower case and not containing any spaces.
-Once the data is prepared, for example in CSV or Excel format, users can create Data Connections in DataStar to make the data visible inside any DataStar project. See the How to Create a New Data Connection section in the DataStar Overview help center article for more details.
-This data from the connections then needs to be imported into the project sandbox of the project. Users can use an Import task for each table they are importing, see this Quick Start Guide for a walk-through on how to import data from a CSV data connection.
-From the Workflow Task dropdown in the Configure Utility section, choose the desired workflow. As discussed above in the Workflow Tasks You Can Run section, the All Forecast Workflow is recommended in most cases.
-Choose how data is provided from the IO Adapter Type dropdown:
-Several forecasting and growth projection related settings can be configured next. The settings shown in the screenshot are the defaults (except where noted) and it is recommended to use these as a starting point.
-5.1 Skip Bottom Level Forecasting
-5.2 Generate Growth Projections
-5.3 Number of Strategies
-The number of hierarchical strategies that will be generated. Outputs can be found in the hierarchystrategies table.
-5.4 Maximum Number of Forecast Levels
-5.5 Required Hierarchy Levels
-If a forecast at a specific combination of product and location levels is required, for example for a certain supply chain function, this can be added in this setting. The format is comma-separated tuples. For example, if you require forecasts at the product - location_l3 and product_l4 - location_l2 levels, you enter: (product,location_l3),(product_l4,location_l2).
-5.6 Smooth Bottom Forecast Proportions
-5.7 Forecast Source (if Generate Growth Projections = ON)
-5.8 Generate HTML Growth Report (if Generate Growth Projections = ON)
-5.9 Growth Calculation Method (if Generate Growth Projections = ON)
-Currently only year-over-year (YoY) is available as the method for calculating growth. More to come.
-These options configure what data is used for forecasting, plus the interval and length required for the forecasted demand.
-6.1 Data End Date
-Controls how much historical data is used.
-6.2 Forecast Horizon
-6.3 Frequency
-6.4 Test Length (Model Validation)
-What happens:
-This is how users gain confidence in the engine’s performance.
-Here, users can overwrite the automatic selection of algorithms.
-7.1 Advanced Algorithms
-7.2 Statistical Algorithms
-7.3 Enable Ensemble
-Options for more advanced users and applications can optionally be configured. If not configured, their defaults will be used under the hood.
-8.1 Show Advanced Options
-8.2 Model Selection Metric
-The error metric used for selecting the best model for a series. Options are:
-8.3 Number of Validation Splits
-The number of times the model is tested on different unseen slices of historical data during cross-validation. An example with 3 folds:
-8.4 Enable Differencing
-8.5 Lag Periods
-Defines how the data needs to be shifted backwards in time to predict future demand. Options are:
-8.6 Rolling Window Periods
-Defines the period used to calculate an aggregated average over; this acts as a moving block of time. Options are:
-8.7 Enable Standardization
-8.8 Enable Calendar Features
-8.9 Enable Exogenous Variables
-8.10 Enable Seasonality Extraction
-8.11 Enable Time Decay Weights
-8.12 Demand Job Config
-Optionally, users can adjust Run Configuration settings, located underneath the Configure Utility section:
-Click on the play button on the task that is shown when hovering over the task to start running the Pulsar engine:
-You can monitor the progress of the run in the Macro & Task Logs below the macro canvas:
-Example outputs found in the most used output tables are shown here with a short explanation.
-Hierarchy Strategies
-This table shows at which levels forecasts will be generated. The Pulsar engine has determined at which combination of product-location levels the demand signal the richest is.
-We see that one strategy is generated (per the Number of Strategies input) and it contains 4 levels to forecast at (per the Maximum Number of Forecast Levels input):
-Reconciled Forecasts
-This table contains the demand forecasts after reconciliation has been performed. It contains the forecast at all 4 levels from Strategy_1.
-Growth Projections
-The forecasts are turned into growth projections which can be found in this output table; this is again done for all 4 levels of Strategy_1:
-Please note there are 2 more columns in this table which are not shown in the screenshot:
-HTML Growth Report
-When growth projections are being generated and the Generate HTML Report option is turned on, a growth_report.html file is created. It contains an overview of what the growth projections tell us and users can drill into details.
-After logging into the Demand Modeling App at https://demand-modeling.apps.optilogic.app, users will see a screen similar to the following:
-When you switch between accounts or projects, a Switch Team? / Switch Project? confirmation message will come up:
-Create a new project as follows:
-After creating a new project, first a toast message comes up at the right top of the app saying that you will be notified when the new project is ready:
-While the project is being created, we see the status of “1 job running” in the toolbar of the App, to the left of the Team selector:
-A short while later the following toast message lets us know that the project has been created successfully. You can then select it from the Project drop-down list to start working with it.
-If input data is already present in the project, it can be viewed and otherwise it can be directly added by uploading CSV or Excel (.xlsx) files.
-To upload files to populate the input tables, click on the ‘+ Upload’ button at the right top which brings up the following Upload Demand Files form:
-After clicking on the Upload button, the Status of both files will show a spinner indicating the upload is in progress.
-Should an upload fail, an error status icon appears, and users can hover over the icon to show a tooltip which displays the error message. The following screenshot shows an example where the column names are incorrect:
-Once your project contains demand data, you can configure the inputs for running the demand modeling engine. The configuration options are mostly the same as what we have seen for the DataStar workflow as covered in the previous section, but somewhat simplified. The Demand Model Configuration section is found on the Inputs page, below the grid showing the selected table:
-Following advanced options can be configured if desired. The numbers on the options refer to the part of section Step 8: Advanced Options where they are explained:
-Click on the Generate Forecast button at the right top of the Demand Model Configuration area once ready to run the Pulsar engine. First, a toast message saying that the job was submitted comes up at the right-top of the App:
-While the Pulsar engine is running, we see the status of “1 job running” in the toolbar of the App, to the left of the Team selector:
-Once a run completes, another toast message stating so comes up in the right-top corner of the App:
-Once the job has finished, outputs can be reviewed in the Detailed, Hierarchical, and Growth Projections (if generated) parts of the App. Switch to them using the navigation on the left hand-side.
-In the Detailed outputs section, you can look at the historical and forecasted demand, at the bottom product-location level. Features from the causals tables can be overlayed as well.
-In the Hierarchical part of the App, outputs can be viewed at the different levels that were forecast at:
-Note that similar to the Detailed outputs chart, you can also hover over the graphs here to show a tooltip with date and values of the historical demand / forecast(s) and use the slider beneath to zoom in/out of the chart.
-If Growth Projections generation was turned on for the Pulsar engine run, results at the table level and summarized into a risk quadrant and growth distribution bar chart can be found in the Growth Projections part of the App.
-The grid further below shows all growth projections at all forecasted levels. Like the grids showing the input tables, in this one the columns can be re-ordered, resized, sorted on, and filtered too. At the bottom of the grid, the number of records per page can be set and if there are multiple pages they can be stepped through using the controls here. Positive growth rates are shown in green and negative ones in red. Where confidence is greater than 80%, it is shown in green:
-As always, please feel free to contact our Support team on support@optilogic.com in case of any questions or feedback. Happy demand modeling!
-The following zip-file contains an Excel file named DemandModeling_DatabaseSchema_August2026.xlsx in which the schema of all input and output tables of the Pulsar engine can be found: Demand Modeling Schema download (download this zip-file and then extract it). The tables are colored like they are in the diagram in the Inputs and Outputs Overview section:
-The column master output table is one of the metadata output tables. It is the first table in the file as it shows the schema: it contains a list of all the columns and their descriptions used across the input and output tables. Some columns are used in multiple tables and their values need to be internally consistent.
 This documentation details how to connect and disconnect the Optilogic MCP connector using Copilot. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
 The steps to take when connecting to the Optilogic MCP Connector in Copilot are as follows:
 These steps are covered in detail in the next sections.

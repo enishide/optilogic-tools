@@ -1125,6 +1125,7 @@ You can clear output data from all model output tables in one quick action. Navi
 **URL:** https://optilogic.com/resources/help-center/docs/demand-modeling-using-the-pulsar-engine
 
 Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
+This video gives an overview of demand modeling in the Demand Modeling App, basic inputs and outputs, and how the app interacts with the core Optilogic platform:
 Quick Start
 Follow these steps to get up and running with the Pulsar demand engine quickly.
 Prepare your input data. You need at minimum three tables: Demand (historical SKU-location data, ideally 2–3 years), Product Hierarchy, and Location Hierarchy. Column names must match the schema exactly (all lowercase, no spaces). See the appendix for full details on the schema.
@@ -1147,9 +1148,7 @@ Supports base, upside, and downside scenarios with targeted adjustments
 Hierarchical modeling ensures consistency from regional down to SKU/site level
 Outputs can be directly used in network optimization
 2. Inventory & Replenishment Planning
-It shifts planning from reactive to forward-looking:
-Uses projected growth to recalculate safety stock and reorder points
-Enables targeted inventory investment, increasing stock where demand
+It shifts planning from reac
 …（省略）
 
 
@@ -4025,30 +4024,46 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
-Anura 2.8.21 is the current schema.
-A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
-The best way to understand modeling in Cosmic Frog is to understand the data model and structure. The following link provides a downloadable (Excel) template with the documentation and explanation for every input table and field in the modeling schema.
-A downloadable template describing the fields in the output tables can be downloaded from the Downloadable Anura Data Structure - Outputs Help Center article.
-For a brief review of how to use the template file, please watch the following video.
-This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
-Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
-Step 1: Add the Connector
-Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
-Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
-Step 2: Log In to Optilogic
-Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Step 3: Confirm the Connection
-Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
-Step 4: Allow Access
-When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
-To connect when on an Enterprise plan, your organization's IT department needs to take steps 1-4 below before individual users on the plan can start using the Optilogic connector (step 5 below).
-Step 1: Open Organization Settings
-As an administrator of the Claude Enterprise plan, click on your username at the left bottom, and choose "Organization settings":
-Step 2: Open the Connector Directory
-Navigate to Connectors in the Settings screen, then click on the "Add" button, and choose "All Available" to open the Connector Directory modal:
-Step 3: Se
+Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
+This video gives an overview of demand modeling in the Demand Modeling App, basic inputs and outputs, and how the app interacts with the core Optilogic platform:
+Follow these steps to get up and running with the Pulsar demand engine quickly.
+Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
+The Pulsar demand engine generates granular, hierarchy-consistent forecasts.
+Traditional approaches rely on historical averages or fixed proportions. These often break when demand shifts, new products launch, or channels grow unevenly.
+Pulsar improves this by:
+Result:
+A single, reliable demand signal used across different teams and functions: network design & facility investment, inventory & replenishment planning, transportation & logistics, capacity planning, and strategic planning.
+1. Network Design & Facility Investment
+The engine enables scenario-based network planning using granular growth forecasts (product × location), rather than blanket assumptions.
+2. Inventory & Replenishment Planning
+It shifts planning from reactive to forward-looking:
+3. Transportation & Logistics
+The engine improves logistics planning with predictive insights:
+4. Capacity Planning
+It strengthens long-term infrastructure decisions:
+5. Strategic Planning
+The outputs align decision-making across the business:
+Bottom line
+The engine replaces broad, assumption-driven planning with granular, statistically grounded, and aligned forecasts, improving decision quality across operational and strategic levels.
+The following table provides an overview of problems commonly encountered when modeling demand and how Pulsar addresses these.
+After running the Pulsar engine, the outputs include:
+The table-based outputs can be used directly in downstream models.
+These are the workflow tasks available in the Pulsar Engine:
+*Uses the Generate Forecasts task and not the Generate Probabilistic Forecasts task.
+If unsure, use the All Forecast Workflow.
+Run this utility after:
+Outputs feed into:
+This makes Pulsar a core upstream step in supply chain decision-making.
+The Pulsar engine handles complex forecasting tasks for you:
+Keeps forecasts consistent across all levels
+Adapts to each demand pattern
+Provides multiple models so users can choose the best one(s) for their needs
+Uses statistical and machine/deep learning models such as:
+Learns across products when useful
+Quantifies uncertainty
+Generates scenario-ready growth rates
+When you run the full workflow, the Pulsar engine executes a structured pipeline:
+This process is fully automated within the engine
 …（省略）
 
 
