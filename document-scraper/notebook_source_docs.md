@@ -1289,6 +1289,27 @@ In this help article we will cover the inputs & outputs of Cosmic Frog’s produ
 
 
 ---
+## Dock Door Constraints (Transportation Optimization)
+**URL:** https://optilogic.com/resources/help-center/docs/dock-door-constraints-transportation-optimization
+
+Without dock door constraints, the transportation optimization engine (Hopper) assumes facilities and customers can load and unload any number of vehicles at the same time. In reality, a depot with 2 dock doors can only service 2 vehicles at once, and routes that look good on paper may be impossible to execute. Dock door constraints let you model that limit, so the routes and schedules Hopper produces are operationally realistic.
+Example business questions that can be answered with the help of dock door constraints:
+Please note that a basic knowledge of Hopper prior to diving into this content is recommended, see the Getting Started with Hopper article.
+Dock door constraints are specified by using the new Number of Dock Doors column on the Facilities and Customers tables. The new field on the Facilities table is shown here:
+If Number of Dock Doors is:
+Dock doors can be occupied by assets (vehicles/trucks) which are loading and/or unloading.
+The time an asset spends (un)loading at a dock door is determined by pickup and delivery times that can be specified in following input tables: Customers, Facilities, Transportation Assets, and Shipments. Fixed and variable (“unit”) pickup and delivery times plus their units of measure can be specified on all tables, and these times are additive.
+Assets do not occupy a dock door when they are waiting.
+If used, business hours and business calendars need to be satisfied as with any other Hopper runs, while the Complete Service in Time Window run setting also impacts when service at a facility can start and end.
+If due to a dock door constraint, a shipment cannot be routed like it otherwise would, Hopper will take the usual steps of changing the timing of stops/routes, moving stops around, trying shipments on different routes, using more assets or a different asset mix, etc. Ultimately, it is possible that dock door constraints make it such that one or multiple shipments cannot be routed, which will be indicated with Shipment Status = Unrouted in the Transportation Shipment Summary output table.
+We will use an example that is set up on a copy of a model from the Resource Library: Multi Stop Routes with Time Windows. You can copy it to your own account if you want to follow along. In this model there are 2 depots, one in Atlanta and one in Jacksonville, from which product is picked up and then delivered to 31 customers in Georgia. Several scenarios that explore routes, fleet mix, use of the second depot, and integration of a new customer base consisting of 13 customers into the existing one are already set up.
+In our relatively simple example, we will update an existing scenario by specifying that the Atlanta Depot only has 1 dock door available. Then we run the original scenario without any dock door constraints together with the updated scenario and compare the outputs.
+In the Scenarios module of this model:
+After running both scenarios with the Solver Focus run setting set to High Precision, we filter the Trans
+…（省略）
+
+
+---
 ## Downloadable Anura Data Structure – Inputs
 **URL:** https://optilogic.com/resources/help-center/docs/downloadable-anura-data-structure---inputs
 
@@ -1710,6 +1731,7 @@ How can I best slot in new customers into existing routes? Or is it better to se
 How many transportation assets do I need to operate my routes?
 What is the most optimal stop sequence on my routes when combining deliveries and pickups (interleaved)?
 How do the interleaved routes change if I need to enforce Last In First Out (LIFO) rules?
+Where in my network (depots and customers) are dock doors the bottleneck, and what does it cost me in wait time or extra routes?
 Hopper’s transportation optimization capabilities can be used in combination with network design to test out what a new network design means in terms of the last-mile delivery configuration. For example, questions that can be looked at are:
 How is the proposed design going to change my current delivery design?
 What is my asset utilization going to be?
@@ -1721,7 +1743,7 @@ In this documentation we will first cover some general Cosmic Frog functionality
 General Pointers before diving into Hopper Specifics
 To not make this document too repetitive we will cover some general Cosmic Frog functionality here that applies to all Cosmic Frog technologies and is used extensively for Hopper too.
 Using the Hopper Technology Filter
-To only show tables and fields in them that can be used by the Hopper transportation optimization algorithm, disable all icons except the 4th (“Transportation”) in the Technologies Selector from the toolbar at the top in Cosmic Frog. This will hide any tables and fields that are no
+To only show tables and fields in them that can be used by the Hopper transportation optimization algorithm, disable all icons except the 4th (“Transport
 …（省略）
 
 
@@ -4024,46 +4046,15 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
-This video gives an overview of demand modeling in the Demand Modeling App, basic inputs and outputs, and how the app interacts with the core Optilogic platform:
-Follow these steps to get up and running with the Pulsar demand engine quickly.
-Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
-The Pulsar demand engine generates granular, hierarchy-consistent forecasts.
-Traditional approaches rely on historical averages or fixed proportions. These often break when demand shifts, new products launch, or channels grow unevenly.
-Pulsar improves this by:
-Result:
-A single, reliable demand signal used across different teams and functions: network design & facility investment, inventory & replenishment planning, transportation & logistics, capacity planning, and strategic planning.
-1. Network Design & Facility Investment
-The engine enables scenario-based network planning using granular growth forecasts (product × location), rather than blanket assumptions.
-2. Inventory & Replenishment Planning
-It shifts planning from reactive to forward-looking:
-3. Transportation & Logistics
-The engine improves logistics planning with predictive insights:
-4. Capacity Planning
-It strengthens long-term infrastructure decisions:
-5. Strategic Planning
-The outputs align decision-making across the business:
-Bottom line
-The engine replaces broad, assumption-driven planning with granular, statistically grounded, and aligned forecasts, improving decision quality across operational and strategic levels.
-The following table provides an overview of problems commonly encountered when modeling demand and how Pulsar addresses these.
-After running the Pulsar engine, the outputs include:
-The table-based outputs can be used directly in downstream models.
-These are the workflow tasks available in the Pulsar Engine:
-*Uses the Generate Forecasts task and not the Generate Probabilistic Forecasts task.
-If unsure, use the All Forecast Workflow.
-Run this utility after:
-Outputs feed into:
-This makes Pulsar a core upstream step in supply chain decision-making.
-The Pulsar engine handles complex forecasting tasks for you:
-Keeps forecasts consistent across all levels
-Adapts to each demand pattern
-Provides multiple models so users can choose the best one(s) for their needs
-Uses statistical and machine/deep learning models such as:
-Learns across products when useful
-Quantifies uncertainty
-Generates scenario-ready growth rates
-When you run the full workflow, the Pulsar engine executes a structured pipeline:
-This process is fully automated within the engine
+Hopper is the Transportation Optimization algorithm within Cosmic Frog. It designs optimal multi-stop routes to deliver/pickup a given set of shipments to/from customer locations at the lowest cost. Fleet sizing and balancing weekly demand can be achieved with Hopper too. Example business questions Hopper can answer are:
+Hopper’s transportation optimization capabilities can be used in combination with network design to test out what a new network design means in terms of the last-mile delivery configuration. For example, questions that can be looked at are:
+With ever increasing transportation costs, getting the last-mile delivery part of your supply chain right can make a big impact on the overall supply chain costs!
+It is recommended to watch this short Getting Started with Hopper video before diving into the details of this documentation. The video gives a nice, concise overview of the basic inputs, process, and outputs of a Hopper model.
+In this documentation we will first cover some general Cosmic Frog functionality that is used extensively in Hopper, next we go through how to build a Hopper model which discusses required and optional inputs, how to run a Hopper model is explained, Hopper outputs in tables, on maps and analytics are covered as well, and finally references to a few additional Hopper resources are listed. Note that additional more advanced Hopper features are covered in separate articles:
+To not make this document too repetitive we will cover some general Cosmic Frog functionality here that applies to all Cosmic Frog technologies and is used extensively for Hopper too.
+To only show tables and fields in them that can be used by the Hopper transportation optimization algorithm, disable all icons except the 4th (“Transportation”) in the Technologies Selector from the toolbar at the top in Cosmic Frog. This will hide any tables and fields that are not used by Hopper and therefore simplifies the user interface:
+Many Hopper related fields in the input and output tables will be discussed in this document. Keep in mind however that a lot of this information can also be found in the tooltips that are shown when you hover over the column name in a table, see following screenshot for an example. The column name, technology/technologies that use this field, a description of how this field is used by those algorithm(s), its default value, and whether it is part of the table’s primary key are listed in the tooltip.
+There are a lot of fields with names that end in “…UOM” throughout the input tables. How they work will be explained here so that individual UOM fields across the tables do not need to be explained further in this documentation as they all work similarly. These UOM fields are unit of measure fields and often appear to the immediate right of the field that they apply to, like for example Distance Cost and Distance Cost UOM in the screenshot above. In these UOM fields you can type the Symbol of a unit of measure that is of the requi
 …（省略）
 
 
