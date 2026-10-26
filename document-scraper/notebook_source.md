@@ -4,7 +4,7 @@
 
 
 ---
-## Connecting to External Data
+## Connecting to External Data - Optilogic
 **URL:** https://optilogic.com/resources/help-center/connecting-to-external-data
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -25,7 +25,7 @@ Find step-by-step guides, FAQs, and support.
 
 
 ---
-## Adding Custom Columns In Cosmic Frog
+## Adding Custom Columns In Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/adding-custom-columns-in-cosmic-frog
 
 Custom Columns can be added to any input table directly through Cosmic Frog. To add a custom column to a table, open the table and then select Grid > Create Custom Column
@@ -41,7 +41,7 @@ If any issues arise during the Custom Column creation, please reach out to suppo
 
 
 ---
-## Adding Demand (Simulation)
+## Adding Demand (Simulation) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/adding-demand-simulation
 
 Simulations are generally (mostly) driven by demand specified as customer orders. These orders can be entered in the Customer Orders and/or the Customer Order Profiles input tables. The Customer Orders table typically contains historical transactional demand records to simulate a historical baseline. The Customer Order Profiles table on the other hand contains descriptions of customer order behaviors from which the simulation engine (Throg) generates orders that follow these profiles.
@@ -137,7 +137,7 @@ The interval between the orders varies too, as these too are generated from samp
 
 
 ---
-## Adding Inventory Policies (Simulation)
+## Adding Inventory Policies (Simulation) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/adding-inventory-policies-simulation
 
 Inventory policies describe how inventory is managed across facilities in our supply chain. These policies can include how and when to replenish, how stock is picked out of inventory, and many other important rules.
@@ -159,7 +159,7 @@ Inventory Policy Value fields can also be expressed in terms of the number of da
 
 
 ---
-## Adding Model Constraints
+## Adding Model Constraints | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/adding-model-constraints
 
 Model constraints allow us to capture real-world limitations in our supply chain. These limitations might include production capacity, transportation restrictions, storage limits, etc. 
@@ -184,7 +184,7 @@ Inventory count constraints allow us to limit the number of product types that a
 
 
 ---
-## Adding Sourcing Policies via the Sourcing Tables (Simulation)
+## Adding Sourcing Policies via the Sourcing Tables (Simulation) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/adding-sourcing-policies-via-the-sourcing-tables-simulation
 
 In a supply chain model, sourcing policies describe how network components create and order necessary materials. In Cosmic Frog, sourcing rules & policies appear in two different table categories:
@@ -211,7 +211,7 @@ Finally, the Production Policies table also has following additional fields:
 
 
 ---
-## Adding Sourcing Rules via the Model Element Tables (Simulation)
+## Adding Sourcing Rules via the Model Element Tables (Simulation) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/adding-sourcing-rules-via-the-model-element-tables-simulation
 
 In a supply chain model, sourcing policies describe how network components create and order necessary materials. In Cosmic Frog, sourcing policies and rules appear in two different table categories:
@@ -224,7 +224,7 @@ We can also decide to allow partial fulfillment of orders or individual line-ite
 
 
 ---
-## Adding Transportation Modes (Simulation)
+## Adding Transportation Modes (Simulation) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/adding-transportation-modes-simulation
 
 The Transportation Modes table is an often used optional input table to run a simulation. Mode attributes like fill levels and capacities are specified in this table to control the size of shipments, which will be explained first in this documentation. Rules of precedence when using multiple fill level / capacity fields and when using On Volume / Weight / Quantity transportation simulation policies will be covered also.
@@ -268,7 +268,7 @@ Setting a capacity on the Transportation Modes table that is lower than the one 
 
 
 ---
-## Adding Transportation Policies (Simulation)
+## Adding Transportation Policies (Simulation) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/adding-transportation-policies-simulation
 
 Transportation policies describe how material flows throughout a supply chain. In Cosmic Frog, we can define our transportation policies using the Transportation Policies (required) and Transportation Modes (optional) tables. The Transportation Policies table will be covered in this documentation. In general, we can have a unique transportation policy for each combination of origin, destination, product, and transport mode.
@@ -372,7 +372,7 @@ Unload Process Name – if a Process representing the unloading of a shipment us
 
 
 ---
-## Advanced Data Enrichment and Transformation using the Run Python Task
+## Advanced Data Enrichment and Transformation using the Run Python Task | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/advanced-data-enrichment-and-transformation-using-the-run-python-task
 
 The Run Python task allows you to execute Python scripts within a DataStar macro. You select a script, define its inputs (arguments), and run it as part of your workflow. This is ideal when built-in tasks are insufficient or when you want to reuse existing Python logic.
@@ -636,7 +636,7 @@ main()
 
 
 ---
-## AI Agents and Utilities - Overview
+## AI Agents and Utilities - Overview | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/ai-agents-and-utilities---overview
 
 Exciting tools that drastically shorten the time spent wrangling data, building supply chain models for Cosmic Frog, and analyzing outputs of these models are now available on the Optilogic platform.
@@ -742,7 +742,7 @@ Duplicate Macro: Duplicates a DataStar macro within the same project or to a dif
 
 
 ---
-## AI Agents: Architecture and Components
+## AI Agents: Architecture and Components | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/ai-agents-architecture-and-components
 
 Ada, Optilogic's Agentic AI, is a suite of specialized AI agents designed to help supply chain teams work faster and with greater confidence across the full modeling lifecycle. Each agent is tailored to a specific part of the supply chain workflow.
@@ -780,7 +780,7 @@ As an AI Agent works, it produces the logs which include steps that the agent ta
 
 
 ---
-## Air Express Freight Costing Utility
+## Air Express Freight Costing Utility | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/air-express-freight-costing-utility
 
 The Air Express Freight Costing utility solves the challenge of pricing air express freight shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
@@ -906,7 +906,7 @@ This utility currently supports US domestic air express freight shipments only. 
 
 
 ---
-## Anura 2.8.19 Upgrade - Release Notes
+## Anura 2.8.19 Upgrade - Release Notes | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/anura-2-8-19-upgrade---release-notes
 
 We are excited to announce the upcoming release of Anura schema version 2.8.19, with enhancements to our engines and model run options. The migration rollout will start soon and is expected to be completed by the end of March.
@@ -946,7 +946,7 @@ If you have any questions or concerns about this upcoming Anura upgrade, please 
 
 
 ---
-## Anura 2.8 Upgrade Information
+## Anura 2.8 Upgrade Information | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/anura-2-8-upgrade-information
 
 Anura 2.8 Upgrade Information
@@ -1036,7 +1036,7 @@ TRIAD Enhancements:
 
 
 ---
-## Application Stuck On Loading Screen
+## Application Stuck On Loading Screen | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/application-stuck-on-loading-screen
 
 If you are running into issues loading Atlas or Cosmic Frog initially where the loading spinner is stuck on the screen you can attempt to perform a hard refresh of the browser. This spinner being stuck can be caused by the website loading a stale token and refreshing the page without loading from cache should generate a fresh token.
@@ -1048,7 +1048,7 @@ If the issue persists, please reach out to support@optilogic.com.
 
 
 ---
-## Auto-Archiving Databases
+## Auto-Archiving Databases | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/auto-archiving-databases
 
 The Auto-Archiving feature helps keep your account clean and efficient while ensuring Optilogic maintains a streamlined, cost-effective storage footprint. By automatically archiving inactive databases, we reduce unnecessary server load, improve overall performance, and free up space so you can always create new Cosmic Frog models or DataStar projects when you need them.
@@ -1212,7 +1212,7 @@ As always, please feel free to reach out to the Optilogic support team at suppor
 
 
 ---
-## Building Scenarios
+## Building Scenarios | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/building-scenarios
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -1234,7 +1234,7 @@ Watch the video to learn how to create, manage and hyperscale scenarios:
 
 
 ---
-## Building Your First Cosmic Frog Model
+## Building Your First Cosmic Frog Model | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/building-your-first-cosmic-frog-model
 
 We have prepared step-by-step instructions to build your own version of the Global Supply Chain Strategy model from scratch.
@@ -1244,7 +1244,7 @@ Please download the “Build your first Frog model.zip” file, save to your loc
 
 
 ---
-## Categorizing Anura Tables
+## Categorizing Anura Tables | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/categorizing-anura-tables
 
 The Anura data model contains 11 categories of tables. The most basic of models can be built by only populated six tables (Customers, Facilities, Products, Customer Demand, Production Policies, and Transportation Policies); however, most models require a few tables from each modeling category to build out a realistic interpretation of the supply chain.
@@ -1252,7 +1252,7 @@ Tables are grouped into the following sections:
 
 
 ---
-## Choosing to “Run in Studio” versus “Run as Job”
+## Choosing to “Run in Studio” versus “Run as Job” | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/choosing-to-run-in-studio-versus-run-as-job
 
 Python models can be run on your “local” IDE instance or you can leverage the power of hyper-scaling by running the module as a Job. When running as a job you have access to a number of different machine configurations as follows:
@@ -1264,7 +1264,7 @@ Complex optimization models may require more CPU cores to solve quickly and larg
 
 
 ---
-## Comparing Cosmic Frog to Other Supply Chain Design Software
+## Comparing Cosmic Frog to Other Supply Chain Design Software | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/comparing-cosmic-frog-to-other-supply-chain-design-software
 
 Comparing Cosmic Frog to Other Supply Chain Design Software
@@ -1294,7 +1294,7 @@ We split inventory policies into three sections because we believe there is a lo
 
 
 ---
-## Connecting to Optilogic with Alteryx
+## Connecting to Optilogic with Alteryx | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/connecting-to-optilogic-with-alteryx
 
 The following instructions show how to establish a local connection, using Alteryx, to an Optilogic model that resides within our platform. These instructions will show you how to:
@@ -1328,7 +1328,7 @@ An alternative workaround is to disable the AMP engine on your Alteryx workflow.
 
 
 ---
-## Connecting to Optilogic with Azure Data Studio
+## Connecting to Optilogic with Azure Data Studio | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/connecting-to-optilogic-with-azure-data-studio
 
 The following instructions show how to establish a local connection, using Azure Data Studio, to an Optiogic model that resides in the platform. These instructions will show you how to:
@@ -1388,7 +1388,7 @@ Depending on your organization’s security protocols, one additional step might
 
 
 ---
-## Connecting to Optilogic with External Data Tools
+## Connecting to Optilogic with External Data Tools | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/connecting-to-optilogic-with-external-data-tools
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -1410,7 +1410,7 @@ Watch the video to learn how to connect your data tool of choice directly to you
 
 
 ---
-## Connecting to Optilogic with Microsoft Power BI
+## Connecting to Optilogic with Microsoft Power BI | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/connecting-to-optilogic-with-microsoft-power-bi
 
 The following instructions show how to establish a local connection, using Power BI, to an Optilogic model that resides within our platform. These instructions will show you how to:
@@ -1437,7 +1437,7 @@ Create Dashboards of Data from Cosmic Frog tables!
 
 
 ---
-## Connecting to Optilogic with Snowflake
+## Connecting to Optilogic with Snowflake | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/connecting-to-optilogic-with-snowflake
 
 An example of how to connect a Cosmic Frog model to a Snowflake database, along with a video walkthrough, can be found in the Resource Library. To get a copy of this demo into your own Optilogic account simply navigate to the Resource Library and copy the Snowflake template into your workspace.
@@ -1445,7 +1445,7 @@ An example of how to connect a Cosmic Frog model to a Snowflake database, along 
 
 
 ---
-## Connecting via API
+## Connecting via API | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/connecting-via-api
 
 Optilogic provides a uniform, easy to use way to connect to your models and embed optimization and simulation in any application that can make an API call.
@@ -1485,7 +1485,7 @@ The Files API section of calls allows you to interact with the files of a given 
 
 
 ---
-## Cosmic Frog Data Tables – Row Grouping, Aggregation, and Pivoting
+## Cosmic Frog Data Tables – Row Grouping, Aggregation, and Pivoting | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/cosmic-frog-data-tables-row-grouping-aggregation-and-pivoting
 
 Cosmic Frog users can now perform additional quick analyses on their supply chain models’ input and output data through Cosmic Frog’s new grid features. This functionality enables users to easily apply different types of grouping and aggregation to their data, while also allowing users to view their data in a pivoted format. Think for example of the following use cases:
@@ -1781,7 +1781,7 @@ Right-click on the pivot grid and select the “Copy with Group Headers” optio
 
 
 ---
-## Cosmic Frog’s Integrity Checker
+## Cosmic Frog’s Integrity Checker | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/cosmic-frogs-integrity-checker
 
 Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
@@ -2033,7 +2033,7 @@ We hope you will find the Integrity Checker to be a helpful additional tool to f
 
 
 ---
-## Cost to Serve Outputs (Optimization)
+## Cost to Serve Outputs (Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/cost-to-serve-outputs-optimization
 
 When modeling supply chains, stakeholders are often interested in understanding the cost to serve specific customers and/or products for segmentation and potential reposition purposes. In order to calculate the cost to serve, variable costs incurred all along the path through the supply chain need to be aggregated, while fixed costs that are incurred need to be apportioned to the correct customer/product. This is not always straightforward and easy to do, think for example of multi-layer BOMs.
@@ -2349,7 +2349,7 @@ Note that the Path Product Name is FG_BLU for these 3 paths and there are no det
 
 
 ---
-## Creating and Managing Models
+## Creating and Managing Models | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/creating-and-managing-models
 
 The Model Manager in Cosmic Frog is the central place to create, view, organize, and maintain your supply chain models. It provides tools for quickly finding models, understanding their status, and performing common management actions such as editing, duplicating, and deleting models.
@@ -2541,7 +2541,7 @@ Learn more about Cosmic Frog and modeling from the "Navigating Cosmic Frog" page
 
 
 ---
-## Creating Scenarios in Cosmic Frog
+## Creating Scenarios in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/creating-scenarios-in-cosmic-frog
 
 Create/add scenario items that you want to change in your scenario
@@ -2571,7 +2571,7 @@ After you have created and saved the Scenario Item you need to assign that item 
 
 
 ---
-## CSV File Data Connection
+## CSV File Data Connection | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/csv-file-data-connection
 
 This documentation covers how to create and configure DataStar CSV File data connections.
@@ -2675,7 +2675,7 @@ Learn all about DataStar from the Navigating DataStar section on Optilogic's Hel
 
 
 ---
-## Custom Risk Profiles in Cosmic Frog
+## Custom Risk Profiles in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/custom-risk-profiles-in-cosmic-frog
 
 Being able to assess the Risk associated with your supply chain has increasingly become more important in a quickly changing world with high levels of volatility. Not only does Cosmic Frog calculate an overall supply chain risk score for each scenario that is run, but it also gives you details about the risk at the location and flow level, so you can easily identify the highest and lowest risk components of your supply chain and use that knowledge to quickly set up new scenarios to reduce the risk in your network.
@@ -2847,7 +2847,7 @@ The “Global Risk Analysis” Cosmic Frog model in the Resource Library is a go
 
 
 ---
-## Data Cleansing AI Agent
+## Data Cleansing AI Agent | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/data-cleansing-ai-agent
 
 The Data Cleansing Agent is one of Ada’s AI-powered assistants. It helps users profile, clean, and standardize their database data without writing code. Users describe what they want in plain English -- such as "find and fix postal code issues in the customers table" or "standardize date formats in the orders table to ISO" -- and the agent autonomously discovers issues, creates safe working copies of the data, applies the appropriate fixes, and verifies the results. The agent handles common supply chain data problems including mixed date formats, inconsistent country codes, Excel-corrupted postal codes, missing values, outliers, and messy text fields. It expects a connected database with one or more tables as input. The output is a set of cleaned copies of their tables in the database which users can immediately use for Cosmic Frog model building, reporting, or further analysis, while the original data is preserved untouched for comparison or rollback.
@@ -3273,7 +3273,7 @@ Reports
 
 
 ---
-## Data Profiler AI Agent
+## Data Profiler AI Agent | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/data-profiler-ai-agent
 
 The Data Profiler AI Agent is one of Ada's AI-powered assistants, focused on assessing data. It automatically analyzes the quality, structure, and relationships of data stored in an Optilogic database. By profiling every table and column, the agent creates a comprehensive data-quality catalog that helps users understand their data, identify issues, discover relationships, and prioritize cleansing efforts.
@@ -3319,7 +3319,7 @@ Questions or feedback? Please contact the Optilogic Support team on support@opti
 
 
 ---
-## DataStar: Data Integration
+## DataStar: Data Integration | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/datastar-data-integration
 
 DataStar users typically will want to use data from a variety of sources in their projects. This data can be in different locations and systems and there are multiple methods available to get the required data into the DataStar application. In this documentation we will describe the main categories of data sources users may want to use and the possible ways of making these available in DataStar for usage.
@@ -3571,7 +3571,7 @@ For any questions or feedback, please feel free to reach out to the Optilogic su
 
 
 ---
-## DataStar Quick Start: Cost to Serve Analysis & Visualization with Power BI
+## DataStar Quick Start: Cost to Serve Analysis & Visualization with Power BI | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/datastar-quick-start-cost-to-serve-analysis-visualization-with-power-bi
 
 In this quick start guide we will show how users can seamlessly go from using the Resource Library, Cosmic Frog and DataStar applications on the Optilogic platform to creating visualizations in Power BI. The example covers cost to serve analysis using a global sourcing model. We will run 2 scenarios in this Cosmic Frog model with the goal to visualize the total cost difference between the scenarios by customer on a map. We do this by coloring the customers based on the cost difference.
@@ -3791,7 +3791,7 @@ DataStar specific resources such as scripts for uploading data and connecting to
 
 
 ---
-## DataStar Quick Start: Creating a Task using Natural Language
+## DataStar Quick Start: Creating a Task using Natural Language | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/datastar-quick-start-creating-a-task-using-natural-language
 
 In this quick start guide we will show how Leapfrog AI can be used in DataStar to generate tasks from natural language prompts, no coding necessary!
@@ -3824,7 +3824,7 @@ In addition, these example prompts do not use the @ character to specify tables 
 
 
 ---
-## DataStar Quick Start: Export Data to a Cosmic Frog Model
+## DataStar Quick Start: Export Data to a Cosmic Frog Model | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/datastar-quick-start-export-data-to-a-cosmic-frog-model
 
 In this quick start guide we will walk through the steps of exporting data from a table in the Project Sandbox to a table in a Cosmic Frog model.
@@ -3952,7 +3952,7 @@ DataStar specific resources such as scripts for uploading data and connecting to
 
 
 ---
-## DataStar Quick Start: Importing a CSV File
+## DataStar Quick Start: Importing a CSV File | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/datastar-quick-start-importing-a-csv-file
 
 In this quick start guide we will walk-through importing a CSV file into the Project Sandbox of a DataStar project. The steps involved are:
@@ -3970,7 +3970,7 @@ You can follow the progress of the Macro run in the Logs tab and once finished e
 
 
 ---
-## DataStar Quick Start: Macro Building with Ada
+## DataStar Quick Start: Macro Building with Ada | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/datastar-quick-start-macro-building-with-ada
 
 In this quick start guide we will walk through how you can build a DataStar macro for repeatable Cosmic Frog model building, where data needs to be refreshed periodically, through chatting with Ada.
@@ -4090,7 +4090,7 @@ The Getting Started with Ada & Agentic AI documentation contains the following s
 
 
 ---
-## DataStar Quick Start: Updating Data
+## DataStar Quick Start: Updating Data | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/datastar-quick-start-updating-data
 
 In this quick start guide we will walk through the steps of modifying data in a table in the Project Sandbox using Update tasks. These changes can either be made to all records in a table or a subset based on a filtering condition. Any PostgreSQL function can be used when configuring the update statements and conditions of Update tasks.
@@ -4131,7 +4131,7 @@ Finally, if you want to apply multiple conditions you can use logical AND and OR
 
 
 ---
-## Deleting Scenario Output Data
+## Deleting Scenario Output Data | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/deleting-scenario-output-data
 
 You can clear output data from all model output tables in one quick action. Navigate to the Scenarios tab and from the scenario drop-down menu select the Delete Scenario Results option. This can also be accessed by right-clicking on any scenario name. Next, from the window on the right-hand side of the screen you can select the scenario(s) that you want to delete output data for. Once selected, click the Delete button and all output data will be cleared for the selected scenarios.
@@ -4139,7 +4139,7 @@ You can clear output data from all model output tables in one quick action. Navi
 
 
 ---
-## Demand Modeling using the Pulsar Engine
+## Demand Modeling using the Pulsar Engine | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/demand-modeling-using-the-pulsar-engine
 
 Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
@@ -4873,7 +4873,7 @@ The column master output table is one of the metadata output tables. It is the f
 
 
 ---
-## Dendro: Genetic Algorithm Guide
+## Dendro: Genetic Algorithm Guide | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/dendro-genetic-algorithm-guide
 
 Dendro, Optilogic’s simulation-optimization engine, uses a sophisticated Genetic Algorithm (GA) to, for example, optimize inventory policies across your supply chain network. This guide explains how the algorithm works in business-friendly terms, helping you understand what happens when you run Dendro and how to get the best results.
@@ -5567,7 +5567,7 @@ You may find these links helpful, some of which have already been mentioned abov
 
 
 ---
-## Dendro: Input Factors Guide
+## Dendro: Input Factors Guide | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/dendro-input-factors-guide
 
 Input factors are at the heart of Dendro optimization - they define what Dendro can change to improve your supply chain performance. Think of input factors as the "knobs" Dendro can turn to find better inventory policies.
@@ -5716,7 +5716,7 @@ Please do not hesitate to contact the Optilogic Support team on support@optilogi
 
 
 ---
-## Dendro: Output Factors Guide
+## Dendro: Output Factors Guide | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/dendro-output-factors-guide
 
 Output factors define what Dendro tries to optimize - they are your business objectives translated into measurable metrics. While input factors control what can change, output factors determine what "better" means.
@@ -5924,7 +5924,7 @@ Please do not hesitate to contact the Optilogic Support team on support@optilogi
 
 
 ---
-## Detailed Production Modelling in Cosmic Frog (Network Optimization)
+## Detailed Production Modelling in Cosmic Frog (Network Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/detailed-production-modelling-in-cosmic-frog-network-optimization
 
 Depending on the type of supply chain one is modelling in Cosmic Frog and the questions being asked of it, it may be necessary to utilize some or all the features that enable detailed production modelling. A few business case examples that will often include some level of detailed production modelling include:
@@ -6746,7 +6746,7 @@ Note that had the demand for Byproduct_1 been set to Include rather than Conside
 
 
 ---
-## Dock Door Constraints (Transportation Optimization)
+## Dock Door Constraints (Transportation Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/dock-door-constraints-transportation-optimization
 
 Without dock door constraints, the transportation optimization engine (Hopper) assumes facilities and customers can load and unload any number of vehicles at the same time. In reality, a depot with 2 dock doors can only service 2 vehicles at once, and routes that look good on paper may be impossible to execute. Dock door constraints let you model that limit, so the routes and schedules Hopper produces are operationally realistic.
@@ -6768,7 +6768,7 @@ As always, please do not hesitate to contact our Support team on support@optilog
 
 
 ---
-## Downloadable Anura Data Structure – Inputs
+## Downloadable Anura Data Structure – Inputs | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/downloadable-anura-data-structure---inputs
 
 The best way to understand modeling in Cosmic Frog is to understand the data model and structure. The following link provides a downloadable (Excel) template with the documentation and explanation for every input table and field in the modeling schema.
@@ -6777,7 +6777,7 @@ For a brief review of how to use the template file, please watch the following v
 
 
 ---
-## Downloadable Anura Data Structure – Outputs
+## Downloadable Anura Data Structure – Outputs | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/downloadable-anura-data-structure---outputs
 
 The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
@@ -6786,7 +6786,7 @@ A downloadable template describing the fields in the input tables can be downloa
 
 
 ---
-## Downloading Data from a Cosmic Frog Database in Alteryx
+## Downloading Data from a Cosmic Frog Database in Alteryx | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/downloading-data-from-a-cosmic-frog-database-in-alteryx
 
 These instructions assume you have already made a connection to your database as described in Connecting to Optilogic with Alteryx.
@@ -6795,7 +6795,7 @@ At this point you can run your workflow and it will be populated with the data f
 
 
 ---
-## Editing Dashboards and Visualizations
+## Editing Dashboards and Visualizations | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/editing-dashboards-and-visualizations
 
 To learn all about dashboards and visualizations within Cosmic Frog, please refer to the Getting Started with Analytics help center article, which contains the latest information.
@@ -6803,7 +6803,7 @@ To learn all about dashboards and visualizations within Cosmic Frog, please refe
 
 
 ---
-## Editing Map Data
+## Editing Map Data | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/editing-map-data
 
 For a detailed walk-through of all map features, please see the "Getting Started with Maps" Help Center article.
@@ -6819,7 +6819,7 @@ Note: leaving the product filter blank will include all products in the model
 
 
 ---
-## Editing Map Layers
+## Editing Map Layers | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/editing-map-layers
 
 For a detailed walk-through of all map features, please see the "Getting Started with Maps" Help Center article.
@@ -6865,7 +6865,7 @@ Within the Condition Builder you can use conditions to filter the table further 
 
 
 ---
-## Frogger Pond Community
+## Frogger Pond Community | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/frogger-pond-community
 
 We love for our users to connect, keep up to date, learn from and share with other Cosmic Frog users & experts through the Frogger Pond Community! If you have an Optilogic account (see this page on how to create your free account if you do not have one yet), you can use that same account to log into the Frogger Pond Community.
@@ -7059,7 +7059,7 @@ Using a platform you may not be familiar with can be overwhelming. To help new u
 
 
 ---
-## Full Truckload Costing Utility
+## Full Truckload Costing Utility | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/full-truckload-costing-utility
 
 The Full Truckload Costing utility solves the common problem of missing transportation cost data when building supply chain models. Rather than requiring users to manually research rates for every lane, this workflow automatically derives costs from a company's existing shipment history. The utility expects two input tables: a lanes-to-cost table containing the origin-destination pairs that need pricing, and an optional historical shipments table containing preprocessed cost data. After running the utility, users receive a fully costed lanes table with confidence levels for each estimate.
@@ -7125,7 +7125,7 @@ Distance bands help match lanes with similar characteristics: <25 miles (short h
 
 
 ---
-## Generating App and API Keys
+## Generating App and API Keys | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/generating-app-and-api-keys
 
 There are two methods for establishing a secure connection to the Optilogic platform:
@@ -7153,7 +7153,7 @@ In a python file copy and paste this code and replace the USERNAME and PASSWORD 
 
 
 ---
-## Geo Providers for Geocoding and Distance and Time Calculations
+## Geo Providers for Geocoding and Distance and Time Calculations | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/geo-providers-for-geocoding-and-distance-and-time-calculations
 
 This documentation covers which geo providers one can use with Cosmic Frog, and how they can be used for geocoding and distance and time calculations.
@@ -7293,7 +7293,7 @@ This results in the following 6 records being added to the Transit Matrix table 
 
 
 ---
-## Geocoding Accuracy Issues
+## Geocoding Accuracy Issues | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/geocoding-accuracy-issues
 
 When running geocoding through the default Mapbox provider, all of the available location data from the Customers, Facilities and Suppliers table will be used to try and determine the latitude and longitude coordinates. Mapbox will use all of these components and perform the best mapping possible and will return a latitude / longitude coordinate along with a confidence score. By default, Cosmic Frog will only accept scores with a confidence score of 100. You can optionally turn this option off and the top confidence score will then be returned by Mapbox.
@@ -7302,7 +7302,7 @@ If you’d like to use an alternate provider instead of Mapbox, setup instructio
 
 
 ---
-## Getting Started with Ada & Agentic AI
+## Getting Started with Ada & Agentic AI | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-ada-agentic-ai
 
 Ada is Optilogic’s next-generation agentic AI, enabling supply chain teams to work faster and with greater confidence across the full modeling lifecycle — from raw data preparation to optimization runs to executive reporting — all through natural language interactions.
@@ -7313,7 +7313,8 @@ Log into the Next Generation UI Optilogic platform at https://ai.optilogic.app o
 Ask Ada your question or to perform a task through chat in the top central part of the platform:
 Choose which database(s) the prompt applies to
 Choose which AI Agent to use
-Type your prompt in the chat textbox and click on submit, or
+Optionally, attach any file(s) the prompt needs to use
+Type your prompt in the chat textbox and click on submit, OR
 Click on an example prompt
 Respond to any clarifications Ada needs
 Authorize any actions if needed
@@ -7322,24 +7323,20 @@ Understanding Ada
 What is Ada?
 Ada is your AI-first supply chain modeling partner, designed specifically for the Optilogic platform. Through a conversational interface, Ada helps users build, validate, analyze, and improve supply chain models.
 You can think of Ada as a chat agent like for example Claude and ChatGPT. But, unlike general-purpose AI chat tools, Ada is trained around supply chain modelling workflows and has access to Optilogic-specific tools, applications, databases, schemas, and platform capabilities.
-Today, Ada includes three specialized AI Agents:
-Modeler Agent - a supply-chain modeling assistant focused on turning data into optimization-ready ANURA datasets and running/diagnosing solves (NEO / Hopper) in a disciplined, schema-driven way.
+Today, Ada includes four specialized AI Agents:
+Modeler Agent - a supply-chain modeling assistant focused on turning data into optimization-ready ANURA datasets and running/diagnosing solves in a disciplined, schema-driven way.
+Executive Agent (beta) - a read-only agent for decision-makers who want business findings and recommendations from solved models across the organization.
 Data Cleanser Agent - A data quality and transformation agent that can profile datasets, identify issues, standardize data, apply transformations, and validate results.
-Next Gen UI Agent – an interface-focused agent that helps users explore data, monitor work, and take action inside the Optilogic Next Gen UI platform.
+Next Gen UI Agent (beta) – an interface-focused agent that helps users explore data, monitor work, and take action inside the Optilogic Next Gen UI platform.
 Good to know
 These AI agents continuously improve over time and will be merged into one agent in future, so that users do not need to select which one to use for their specific question/task.
 The Select the AI Agent part of the Create Your First Prompt section further below includes guidance on which agent to use for what type of question/task.
 For a deeper technical explanation of how AI agents, tools, and skills work together, see the AI Agents: Architecture and Components help center article.
 What Should I Use Ada for?
 Teams commonly use Ada for:
-building optimization-ready datasets
-validating model structure and assumptions
-profiling and cleaning raw supply chain data
-generating scenarios for comparison
-interpreting optimization outputs
-summarizing findings for stakeholders
-identifying modeling gaps before solver runs
-exploring unfamiliar models or databases
+analyzing attached spreadsheets, PDFs, text files, and structured data files
+loading attached data into a Cosmic Frog model or DataStar project sandbox
+managing connected databases during a conversation
 creating repeatable data cleansing and model building workflows
 analyzing and summarizing existing workflows
 Ada works best for:
@@ -7365,12 +7362,15 @@ organizational conventions
 The clearer the context you provide, the better the results typically become.
 What Ada Can Connect to
 Ada can connect to:
+Files - .csv, .xlsx, .xls, .pdf, .txt, .md, and .json files can be attached or pointed to (if already in the user's Optilogic account) for Ada to analyze, use as context for the prompt, or be loaded into a Cosmic Frog model or DataStar project sandbox.
 Cosmic Frog model databases — Postgres databases with a standard Anura schema that optimization and simulation engines read from and write to. The Modeler Agent builds and validates models here and can query them to perform various types of analysis.
 DataStar project databases — Postgres databases with a Starburst schema used by DataStar, the Optilogic platform application for data transformation work. The Modeler Agent can interact with DataStar macros and tasks for data workflows. Both the Modeler Agent and the Data Cleanser Agent can read from and write to DataStar Project Sandboxes.
 Postgres databases — any other Postgres databases on the Optilogic platform. The Data Cleanser Agent and the Modeler Agent can work with these alongside Cosmic Frog models and DataStar Project Sandboxes. 
-Optilogic optimization engines — the Modeler Agent can launch NEO (network design and optimization) and Hopper (multi-stop transportation routing) solver runs directly. 
+Optilogic engines — the Modeler Agent can launch solver runs for any of the Cosmic Frog engines directly. 
 Optilogic platform storage — both the Modeler Agent and Data Cleanser Agent can create artifacts that can be saved in the user’s Optilogic account (accessible through the Explorer application). These artifacts include for example Python scripts (.py files), markdown documents (.md), and web browser files (.html).
 Ada operates entirely within the Optilogic platform and your connected databases. It does not access the internet or any data or systems outside of the Optilogic environment. It does not send your data to third parties beyond what is required by the underlying GPT family model API (see AI Data Security & Privacy).
+Pro tip
+You can ask Ada to list, connect to, switch, or create a database without restarting the conversation. Ada can create a Cosmic Frog model database, DataStar project database, or plain Postgres database. Note that database creation can take up to two minutes.
 What to Expect When Working with Ada
 Ada may:
 ask clarifying questions
@@ -7378,6 +7378,13 @@ propose plans before execution
 require approvals before modifying data
 occasionally provide imperfect or incomplete answers
 improve when given more structured context
+Long-running Tasks
+When working on a response that takes a considerable amount of time/work, Ada will:
+complete scripts and data jobs without a time cut-off
+divide a large task among helpers that can work at the same time
+preserve completed progress if a later step fails
+recover when the AI provider connection drops during a response
+provide short updates between steps of a multi-step answer, so it is clear that the task is progressing
 How to Use Ada
 Good to know
 This section focuses on how to work with Ada and the types of responses and interactions you can expect. To understand the individual agents, their strengths, and to get ideas for prompts to use with them, see the help center articles linked in the What is Ada? section above. Or, ask the agents themselves!
@@ -7389,10 +7396,20 @@ Go to the Home page, if not yet there, by clicking on the icon in the sidebar al
 Ada will be available through chat at the top in the central part of the platform. Note other widgets are available below Ada.
 If you want to just chat with Ada without other widgets and/or access historical conversations, click on the chat bubble icon in the sidebar. The whole central part of the platform will then be used by your chat with Ada:
 Create Your First Prompt
-In a new conversation, you first need to configure chat style (optional), select your database(s), choose your agent, and then enter your question/task for Ada.
-Note that for any further questions within the same conversation, the chat style, database(s), and agent do not need to be configured again – they will remain as they were set for the first prompt.
+In a new conversation, you can select your database(s), choose your agent, and enter your question/task ("prompt") for Ada. Optionally, you can attach any files and configure the chat style.
+Note that for any further prompts within the same conversation, the chat style, database(s), and agent will remain as they were set for the first prompt. You can adjust them if required during a conversation.
+Attach File(s)
+If you have any .csv, .xlsx, .xls, .pdf, .txt, .md, or .json files on your computer or in your Optilogic workspace that you want Ada to have access to during the conversation, you can attach them:
+To attach files to your Ada conversation, click on the plus icon at the left bottom of the prompt textbox.
+Then hover over the "Attach a file" menu that comes up.
+Three options for attaching files are available:
+Upload from computer - opens File Explorer on your computer which you can use to browse to the local file(s) to attach. Hold the Ctrl key down to select multiple files.
+Upload a folder - opens File Explorer on your computer which you can use to browse to the local folder to attach. All files in the folder and any of its subfolders will be attached to the conversation.
+Attach workspace file - opens a browser modal where you can navigate to files in your Optilogic workspace to find the one you want to attach.
+Once files are attached, they are shown above the prompt. They can be removed by clicking on the cross icon to the right of the file name:
 Set Interaction Style
-To choose the style for your conversations with Ada, click on the settings icon at the left bottom of the prompt textbox.
+Four different interaction styles are available for conversations with Ada. You can choose the one that suits your needs best:
+To choose the style for your conversations with Ada, click on the settings icon - second from the left at the bottom of the prompt textbox.
 Click on the Style drop-down list to view the options. The selected style has a darker background and a checkmark. Choose from:
 Scout (default)
 Low autonomy - asks before significant actions
@@ -7414,20 +7431,33 @@ Best for experienced users who prefer compact interactions
 Pro tip
 For most users with some experience using Optilogic tools, but just starting out using AI, the default Scout style will be suitable. And know that you can always change this setting to try out a different style too.
 Select Database(s)
-Click on the Databases drop-down list to view the available databases in the account you are working in. These can be Cosmic Frog models, DataStar projects, and Postgres SQL databases.
+When a prompt needs to work on a specific Cosmic Frog model, DataStar project, or other Postgres database, it needs to be pointed to it:
+Click on the Databases drop-down list to view the available databases in the account you are working in. These can be Cosmic Frog models, DataStar projects, and Postgres databases.
 You can use the search box to quickly find the database(s) of interest.
-At the top of the list, Cosmic Frog models will be listed. Here the one named Global Supply Chain Strategy C2S has been selected.
+At the top of the list, Cosmic Frog models will be listed. Here the one named Global Supply Chain Strategy has been selected.
 Further down the list, DataStar projects are listed. Here the one named AI Agents is selected.
 Pro tip
 Users can select multiple databases, which is helpful when for example working on a workflow which populates Cosmic Frog input tables with data prepared in a DataStar project.
 Select the AI Agent
+Four agents are accessible via Ada, the descriptions below the screenshot will help you choose the one most suited for your prompt:
 Click on the Agent drop-down to view the available agents.
 Choose the one most suitable for your question/task.
 To guide you on choosing the best agent for the task, here is an overview of what each is good at.
 Modeler Agent:
-Mapping cleaned / staged data into ANURA-structured inputs for Neo and Hopper (Customers, Facilities, Products, Demand, Shipments, etc.)
+Mapping cleaned / staged data into ANURA-structured inputs for all Cosmic Frog engines (Customers, Facilities, Products, Customer Demand, Inventory Policies, Shipments, etc.)
 Schema / enumerate / UoM compliance checks, referential integrity for model tables
 Pre-solve viability checks (connectivity, capacity vs demand, scenario alignment)
+Running any of the engines and diagnosing preprocessing / validation / empty-output issues
+Output analysis of solves, including reports comparing scenarios, summarizing KPI’s, etc.
+Analyzing, designing and creating DataStar projects and macros, for example to leave behind data transformation steps in a repeatable Macro
+Executive Insights:
+From available solved models/databases in the account, choosing the one(s) most suitable for answering the question.
+Summarizes up to 3 main findings, including:
+Why it is an important finding
+Recommended next steps
+Evidence to back up the finding
+Confidence in the finding
+Note the Executive Insights agent is a read-only agent: it does not change models or data and it leaves modeling work to the Modeler Agent.
 Reconciling keys across sources (referential integrity checks)
 Next Gen UI Agent:
 Showing live dashboards (jobs, model previews) as interactive widgets
@@ -7435,43 +7465,57 @@ Querying your databases (read-only SQL) and render results as tables, KPIs, and 
 Exploring schemas (tables / columns / relationships) so we can write correct queries
 Navigating / opening apps (SQL Editor, Cosmic Frog, Run Manager, etc.) via buttons
 Helping manage your work (projects/goals/tasks) with reviewable drafts for multi-step changes
+Enter Prompt
+Enter your question/task and submit it to Ada:
+In the prompt textbox, type your prompt. See the Best Practices and Tips & Tricks sections further below for advice on writing successful prompts.
+Either hit Enter or click on the send icon to submit the prompt.
+Instead of writing a prompt, you can use one of the example prompts located underneath the prompt textbox. Use the white arrows on the left and right to scroll through the available example prompts.
 Ada’s Response
-Once a prompt has been submitted, Ada will process it and formulate a response. Responses can have different formats, here we will see a text only result, while other response types are covered in the next section.
-The user submitted the prompt “Please profile my data”.
+Once a prompt has been submitted, Ada will process it and formulate a response. Responses can have different formats, here we will see a mostly text-based result with a generated .md file, while other response types are covered in the next section.
+The user submitted the prompt “Please examine this Cosmic Frog model and summarize the inputs, scenarios and outputs.”.
+Larger tasks will be split into multiple subtasks and a description plus status of each is shown when this section is expanded. The section can be expanded/collapsed by using the caret icon on the left.
 While Ada is processing the prompt, a status line appears which includes how long she has been processing the prompt for and information on the current step she is on. This section can be expanded, like it is here, by using the caret icon on the left.
-Since the status section is expanded, we see all of Ada’s steps here.
-These icons at the top left of the detailed status section can be used to just filter the list for Status updates, Thinking steps, Tool calls, Knowledge retrieval steps, and AI steps (left to right; latter 2 not shown here as they were not used).
+Since the status section is expanded, we see all of Ada’s steps here. Note the scroll bar on the right can be used to scroll through all the steps and the individual subsections, e.g. Agent and Ada sections are shown here, can be expanded/collapsed too.
+These icons at the top left of the detailed status section can be used to just filter the list for Status updates, Thinking steps, Tool calls, AI steps, and Knowledge retrieval steps (left to right; latter not shown here as it was not used).
 Use these 2 icons to collapse and expand all steps in the status list.
 If you want to stop Ada’s execution, you can click on the stop button.
+When everything is collapsed, it will look similar to this next screenshot while Ada is processing:
 Once Ada is done processing the prompt, the response will be displayed:
-In the, now collapsed, status line we see that the response took 1.2 minutes.
-On the right-hand side in the status line, users can click on this icon to open the list of Status Updates.
-Clicking on this icon opens the list of Tool Calls made while processing.
-The full response for this prompt is shown in the next 2 screenshots:
+In the, now collapsed, status line we see that the response took 5 minutes.
+On the right-hand side in the status line, the user clicked on this icon to open the list of Tool Calls.
+Clicking on this icon opens the list of Knowledge Retrieval calls made while processing.
+The first part of the response for this prompt, which gives an overview of the model and summarizes the inputs, is shown in this next screenshot:
+Then follow summaries of the scenarios and outputs (not shown) before concluding with the limitations of the review:
 Users can copy the response text by clicking on this copy icon.
 To help Ada continuously improve, users can give a thumbs up or down if the response is considered good or poor.
+An .md file that contains the summarized inputs is generated and attached to the response. It can be downloaded, saved to the user's workspace, and opened in the Lightning Editor app from here.
+To the right of the prompt textbox, information has now appeared to indicate that there is 1 artifact associated with this conversation (the current-inputs.md file just generated) and 0 attachments. Clicking on here gives users options to access associated artifacts and attachments.
 To continue the conversation, type your follow up question/task in the prompt textbox. Ada will remember the context of the conversation so far and will use it to respond to follow-up prompts.
 Additional Response Types and Interactions
-Besides responses that are purely text-based, you will come across other types too. For example, when your input is needed, Ada will pause the response and ask you for feedback:
-As a follow-up from the previous prompt, the user has asked Ada to go ahead and clean the just profiled tables.
+Besides responses that are purely text-based, you will come across other types too. For example, when your input is needed, Ada will pause the response and ask you for feedback. Here the user was asked if they wanted to go ahead with cleaning a dataset after profiling it, to which they said yes:
+As a follow-up from a previous prompt profiling a dataset, the user has asked Ada to go ahead and clean the just profiled tables.
 The current status indicates that Human in the Loop (HITL) feedback is required now.
 The top part summarizes why HITL feedback is needed and states what will happen once the feedback is received.
 Often, Ada will propose several ways forward and all the user needs to do is click on the desired option. A selected option is shown in a darker color.
 If the user does not want to go forward with an Ada-proposed option, they can use the textbox to provide instructions on what to do for that specific feedback item. Additional context can be provided here too.
 Once feedback options are selected, click on “Send response” for Ada to continue processing.
 If it has become clear that the prompt will not achieve what you intended or you need more time to look into something Ada surfaced, you can click on “Stop agent” to halt execution.
+Note that if a HITL request times out, you can still continue the conversation and tell Ada your preferences on how to proceed in the follow up prompt or ask her to repeat/rephrase the feedback she requires.
 When Ada modifies a Cosmic Frog model or a DataStar project sandbox, users can verify these in the respective applications on the current platform (https://optilogic.app). Here, we are checking if the data cleaning step indeed created the clean_ tables in the sandbox of the connected DataStar project:
-Responses can also contain files:
+Responses can also contain files as we have already seen above briefly too:
 The user has prompted Ada to create a scenario comparison report in HTML format.
 The top part of the response summarizes what Ada has done.
 Two files are available in the response, this first one is a Python script which a user could save for future use to create scenario comparison reports using the same logic.
 This is the report itself. Use the 3 buttons to the right of the report name to download it, save it to your workspace, or to open it in the Lightning Editor application.
-If a conversation has generated any artifacts, this icon with the number of artifacts will be showing. This way you can easily access all artifacts if you are further up or down in a conversation.
+Responses that generated multiple artifacts have options for users to simultaneously download all, save all to workspace, or open all in Lightning Editor.
+If a conversation has generated any artifacts and/or it has any files attached to it by the user, this icon with the number of artifacts and number of attachments will be showing. This way you can easily access all artifacts and attachments if you are further up or down in a conversation.
+Clicking on the icon showing the number of artifacts and attachments brings up this "Session assets" modal, where all artifacts and attachments are listed and can be accessed.
+Hovering over an artifact brings up the options to download, save to workspace, and open in Lightning Editor again.
 When saving an artifact to your workspace, the following modal will come up where you can choose the location to save it and indicate if any pre-existing files with the same name at the chosen location should be overwritten or not:
 When choosing to open the report in Lightning Editor, it does so in the new platform, to the right of the conversation with Ada so users do not need to change context:
 The Next Gen UI Agent can help you for example with changing the look and feel of the platform’s UI. In this example it created a tour on how to customize the UI where the user can click on the buttons in the response to be taken directly to that part of the UI. Note that only part of Ada's response is shown in the screenshot:
 Historical Conversations
-Conversations with Ada are by default saved and users can return to them to review, audit, or continue the conversation.
+Conversations with Ada are by default saved and users can return to them to review, audit, or continue the conversation:
 Click on the chat icon in the task bar to open Ada and any historical conversations.
 To just see your current conversation, click on the close icon at the right top to close the list of historical conversations.
 To start a new conversation, click on the plus button.
@@ -7482,7 +7526,7 @@ The conversation’s name, by default this is the first prompt in the conversati
 When this conversation was had.
 How many messages there are in the conversation, this includes user prompts and Ada responses.
 Any tags to facilitate filtering conversations.
-Use this button to surface a context menu with pin, rename, and delete options for the conversation.
+Use this button to surface a context menu with pin, rename, copy ID, send to Support, and delete options for the conversation.
 This delete button can also be used to remove a conversation.
 Best Practices
 Keep Conversations Focused
@@ -7524,7 +7568,6 @@ Example: “Before executing, ask any clarifying questions needed to complete th
 This often improves first-pass accuracy significantly.
 Start a New Conversation When Switching Contexts
 Create a new conversation when:
-changing interaction style, database(s), or Agent
 switching between unrelated tasks
 moving from brainstorming to execution
 responses become inconsistent or degraded
@@ -7567,10 +7610,6 @@ Examples:
 Ada can often suggest workflows, prompts, and capabilities you may not know are available.
 Current Limitations and Known Behaviors
 Ada is evolving rapidly, and some platform capabilities are still in active development.
-File Attachments in Chat
-Files cannot currently be uploaded directly into Ada conversations.
-File Explorer Data Access
-Data stored in your account (accessible through the Explorer application) is not directly accessible in chat workflows. Data first needs to be imported into a DataStar project or connected database.
 DataStar and Cosmic Frog Integration
 The Next Gen platform does not yet provide fully seamless integration of the DataStar and Cosmic Frog applications. For some processes, users will need to open these in the current platform (https://optilogic.app).
 UI Rendering Requires the Next Gen UI Agent
@@ -7588,7 +7627,14 @@ KPI interpretations
 scenario recommendations
 before using outputs in production or customer-facing work.
 Session Stability
-Leaving the platform idle for extended periods can interrupt workflows or produce unexpected behavior.
+The platform refreshes sessions automatically when you return to an idle or backgrounded browser tab. If a workflow still appears interrupted, refresh the page and review the conversation state before restarting the conversation.
+Model Anatomy Example
+Asking Ada to show a model's anatomy will allow you to see the model as a picture: you get an interactive diagram with every input, decision variable, cost and constraint shown by what it does, sized by how much data is in it, all flowing toward the resulting total cost.
+The model anatomy comes out as a single .html file you can share and anatomies can be generated for any of the Cosmic Frog engines.
+We will walk through creating and examining the anatomy of a model using Ada here. With a model named Capacity Expansion v2 selected, the user asks Ada to show the anatomy of the model. Since there are multiple scenarios with outputs in this model, Ada asks the user which scenario to use. The user chooses to use the "2a Consider Reno from 2027" scenario:
+Ada's response gives a quick summary of the scenario and includes the .html file with the anatomy, which the user can download and then open in a browser, along with several other artifacts:
+The next 2 screenshots show the anatomy of this scenario, first the left part and then the right part. Along the top, the model name, engine, and total cost are listed on the left, along with statistics around customers, periods, flow and demand amounts on the right-hand side. The diagram itself shows input data, decision variables, costs, and constraints from top to bottom color coded by type (legend towards the bottom), while costs accumulates from left to right.
+Hovering over an element in the diagram isolates it and shows just the element plus the elements it is connected to. In addition, it pops up a tooltip with information on the element. Here the user is hovering over the Open Status decision variable:
 We hope you are going to have many productive conversations with Ada! Please do not hesitate to contact our Support team via support@optilogic.com if you have any questions or concerns.
 Appendix – AI Data Security and Privacy
 Applies to all Optilogic AI systems.
@@ -7615,7 +7661,8 @@ Log into the Next Generation UI Optilogic platform at https://ai.optilogic.app o
 Ask Ada your question or to perform a task through chat in the top central part of the platform:
 Choose which database(s) the prompt applies to
 Choose which AI Agent to use
-Type your prompt in the chat textbox and click on submit, or
+Optionally, attach any file(s) the prompt needs to use
+Type your prompt in the chat textbox and click on submit, OR
 Click on an example prompt
 Respond to any clarifications Ada needs
 Authorize any actions if needed
@@ -7624,24 +7671,20 @@ Understanding Ada
 What is Ada?
 Ada is your AI-first supply chain modeling partner, designed specifically for the Optilogic platform. Through a conversational interface, Ada helps users build, validate, analyze, and improve supply chain models.
 You can think of Ada as a chat agent like for example Claude and ChatGPT. But, unlike general-purpose AI chat tools, Ada is trained around supply chain modelling workflows and has access to Optilogic-specific tools, applications, databases, schemas, and platform capabilities.
-Today, Ada includes three specialized AI Agents:
-Modeler Agent - a supply-chain modeling assistant focused on turning data into optimization-ready ANURA datasets and running/diagnosing solves (NEO / Hopper) in a disciplined, schema-driven way.
+Today, Ada includes four specialized AI Agents:
+Modeler Agent - a supply-chain modeling assistant focused on turning data into optimization-ready ANURA datasets and running/diagnosing solves in a disciplined, schema-driven way.
+Executive Agent (beta) - a read-only agent for decision-makers who want business findings and recommendations from solved models across the organization.
 Data Cleanser Agent - A data quality and transformation agent that can profile datasets, identify issues, standardize data, apply transformations, and validate results.
-Next Gen UI Agent – an interface-focused agent that helps users explore data, monitor work, and take action inside the Optilogic Next Gen UI platform.
+Next Gen UI Agent (beta) – an interface-focused agent that helps users explore data, monitor work, and take action inside the Optilogic Next Gen UI platform.
 Good to know
 These AI agents continuously improve over time and will be merged into one agent in future, so that users do not need to select which one to use for their specific question/task.
 The Select the AI Agent part of the Create Your First Prompt section further below includes guidance on which agent to use for what type of question/task.
 For a deeper technical explanation of how AI agents, tools, and skills work together, see the AI Agents: Architecture and Components help center article.
 What Should I Use Ada for?
 Teams commonly use Ada for:
-building optimization-ready datasets
-validating model structure and assumptions
-profiling and cleaning raw supply chain data
-generating scenarios for comparison
-interpreting optimization outputs
-summarizing findings for stakeholders
-identifying modeling gaps before solver runs
-exploring unfamiliar models or databases
+analyzing attached spreadsheets, PDFs, text files, and structured data files
+loading attached data into a Cosmic Frog model or DataStar project sandbox
+managing connected databases during a conversation
 creating repeatable data cleansing and model building workflows
 analyzing and summarizing existing workflows
 Ada works best for:
@@ -7667,12 +7710,15 @@ organizational conventions
 The clearer the context you provide, the better the results typically become.
 What Ada Can Connect to
 Ada can connect to:
+Files - .csv, .xlsx, .xls, .pdf, .txt, .md, and .json files can be attached or pointed to (if already in the user's Optilogic account) for Ada to analyze, use as context for the prompt, or be loaded into a Cosmic Frog model or DataStar project sandbox.
 Cosmic Frog model databases — Postgres databases with a standard Anura schema that optimization and simulation engines read from and write to. The Modeler Agent builds and validates models here and can query them to perform various types of analysis.
 DataStar project databases — Postgres databases with a Starburst schema used by DataStar, the Optilogic platform application for data transformation work. The Modeler Agent can interact with DataStar macros and tasks for data workflows. Both the Modeler Agent and the Data Cleanser Agent can read from and write to DataStar Project Sandboxes.
 Postgres databases — any other Postgres databases on the Optilogic platform. The Data Cleanser Agent and the Modeler Agent can work with these alongside Cosmic Frog models and DataStar Project Sandboxes. 
-Optilogic optimization engines — the Modeler Agent can launch NEO (network design and optimization) and Hopper (multi-stop transportation routing) solver runs directly. 
+Optilogic engines — the Modeler Agent can launch solver runs for any of the Cosmic Frog engines directly. 
 Optilogic platform storage — both the Modeler Agent and Data Cleanser Agent can create artifacts that can be saved in the user’s Optilogic account (accessible through the Explorer application). These artifacts include for example Python scripts (.py files), markdown documents (.md), and web browser files (.html).
 Ada operates entirely within the Optilogic platform and your connected databases. It does not access the internet or any data or systems outside of the Optilogic environment. It does not send your data to third parties beyond what is required by the underlying GPT family model API (see AI Data Security & Privacy).
+Pro tip
+You can ask Ada to list, connect to, switch, or create a database without restarting the conversation. Ada can create a Cosmic Frog model database, DataStar project database, or plain Postgres database. Note that database creation can take up to two minutes.
 What to Expect When Working with Ada
 Ada may:
 ask clarifying questions
@@ -7680,6 +7726,13 @@ propose plans before execution
 require approvals before modifying data
 occasionally provide imperfect or incomplete answers
 improve when given more structured context
+Long-running Tasks
+When working on a response that takes a considerable amount of time/work, Ada will:
+complete scripts and data jobs without a time cut-off
+divide a large task among helpers that can work at the same time
+preserve completed progress if a later step fails
+recover when the AI provider connection drops during a response
+provide short updates between steps of a multi-step answer, so it is clear that the task is progressing
 How to Use Ada
 Good to know
 This section focuses on how to work with Ada and the types of responses and interactions you can expect. To understand the individual agents, their strengths, and to get ideas for prompts to use with them, see the help center articles linked in the What is Ada? section above. Or, ask the agents themselves!
@@ -7691,10 +7744,20 @@ Go to the Home page, if not yet there, by clicking on the icon in the sidebar al
 Ada will be available through chat at the top in the central part of the platform. Note other widgets are available below Ada.
 If you want to just chat with Ada without other widgets and/or access historical conversations, click on the chat bubble icon in the sidebar. The whole central part of the platform will then be used by your chat with Ada:
 Create Your First Prompt
-In a new conversation, you first need to configure chat style (optional), select your database(s), choose your agent, and then enter your question/task for Ada.
-Note that for any further questions within the same conversation, the chat style, database(s), and agent do not need to be configured again – they will remain as they were set for the first prompt.
+In a new conversation, you can select your database(s), choose your agent, and enter your question/task ("prompt") for Ada. Optionally, you can attach any files and configure the chat style.
+Note that for any further prompts within the same conversation, the chat style, database(s), and agent will remain as they were set for the first prompt. You can adjust them if required during a conversation.
+Attach File(s)
+If you have any .csv, .xlsx, .xls, .pdf, .txt, .md, or .json files on your computer or in your Optilogic workspace that you want Ada to have access to during the conversation, you can attach them:
+To attach files to your Ada conversation, click on the plus icon at the left bottom of the prompt textbox.
+Then hover over the "Attach a file" menu that comes up.
+Three options for attaching files are available:
+Upload from computer - opens File Explorer on your computer which you can use to browse to the local file(s) to attach. Hold the Ctrl key down to select multiple files.
+Upload a folder - opens File Explorer on your computer which you can use to browse to the local folder to attach. All files in the folder and any of its subfolders will be attached to the conversation.
+Attach workspace file - opens a browser modal where you can navigate to files in your Optilogic workspace to find the one you want to attach.
+Once files are attached, they are shown above the prompt. They can be removed by clicking on the cross icon to the right of the file name:
 Set Interaction Style
-To choose the style for your conversations with Ada, click on the settings icon at the left bottom of the prompt textbox.
+Four different interaction styles are available for conversations with Ada. You can choose the one that suits your needs best:
+To choose the style for your conversations with Ada, click on the settings icon - second from the left at the bottom of the prompt textbox.
 Click on the Style drop-down list to view the options. The selected style has a darker background and a checkmark. Choose from:
 Scout (default)
 Low autonomy - asks before significant actions
@@ -7716,20 +7779,33 @@ Best for experienced users who prefer compact interactions
 Pro tip
 For most users with some experience using Optilogic tools, but just starting out using AI, the default Scout style will be suitable. And know that you can always change this setting to try out a different style too.
 Select Database(s)
-Click on the Databases drop-down list to view the available databases in the account you are working in. These can be Cosmic Frog models, DataStar projects, and Postgres SQL databases.
+When a prompt needs to work on a specific Cosmic Frog model, DataStar project, or other Postgres database, it needs to be pointed to it:
+Click on the Databases drop-down list to view the available databases in the account you are working in. These can be Cosmic Frog models, DataStar projects, and Postgres databases.
 You can use the search box to quickly find the database(s) of interest.
-At the top of the list, Cosmic Frog models will be listed. Here the one named Global Supply Chain Strategy C2S has been selected.
+At the top of the list, Cosmic Frog models will be listed. Here the one named Global Supply Chain Strategy has been selected.
 Further down the list, DataStar projects are listed. Here the one named AI Agents is selected.
 Pro tip
 Users can select multiple databases, which is helpful when for example working on a workflow which populates Cosmic Frog input tables with data prepared in a DataStar project.
 Select the AI Agent
+Four agents are accessible via Ada, the descriptions below the screenshot will help you choose the one most suited for your prompt:
 Click on the Agent drop-down to view the available agents.
 Choose the one most suitable for your question/task.
 To guide you on choosing the best agent for the task, here is an overview of what each is good at.
 Modeler Agent:
-Mapping cleaned / staged data into ANURA-structured inputs for Neo and Hopper (Customers, Facilities, Products, Demand, Shipments, etc.)
+Mapping cleaned / staged data into ANURA-structured inputs for all Cosmic Frog engines (Customers, Facilities, Products, Customer Demand, Inventory Policies, Shipments, etc.)
 Schema / enumerate / UoM compliance checks, referential integrity for model tables
 Pre-solve viability checks (connectivity, capacity vs demand, scenario alignment)
+Running any of the engines and diagnosing preprocessing / validation / empty-output issues
+Output analysis of solves, including reports comparing scenarios, summarizing KPI’s, etc.
+Analyzing, designing and creating DataStar projects and macros, for example to leave behind data transformation steps in a repeatable Macro
+Executive Insights:
+From available solved models/databases in the account, choosing the one(s) most suitable for answering the question.
+Summarizes up to 3 main findings, including:
+Why it is an important finding
+Recommended next steps
+Evidence to back up the finding
+Confidence in the finding
+Note the Executive Insights agent is a read-only agent: it does not change models or data and it leaves modeling work to the Modeler Agent.
 Reconciling keys across sources (referential integrity checks)
 Next Gen UI Agent:
 Showing live dashboards (jobs, model previews) as interactive widgets
@@ -7737,43 +7813,57 @@ Querying your databases (read-only SQL) and render results as tables, KPIs, and 
 Exploring schemas (tables / columns / relationships) so we can write correct queries
 Navigating / opening apps (SQL Editor, Cosmic Frog, Run Manager, etc.) via buttons
 Helping manage your work (projects/goals/tasks) with reviewable drafts for multi-step changes
+Enter Prompt
+Enter your question/task and submit it to Ada:
+In the prompt textbox, type your prompt. See the Best Practices and Tips & Tricks sections further below for advice on writing successful prompts.
+Either hit Enter or click on the send icon to submit the prompt.
+Instead of writing a prompt, you can use one of the example prompts located underneath the prompt textbox. Use the white arrows on the left and right to scroll through the available example prompts.
 Ada’s Response
-Once a prompt has been submitted, Ada will process it and formulate a response. Responses can have different formats, here we will see a text only result, while other response types are covered in the next section.
-The user submitted the prompt “Please profile my data”.
+Once a prompt has been submitted, Ada will process it and formulate a response. Responses can have different formats, here we will see a mostly text-based result with a generated .md file, while other response types are covered in the next section.
+The user submitted the prompt “Please examine this Cosmic Frog model and summarize the inputs, scenarios and outputs.”.
+Larger tasks will be split into multiple subtasks and a description plus status of each is shown when this section is expanded. The section can be expanded/collapsed by using the caret icon on the left.
 While Ada is processing the prompt, a status line appears which includes how long she has been processing the prompt for and information on the current step she is on. This section can be expanded, like it is here, by using the caret icon on the left.
-Since the status section is expanded, we see all of Ada’s steps here.
-These icons at the top left of the detailed status section can be used to just filter the list for Status updates, Thinking steps, Tool calls, Knowledge retrieval steps, and AI steps (left to right; latter 2 not shown here as they were not used).
+Since the status section is expanded, we see all of Ada’s steps here. Note the scroll bar on the right can be used to scroll through all the steps and the individual subsections, e.g. Agent and Ada sections are shown here, can be expanded/collapsed too.
+These icons at the top left of the detailed status section can be used to just filter the list for Status updates, Thinking steps, Tool calls, AI steps, and Knowledge retrieval steps (left to right; latter not shown here as it was not used).
 Use these 2 icons to collapse and expand all steps in the status list.
 If you want to stop Ada’s execution, you can click on the stop button.
+When everything is collapsed, it will look similar to this next screenshot while Ada is processing:
 Once Ada is done processing the prompt, the response will be displayed:
-In the, now collapsed, status line we see that the response took 1.2 minutes.
-On the right-hand side in the status line, users can click on this icon to open the list of Status Updates.
-Clicking on this icon opens the list of Tool Calls made while processing.
-The full response for this prompt is shown in the next 2 screenshots:
+In the, now collapsed, status line we see that the response took 5 minutes.
+On the right-hand side in the status line, the user clicked on this icon to open the list of Tool Calls.
+Clicking on this icon opens the list of Knowledge Retrieval calls made while processing.
+The first part of the response for this prompt, which gives an overview of the model and summarizes the inputs, is shown in this next screenshot:
+Then follow summaries of the scenarios and outputs (not shown) before concluding with the limitations of the review:
 Users can copy the response text by clicking on this copy icon.
 To help Ada continuously improve, users can give a thumbs up or down if the response is considered good or poor.
+An .md file that contains the summarized inputs is generated and attached to the response. It can be downloaded, saved to the user's workspace, and opened in the Lightning Editor app from here.
+To the right of the prompt textbox, information has now appeared to indicate that there is 1 artifact associated with this conversation (the current-inputs.md file just generated) and 0 attachments. Clicking on here gives users options to access associated artifacts and attachments.
 To continue the conversation, type your follow up question/task in the prompt textbox. Ada will remember the context of the conversation so far and will use it to respond to follow-up prompts.
 Additional Response Types and Interactions
-Besides responses that are purely text-based, you will come across other types too. For example, when your input is needed, Ada will pause the response and ask you for feedback:
-As a follow-up from the previous prompt, the user has asked Ada to go ahead and clean the just profiled tables.
+Besides responses that are purely text-based, you will come across other types too. For example, when your input is needed, Ada will pause the response and ask you for feedback. Here the user was asked if they wanted to go ahead with cleaning a dataset after profiling it, to which they said yes:
+As a follow-up from a previous prompt profiling a dataset, the user has asked Ada to go ahead and clean the just profiled tables.
 The current status indicates that Human in the Loop (HITL) feedback is required now.
 The top part summarizes why HITL feedback is needed and states what will happen once the feedback is received.
 Often, Ada will propose several ways forward and all the user needs to do is click on the desired option. A selected option is shown in a darker color.
 If the user does not want to go forward with an Ada-proposed option, they can use the textbox to provide instructions on what to do for that specific feedback item. Additional context can be provided here too.
 Once feedback options are selected, click on “Send response” for Ada to continue processing.
 If it has become clear that the prompt will not achieve what you intended or you need more time to look into something Ada surfaced, you can click on “Stop agent” to halt execution.
+Note that if a HITL request times out, you can still continue the conversation and tell Ada your preferences on how to proceed in the follow up prompt or ask her to repeat/rephrase the feedback she requires.
 When Ada modifies a Cosmic Frog model or a DataStar project sandbox, users can verify these in the respective applications on the current platform (https://optilogic.app). Here, we are checking if the data cleaning step indeed created the clean_ tables in the sandbox of the connected DataStar project:
-Responses can also contain files:
+Responses can also contain files as we have already seen above briefly too:
 The user has prompted Ada to create a scenario comparison report in HTML format.
 The top part of the response summarizes what Ada has done.
 Two files are available in the response, this first one is a Python script which a user could save for future use to create scenario comparison reports using the same logic.
 This is the report itself. Use the 3 buttons to the right of the report name to download it, save it to your workspace, or to open it in the Lightning Editor application.
-If a conversation has generated any artifacts, this icon with the number of artifacts will be showing. This way you can easily access all artifacts if you are further up or down in a conversation.
+Responses that generated multiple artifacts have options for users to simultaneously download all, save all to workspace, or open all in Lightning Editor.
+If a conversation has generated any artifacts and/or it has any files attached to it by the user, this icon with the number of artifacts and number of attachments will be showing. This way you can easily access all artifacts and attachments if you are further up or down in a conversation.
+Clicking on the icon showing the number of artifacts and attachments brings up this "Session assets" modal, where all artifacts and attachments are listed and can be accessed.
+Hovering over an artifact brings up the options to download, save to workspace, and open in Lightning Editor again.
 When saving an artifact to your workspace, the following modal will come up where you can choose the location to save it and indicate if any pre-existing files with the same name at the chosen location should be overwritten or not:
 When choosing to open the report in Lightning Editor, it does so in the new platform, to the right of the conversation with Ada so users do not need to change context:
 The Next Gen UI Agent can help you for example with changing the look and feel of the platform’s UI. In this example it created a tour on how to customize the UI where the user can click on the buttons in the response to be taken directly to that part of the UI. Note that only part of Ada's response is shown in the screenshot:
 Historical Conversations
-Conversations with Ada are by default saved and users can return to them to review, audit, or continue the conversation.
+Conversations with Ada are by default saved and users can return to them to review, audit, or continue the conversation:
 Click on the chat icon in the task bar to open Ada and any historical conversations.
 To just see your current conversation, click on the close icon at the right top to close the list of historical conversations.
 To start a new conversation, click on the plus button.
@@ -7784,7 +7874,7 @@ The conversation’s name, by default this is the first prompt in the conversati
 When this conversation was had.
 How many messages there are in the conversation, this includes user prompts and Ada responses.
 Any tags to facilitate filtering conversations.
-Use this button to surface a context menu with pin, rename, and delete options for the conversation.
+Use this button to surface a context menu with pin, rename, copy ID, send to Support, and delete options for the conversation.
 This delete button can also be used to remove a conversation.
 Best Practices
 Keep Conversations Focused
@@ -7826,7 +7916,6 @@ Example: “Before executing, ask any clarifying questions needed to complete th
 This often improves first-pass accuracy significantly.
 Start a New Conversation When Switching Contexts
 Create a new conversation when:
-changing interaction style, database(s), or Agent
 switching between unrelated tasks
 moving from brainstorming to execution
 responses become inconsistent or degraded
@@ -7869,10 +7958,6 @@ Examples:
 Ada can often suggest workflows, prompts, and capabilities you may not know are available.
 Current Limitations and Known Behaviors
 Ada is evolving rapidly, and some platform capabilities are still in active development.
-File Attachments in Chat
-Files cannot currently be uploaded directly into Ada conversations.
-File Explorer Data Access
-Data stored in your account (accessible through the Explorer application) is not directly accessible in chat workflows. Data first needs to be imported into a DataStar project or connected database.
 DataStar and Cosmic Frog Integration
 The Next Gen platform does not yet provide fully seamless integration of the DataStar and Cosmic Frog applications. For some processes, users will need to open these in the current platform (https://optilogic.app).
 UI Rendering Requires the Next Gen UI Agent
@@ -7890,7 +7975,14 @@ KPI interpretations
 scenario recommendations
 before using outputs in production or customer-facing work.
 Session Stability
-Leaving the platform idle for extended periods can interrupt workflows or produce unexpected behavior.
+The platform refreshes sessions automatically when you return to an idle or backgrounded browser tab. If a workflow still appears interrupted, refresh the page and review the conversation state before restarting the conversation.
+Model Anatomy Example
+Asking Ada to show a model's anatomy will allow you to see the model as a picture: you get an interactive diagram with every input, decision variable, cost and constraint shown by what it does, sized by how much data is in it, all flowing toward the resulting total cost.
+The model anatomy comes out as a single .html file you can share and anatomies can be generated for any of the Cosmic Frog engines.
+We will walk through creating and examining the anatomy of a model using Ada here. With a model named Capacity Expansion v2 selected, the user asks Ada to show the anatomy of the model. Since there are multiple scenarios with outputs in this model, Ada asks the user which scenario to use. The user chooses to use the "2a Consider Reno from 2027" scenario:
+Ada's response gives a quick summary of the scenario and includes the .html file with the anatomy, which the user can download and then open in a browser, along with several other artifacts:
+The next 2 screenshots show the anatomy of this scenario, first the left part and then the right part. Along the top, the model name, engine, and total cost are listed on the left, along with statistics around customers, periods, flow and demand amounts on the right-hand side. The diagram itself shows input data, decision variables, costs, and constraints from top to bottom color coded by type (legend towards the bottom), while costs accumulates from left to right.
+Hovering over an element in the diagram isolates it and shows just the element plus the elements it is connected to. In addition, it pops up a tooltip with information on the element. Here the user is hovering over the Open Status decision variable:
 We hope you are going to have many productive conversations with Ada! Please do not hesitate to contact our Support team via support@optilogic.com if you have any questions or concerns.
 Appendix – AI Data Security and Privacy
 Applies to all Optilogic AI systems.
@@ -7912,7 +8004,7 @@ Best Practices: Users should avoid including sensitive information (PII, credent
 
 
 ---
-## Getting Started with Analytics
+## Getting Started with Analytics | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-analytics
 
 Once you have run a model, you can visualize your results using the Analytics module. A dashboard in the Analytics moduleis a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
@@ -8210,7 +8302,7 @@ As always, please reach out to our Support team at support@optilogic.com in case
 
 
 ---
-## Getting Started with Cosmic Frog
+## Getting Started with Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-cosmic-frog
 
 This video guides you though creating your free account and the features of the Optilogic Cosmic Frog supply chain design platform.
@@ -8218,7 +8310,7 @@ If you are running into issues receiving your account confirmation email, please
 
 
 ---
-## Getting Started with Cosmic Frog for Excel Applications
+## Getting Started with Cosmic Frog for Excel Applications | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-cosmic-frog-for-excel-applications
 
 Cosmic Frog for Excel Applications provide alternative interfaces for specific use cases as companion applications to the full Cosmic Frog Supply chain design product. For example, they can be used to access a subset of the Cosmic Frog functionality in a simplified manner or provide specific users who are not experienced in working with Cosmic Frog models access to a subset of inputs and/or outputs of a full-blown Cosmic Frog model that are relevant to their position.
@@ -9332,7 +9424,7 @@ Resource Library – Optilogic’s Resource Library where various Cosmic Frog mo
 
 
 ---
-## Getting Started with Cyclo (Multi Echelon Inventory Optimization)
+## Getting Started with Cyclo (Multi Echelon Inventory Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-cyclo-multi-echelon-inventory-optimization
 
 Cyclo is Optilogic’s new Multi Echelon Inventory Optimization (MEIO) engine within Cosmic Frog. It helps supply chain teams determine where safety stock should be held across a network, how much is needed at each stage, and how service levels impact total safety stock cost and responsiveness.
@@ -10028,7 +10120,7 @@ Please do not hesitate to contact our support team on Support@optilogic.com in c
 
 
 ---
-## DataStar Overview
+## DataStar Overview | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-datastar
 
 DataStar is Optilogic’s new AI-powered data product designed to help supply chain teams build and update models & scenarios and power apps faster & easier than ever before. It enables users to create flexible, accessible, and repeatable workflows with zero learning curve—combining drag-and-drop simplicity, natural language AI, and deep supply chain context.
@@ -10900,7 +10992,7 @@ Optilogic uses industry-standard security protocols to keep everything safe and 
 
 
 ---
-## Getting Started with DataStar: Application Overview
+## Getting Started with DataStar: Application Overview | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-datastar-application-overview
 
 Please watch this 5-minute video for an overview of DataStar, Optilogic’s new AI-powered data application designed to help supply chain teams build and update models & scenarios and power apps faster & easier than ever before!
@@ -10910,7 +11002,7 @@ For detailed DataStar documentation, please see Navigating DataStar on the Help 
 
 
 ---
-## Getting Started with Dendro
+## Getting Started with Dendro | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-dendro
 
 Dendro is Optilogic's simulation-optimization engine. A prime use case for Dendro is inventory policy optimization.
@@ -11286,7 +11378,7 @@ You may find these links helpful, some of which have already been mentioned abov
 
 
 ---
-## Getting Started with Hopper
+## Getting Started with Hopper | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-hopper
 
 Hopper is the Transportation Optimization algorithm within Cosmic Frog. It designs optimal multi-stop routes to deliver/pickup a given set of shipments to/from customer locations at the lowest cost. Fleet sizing and balancing weekly demand can be achieved with Hopper too. Example business questions Hopper can answer are:
@@ -12494,7 +12586,7 @@ The Resource Library Cosmic Frog model named “Hop Through Model” serves as a
 
 
 ---
-## Getting Started with Intelligent Greenfield Analysis
+## Getting Started with Intelligent Greenfield Analysis | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-intelligent-greenfield-analysis
 
 Greenfield analysis (GF) is a method for determining the optimal location of facilities in a supply chain network. The Greenfield engine in Cosmic Frog is called Triad and this name comes from the oldest known species of frogs – Triadobatrachus. You can think of it as the starting point for the evolution of all frogs, and it serves as a great starting point for modeling projects too! We can use Triad to identify 3 key parameters: 
@@ -12562,7 +12654,7 @@ While grouping customers can significantly improve the run time of the model, cl
 
 
 ---
-## Getting Started with Leapfrog AI
+## Getting Started with Leapfrog AI | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-leapfrog-ai
 
 Leapfrog helps Cosmic Frog users explore and use their model data via natural language. View data, make changes, create & run scenarios, analyze outputs, learn all about the Anura schema that underlies Cosmic Frog models, and a whole lot more!
@@ -13546,7 +13638,7 @@ Response: SQL Select statement and Data Grid showing the requested data:
 
 
 ---
-## Getting Started with Maps
+## Getting Started with Maps | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-maps
 
 Showing supply chains on maps is a great way to visualize them, to understand differences between scenarios, and to show how they evolve over time. Cosmic Frog offers users many configuration options to customize maps to their exact needs and compare them side-by-side. In this documentation we will cover how to create and configure maps in Cosmic Frog.
@@ -14052,7 +14144,7 @@ We hope users feel empowered to create their own insightful maps. For any questi
 
 
 ---
-## Getting Started with Optilogic Teams
+## Getting Started with Optilogic Teams | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-optilogic-teams
 
 Teams is an exciting new feature set designed to enhance collaboration within Supply Chain Design, enabling companies to foster a more connected and efficient working environment. With Teams, users can join a shared workspace where all team members have seamless access to collective models and files. This ensures that every piece of work remains synchronized, providing a single source of truth for your data. When one team member updates a file, those changes instantly reflect for all other members, eliminating inconsistencies and ensuring that everyone stays aligned.
@@ -14150,7 +14242,7 @@ Let us know if you need help along the way—our support team (support@optilogic
 
 
 ---
-## Getting Started with Scenarios
+## Getting Started with Scenarios | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-scenarios
 
 Scenarios let you rapidly explore "what-if" questions against an existing Cosmic Frog model. Define one or more data changes (scenario items), run the scenarios, then compare outputs - all without altering your baseline input data.
@@ -14534,7 +14626,7 @@ Happy scenario modeling! As always, please contact our Support team on support@o
 
 
 ---
-## Getting Started with the Optilogic MCP Connector in Claude
+## Getting Started with the Optilogic MCP Connector in Claude | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-ada-claude-connector
 
 This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
@@ -14598,7 +14690,7 @@ To completely remove the connector, click on the button with the 3 vertical dots
 
 
 ---
-## Getting Started with the Cosmic Frog for Excel App Builder
+## Getting Started with the Cosmic Frog for Excel App Builder | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-cosmic-frog-for-excel-app-builder
 
 To enable users to build basic Cosmic Frog for Excel Applications to interact directly with Cosmic Frog from within Excel without needing to write any code, Optilogic has developed the Cosmic Frog for Excel Application Builder (also referred to as App Builder in this documentation). In this App Builder, users can build their own workflows using common actions like creating a new model, connecting to an existing model, importing & exporting data, creating & running scenarios, and reviewing outputs. Once a workflow has been established, the App can be deployed so it can be shared with other users. These other users do not need to build the workflow of the App again, they can just use the App as is. In this documentation we will take a user through the steps of a complete workflow build, including App deployment.
@@ -15010,7 +15102,7 @@ If you want to build Apps that go beyond what can be done using the App Builder,
 
 
 ---
-## Getting Started with the Explorer
+## Getting Started with the Explorer | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-explorer
 
 Users of the Optilogic platform can easily access all files they have in their Optilogic account and perform common tasks like opening, copying, and sharing them by using the built-in Explorer application. This application sits across all other applications on the Optilogic platform.
@@ -15450,7 +15542,7 @@ As always, please feel free to let us know of any questions or feedback by conta
 
 
 ---
-## Getting Started with the Optilogic MCP Connector in ChatGPT
+## Getting Started with the Optilogic MCP Connector in ChatGPT | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-mcp-connector-in-chatgpt
 
 This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
@@ -15494,7 +15586,7 @@ Use the steps outlined in the “Setting up the Connector” section above to re
 
 
 ---
-## Getting Started with the Optilogic MCP Connector in Copilot
+## Getting Started with the Optilogic MCP Connector in Copilot | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-mcp-connector-in-copilot
 
 This documentation details how to connect and disconnect the Optilogic MCP connector using Copilot. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
@@ -15522,7 +15614,7 @@ Go back to your Copilot chat window and test it out with a first prompt, such as
 
 
 ---
-## Getting Started with the Optilogic Risk Engine
+## Getting Started with the Optilogic Risk Engine | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-the-optilogic-risk-engine
 
 The only constant is change. When building our supply chains, the “optimal” design doesn’t only mean lowest cost. What happens if (or perhaps when) a disruption occurs? Fragile, low-cost supply chains can end up costing more in the long run if they aren’t resilient to the dynamic nature of today’s world.
@@ -15632,7 +15724,7 @@ We can use our visualization tools to get a better sense of how risk varies acro
 
 
 ---
-## Getting Started with Troubleshooting
+## Getting Started with Troubleshooting | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-troubleshooting
 
 In this section, we outline some techniques for debugging models in Cosmic Frog. In general, there’s no one “right” approach to debugging, but knowing where you can get information on what went wrong can be helpful.
@@ -15647,7 +15739,7 @@ If you are still having trouble, you can also reach out to us directly at suppor
 
 
 ---
-## Global Supply Chain Strategy Demo Model Review
+## Global Supply Chain Strategy Demo Model Review | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/global-supply-chain-strategy-demo-model-review
 
 Every account holder has access to create the Global Supply Chain Strategy demo model. Following is an overview of the features of the model (and of Cosmic Frog).
@@ -15655,7 +15747,7 @@ If you wish to build the model instead, please follow the instructions located h
 
 
 ---
-## Greenfield Settings Explained
+## Greenfield Settings Explained | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/greenfield-settings-explained
 
 With Intelligent Greenfield Analysis (the Triad engine in Cosmic Frog), you have control over several different solve settings. For ease of use with scenario modeling, these have been placed in a dedicated table called Greenfield Settings. This allows for quick scenario building that leverages the column names. We will cover the settings which can be configured on the Greenfield Settings table and show an example of how scenarios can be used to change these settings.
@@ -15719,7 +15811,7 @@ The action is set to change the value of the Max Number Of New Facilities field 
 
 
 ---
-## Hour Usage Tracking
+## Hour Usage Tracking | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/hour-usage-tracking
 
 When running Cosmic Frog models and other jobs on the Optilogic platform, cloud resources are used. Usage of these resources is billed based on the billing factor of the resource used for the job. Each Optilogic customer has an amount of cloud compute hours included in their Master License Agreement (MLA). Users may want to check how many of these hours have been used up and in this documentation 2 ways to do so will be covered. In the last section we will touch on how to best track hours at the team/company level.
@@ -15807,7 +15899,7 @@ Currently, only tracking of usage hours at the individual user level is availabl
 
 
 ---
-## How to Create an Optilogic Account
+## How to Create an Optilogic Account | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/how-to-create-an-optilogic-account
 
 In just a few clicks, you can create a free account on the Optilogic platform, which includes Cosmic Frog and DataStar among other applications. This document walks you through the steps.
@@ -15835,7 +15927,7 @@ Wrong SSO account selected?
 
 
 ---
-## How to use & create Cosmic Frog Model Utilities
+## How to use & create Cosmic Frog Model Utilities | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/how-to-use-create-cosmic-frog-model-utilities
 
 Utilities enable powerful modelling capabilities for use cases like integration to other services or data sources, repeatable data transformation or anything that can be supported by Python! System Utilities are available as a core capability in Cosmic Frog for use cases like LTL rate lookups, TransitMatrix time & distance generation, and copying items like Maps and Dashboards from one model to another. More useful System Utilities will become available in Cosmic Frog over time. Some of these System Utilities are also available in the Resource Library where they can be downloaded from, and then customized and made available to modelers for specific projects or models. In this Help Article we will cover both how to use use System Utilities as well as how to customize and deploy Custom Utilities.
@@ -16191,7 +16283,7 @@ Orders to demand: this is a utility that will aggregate records in the Customer 
 
 
 ---
-## How to use Debug Mode
+## How to use Debug Mode | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/how-to-use-debug-mode
 
 Running a model in debug mode can be a helpful troubleshooting tool as it will print more detailed reports of model issues.
@@ -16223,7 +16315,7 @@ If you have any questions or concerns about how this might impact your models, p
 
 
 ---
-## How to use Sequential Objectives
+## How to use Sequential Objectives | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/how-to-use-sequential-objectives
 
 Sequential Objectives allow for you to set multiple tiers of objectives for the optimization solve to consider, where each tier of objectives can be relaxed by a defined percentage when solving for the next tier.
@@ -16257,7 +16349,7 @@ This example model can be found in the Resource Library listed under the name of
 
 
 ---
-## How to use SMC3 RateWare XL in Cosmic Frog
+## How to use SMC3 RateWare XL in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/how-to-use-smc3-rateware-xl-in-cosmic-frog
 
 The nature of LTL freight rating is complex and multi-faceted. The RateWare® XL LTL rating engine of SMC3 enables customers to manage parcel pricing and LTL rating complexity, for both class and density rates, with comprehensive rating solutions.
@@ -16279,7 +16371,7 @@ The optimization has correctly used DC2 as the source for CZ1 as it has the lowe
 
 
 ---
-## How to use the Resource Library
+## How to use the Resource Library | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/how-to-use-the-resource-library
 
 The Resource Library is the application within the Optilogic platform where you can find files that will help facilitate, accelerate, and customize your model building and running. These include Cosmic Frog template models, Python scripts, Reference Data and more.
@@ -16393,7 +16485,7 @@ Once all the selections are made and at least the required fields (indicated wit
 
 
 ---
-## How to use User Defined Variables
+## How to use User Defined Variables | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/how-to-use-user-defined-variables
 
 If you find that the standard constraints or costs in a model don’t quite capture your specific needs, you can create and define your own variables to use with costs and constraints.
@@ -16414,7 +16506,7 @@ MFG_CZ_Product_1_Flow – MFG_CZ_Product_2_Flow <= 0
 
 
 ---
-## How We Safeguard Your Data: Backups & Retention Explained
+## How We Safeguard Your Data: Backups & Retention Explained | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/how-we-safeguard-your-data-backups-retention-explained
 
 We take data protection seriously. Below is an overview of how backups work within our platform, including what’s included, how often backups occur, and how long they’re kept.
@@ -16476,7 +16568,7 @@ Review & Clean Up: Periodically review your user-initiated backups and delete an
 
 
 ---
-## Importing Data to Atlas
+## Importing Data to Atlas | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/importing-data-to-atlas
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -16506,7 +16598,7 @@ There are four main methods for adding data to Atlas:
 
 
 ---
-## Cosmic Frog - Importing and Exporting Data
+## Cosmic Frog - Importing and Exporting Data | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/importing-data-to-cosmic-frog
 
 Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
@@ -16840,7 +16932,7 @@ Questions or feedback? Please feel free to contact the Optilogic support team on
 
 
 ---
-## Incremental Change (Network Optimization)
+## Incremental Change (Network Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/incremental-change-network-optimization
 
 Incremental Change is a powerful new capability in Cosmic Frog’s NEO engine (Network Optimization) that helps you manage the transition between two network states – such as moving from your current baseline network to an optimized future state. Rather than implementing all changes at once, Incremental Change allows you to control the pace and sequence of changes over time, making network transformations more practical and manageable.
@@ -17430,7 +17522,7 @@ Please note that this custom table, the Supplier Transition Timeline dashboard, 
 
 
 ---
-## Introduction to TRIAD – Intelligent Greenfield
+## Introduction to TRIAD – Intelligent Greenfield | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/introduction-to-triad---intelligent-greenfield
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -17452,7 +17544,7 @@ Watch the video for an introduction to the features and functions of the Optilog
 
 
 ---
-## Inventory – Days of Supply (Simulation)
+## Inventory – Days of Supply (Simulation) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/inventory-days-of-supply-simulation
 
 When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
@@ -17532,7 +17624,7 @@ The inventory position end indicates the inventory position at the end of the da
 
 
 ---
-## Keyboard Shortcuts in Cosmic Frog
+## Keyboard Shortcuts in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/keyboard-shortcuts-in-cosmic-frog
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -17553,7 +17645,7 @@ Find step-by-step guides, FAQs, and support.
 
 
 ---
-## Less-Than-Truckload Costing Utility
+## Less-Than-Truckload Costing Utility | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/less-than-truckload-costing-utility
 
 The Less Than Truckload Costing utility solves the challenge of pricing less-than-truckload (LTL) shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
@@ -17605,7 +17697,7 @@ This utility currently supports US domestic less-than-truckload shipments only.
 
 
 ---
-## Lumina Tariff Optimizer – Modeling Tariff Strategies
+## Lumina Tariff Optimizer – Modeling Tariff Strategies | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/lumina-tariff-optimizer-modeling-tariff-strategies
 
 Optilogic introduces the Lumina Tariff Optimizer – a powerful optimization engine that empowers companies to reoptimize supply chains in real-time to reduce the effects of tariffs. It provides instant clarity on today’s evolving tariff landscape, uncovers supply chain impacts, and recommends actions to stay ahead – now and into the future.
@@ -18097,7 +18189,7 @@ In the box that says “Enter Formula”, type concatenate([pathoriginvalue],”
 
 
 ---
-## Maps – Styling Points & Flows based on Breakpoints
+## Maps – Styling Points & Flows based on Breakpoints | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/maps-styling-points-flows-based-on-breakpoints
 
 Cosmic Frog’s new breakpoints feature enables users to create maps which relay even more supply chain data in just one glance. Lines and points can now be styled based on field values from the underlying input or output table the lines/points are drawn from.
@@ -18261,7 +18353,7 @@ As always, please feel free to reach out to Optilogic support at support@optilog
 
 
 ---
-## Model Output Insights AI Agent
+## Model Output Insights AI Agent | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/model-output-insights-ai-agent
 
 The Model Output Insights Agent helps users investigate and analyze Cosmic Frog model outputs by turning analytical questions into structured, data-backed strategic reports. It breaks down complex questions into a step-by-step exploration plan, executes targeted queries, synthesizes findings, and produces a professional report - complete with visualizations and actionable recommendations.
@@ -18355,7 +18447,7 @@ The following screenshot shows part of a report instructions file, which can be 
 
 
 ---
-## Model Sharing & Backups for Multi-User Collaboration in Cosmic Frog
+## Model Sharing & Backups for Multi-User Collaboration in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/model-sharing-backups-for-multi-user-collaboration-in-cosmic-frog
 
 With Optilogic’s new Teams feature set (see the "Getting Started with Optilogic Teams" help center article) working collaboratively on Cosmic Frog models has never been easier: all members of a team have access to all contents added to that team’s workspace. Centralizing data using Teams ensures there is a single source of truth for files/models which prevents version conflicts. It also enables real-time collaboration where files/models are seamlessly shared across all team members, and updates to any files/models are instantaneous for all team members.
@@ -18719,7 +18811,7 @@ Bookmark queries - Yes - Only SELECT queries allowed
 
 
 ---
-## Modeler AI Agent
+## Modeler AI Agent | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/modeler-ai-agent
 
 The Modeler Agent is one of Ada’s AI-powered supply chain modeling specialists. It helps users build, validate, troubleshoot, run, analyze, and automate Cosmic Frog network optimization (Neo) and transportation optimization (Hopper) models. The Modeler Agent accelerates the entire modeling lifecycle – from raw operational data to optimization-ready model construction and scenario analysis – while improving model quality, traceability, and reproducibility. By combining supply chain domain knowledge with direct platform capabilities, it helps teams move from messy source data to solver-ready models faster and with fewer manual hand-offs.
@@ -19005,7 +19097,7 @@ Automate repeatable workflows in DataStar
 
 
 ---
-## Modeling Brazilian Taxes using User Defined Variables & Costs
+## Modeling Brazilian Taxes using User Defined Variables & Costs | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/modeling-brazilian-taxes-using-user-defined-variables-costs
 
 Tax systems can be complex, like for example those in Greece, Colombia, Italy, Turkey, and Brazil are considered to be among the most complex ones. It can however be important to include taxes, whether as a cost or benefit or both, in supply chain modeling as they can have a big impact on sourcing decisions and therefore overall costs. Here we will showcase an example of how Cosmic Frog’s User Defined Variables and User Defined Costs can be used to model Brazilian ICMS tax benefits and take these into account when optimizing a supply chain.
@@ -19046,7 +19138,7 @@ We hope this gives you a good idea of how taxes and tax incentives can be consid
 
 
 ---
-## Modelling Returns (Network Optimization)
+## Modelling Returns (Network Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/modelling-returns-network-optimization
 
 For various reasons, many supply chains need to deal with returns. This can for example be due to packaging materials coming back to be reused at plants or DCs, retail customers returning finished goods that they are not happy with, defective products, etc. Previously, these returns could mostly be modelled within Cosmic Frog NEO (Network Optimization) models by using some tricks and workarounds. But with the latest Cosmic Frog release, returns are now supported natively, so that the reuse, repurposing, or recycling of these retuned products to help companies reduce costs, minimize waste, and improve overall supply chain efficiency can be taken into account easily.
@@ -19508,7 +19600,7 @@ Return Cost – the cost associated with returning this product (Return Product 
 
 
 ---
-## Multiple Compartments (Transportation Optimization)
+## Multiple Compartments (Transportation Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/multiple-compartments-transportation-optimization
 
 The Multiple Compartments (MC) feature allows a single transportation asset (e.g., truck, trailer) to be divided into independent compartments, each with its own capacity and compatibility constraints. This enables Hopper to produce more accurate, feasible, and operationally realistic transportation plans.
@@ -19622,7 +19714,7 @@ Output plans reflect operational reality and can be executed without manual adju
 
 
 ---
-## Named Filters in Cosmic Frog
+## Named Filters in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/named-filters-in-cosmic-frog
 
 Named Filters are an exciting new feature which allows users to create and save specific filters directly on grid views, to then be utilized seamlessly across all policies tables, scenario items and map layers. For example, if you create a filter named “DCs” in the Facilities table to capture all entries with “DC” in their designation, this Named Filter can then be applied in a policy table, providing a dynamic alternative to the traditional Group function.
@@ -19942,7 +20034,7 @@ Deleting a Named Filter that was used as a condition for a map layer: the named 
 
 
 ---
-## Navigating the Cosmic Frog Interface
+## Navigating the Cosmic Frog Interface | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/navigating-the-cosmic-frog-interface
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -19964,7 +20056,7 @@ Before you get started in Cosmic Frog watch this short video to learn how to nav
 
 
 ---
-## Navigating the Optilogic Platform
+## Navigating the Optilogic Platform | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/navigating-the-optilogic-platform
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -19985,7 +20077,7 @@ Find step-by-step guides, FAQs, and support.
 
 
 ---
-## Navigating the Platform
+## Navigating the Platform | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/navigating-the-platform
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -20007,7 +20099,7 @@ To help familiarize you with our product we have created the following video.
 
 
 ---
-## Network Transportation Optimization (Neo & Hopper)
+## Network Transportation Optimization (Neo & Hopper) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/network-transportation-optimization-neo-hopper
 
 Exciting new features which enable users to solve both network and transportation optimization in one solve have been added to Cosmic Frog. By optimizing multi-stop route optimization as part of Network Optimization, it enables users to streamline their analysis and make their Network Optimization more accurate. This is possible because the single optimization solve calculates multi-stop route costs by shipment/customer combination, uses this cost as part of another possible transportation mode in addition to OTR, Rail, Air, etc. and will result in more accurate answers by including better transportation costs in a single solve.
@@ -20527,7 +20619,7 @@ We hope this provides you with the guidance needed to start using the Hopper wit
 
 
 ---
-## Next Generation Optilogic Platform Overview
+## Next Generation Optilogic Platform Overview | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/next-generation-optilogic-platform-overview
 
 At Optilogic, we have built the next generation (next-gen) platform to complement our AI. It is a modern, unified workspace where users:
@@ -20789,7 +20881,7 @@ Add “Review new historical productions file” to my tasks.
 
 
 ---
-## Optilogic Engine Names Explained
+## Optilogic Engine Names Explained | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/optilogic-engine-names-explained
 
 As you continue to work with the tool you might find yourself asking, what do these engine names mean and how the heck did they come up with them?
@@ -20825,7 +20917,7 @@ Hopper, our transportation routing engine, doesn’t have a name rooted in frog-
 
 
 ---
-## Optilogic Platform Overview
+## Optilogic Platform Overview | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/optilogic-platform-overview
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -20848,7 +20940,7 @@ To see the highlights of the software please watch the following video.
 
 
 ---
-## Optilogic Teams – Administrator Guide
+## Optilogic Teams – Administrator Guide | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/optilogic-teams---administrator-guide
 
 Teams is an exciting new feature set on the Optilogic platform designed to enhance collaboration within Supply Chain Design, enabling companies to foster a more connected and efficient working environment. With Teams, users can join a shared workspace where all team members have seamless access to collective models and files. For a more elaborate introduction to and high-level overview of the Teams feature set, please see this “Getting Started with Optilogic Teams” help center article.
@@ -21208,7 +21300,7 @@ Let us know if you need help along the way—our support team (support@optilogic
 
 
 ---
-## Optilogic Teams – User Guide
+## Optilogic Teams – User Guide | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/optilogic-teams---user-guide
 
 Teams is an exciting new feature set on the Optilogic platform designed to enhance collaboration within Supply Chain Design, enabling companies to foster a more connected and efficient working environment. With Teams, users can join a shared workspace where all team members have seamless access to collective models and files. For a more elaborate introduction to and high-level overview of the Teams feature set, please see this “Getting Started with Teams” help center article.
@@ -21462,7 +21554,7 @@ Let us know if you need help along the way—our support team (support@optilogic
 
 
 ---
-## Optimization Sourcing Policies Explained
+## Optimization Sourcing Policies Explained | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/optimization-sourcing-policies-explained
 
 Optimization (NEO) will read from all 5 of input tables in the Sourcing section of Cosmic Frog.
@@ -21481,7 +21573,7 @@ If Policy Values add up to more than 100 for a listed destination / product comb
 
 
 ---
-## Resolving ODBC Connection Errors
+## Resolving ODBC Connection Errors | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/resolving-odbc-connection-errors
 
 There can be many different causes for an ODBC connection error, this article contains a couple of specific error messages along with resolution steps.
@@ -21499,7 +21591,7 @@ Resolution: Please confirm the PSQL drivers are updated as shown in the previous
 
 
 ---
-## Resource Size Selection Guidance
+## Resource Size Selection Guidance | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/resource-size-selection-guidance-neo
 
 When running models in Cosmic Frog, users can choose the size of the resource the model’s scenario(s) will be run on in terms of available memory (RAM in Gb) and number of CPU cores. Depending on the complexity of the model and the number of elements, policies and constraints in the model, the model will need a certain amount of memory to run to completion successfully. Bigger, more complex models typically need to be run using a resource that has more memory (RAM) available as compared to smaller, less complex models. The bigger the resource that is being used, the higher the billing factor which leads to using more of the available cloud compute hours available to the customer (the total amount of cloud compute time available to the customer is part of customer’s Master License Agreement with Optilogic). Ideally, users choose a resource size that is just big enough to run their scenario(s) without the resource running out of memory, while minimizing the amount of cloud compute time used. This document guides users in choosing an initial resource size and periodically re-evaluating it to ensure optimal usage of the customer’s available cloud compute time.
@@ -21713,7 +21805,7 @@ It is recommended to periodically re-assess if the resource size(s) used are sti
 
 
 ---
-## Running a Model in Atlas/Python
+## Running a Model in Atlas/Python | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/running-a-model-in-atlas-python
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -21736,7 +21828,7 @@ To leverage the power of hyperscaling, click the “Run as Job” button.
 
 
 ---
-## Running a Model in the Optilogic Software Development Kit (SDK)
+## Running a Model in the Optilogic Software Development Kit (SDK) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/running-a-model-in-the-optilogic-software-development-kit-sdk
 
 Running a model from Atlas via the SDK requires the following inputs:
@@ -21806,7 +21898,7 @@ you can copy the model name from your browser window
 
 
 ---
-## Running Models & Scenarios in Cosmic Frog
+## Running Models & Scenarios in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/running-models-scenarios-in-cosmic-frog
 
 When a Cosmic Frog model has been built and scenarios of interest have been created, it is usually time to run 1 or multiple scenarios. This documentation covers how scenarios can be kicked off, and which run parameters can be configured by users.
@@ -22178,7 +22270,7 @@ As always, please feel free to contact Optilogic Support at support@optilogic.co
 
 
 ---
-## Sensitivity at Scale Scenarios in Cosmic Frog
+## Sensitivity at Scale Scenarios in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/sensitivity-at-scale-scenarios-in-cosmic-frog
 
 One of Cosmic Frog’s great competitive features is the ability to quickly run many sensitivity analysis scenarios in parallel on Optilogic’s Cloud-based platform. This built-in Sensitivity at Scale (S@S) functionality lets a user run sensitivity on demand quantity and transportation costs with 1 click of a button, on any scenario using any of Cosmic Frog’s engines. In this documentation, we will walk through how to kick-off a S@S run, where to track the status of the scenarios, and show some example outputs of S@S scenarios once they have completed running.
@@ -22262,7 +22354,7 @@ Hovering over an individual bar in the chart shows the detailed cost breakdown f
 
 
 ---
-## Setting Up a Visualization Database
+## Setting Up a Visualization Database | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/setting-up-a-visualization-database
 
 The data for our visualizations comes from our Cosmic Frog model database. This is often stored in the cloud using a unique identifier.
@@ -22276,7 +22368,7 @@ We can also preview the data in a table using the magnifying glass button:
 
 
 ---
-## Setup: Scripting with Python for Cosmic Frog and DataStar
+## Setup: Scripting with Python for Cosmic Frog and DataStar | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/setup-scripting-with-python-for-cosmic-frog-and-datastar
 
 Optilogic has developed Python libraries to facilitate scripting for 2 of its flagship applications: Cosmic Frog, the most powerful supply chain design tool on the market, and DataStar, its just released AI-powered data product where users can create flexible, accessible and repeatable workflows with zero learning curve.
@@ -22436,7 +22528,7 @@ DataStar: learn more about DataStar and its capabilities from these articles on 
 
 
 ---
-## Product Shelf Life, Maturation Time, and Disposal (Network Optimization)
+## Product Shelf Life, Maturation Time, and Disposal (Network Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/shelf-life-and-maturation-time-network-optimization
 
 Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
@@ -22700,7 +22792,7 @@ For any questions on these new features, please do not hesitate to contact Optil
 
 
 ---
-## Special Characters in Cosmic Frog
+## Special Characters in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/special-characters-in-cosmic-frog
 
 The use of non alpha-numeric characters can present the possibilities of data issues when running scenarios. The only special characters that will be officially supported are periods, dashes, parentheses and underscores.
@@ -22710,7 +22802,7 @@ Please note that while other special characters in input data or scenario names 
 
 
 ---
-## SQL Editor Overview
+## SQL Editor Overview | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/sql-editor-overview
 
 The SQL Editor helps users write, edit, and execute SQL (Structured Query Language) queries within Optilogic’s platform. It provides direct access to database objects such as tables and views stored within the platform. In this documentation, the Anura Supply Chain Model Database (Cosmic Frog’s database) will be used as the database example.
@@ -22808,7 +22900,7 @@ Visit https://www.postgresqltutorial.com/ for more information on PostgreSQL que
 
 
 ---
-## Territory Planning (Transportation Optimization)
+## Territory Planning (Transportation Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/territory-planning-transportation-optimization
 
 Territory Planning is a new capability in the Transportation Optimization (Hopper) engine that automatically clusters customers into geographic regions - territories - and restricts routes and drivers to operate within those territory boundaries. This reduces operational complexity, improves route consistency, and enables delivery-promise logic for end consumers.
@@ -23042,7 +23134,7 @@ Compare multiple territory configurations and their costs
 
 
 ---
-## The Optilogic MCP Connector
+## The Optilogic MCP Connector | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/the-optilogic-mcp-connector
 
 The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
@@ -23346,7 +23438,7 @@ Questions or feedback on the connector? Reach out to the Optilogic Support team 
 
 
 ---
-## Throg – Simulation Distribution Syntax
+## Throg – Simulation Distribution Syntax | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/throg---simulation-distribution-syntax
 
 Several input columns used by Throg (Simulation) will accept distributions as inputs. The following distributions, along with their syntax, are currently supported by Throg:
@@ -23356,7 +23448,7 @@ A user-defined Histogram is also supported as an acceptable input. These will be
 
 
 ---
-## Transportation Costs in Optimization
+## Transportation Costs in Optimization | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/transportation-costs-in-optimization
 
 Here we will cover the options a Cosmic Frog user has for modeling transportation costs when using the Neo Optimization engine. The different fields that can be populated and how the calculations under the hood work will be explained in detail.
@@ -23391,7 +23483,7 @@ Note that the 4 different types of transportation costs are also included in the
 
 
 ---
-## Trouble Receiving Account Confirmation Email
+## Trouble Receiving Account Confirmation Email | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/trouble-receiving-account-confirmation-email
 
 A confirmation email is sent following account creation, however this email could potentially be blocked due to an organization’s IT policies. If you are failing to receive your confirmation email, please make sure that www.optilogic.com is whitelisted, as well as the following email address: support=www.optilogic.com@mail.www.optilogic.com.
@@ -23403,7 +23495,7 @@ After confirming that these have been whitelisted, try and send another confirma
 
 
 ---
-## Troubleshooting Model Failure Messages
+## Troubleshooting Model Failure Messages | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/troubleshooting-model-failure-messages
 
 Please find a list of model errors that might appear in the Job Error Log and their associated resolutions.
@@ -23423,7 +23515,7 @@ Resolution – This indicates an intermittent drop in connection when reading / 
 
 
 ---
-## Troubleshooting Resource Library Excel Apps
+## Troubleshooting Resource Library Excel Apps | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/troubleshooting-resource-library-excel-apps
 
 When downloading all of the related files for any of the sample Excel Apps that are posted to our Resource Library, you will likely encounter macro-enabled Excel workbooks (.xlsm) which might have their macros disabled following download.
@@ -23445,7 +23537,7 @@ If other issues come from any Resource Library templates please do not hesitate 
 
 
 ---
-## Troubleshooting: Unable to Open Cosmic Frog
+## Troubleshooting: Unable to Open Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/troubleshooting-unable-to-open-cosmic-frog
 
 If you are seeing a "Something went wrong" error when trying to open a model in Cosmic Frog — for example, Cannot read properties of undefined (reading 'call') — this is likely caused by a cached version of the application conflicting with a recent platform update. Follow the steps below in order to resolve it.
@@ -23493,7 +23585,7 @@ If neither step resolves the problem, please contact the Optilogic support team.
 
 
 ---
-## Troubleshooting with Linear Programming Output Files
+## Troubleshooting with Linear Programming Output Files | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/troubleshooting-with-linear-programming-output-files
 
 If you are comfortable with traditional linear programming techniques, you can select the “Write Input Solver Files” and “Write LP File” parameters to get useful output files.
@@ -23515,7 +23607,7 @@ When using the Infeasibility Diagnostic engine, the LP file is different than a 
 
 
 ---
-## Troubleshooting with the Infeasibility Diagnostic Engine
+## Troubleshooting with the Infeasibility Diagnostic Engine | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/troubleshooting-with-the-infeasibility-diagnostic-engine
 
 When a scenario run is infeasible, it means that the solver cannot find any solutions that satisfy all the specified constraints simultaneously. In other words, the defined constraints are too restrictive or they contradict each other, making it impossible to satisfy all of them at once. Examples are:
@@ -23532,7 +23624,7 @@ If the user has turned on the "Print Full Solution During Infeasibility Diagnosi
 
 
 ---
-## Troubleshooting with Validation Errors
+## Troubleshooting with Validation Errors | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/troubleshooting-with-validation-errors
 
 After every Cosmic Frog run, it’s a great habit to check the OptimizationValidationErrorReport table. Even for models that run successfully, this table can have useful information on how the input data is being processed by the solver.
@@ -23586,7 +23678,7 @@ The OutputValidationErrorReport table is often very useful, even if a model “s
 
 
 ---
-## Understanding Ada Credits
+## Understanding Ada Credits | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/understanding-ada-credits
 
 Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
@@ -23614,7 +23706,7 @@ Additional credits cannot currently be purchased or added directly within the pl
 
 
 ---
-## Understanding Anura: the Cosmic Frog Data Structure
+## Understanding Anura: the Cosmic Frog Data Structure | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/understanding-anura-the-cosmic-frog-data-structure
 
 The Anura data schema enables design in the Optilogic platform. It sits above the design algorithms to create a consistent modeling paradigm for our algorithms:
@@ -23623,7 +23715,7 @@ A complete list of the tables and fields within each table can be downloaded loc
 
 
 ---
-## Understanding Lane Creation Rules
+## Understanding Lane Creation Rules | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/understanding-lane-creation-rules
 
 Transportation lanes are a necessary part of any supply chain. These lanes represent how product flows throughout our supply chain. In network optimization, transportation lanes are often referred to as arcs or edges.
@@ -23639,7 +23731,7 @@ If the “Union” rule is selected, Cosmic Frog will generate transportation la
 
 
 ---
-## Understanding the Validation Error Report
+## Understanding the Validation Error Report | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/understanding-the-validation-error-report
 
 The validation error report table will be populated for all model solves and contains a lot of helpful information for both reviewing and troubleshooting models. A set of results will be saved for each scenario and every record will report the table and column where the issue has been identified, a description of the error, the value that was identified as the problem along with the action taken by the solver. In the instance where multiple records are generated for the same type of error, you will see an example record populated as the identified value and a count of the errors will be displayed – detailed records can be printed using debug mode. Each record will also be rated on the severity of its impact on a scale from 0 – 3 with 3 being the highest.
@@ -23656,7 +23748,7 @@ Severity 0 records are for informational purposes only and are generated when re
 
 
 ---
-## Update connection string information for third-party tools (Alteryx, Tableau, PowerBI…)
+## Update connection string information for third-party tools (Alteryx, Tableau, PowerBI…) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/update-connection-string-information-for-third-party-tools-alteryx-tableau-powerbi
 
 ‘Connection Info’ is required when connecting 3rd party tools such as Alteryx, Tableau, PowerBI, etc. to Cosmic Frog.
@@ -23671,7 +23763,7 @@ Cosmic Frog ‘HOST’ value can be copied from Cloud Storage browser.
 
 
 ---
-## Uploading Data to Cosmic Frog from Alteryx
+## Uploading Data to Cosmic Frog from Alteryx | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/uploading-data-to-cosmic-frog-from-alteryx
 
 The following instructions begin with the assumption that you have data that you wish to upload to your Cosmic Frog model.
@@ -23699,7 +23791,7 @@ Now you can Run the Workflow to upload the data to your model. Once it has compl
 
 
 ---
-## User-Defined Variables, Costs and Constraints (Transportation Optimization)
+## User-Defined Variables, Costs and Constraints (Transportation Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/user-defined-variables-costs-and-constraints-transportation-optimization
 
 User-defined variables (UDVs) are a transformative feature in Cosmic Frog’s transportation optimization algorithm (Hopper engine) that allow users to create and track custom metrics specific to their transportation needs. Once established, these variables can be seamlessly integrated into user-defined constraints and/or user-defined costs. Several example use cases are:
@@ -24063,7 +24155,7 @@ Note that it does not matter in this case how much longer than 10 hours the ship
 
 
 ---
-## Using Alternate Geocoding Providers
+## Using Alternate Geocoding Providers | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/using-alternate-geocoding-providers
 
 By default, the Geocoding option in Cosmic Frog will use Mapbox as the geodata provider. Other supported providers will be Bing, Google, PTV and PC Miler. If you have an access key for an alternate provider and would like to configure this provider as the default option, follow these two steps:
@@ -24075,7 +24167,7 @@ By default, the Geocoding option in Cosmic Frog will use Mapbox as the geodata p
 
 
 ---
-## Using Analytics in Cosmic Frog
+## Using Analytics in Cosmic Frog | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/using-analytics-in-cosmic-frog
 
 Watch the video to learn how to build dashboards to analyze scenarios and tell the stories behind your Cosmic Frog models. You can also refer to the Getting Started with Analytics help center article, which contains the latest information as of July 2026 in text + screenshot format.
@@ -24083,7 +24175,7 @@ Watch the video to learn how to build dashboards to analyze scenarios and tell t
 
 
 ---
-## Using Groups to Write Model Constraints
+## Using Groups to Write Model Constraints | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/using-groups-to-write-model-constraints
 
 Adding model constraints often requires us to take advantage of Cosmic Frog’s Groups feature. Using the Groups table, we can define groups of model elements. This allows us to reference several individual elements using just the group name.
@@ -24105,7 +24197,7 @@ Enumerating a constraint across a group applies the constraint to each individua
 
 
 ---
-## Using the Atlas File Explorer
+## Using the Atlas File Explorer | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/using-the-atlas-file-explorer
 
 The File Explorer is a fully functioning view into your workspace file system. To open the File Explorer, look for the following icon on the left-hand side of the Atlas environment:
@@ -24128,7 +24220,7 @@ When there are changes to your workspace file system but they haven’t shown up
 
 
 ---
-## Using the Cosmic Frog Python Library
+## Using the Cosmic Frog Python Library | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/using-the-cosmic-frog-python-library
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -24151,7 +24243,7 @@ You can also reference the video shown below that covers an overview on scriptin
 
 
 ---
-## Using the DataStar Python Library
+## Using the DataStar Python Library | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/using-the-datastar-python-library
 
 DataStar users can take advantage of the datastar Python library, which gives users access to DataStar projects, macros, tasks, and connections through Python scripts. This way users can build, access, and run their DataStar workflows programmatically. The library can be used in a user’s own Python environment (local or on the Optilogic platform), and it can also be used in Run Python tasks in a DataStar macro.
@@ -24428,7 +24520,7 @@ macro.wait_for_done(verbose=True)
 
 
 ---
-## Using the Minimum Required Tables
+## Using the Minimum Required Tables | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/using-the-minimum-required-tables
 
 Anura contains 100+ (and growing) input tables to organize modeling data.
@@ -24458,7 +24550,7 @@ While not required, many Neo models will also contain data in the following tabl
 
 
 ---
-## Using the SCG to Cosmic Frog Model Converter
+## Using the SCG to Cosmic Frog Model Converter | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/using-the-scg-to-cosmic-frog-model-converter
 
 The team at Optilogic has built a powerful tool to take existing Supply Chain Guru models from either a .scgm or .mdf format and convert them to the Optilogic Anura and .frog schema.
@@ -24476,7 +24568,7 @@ You can review the data from the original database under the _original_scg table
 
 
 ---
-## Waypoint Routes (Transportation and Network Optimization)
+## Waypoint Routes (Transportation and Network Optimization) | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/waypoint-routes-transportation-and-network-optimization
 
 Cosmic Frog users can now visualize routes from Hopper (transportation optimization) and Neo (network optimization) on real road networks instead of straight lines. Valhalla, an open-source routing engine for OpenStreetMap, is used to calculate the waypoints.
@@ -24582,7 +24674,7 @@ It is recommended to disable (uncheck its checkbox in the Maps list) a layer sho
 
 
 ---
-## Welcome to Optilogic!
+## Welcome to Optilogic! | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/welcome-to-optilogic
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -24605,7 +24697,7 @@ To see the highlights of the software please watch the following video.
 
 
 ---
-## Working with Data
+## Working with Data | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/working-with-data
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -24630,7 +24722,7 @@ Build Your First Cosmic Frog Model
 
 
 ---
-## Working with Multi Time Period Tables
+## Working with Multi Time Period Tables | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/working-with-multi-time-period-tables
 
 The Multi Time Period (MTP) tables allow for you to enter time-period specific data across many input tables. These MTP tables will act as overrides in the relevant periods for the records in their standard tables. If a record with the same key structure does not exist in the standard table, the MTP record won’t be recognized by the solver and will be dropped.
@@ -24666,7 +24758,7 @@ Closing the entire facility will do more than just limit production, the facilit
 
 
 ---
-## Writing Scenario Syntax
+## Writing Scenario Syntax | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/writing-scenario-syntax
 
 To describe the action and conditions of our scenario, there are specific syntax rules we need to follow.
@@ -24690,7 +24782,7 @@ Further detail on Conditions syntax can be found here.
 
 
 ---
-## Writing Syntax for Actions
+## Writing Syntax for Actions | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/writing-syntax-for-actions
 
 If you are ever doubting the name of a column that needs to be used in an action, you can type CTRL+SPACE to have the full list of columns available to you displayed. Alternatively, you can start typing and the valid column names will auto-complete.
@@ -24724,7 +24816,7 @@ Set a customer to be single sourced: singlesource=’True’
 
 
 ---
-## Writing Syntax for Conditions
+## Writing Syntax for Conditions | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/writing-syntax-for-conditions
 
 If you are ever doubting the name of a column that needs to be used in an action, you can type CTRL+SPACE to have the full list of columns available to you displayed. Alternatively, you can start typing and the valid column names will auto-complete.
@@ -24766,7 +24858,7 @@ Filter for all Facilities that are in a list of known records: facilityname IN (
 
 
 ---
-## Getting Started with Optilogic
+## Getting Started with Optilogic - Optilogic
 **URL:** https://optilogic.com/resources/help-center/getting-started-with-optilogic
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -24790,860 +24882,21 @@ Find step-by-step guides, FAQs, and support.
 ## Knowledge Library
 **URL:** https://optilogic.com/resources/help-center/knowledge-library
 
-Hopper is the Transportation Optimization algorithm within Cosmic Frog. It designs optimal multi-stop routes to deliver/pickup a given set of shipments to/from customer locations at the lowest cost. Fleet sizing and balancing weekly demand can be achieved with Hopper too. Example business questions Hopper can answer are:
-Hopper’s transportation optimization capabilities can be used in combination with network design to test out what a new network design means in terms of the last-mile delivery configuration. For example, questions that can be looked at are:
-With ever increasing transportation costs, getting the last-mile delivery part of your supply chain right can make a big impact on the overall supply chain costs!
-It is recommended to watch this short Getting Started with Hopper video before diving into the details of this documentation. The video gives a nice, concise overview of the basic inputs, process, and outputs of a Hopper model.
-In this documentation we will first cover some general Cosmic Frog functionality that is used extensively in Hopper, next we go through how to build a Hopper model which discusses required and optional inputs, how to run a Hopper model is explained, Hopper outputs in tables, on maps and analytics are covered as well, and finally references to a few additional Hopper resources are listed. Note that additional more advanced Hopper features are covered in separate articles:
-To not make this document too repetitive we will cover some general Cosmic Frog functionality here that applies to all Cosmic Frog technologies and is used extensively for Hopper too.
-To only show tables and fields in them that can be used by the Hopper transportation optimization algorithm, disable all icons except the 4th (“Transportation”) in the Technologies Selector from the toolbar at the top in Cosmic Frog. This will hide any tables and fields that are not used by Hopper and therefore simplifies the user interface:
-Many Hopper related fields in the input and output tables will be discussed in this document. Keep in mind however that a lot of this information can also be found in the tooltips that are shown when you hover over the column name in a table, see following screenshot for an example. The column name, technology/technologies that use this field, a description of how this field is used by those algorithm(s), its default value, and whether it is part of the table’s primary key are listed in the tooltip.
-There are a lot of fields with names that end in “…UOM” throughout the input tables. How they work will be explained here so that individual UOM fields across the tables do not need to be explained further in this documentation as they all work similarly. These UOM fields are unit of measure fields and often appear to the immediate right of the field that they apply to, like for example Distance Cost and Distance Cost UOM in the screenshot above. In these UOM fields you can type the Symbol of a unit of measure that is of the required Type from the ones specified in the Units Of Measure table. For example, in the screenshot above, the unit of measure Type for the Distance Cost UOM field is Distance. Looking in the Units of Measure table, we see there are multiple of these specified, like for example Mile (Symbol = MI), Yard (Symbol = YD) and Kilometer (Symbol = KM), so we can use any of these in this UOM field. If we leave a UOM field blank, then the Primary UOM for that UOM Type specified in the Model Settings table will be used. For example, for the Distance Cost UOM field in the screenshot above the tooltip says Default Value = {Primary Distance UOM}. Looking this up in the Model Settings table shows us that this is set to MI (= mile) in our current model. Let’s illustrate this with the following screenshots of 1) the tooltip for the Distance Cost UOM field (located on the Transportation Assets table), 2) units of measure of Type = Distance in the Units Of Measure table and 3) checking what the Primary Distance UOM is set to in the Model Settings table, respectively:
-Note that only hours (Symbol = HR) is currently allowed as the Primary Time UOM in the Model Settings table. This means that if another Time UOM, like for example minutes (MIN) or days (DAY), is to be used, the individual UOM fields need to be used to set these. Leaving them blank would mean HR is used by default.
-With few exceptions, all tables in Cosmic Frog contain both a Status field and a Notes field. These are often used extensively to add elements to a model that are not currently part of the supply chain (commonly referred to as the “Baseline”), but are to be included in scenarios in case they will definitely become part of the future supply chain or to see whether there are benefits to optionally include these going forward. In these cases, the Status in the input table is set to Exclude and the Notes field often contains a description along the lines of ‘New Market’, ‘New Product’, ‘Box truck for Scenarios 2-4’, ‘Depot for scenario 5’, ‘Include S6’, etc. When creating scenario items for setting up scenarios, the table can then be filtered for Notes = ‘New Market’ while setting Status = ‘Include’ for those filtered records. We will not call out these Status and Notes fields in each individual input table in the remainder of this document, but we definitely do encourage users to use these extensively as they make creating scenarios very easy. When exploring any Cosmic Frog models in the Resource Library, you will notice the extensive use of these fields too. The following 2 screenshots illustrate the use of the Status and Notes fields for scenario creation: 1) shows several customers on the Customers table where CZ_Secondary_1 and CZ_Secondary_2 are not currently customers that are being served but we want to explore what it takes to serve them in future. Their Status is set to Exclude and the Notes field contains ‘New Market’; 2) a scenario item called ‘Include New Market’ shows that the Status of Customers where Notes = ‘New Market’ is changed to ‘Include’.
-The Status and Notes fields are also often used for the opposite where existing elements of the current supply chain are excluded in scenarios in cases where for example locations, products or assets are going to go offline in the future. To learn more about scenario creation, please see this short Scenarios Overview video, this Scenario Creation and Maps and Analytics training session video, this Creating Scenarios in Cosmic Frog help article, and this Writing Scenario Syntax help article.
-A subset of Cosmic Frog’s input tables needs to be populated in order to run Transportation Optimization, whereas several other tables can be used optionally based on the type of network that is being modelled, and the questions the model needs to answer. The required tables are indicated with a green check mark in the screenshot below, whereas the optional tables have an orange circle in front of them. The Units Of Measure and Model Settings tables are general Cosmic Frog tables, not only used by Hopper and will always be populated with default settings already; these can be added to and changed as needed.
-We will first discuss the tables that are required to be populated to set up a basic Hopper model and then cover what can be achieved by also using the optional tables and fields. Note that the screenshots of all input and output tables mostly contain the fields in the order they appear in in the Cosmic Frog user interface, however on occasion the order of the fields was rearranged manually. So, if you do not see a specific field in the same location as in a screenshot, then please scroll through the table to find it.
-The Customers table contains what for purposes of modelling are considered the customers: the locations that we need to deliver a certain amount of certain product(s) to or pick a certain amount of product(s) up from. The customers need to have their latitudes and longitudes specified so that distances and transport times of route segments can be calculated, and routes can be visualized on a map. Alternatively, users can enter location information like address, city, state, postal code, country and use Cosmic Frog’s built in geocoding tool to populate the latitude and longitude fields. If the customer’s business hours are important to take into account in the Hopper run, its operating schedule can be specified here too, along with customer specific variable and fixed pickup & delivery times. Following screenshot shows an example of several populated records in the Customers table:
-The pickup & delivery time input fields can be seen when scrolling right in the Customers table (the accompanying UOM fields are omitted in this screenshot):
-Scrolling still further right, there are 3 additional Hopper-specific fields in the Customers table:
-Finally, 2 more fields used by Hopper which are not in any of the above screenshots are:
-The Facilities table needs to be populated with the location(s) the transportation routes start from and end at; they are the domicile locations for vehicles (assets). The table is otherwise identical to the customers table, where location information can again be used by the geocoding tool to populate the latitude and longitude fields if they are not yet specified. And like other tables, the Status and Notes field are often used to set up scenarios. This screenshot shows the Facilities table populated with 2 depots, 1 current one in Atlanta, GA, and 1 new one in Jacksonville, FL:
-Scrolling further right in the Facilities table shows almost all the same fields as those to the right on the Customers table: Operating Schedule, Operating Calendar, and Fixed & Unit Pickup & Delivery Times plus their UOM fields, and Number of Dock Doors. These all work the same as those on the Customers table, please refer to the descriptions of them in the previous section.
-The item(s) that are to be delivered to the customers from the facilities are entered into the Products table. It contains the Product Name, and again a Status and Notes fields for ease of scenario creation. Details around the Volume and Weight of the product are entered here too, which are further explained below this screenshot of the Products table where just one product “PRODUCT” has been specified:
-On the Transportation Assets table, the vehicles to be used in the Hopper baseline and any scenario runs are specified. There are a lot of fields around capacities, route and stop details, delivery & pickup times, and driver breaks that can be used on this table, but there is no requirement to use all of them. Use only those that are relevant to your network and the questions you are trying to answer with your model. We will discuss most of them through multiple screenshots. Note that the UOM fields have been omitted in these screenshots. Let’s start with this screenshot showing basic asset details like name, number of units, domicile locations, and rate information:
-Note that in the above screenshot the Transportation Driver Rate Name field is not shown, but this is available too. If driver specific costs are specified in the Transportation Driver Costs table (discussed further below in the section on Hopper optional input tables), they can be chosen from the drop-down in this field to be applied to this asset.
-The following screenshot shows the fields where the operating schedule of the asset, any fixed costs, and capacity of the vehicles can be entered:
-Note that if all 3 of these capacities are specified, the most restrictive one will be used. If you for example know that a certain type of vehicle always cubes out, then you could just populate the Volume Capacity and Volume Capacity UOM fields and leave the other capacity fields blank.
-If you scroll further right, you will see the following fields that can be used to set limits on route distance and time when using this type of vehicle. Where applicable, you will notice their UOM fields too (omitted in the screenshot):
-Limits on the amount of stops per route can be set too:
-A tour is defined as all the routes a specific unit of a vehicle is used on during the model horizon. Limits around routes, time, and distance for tours can be added if required:
-Scrolling still further right you will see the following fields that can be used to add details around how long pickup and delivery take when using this type of vehicle. These all have their own UOM fields too (omitted in the screenshot):
-The next 2 screenshots shows the fields on the Transportation Assets table where rules around driver duty, shift, and break times can be entered. Note that these fields each have a UOM field that is not shown in the screenshot:
-Limits around out of route distance can be set too. Plus details regarding the weight of the asset itself and the level of CO2 emissions:
-Lastly, a default cost, fixed times for admin, and an operating calendar can be specified for a vehicle in the following fields on the transportation assets table:
-As a reference, these are the department of transportation driver regulations in the US and the EU. They have been somewhat simplified from these sources: US DoT Regulations and EU DoT Regulations:
-Consider this route that starts from the DC, then goes to CZ1 & CZ2, and then returns to the DC:
-The activities on this route can be thought of as follows, where the start of the Rest is the end of Shift 1 and Shift 2 starts at the end of the Rest:
-Notes on Driver Breaks:
-Except for asset fixed costs, which are set on the Transportation Assets table, and any Direct Costs which are set on the Shipments table, all costs that can be associated with a multi-stop route can be specified in the Transportation Rates table. The following screenshot shows how a transportation rate is set up with a name, a destination name and the first several cost fields. Note that UOM fields have been omitted in this screenshot, but that each cost field has its own UOM field to specify how the costs should be applied:
-Scrolling further right in the Transportation Rates table we see the remaining cost fields:
-Finally, a minimum charge and fuel surcharge can be specified as part of a transportation rate too:
-The amount of product that needs to be delivered from which source facility/supplier to which destination customer or picked up from which customer is specified on the Shipments table. Optionally, details around pickup and delivery times, direct costs, and fixed template routes can be set on this table too. Note that the Shipments table is Transportation Asset agnostic, meaning that the Hopper transportation optimization algorithm will choose the optimal one to use from the vehicles domiciled at the source location. This first screenshot of the Shipments table shows the basic shipment details:
-Here is an example of a subset of Shipments for a model that will route both pickups and deliveries:
-To the right in the Shipments table we find the fields where details around shipment windows can be entered:
-Still further right on the Shipments table are the fields where details around pickup and delivery times can be specified:
-Finally, furthest right on the Shipments table are fields where Direct Costs, details around Template Routes and decompositions can be configured:
-Note that there are multiple ways to switching between forcing Shipments and the order of stops onto a template route and letting Hopper optimize which shipments will be put on a route together and in which order. Two example approaches are:
-The tables and their input fields that can optionally be populated for their inputs to be used by Hopper will now be covered. Where applicable, it will also be mentioned how Hopper will behave when these are not populated.
-In the Transit Matrix table, the transport distance and time for any source-destination-asset combination that could be considered as a segment of a route by Hopper can be specified. Note that the UOM fields in this table are omitted in following screenshot:
-The transport distances for any source-destination pairs that are not specified in this table will be calculated based on the latitudes and longitudes of the source and destination and the Circuity Factor that is set in the Model Settings table. Transport times for these pairs will be calculated based on the transport distance and the vehicle’s Speed as set on the Transportation Assets table or, if Speed is not defined on the Transportation Assets table, the Average Speed in the Model Settings table.
-Costs that need to be applied on a stop basis can be specified in the Transportation Stop Rates table:
-Costs that are specific to drivers of assets can be specified in the Transportation Driver Rates table:
-When driver rates are used in a model, the Total Driver Cost is reported on the Transportation Summary output table and the detailed driver costs can be found in the Transportation Driver Rate Summary output table.
-If Template Routes are specified on the Shipments table by using the Template Route Name and Template Route Stop Sequence fields, then the Template Routes table can be used to specify if and how insertions of other Shipments can be made into these template routes:
-If a template route is set up by using the Template Route Name and Template Route Stop Sequence fields in the Shipments table and this route is not specified in the Template Routes table, it means that no insertions can be made into this template route.
-In addition to routing shipments with a fixed amount of product to be delivered to a customer location, Hopper can also solve problems where routes throughout a week need to be designed to balance out weekly demand while achieving the lowest overall routing costs. The Load Balancing Demand and Load Balancing Schedules tables can be used to set this up. If both the Shipments table and the Load Balancing Demand/Schedules tables are populated, by default the Shipments table will be used and the Load Balancing Demand/Schedules tables will be ignored. To switch to using the Load Balancing Demand/Schedules tables (and ignoring the Shipments) table, the Run Load Balancing toggle in the Hopper (Transportation Optimization) Parameters section on the Run screen needs to be switched to on (toggle to the left and grey is off; to the right and blue is on):
-The weekly demand, the number of deliveries per week, and, optionally, a balancing schedule can be specified in the Load Balancing Demand table:
-To balance demand over a week according to a schedule, these schedules can be specified in the Load Balancing Schedules table:
-In the screenshots above, the 3 load balancing schedules that have been set up will spread the demand out as follows:
-In the Relationship Constraints table, we can tell Hopper what combinations of entities are not allowed on the same route. For example, in the screenshot below we are saying that customers that make up the Primary Market cannot be served on the same route as customers from the Secondary Market:
-A few examples of common Relationship Constraints are shown in the following screenshot where the Notes field explains what the constraint does:
-To set the availability of customers, facilities, and assets to certain start and end times by day of the week, the Business Hours table can be used. The Schedule Name specified on this table can then be used in the Operating Schedule fields on the Customers, Facilities and Transportation Assets tables. Note that the Wednesday – Saturday Open Time and Close Time fields are omitted in the following screenshot:
-To schedule closure of customers, facilities, and assets on certain days, the Business Calendars table can be used. The Calendar Name specified on this table can then be used in the Operating Calendar fields on the Customers, Facilities and Transportation Assets tables:
-Groups are a general Cosmic Frog feature to make modelling quicker and easier. By grouping elements that behave the same together in a group we can reduce the number of records we need to populate in certain tables since we can use the Group names to populate the fields instead of setting up multiple records for each individual element which will all have the same information otherwise. Underneath the hood, when a model that uses Groups is run, these Groups are enumerated into the individual members of the group. We have for example already seen that groups of Type = Customers were used in the Relationship Constraints table in the previous section to prevent customers in the Primary Market being served on the same route as customers in the Secondary Market. Looking in the Groups table we can see which customers are part (‘members’) of each of these groups:
-Examples of other Hopper input tables where use of Groups can be convenient are:
-Note that in addition to Groups, Named Filters can be used in these instances too. Learn more about Named Filters in this help center article.
-The Step Costs table is a general table in Cosmic Frog used by multiple technologies. It is used to specify costs that change based on the throughput level. For Hopper, all cost fields on the Transportation Rates table, the Transportation Stop Rates table, and the Fixed Cost on the Transportation Assets table can be set up to use Step Costs. We will go through an example of how Step Costs are set up, associated with the correct cost field, and how to understand outputs using the following 3 screenshots of the Step Costs table, Transportation Rates table and Transportation Route Summary output table, respectively. The latter will also be discussed in more detail in the next section on Hopper outputs.
-In this example, the per unit cost for units 0 through 20 is $1, $0.9 for units 21 through 40, and $0.85 for all units over 40. Had the Step Cost Behavior field been set to All Item, then the per unit cost for all items is $1 if the throughput is between 0 and 20 units, the per unit cost for all items is $0.9 if the throughput is between 21 and 40 units, and the per unit cost for all items is $0.85 if the throughput is over 41 units.
-In this screenshot of the Transportation Rates table, it is shown that the Unit Cost field is set to UnitCost_1 which is the stepped cost with 3 throughput levels that we just discussed in the screenshot above:
-Lastly, this is a screenshot of the Transportation Route Summary output table where we see that the Delivered Quantity on Route 1 is 78. With the stepped cost structure as explained above for UnitCost_1, the Unit Cost in the output is calculated as follows: 20 * $1 (for units 1-20) + 20 * $0.9 (for units 21-40) + 38 * $0.85 (for units 41-78) = $20 + $18 + $32.30 = $70.30.
-When the input tables have been populated and scenarios are created (several resources explaining how to set up and configure scenarios are listed in the “2.4 Status and Notes fields” section further above), one can start a Hopper run by clicking on the Run button at the top right in Cosmic Frog:
-The Run screen will come up:
-Once a Hopper run is completed, the Hopper output tables will contain the outputs of the run.
-As with other Cosmic Frog algorithms, we can look at Hopper outputs in output tables, on maps and analytics dashboards. We will discuss each of these in the next 3 sections. Often scenarios will be compared to each other in the outputs to determine which changes need to be made to the last-mile delivery part of the supply chain.
-In the Output Summary Tables section of the Output Tables are 8 Hopper specific tables, they start with “Transportation…”. Plus, there is also the Hopper specific detailed Transportation Activity Report table in the Output Report Tables section:
-Switch from viewing Input Tables to Output Tables by clicking on the round grid at the top right of the tables list. The Transportation Summary table gives a high-level summary of each Hopper scenario that has been run and the next 6 Summary output tables contain the detailed outputs at the route, asset, shipment, stop, segment, and tour level. The Transportation Load Balancing Summary output table is populated when a Load Balancing scenario has been run, and summarizes outputs at the daily level. The Transportation Activity Report is especially useful to understand when Rests and Breaks are required on a route. All these output tables will be covered individually in the following sections.
-The Transportation Summary table contains outputs for each scenario run that include Hopper run details, cost details, how much product was delivered and how, total distance and time, and how many routes, stops and shipments there were in total.
-The Hopper run details that are listed for each scenario include:
-The next 2 screenshots show the Hopper cost outputs, summarized by scenario:
-Scrolling further right in the Transportation Summary table shows the details around how much product was delivered in each scenario:
-For the Quantity UOM that is shown in the farthest right column in this screenshot (eaches here), the Total Delivered Quantity, Total Direct Quantity and Total Undelivered Quantity are listed in these columns. If the Total Direct Quantity is greater than 0, details around which shipments were delivered directly to the customer can be found in the Transportation Shipment Summary output table where the Shipment Status = Direct Shipping. Similarly, if the total undelivered quantity is greater than 0, then more details on which shipments were not delivered and why are detailed in the Unrouted Reason field of the Transportation Shipment Summary output table where the Shipment Status = Unrouted.
-The next set of output columns when scrolling further right repeat these delivered, direct and undelivered amounts by scenario, but in terms of volume and weight.
-Still further to the right we find the outputs that summarize the total distance and time by scenario:
-Lastly, the fields furthest right on the Transportation Summary output table contain details around the number of routes, assets and shipments, and CO2 emissions:
-A few columns contained in this table are not shown in any of the above screenshots, these are:
-The Transportation Route Summary table contains details for each route in each scenario that include cost, distance & time, number of stops & shipments, and the amount of product delivered on the route.
-The costs that together make up the total Route Cost are listed in the next 11 fields shown in the next 2 screenshots:
-The next set of output fields show the distance and time for each route:
-Finally, the fields furthest right in the Transportation Route Summary table list the amount of product that was delivered on the routes, and the number of stops and delivered shipments on each route.
-The Transportation Asset Summary output table contains the details of each type of asset used in each scenario. These details include costs, amount of product delivered, distance & time, and the number of delivered shipments.
-The costs that together make up the Total Cost are listed in the next 12 fields:
-The next set of fields in the Transportation Asset Summary summarize the distances and times by asset type for the scenario:
-Furthest to the right on the Transportation Asset Summary output table we find the outputs that list the total amount of product that was delivered, the number of delivered shipments, and the total CO2 emissions:
-The Transportation Shipment Summary output table lists for each included Shipment of the scenario the details of which asset type it is served by, which stop on which route it is, the amount of product delivered, the allocated cost, and its status.
-The next set of fields in the Transportation Shipment Summary table list the total amount of product that was delivered to this stop.
-The next screenshot of the Transportation Shipment Summary shows the outputs that detail the status of the shipment, costs, and a reason in case the shipment was unrouted.
-Lastly, the outputs furthest to the right on the Transportation Shipment Summary output table list the pickup and delivery time and dates, the allocation of CO2 emissions and associated costs, and the Decomposition Name if used:
-The Transportation Stop Summary output table lists for each route all the individual stops and their details around amount of product delivered, allocated cost, service time, and stop location information.
-This first screenshot shows the basic details of the stops in terms of route name, stop ID, location, stop type, and how much product was delivered:
-Somewhat further right on the Transportation Stop Summary table we find the outputs that detail the route cost allocation and the different types of time spent at the stop:
-Lastly, farthest right on the Transportation Stop Summary table, arrival, service, and departure dates are listed, along with the stop’s latitude and longitude:
-The Transportation Segment Summary output table contains distance, time, and source and destination location details for each segment (or “leg”) of each route.
-The basic details of each segment are shown in the following screenshot of the Transportation Segment Summary table:
-Further right on the Transportation Segment Summary output table, the time details of each segment are shown:
-Next on the Transportation Segment Summary table are the latitudes and longitudes of the segment’s origin and destination locations:
-And farthest right on the Transportation Segment Summary output table details around the start and end date and time of the segment are listed, plus CO2 emissions and the associated CO2 cost:
-For each Tour (= asset schedule) the Transportation Tour Summary output table summarizes the costs, distances, times, and CO2 details.
-The next 3 screenshots show the basic tour details and all costs associated with a tour:
-The next screenshot shows the distance outputs available for each tour on the Transportation Tour Summary output table:
-Scrolling further right on the Transportation Tour Summary table, the outputs available for tour times are listed:
-If a load balancing scenario has been run (see the Load Balancing Demand input table further above for more details on how to run this), then the Transportation Load Balancing Summary output table will be populated too. Details on amount of product delivered, plus the number of routes, assets and delivered shipments by day of the week can be found in this output table; see the following 2 screenshots:
-For each route, the Transportation Activity Report details all the activities that happen in chronological order with details around distance and time and it breaks down how far along the duty and drive times are at each point in the route, which is very helpful to understand when rests and short breaks are happening.
-This first screenshot of the Transportation Activity Report shows the basic details of the activities:
-Next, the distance, time, and delivered amount of product are detailed on the Transportation Activity Report:
-Finally, the last several fields on the Transportation Activity Report details cost, and the thus far accumulated duty and drive times:
-As with the other engines within Cosmic Frog, Maps are very helpful in visualizing baseline and scenario outputs. Here, we will discuss how to set up Hopper specific Maps at a high level; we will not cover all the ins and outs of maps. If you are unfamiliar with the Maps module in Cosmic Frog, then please review the “Getting Started with Maps” article in the Optilogic Help Center first. It covers how to add and configure new maps and their layers.
-Visualizing Hopper routes and direct shipments on maps is achieved by adding map layers which use 1 of the following as the table name:
-Using what we have discussed above and the learnings from the Getting Started with Maps help center article, we can create the following map quite easily and quickly (the model used here is one from the Resource Library, named Transportation Optimization):
-The steps taken to create this map are:
-Let’s also cover 2 maps of a model where both pickups and deliveries are being made, from “backhaul” and to “linehaul” customers, respectively. When setting the LIFO (Is Last In First Out) field on the Transportation Assets table to True, this leads to routes that contain both pickup and delivery stops, but all the pickups are made at the end (e.g. modeling backhaul):
-Two example routes are being shown in the screenshot above and we can see that all deliveries are first made to the linehaul customers which have blue icons. Then, pickups are made at the backhaul customers which have orange icons. If we want to design interleaved routes where pickups and deliveries can be mixed, we need to set the LIFO field to False. The following screenshot shows 2 of these interleaved routes:
-The above 2 screenshots use the Transportation Routes Map Layer as the table name to draw the Routes map layer, where the condition builder is used to filter for 2 of the route names.
-Finally, we will go back to the Transportation Optimization model which was used for the first map screenshot in this section. The Baseline scenario in this model has 1 shipment that is being shipped directly. To visualize this on the map we add a map layer named "Direct Shipping" which uses the Transportation Shipment Summary as the table name input. On the Layer Style pane we change the color for this line layer to red. We also keep the "Routes" map layer, which is drawn from the Transportation Routes Map Layer with the default dark blue color:
-In the Analytics module of Cosmic Frog, dashboards that show graphs of scenario outputs, sliced and diced to the user’s preferences, can quickly be configured. Like Maps, this functionality is not Hopper specific and other Cosmic Frog technologies use these extensively too. We will cover setting up a Hopper specific visualization, but not all the details of configuring dashboards. Please review these resources on Analytics in Cosmic Frog first if you are not yet familiar with these:
-We will do a quick step by step walk through of how to set up a visualization of comparing scenario costs by cost type in a new dashboard:
-The steps to set this up are detailed here, note that the first 4 bullet points are not shown in the screenshot above:
-All Hopper specific Help Center articles can be found in the Hopper - Transportation Optimization section under Navigating Cosmic Frog.
-There are also several models in the Resource Library that transportation optimization users may find helpful to review. How to use resources in the Resource Library is described in the help center article “How to Use the Resource Library”.
-Without dock door constraints, the transportation optimization engine (Hopper) assumes facilities and customers can load and unload any number of vehicles at the same time. In reality, a depot with 2 dock doors can only service 2 vehicles at once, and routes that look good on paper may be impossible to execute. Dock door constraints let you model that limit, so the routes and schedules Hopper produces are operationally realistic.
-Example business questions that can be answered with the help of dock door constraints:
-Please note that a basic knowledge of Hopper prior to diving into this content is recommended, see the Getting Started with Hopper article.
-Dock door constraints are specified by using the new Number of Dock Doors column on the Facilities and Customers tables. The new field on the Facilities table is shown here:
-If Number of Dock Doors is:
-Dock doors can be occupied by assets (vehicles/trucks) which are loading and/or unloading.
-The time an asset spends (un)loading at a dock door is determined by pickup and delivery times that can be specified in following input tables: Customers, Facilities, Transportation Assets, and Shipments. Fixed and variable (“unit”) pickup and delivery times plus their units of measure can be specified on all tables, and these times are additive.
-Assets do not occupy a dock door when they are waiting.
-If used, business hours and business calendars need to be satisfied as with any other Hopper runs, while the Complete Service in Time Window run setting also impacts when service at a facility can start and end.
-If due to a dock door constraint, a shipment cannot be routed like it otherwise would, Hopper will take the usual steps of changing the timing of stops/routes, moving stops around, trying shipments on different routes, using more assets or a different asset mix, etc. Ultimately, it is possible that dock door constraints make it such that one or multiple shipments cannot be routed, which will be indicated with Shipment Status = Unrouted in the Transportation Shipment Summary output table.
-We will use an example that is set up on a copy of a model from the Resource Library: Multi Stop Routes with Time Windows. You can copy it to your own account if you want to follow along. In this model there are 2 depots, one in Atlanta and one in Jacksonville, from which product is picked up and then delivered to 31 customers in Georgia. Several scenarios that explore routes, fleet mix, use of the second depot, and integration of a new customer base consisting of 13 customers into the existing one are already set up.
-In our relatively simple example, we will update an existing scenario by specifying that the Atlanta Depot only has 1 dock door available. Then we run the original scenario without any dock door constraints together with the updated scenario and compare the outputs.
-In the Scenarios module of this model:
-After running both scenarios with the Solver Focus run setting set to High Precision, we filter the Transportation Stop Summary output table for the 2 scenarios we ran, ATLANTA DEPOT as the Site Name, and Stop Type = Pickup. We see that for loading that occurs at Atlanta, these 2 scenarios differ on one date, 2024-04-03:
-If you review the Transportation Summary output table you will find these 2 scenarios have the exact same cost, transport distances, and transport, break, and rest times. The only difference is that one route’s timing has shifted. Without the constraint, Hopper would have loaded two trucks at once, which is impossible at the Atlanta Depot with a single dock door. So, even though the cost is unchanged, the schedule is now feasible.
-As always, please do not hesitate to contact our Support team on support@optilogic.com in case of any questions or feedback.
-Supply chain design is meant to answer future-looking questions — but too often, those decisions are driven by historical averages or coarse forecasts that hide the real structure of demand. We have built Pulsar: a repeatable, scalable Demand Engine that delivers unified demand signals for supply chain decisioning, and scenario modeling.
-This video gives an overview of demand modeling in the Demand Modeling App, basic inputs and outputs, and how the app interacts with the core Optilogic platform:
-Follow these steps to get up and running with the Pulsar demand engine quickly.
-Once you are comfortable with default results, explore the advanced options (algorithm selection, probabilistic forecasts, causal variables) to refine accuracy further.
-The Pulsar demand engine generates granular, hierarchy-consistent forecasts.
-Traditional approaches rely on historical averages or fixed proportions. These often break when demand shifts, new products launch, or channels grow unevenly.
-Pulsar improves this by:
-Result:
-A single, reliable demand signal used across different teams and functions: network design & facility investment, inventory & replenishment planning, transportation & logistics, capacity planning, and strategic planning.
-1. Network Design & Facility Investment
-The engine enables scenario-based network planning using granular growth forecasts (product × location), rather than blanket assumptions.
-2. Inventory & Replenishment Planning
-It shifts planning from reactive to forward-looking:
-3. Transportation & Logistics
-The engine improves logistics planning with predictive insights:
-4. Capacity Planning
-It strengthens long-term infrastructure decisions:
-5. Strategic Planning
-The outputs align decision-making across the business:
-Bottom line
-The engine replaces broad, assumption-driven planning with granular, statistically grounded, and aligned forecasts, improving decision quality across operational and strategic levels.
-The following table provides an overview of problems commonly encountered when modeling demand and how Pulsar addresses these.
-After running the Pulsar engine, the outputs include:
-The table-based outputs can be used directly in downstream models.
-These are the workflow tasks available in the Pulsar Engine:
-*Uses the Generate Forecasts task and not the Generate Probabilistic Forecasts task.
-If unsure, use the All Forecast Workflow.
-Run this utility after:
-Outputs feed into:
-This makes Pulsar a core upstream step in supply chain decision-making.
-The Pulsar engine handles complex forecasting tasks for you:
-Keeps forecasts consistent across all levels
-Adapts to each demand pattern
-Provides multiple models so users can choose the best one(s) for their needs
-Uses statistical and machine/deep learning models such as:
-Learns across products when useful
-Quantifies uncertainty
-Generates scenario-ready growth rates
-When you run the full workflow, the Pulsar engine executes a structured pipeline:
-This process is fully automated within the engine.
-The following diagram shows the required and optional inputs into the Pulsar engine on the left, while the outputs are listed on the right-hand side:
-Note that optionally, an HTML Growth Report can be generated too when growth projections are turned on.
-Full details on table and column names and their descriptions can be found in the appendix.
-The Pulsar engine can be accessed and run from 2 locations:
-This table compares using the Pulsar engine through DataStar versus using it in the App:
-Next, we walk through using the Pulsar engine through the Run Utility task in DataStar. After, we will cover the steps when using the Demand Modeling App.
-Note that this workflow assumes users use the Project Sandbox of a DataStar project to contain the inputs to be used by the Pulsar engine.
-Should you want to use the same data as used in this walk-through while following along, then please download this PulsarDemandModelingDemoData zip-file and unzip it after download. Use the 6 csv-files as your input tables.
-The following data is used as input for the demand modelling engine and needs to be imported into a DataStar project before running the Pulsar engine.
-Required
-Optional
-The appendix contains complete details on the table and column names – your input data needs to match this schema exactly, including being all lower case and not containing any spaces.
-Once the data is prepared, for example in CSV or Excel format, users can create Data Connections in DataStar to make the data visible inside any DataStar project. See the How to Create a New Data Connection section in the DataStar Overview help center article for more details.
-This data from the connections then needs to be imported into the project sandbox of the project. Users can use an Import task for each table they are importing, see this Quick Start Guide for a walk-through on how to import data from a CSV data connection.
-From the Workflow Task dropdown in the Configure Utility section, choose the desired workflow. As discussed above in the Workflow Tasks You Can Run section, the All Forecast Workflow is recommended in most cases.
-Choose how data is provided from the IO Adapter Type dropdown:
-Several forecasting and growth projection related settings can be configured next. The settings shown in the screenshot are the defaults (except where noted) and it is recommended to use these as a starting point.
-5.1 Skip Bottom Level Forecasting
-5.2 Generate Growth Projections
-5.3 Number of Strategies
-The number of hierarchical strategies that will be generated. Outputs can be found in the hierarchystrategies table.
-5.4 Maximum Number of Forecast Levels
-5.5 Required Hierarchy Levels
-If a forecast at a specific combination of product and location levels is required, for example for a certain supply chain function, this can be added in this setting. The format is comma-separated tuples. For example, if you require forecasts at the product - location_l3 and product_l4 - location_l2 levels, you enter: (product,location_l3),(product_l4,location_l2).
-5.6 Smooth Bottom Forecast Proportions
-5.7 Forecast Source (if Generate Growth Projections = ON)
-5.8 Generate HTML Growth Report (if Generate Growth Projections = ON)
-5.9 Growth Calculation Method (if Generate Growth Projections = ON)
-Currently only year-over-year (YoY) is available as the method for calculating growth. More to come.
-These options configure what data is used for forecasting, plus the interval and length required for the forecasted demand.
-6.1 Data End Date
-Controls how much historical data is used.
-6.2 Forecast Horizon
-6.3 Frequency
-6.4 Test Length (Model Validation)
-What happens:
-This is how users gain confidence in the engine’s performance.
-Here, users can overwrite the automatic selection of algorithms.
-7.1 Advanced Algorithms
-7.2 Statistical Algorithms
-7.3 Enable Ensemble
-Options for more advanced users and applications can optionally be configured. If not configured, their defaults will be used under the hood.
-8.1 Show Advanced Options
-8.2 Model Selection Metric
-The error metric used for selecting the best model for a series. Options are:
-8.3 Number of Validation Splits
-The number of times the model is tested on different unseen slices of historical data during cross-validation. An example with 3 folds:
-8.4 Enable Differencing
-8.5 Lag Periods
-Defines how the data needs to be shifted backwards in time to predict future demand. Options are:
-8.6 Rolling Window Periods
-Defines the period used to calculate an aggregated average over; this acts as a moving block of time. Options are:
-8.7 Enable Standardization
-8.8 Enable Calendar Features
-8.9 Enable Exogenous Variables
-8.10 Enable Seasonality Extraction
-8.11 Enable Time Decay Weights
-8.12 Demand Job Config
-Optionally, users can adjust Run Configuration settings, located underneath the Configure Utility section:
-Click on the play button on the task that is shown when hovering over the task to start running the Pulsar engine:
-You can monitor the progress of the run in the Macro & Task Logs below the macro canvas:
-Example outputs found in the most used output tables are shown here with a short explanation.
-Hierarchy Strategies
-This table shows at which levels forecasts will be generated. The Pulsar engine has determined at which combination of product-location levels the demand signal the richest is.
-We see that one strategy is generated (per the Number of Strategies input) and it contains 4 levels to forecast at (per the Maximum Number of Forecast Levels input):
-Reconciled Forecasts
-This table contains the demand forecasts after reconciliation has been performed. It contains the forecast at all 4 levels from Strategy_1.
-Growth Projections
-The forecasts are turned into growth projections which can be found in this output table; this is again done for all 4 levels of Strategy_1:
-Please note there are 2 more columns in this table which are not shown in the screenshot:
-HTML Growth Report
-When growth projections are being generated and the Generate HTML Report option is turned on, a growth_report.html file is created. It contains an overview of what the growth projections tell us and users can drill into details.
-After logging into the Demand Modeling App at https://demand-modeling.apps.optilogic.app, users will see a screen similar to the following:
-When you switch between accounts or projects, a Switch Team? / Switch Project? confirmation message will come up:
-Create a new project as follows:
-After creating a new project, first a toast message comes up at the right top of the app saying that you will be notified when the new project is ready:
-While the project is being created, we see the status of “1 job running” in the toolbar of the App, to the left of the Team selector:
-A short while later the following toast message lets us know that the project has been created successfully. You can then select it from the Project drop-down list to start working with it.
-If input data is already present in the project, it can be viewed and otherwise it can be directly added by uploading CSV or Excel (.xlsx) files.
-To upload files to populate the input tables, click on the ‘+ Upload’ button at the right top which brings up the following Upload Demand Files form:
-After clicking on the Upload button, the Status of both files will show a spinner indicating the upload is in progress.
-Should an upload fail, an error status icon appears, and users can hover over the icon to show a tooltip which displays the error message. The following screenshot shows an example where the column names are incorrect:
-Once your project contains demand data, you can configure the inputs for running the demand modeling engine. The configuration options are mostly the same as what we have seen for the DataStar workflow as covered in the previous section, but somewhat simplified. The Demand Model Configuration section is found on the Inputs page, below the grid showing the selected table:
-Following advanced options can be configured if desired. The numbers on the options refer to the part of section Step 8: Advanced Options where they are explained:
-Click on the Generate Forecast button at the right top of the Demand Model Configuration area once ready to run the Pulsar engine. First, a toast message saying that the job was submitted comes up at the right-top of the App:
-While the Pulsar engine is running, we see the status of “1 job running” in the toolbar of the App, to the left of the Team selector:
-Once a run completes, another toast message stating so comes up in the right-top corner of the App:
-Once the job has finished, outputs can be reviewed in the Detailed, Hierarchical, and Growth Projections (if generated) parts of the App. Switch to them using the navigation on the left hand-side.
-In the Detailed outputs section, you can look at the historical and forecasted demand, at the bottom product-location level. Features from the causals tables can be overlayed as well.
-In the Hierarchical part of the App, outputs can be viewed at the different levels that were forecast at:
-Note that similar to the Detailed outputs chart, you can also hover over the graphs here to show a tooltip with date and values of the historical demand / forecast(s) and use the slider beneath to zoom in/out of the chart.
-If Growth Projections generation was turned on for the Pulsar engine run, results at the table level and summarized into a risk quadrant and growth distribution bar chart can be found in the Growth Projections part of the App.
-The grid further below shows all growth projections at all forecasted levels. Like the grids showing the input tables, in this one the columns can be re-ordered, resized, sorted on, and filtered too. At the bottom of the grid, the number of records per page can be set and if there are multiple pages they can be stepped through using the controls here. Positive growth rates are shown in green and negative ones in red. Where confidence is greater than 80%, it is shown in green:
-As always, please feel free to contact our Support team on support@optilogic.com in case of any questions or feedback. Happy demand modeling!
-The following zip-file contains an Excel file named DemandModeling_DatabaseSchema_August2026.xlsx in which the schema of all input and output tables of the Pulsar engine can be found: Demand Modeling Schema download (download this zip-file and then extract it). The tables are colored like they are in the diagram in the Inputs and Outputs Overview section:
-The column master output table is one of the metadata output tables. It is the first table in the file as it shows the schema: it contains a list of all the columns and their descriptions used across the input and output tables. Some columns are used in multiple tables and their values need to be internally consistent.
-The following link provides a downloadable (excel) template describing the fields included in the output tables for Neo (Optimization), Throg (Simulation), Triad (Greenfield), and Hopper (Routing).
-Anura 2.8.21 is the current schema.
-A downloadable template describing the fields in the input tables can be downloaded from the Downloadable Anura Data Structure - Inputs Help Center article.
-The best way to understand modeling in Cosmic Frog is to understand the data model and structure. The following link provides a downloadable (Excel) template with the documentation and explanation for every input table and field in the modeling schema.
-A downloadable template describing the fields in the output tables can be downloaded from the Downloadable Anura Data Structure - Outputs Help Center article.
-For a brief review of how to use the template file, please watch the following video.
-This documentation details how to connect and disconnect the Optilogic MCP connector using Claude. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-The steps are dependent on the type of Claude account you are connecting: how to connect an individual account is first covered, followed by how to connect when your organization is on an Enterprise plan.
-Any user can add the connector to their individual Claude account and authenticate with Optilogic directly — no admin setup required.
-Step 1: Add the Connector
-Navigate directly to https://claude.ai/directory/optilogic, and Click on the Connect to Claude button:
-Alternatively, in Claude, go to Account > Settings > Connectors > Add (right-top) > Browse Connectors, search for "Optilogic", and click on the Optilogic connector that is found. Then click on Connect to Claude.
-Step 2: Log In to Optilogic
-Clicking Connect to Claude redirects you to the Optilogic login screen. Sign in with your Optilogic credentials:
-Step 3: Confirm the Connection
-Once signed in, you are connected and you can close the Connectors screen. In a new Claude chat, try a test prompt to confirm everything is working: “Show me what databases you have access to in Optilogic.”:
-Step 4: Allow Access
-When Claude requests permission to use the connector choose to Always Allow, Allow once, or Deny.
-To connect when on an Enterprise plan, your organization's IT department needs to take steps 1-4 below before individual users on the plan can start using the Optilogic connector (step 5 below).
-Step 1: Open Organization Settings
-As an administrator of the Claude Enterprise plan, click on your username at the left bottom, and choose "Organization settings":
-Step 2: Open the Connector Directory
-Navigate to Connectors in the Settings screen, then click on the "Add" button, and choose "All Available" to open the Connector Directory modal:
-Step 3: Select the Optilogic Connector
-Search the directory for Optilogic and click on it to select it and see the listing details:
-Step 4: Connect the Connector
-Press the "Connect for your team" button to add it:
-Step 5: Users on the Enterprise Plan Connect
-A user on the organization's Claude Enterprise plan can now connect by going to Settings > Connectors, and pressing the "Connect" button of the Optilogic connector:
-You will be prompted to authenticate with your Optilogic credentials, see also step 2 and onwards in the Individual Claude Account - Setting up the Connector section above.
-Should you need to disconnect or remove the Optilogic Connector, please take following steps:
-Cosmic Frog supports importing and exporting both CSV and Excel files directly through the application. This enables users to for example:
-In this documentation we will cover how users can import and export data into and out of Cosmic Frog, and illustrate this with multiple examples.
-There are 2 methods of importing Excel/CSV data into Cosmic Frog’s input tables available to users:
-Pointers on how data to be imported needs to be formatted will be covered first, including some tips and call outs of specifics to keep in mind when using the upsert import method. Next, the steps to import a CSV/Excel file will be walked through step by step.
-Data is mapped from CSV/Excel files based on matching column names and table names matching to the file name (CSV) or worksheet name (Excel):
-Data preparation tips:
-CSV vs Excel: CSV files only have 1 “worksheet”, so it can only contain data to be imported into 1 table, whereas Excel files can have multiple worksheets with data to be imported to different tables in Cosmic Frog.
-Please take note of how existing records are treated when using the upsert import method to import to a table which already has some data in it:
-We will illustrate these behaviors through several examples too.
-Users can import 1 or multiple CSV or Excel files simultaneously, please take note of how the import will work for following situations:
-Once ready to import the prepared CSV/Excel file(s), users have 2 ways of accessing the import and export methods: from the File menu in the toolbar and from the right-click context menu of an input table. It looks like this from the File menu to import a file:
-And when using the right-click context menu the steps to import a file are as follows:
-When using the replace import method, a confirmation message will now be shown on which the user can click Import to continue the import or Cancel to abort.
-Next, a file explorer window opens in which the user can browse to and select the CSV/Excel file(s) to import:
-Once the import starts, a status message shows at the top of the active table:
-The Model Activity log will also have an entry for each import action:
-Users can see the results of the import by opening and inspecting the affected input table(s), and by looking at the row counts for the tables in the input tables list, outlined in green in this screenshot:
-A common way to start building a new model in Cosmic Frog is to make use of the replace import method to populate multiple tables simultaneously with data from Excel or CSV files. These files have typically been prepared from ERP extracts which have been manipulated to match the Cosmic Frog table and column names. This way, users do not need to enter data manually into the Cosmic Frog input tables, which would be very laborious. Note that it can be helpful to first export empty tables from a new, empty Cosmic Frog model to have a template to start filling out (see the “Exporting to CSV/Excel Files” section further below on how to do this).
-Starting with an empty new model in Cosmic Frog:
-The user has prepared the following Excel .xlsx file:
-After importing this file into Cosmic Frog, we notice that the Customers, Facilities and Products tables now have row counts that match the number of records we had in the Excel file that was used for the import, and we can open the individual tables to see the imported records:
-Consider a user who is modelling a sports equipment company and has populated the Products table of a Cosmic Frog model with 8 products as follows:
-After working with the model for a while, the user realizes a few things:
-As item number 1 will change the product names, a column that is part of the primary key of the Products table, the user will need to use the replace import method to make these changes as the upsert method does not change the values of columns that are part of the primary key. Following is the .xlsx file the user prepares to replace the data in the Products table with:
-After importing the file using the replace method, the Products table looks like this:
-We see the records are the exact same as what was contained in the Products.xlsx file that was imported, and the row count for the Products table has correctly gone up to 10 with the 2 new products added.
-Continuing from the Products table in the last screenshot above, the user now wants to make a few additional changes as follows:
-To make these changes to the Products table, the user prepares the following Products file to be upserted to the Products table, where the green numbers in the screenshot below match the items described in the bullet point list directly above:
-After using the upsert import method for this file into the Products table, it contains following records. The ones changed / added are listed at the bottom:
-In the boxes outlined in green we see that all the expected changes and the insertion of the 1 new record have been made.
-Let us also illustrate what will happen when files with invalid / missing data are imported. We will use the replace import method for the example here, but similar results will be seen when using the upsert method. Following screenshot shows a Products table that has been prepared in Excel, where we can see several issues already: a blank Product Name, a negative value for Unit Price, etc.
-After this file is imported to the Products table using the replace method, the Products table will look as follows:
-The cells that are outlined in red contain invalid values. Hovering over each cell will show a tooltip message describing the problem.
-For tables with many records, it may be hard to find the fields in red outline manually. To help with this, there is a standard filter users can apply that will show all records that have 1 or multiple input data errors:
-In conclusion, Cosmic Frog will let a user import invalid data, and then help identify the data issues with the red outlines, hover over tooltips, and the Show Input Data Errors filter.
-Consider following Transportation Policies table:
-There is now a change where from MFG_1 all Racket products need to be shipped by Parcel for a fixed cost of $50. The user creates 2 Named Filters (see the Named Filters in Cosmic Frog help center article) in the Products table: 1 that filters out all racket products (those products that have a product name that start with FG_Racket) which is named Rackets and 1 that filters out all non-racket products (those products that do not contain racket in the product name) which is named AllExceptRackets. Next, the user prepares following TransportationPolicies.csv file to upsert into the Transportation policies table with the intention to update the first 2 records in the existing table to be specific for the AllExceptRackets products and add 2 new ones for the Rackets products:
-The result of using this file to upsert to the Transportation Policies table is as follows:
-This example shows that users need to be mindful of which fields are part of the table’s primary key and remember that values of primary key fields cannot be changed by the upsert import method. An example workflow that will achieve the desired changes to the Transportation Policies table is as follows:
-It is possible to export a single table or multiple tables (input and output tables) to CSV or Excel from Cosmic Frog. Similar to importing data from CSV/Excel, users can access the export options in 2 ways: from the File menu in the toolbar and from the context menus that come up when right-clicking on tables in the input/output/custom tables lists.
-Please note:
-The steps to export multiple tables to an Excel file are as follows:
-Once the export starts, following message appears at the top of the active table:
-Once the export is complete, the exported file can be found in the folder where the user’s downloaded files are saved:
-When exporting multiple tables to Excel or CSV, the downloaded file will be a .zip file with an automatically generated name based on the model’s Cosmic Frog ID. Extracting the zip-file will show an .xlsx file of the same name, which can be opened in Excel:
-These are the steps to export multiple tables to CSV:
-When the export starts, the same “File is exporting…” message as shown in the previous section will be showing at the top of the active table. Once the export process is finished, the exported file can again be found in the folder where the user’s downloaded files are saved:
-The file is again a zip-file, and it has the same name based on the model’s Cosmic Frog ID, just appended with (1), as there is already a zip-file of the same name in the Downloads folder from the previous export to Excel. Unzipping the file creates a new sub-folder of the same name in the Downloads folder:
-Exporting a single table to Excel can also be done from the File menu, in the same way as multiple tables are exported to Excel, which was shown above in the “Export Multiple Tables to Excel” section. Now, we will show the second way of doing this by using the context menu that comes up when right-clicking on a table:
-When the export starts, the same “File is exporting…” message as shown above will be showing at the top of the active table. Once the export process is finished, the exported file can again be found in the folder where user’s downloaded files are saved:
-The name of the exported CSV file matches that of the table that was exported.
-Exporting a single table to CSV can also be done from the File menu, in the same way as multiple tables are exported to CSV, which was shown above in the “Export Multiple Tables to CSV” section. Now, we will show the second way of doing this by using the context menu that comes up when right-clicking on a table:
-For single tables exported to CSV, the name of the file is the same as the name of the exported table. If the Cosmic Frog table was filtered, the file name is appended with “_filtered” like it is here to remind the user that only the filtered rows are contained in this exported file.
-Questions or feedback? Please feel free to contact the Optilogic support team on support@optilogic.com.
-Ada Credits are used to access Ada and other AI-powered capabilities in the Optilogic platform. Credits are provisioned as a shared pool at the organization level, so eligible users draw from the same balance.
-This article explains how Ada Credits work, where to see your organization’s usage, what happens as credits are consumed, and what to do when an organization’s credits are exhausted.
-Ada uses large language models (LLMs) to process requests and generate responses. LLMs use tokens as part of that process. Tokens and Ada Credits are related, but they are not the same:
-Any conversation with Ada — whether in the Ada chat interface, through an AI Agent via the Optilogic MCP Connector, or as a DataStar Run AI Agent task — consumes Ada Credits. This applies to the entire interaction, not select messages within it. Attaching a database or file to a conversation does not carry any additional cost on its own.
-Does not consume Ada Credits:
-Consumes Ada Credits:
-Ada Credit consumption is calculated per response, not per conversation as a whole. The number of credits a response consumes depends on:
-Because of this, credit consumption varies from response to response, even for requests that look similar on the surface. This is expected behavior, not an error — the same way token usage varies by LLM request. Optilogic does not publish a fixed credit cost per response or per task, since it depends on the nature of the work being done.
-When an AI Agent such as Claude or ChatGPT uses the Optilogic MCP Connector to interact with Ada as part of completing a task, the work performed through that interaction contributes to Ada Credit usage.
-MCP Connector usage can therefore consume Ada Credits. This is separate from the AI Agent’s own token usage.
-Ada Credits are provisioned as a shared pool for your organization rather than as individual allocations for each user or team.
-If your organization is a paying Optilogic customer, it receives a one-time credits allotment, free of cost. Once credits are used up, more can be purchased, see below how.
-You can view your organization’s Ada Credit balance from your profile settings.
-Because Ada Credits are shared at the organization level, the usage shown represents organization-wide usage, not just your individual usage.
-Ada displays notifications directly in the Ada chat interface as your organization approaches its credit limit.
-You will see warning banners when your organization reaches 75%, 85%, 95%, and 100% of its available credits. The banners change as usage increases so that you know when your organization is approaching its limit.
-Once your organization’s Ada Credits are exhausted, you can no longer use Ada. The Ada chat interface displays a notification indicating that the organization’s credits have been used and provides a Contact Support option.
-The following features are affected when Ada Credits are exhausted:
-Leapfrog is not affected by Ada Credit exhaustion. Users can continue to use Leapfrog within DataStar and Cosmic Frog.
-If your organization needs additional Ada Credits, use the Contact Support link shown in the banner saying 100% of credits have been used, see the first screenshot in the previous section.
-Support will review and route the request as appropriate. If additional credits are purchased, the organization’s credit pool is updated by Optilogic, and the new balance becomes available on the platform.
-Additional credits cannot currently be purchased or added directly within the platform.
-Cosmic Frog’s network optimization engine (Neo) can now account for product shelf life, maturation time, and disposal out of the box with the addition of several fields to the Products input table. The age of product that is used in production, product which flows between locations, and product sitting in inventory is also reported in 3 new output tables, so users have 100% visibility into the age of their products across the operations.
-In this documentation, we will give a brief overview of the new features first and then walk through a small demo model, which users can copy from the Resource Library, showing both shelf life and maturation time using 3 scenarios.
-The new feature set consists of:
-Please note that:
-We will now showcase the use of product Shelf Life, Maturation Time, and Disposal in a small demo model. This model can be copied to your own Optilogic account from the Resource Library (see also the “How to use the Resource Library” Help Center article). This model has 3 locations which are shown on the map below:
-It is a multi-period model with 6 periods, which are each 1 week long (the Model End Date is set to February 12, 2025, on the Model Settings input table, not shown):
-There are 3 products included the model: 2 finished goods, Product_1 and Product_2, and 1 raw material, named Component. The component is used in a bill of materials to produce Product_1, as we will see in a screenshot a bit further below. The new shelf life and maturation fields are shown in the next screenshot and the disposal ones in the screenshot after:
-As mentioned above, a bill of materials is used to produce finished good Product_1:
-This bill of materials is named BOM_1 and it specifies that 10 units of the product named Component are used as an input (product type = Component) of this bill of materials. Note that the bill of materials does not indicate the end product that is produced with it. This is specified by associating production policies with a BOM. To learn more about detailed production modelling using the Neo engine, please see this Help Center article.
-In the next screenshot of the production policies table, we see that the plant can produce all 3 products, and that for the production of Product_1, the bill of materials shown in the previous screenshot, BOM_1, is used. The cost per unit is set to 1 here for each product:
-For purposes of showing how Shelf Life and Maturation Time work, we will use the Production Policies Multi-Time Period input table too. In here we override the production cost per unit that we just saw in the above screenshot to become increasingly expensive in later periods for all products, adding $1 per unit for each next period. So, to produce a unit of Product_1 in Period_1 costs $1, in Period_2 it costs $2, in Period_3 $3, etc. Same for Component and Product_2:
-The production cost is increased here to encourage the model to produce product as early as possible, so that it incurs the lowest possible production cost. It will also still need to respect the shelf life and maturation time requirements. Note that this is also weighed against the increased inventory holding costs for producing earlier than possibly needed, as product will sit in inventory longer if produced earlier. So, the cost differential for production in different periods needs to be sufficiently big as compared to the increased inventory holding cost to see this behavior. We will explore this more through the scenarios that are run in this demo model.
-Since products will be spending some time in inventory, we need to have at least 1 inventory policy per product with Stocking Site = True. At the plant, all 3 products can be held in inventory, and there is an initial inventory of 750 units of the Component. At the DC, both finished goods can be held in inventory. The carrying cost percentage to calculate the inventory holding costs is set to 12% at the DC and 10% at the plant; this ensures the model holds product further upstream until it is needed at the DC to fulfill demand:
-Lastly, we will show the demand that has been entered into the Customer Demand table. The customer demands 1,000 units each of the finished goods in period #6:
-Other input tables that have populated records which have not been shown in a screenshot above are: Customers, Facilities, and Transportation Policies. The latter specifies that the plant can ship both finished goods to the DC, and the DC can ship both to the customer. The cost of transportation is set to 0.01 per unit per mile on both lanes.
-The 4 costs that are modelled are therefore:
-There are 4 scenarios run in this model, see also the screenshot below:
-The screenshot shows the 4 scenarios on the left, where we see that the Increased Shelf Life, Product Value Doubled, and Disposal End of Horizon scenarios each contain 1 scenario item, whereas the Baseline does not contain any. On the right-hand side, the scenario item of the Increased Shelf Life scenario is shown where we can see that the Shelf Life value of Product_2 is set to 34. See the following Help Center articles for more details on Scenario building and syntax:
-One note upfront about the outputs before we dive into details as follows: since the transportation lanes and their costs are fixed, and we keep demand the same across the scenarios, transportation costs play no factor in the optimization of these scenarios and are the same for all 4 scenarios.
-Now let us first look at when which product is produced through the Optimization Production Summary output table for the first 3 scenarios:
-The outputs of the Disposal End of Horizon scenario are not shown in the above, they are the same as for the Baseline scenario.
-The next screenshot shows the Optimization Inventory Summary filtered for Product_2. Since we know it is produced in different periods for each of the first 3 scenarios and that the demand occurs in Period_6, we expect to see the product sitting in inventory for a different number of periods in the different scenarios:
-Again, the results of the Disposal End of Horizon scenario are the same as for the Baseline.
-In the Optimization Network Summary output table, we can check the total cost by scenario and how the 4 included costs contribute to this total cost:
-Next, we will take a look at the 3 new output tables, which detail the age of products that are used in production, of products that are transported, and of products that are sitting in inventory. We will start with the Optimization Production Age Summary output table:
-Next, we will look at the age of Product_2 when it is shipped between locations:
-Lastly, we will look at 2 screenshots of the new Optimization Inventory Age Summary output table. This first one only looks at the ages of Product_1 and Component at Plant_1 in the Baseline and Disposal End of Horizon scenarios. For the other 2 scenarios, the values for inventory levels and ages are the same as in the Baseline scenario, since the production of these 2 products occurs during the same periods:
-In the next screenshot, we look at the same output table, Optimization Inventory Age Summary, but now filtered for Product_2 and for all the Baseline, Increased Shelf Life and Product Value Doubles scenarios (outputs of the Disposal End of Horizon scenario are the same as the Baseline):
-In the Optimization Network Summary output table, we can check the total cost for each scenario and how the 4 included costs contribute to this total:
-For any questions on these new features, please do not hesitate to contact Optilogic support on support@optilogic.com.
-The Optilogic Model Context Protocol (MCP) Connector links AI Agents like Claude and ChatGPT to Ada, Optilogic’s agentic AI for supply chain modeling. Together, they give teams a faster way to make better tactical decisions within today’s supply chain — and design the supply chain they need for tomorrow. Ada works with a live digital twin of your supply chain, combining mathematical optimization, simulation, and demand modeling to answer questions across the full planning horizon, from day-to-day operational response to long-term network, transportation, inventory, and production strategy.
-Once connected, the AI Agent can list the model databases in your Optilogic account, open a conversation with Ada, attach one or more databases, and relay prompts and responses back and forth — all from inside the agent. This enables AI-powered what-if analysis, demand and sourcing analysis, routing and inventory tradeoffs, tariff scenarios, and network strategy without switching tools.
-In practice, Ada continues to do what she does best — reasoning over your supply chain data, running analyses, and answering modeling questions. The AI Agent adds a complementary layer on top: turning Ada’s outputs into decision-ready executive summaries, spreadsheets, slide decks, and interactive dashboards, while combining them with web research and other connected tools in a single workflow.
-The connector is currently available in Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Grok (SpaceXAI), and Vibe (Mistral AI).
-Detailed step-by-step instructions for Claude, ChatGPT, and Copilot, including screenshots, can be found here:
-The Optilogic MCP Connector is a Custom Connector for AI Agents built on the Model Context Protocol (MCP). It gives AI Agents a set of tools that let it act as an orchestrator for Ada conversations: discovering your models, starting and managing Ada sessions, attaching databases, and polling for Ada's (asynchronous) responses.
-It is not a replacement for Ada or for the Optilogic platform — it is a bridge. Ada still does the actual modeling work; the connector simply gives the agent a way to ask it questions and receive answers.
-A useful mental model: the AI Agent is the orchestrator and communicator; Ada is the subject-matter expert on your models.
-Teams are using the Optilogic MCP Connector for tasks like:
-The Connector works best for grounded, model-based questions where Ada supplies the underlying facts and the agent handles synthesis, formatting, and communication. It is less suited to open-ended business strategy discussions that have no connection to an actual model or dataset - “What happens to warehouse utilization if demand is up 5% across category A?” is only meaningful when asked in the context of a model.
-*To learn more about using Optilogic Teams, please see this Getting Started with Optilogic Teams Help Center article.
-**To learn more about Ada’s interaction style and agent options, please see the Create Your First Prompt section in the Getting Started with Ada & Agentic AI Help Center article.
-Before you set up and start working with the Optilogic MCP connector, please take note of following:
-The following tools are available to the connector:
-Agent Lifecycle
-Past Conversations
-Artifacts
-Workspace Files
-Sharing
-Account / Teams
-Data
-The prompts below are starting points — swap in your own model names, regions, priorities, etc.
-When you use the Optilogic MCP Connector, prompts and the data Ada returns pass through the agent in order to be displayed, summarized, or turned into a deliverable. This is in addition to — not a replacement for — Optilogic's own data handling for Ada itself.
-Please note that when you connect to the MCP connector:
-The MCP Server connects AI agents to Optilogic's Public APIs and Ada, Optilogic’s native AI agent. Ada and the Public APIs have logging in place; MCP server calls are logged in accordance with those practices with additional meta data to identify it as coming from the MCP, nothing additional - it does not have any user identifiers in it.
-The MCP Server only processes the tool-call payloads needed to fulfill the requests; surrounding conversation context from the agent is not retained. In addition to serving the request, tool-call data is also used for the following purposes:
-For clarity, Optilogic does not use logs for model training.
-MCP request/response data and associated logs are stored in accordance with Optilogic's Data Retention Policy. You can learn more here -- How We Safeguard Your Data: Backups & Retention Explained.
-Disconnecting the Connector on the AI Agent’s settings tells the agent to stop using and refreshing your Optilogic tokens — that is the immediate effect.
-After disconnecting, the historical chats that were had through the connector are still accessible to the user, just no follow-up prompts that require accessing Ada can be added.
-Please note that users have visibility into the MCP Connector conversations and actions on the Optilogic platform in following places:
-If the conversation with Ada through the AI Agent seems to go off track, e.g., gives no response or odd/incorrect responses, please follow these troubleshooting steps:
-In this example, we will:
-Claude was used in this example; using the same prompts in another AI Agent will result in similar responses.
-The prompts used and a summary of the responses follows here, see the appendix for the full conversation captured in screenshots. Note that the some of the “Please check” prompts to check back in with Claude if there is a response from Ada yet when Claude has stopped polling are omitted here.
-Prompt 1: Using the Optilogic Ada connector, can you review the inputs of the Territory Planning model? Please give me a summary and also check which costs are being modeled.
-Response:
-Prompt 2: Can you find what the average per mile cost for trucks in the Atlanta region is and add this to the model?
-Prompt 3: Before re-running, can you suggest a top 3 of additional scenarios that would be interesting to run, based on the expected value / insights they may provide?
-Response: lists 3 sets of suggested scenarios to add and the reasoning:
-Prompt 4: Please add the scenarios for your #2 suggestion, territory count sensitivity, then run all scenarios (Hopper). Once done running, please create the trade-off curve for number of territories vs cost and an interactive map where the multi-stop routes of each scenario can be visualized, including tooltips and main KPIs by scenario.
-Questions or feedback on the connector? Reach out to the Optilogic Support team on support@optilogic.com. In addition, you can use the thumbs-up and thumbs-down buttons in the AI Agent chat to send feedback directly to the AI Agent’s company on any specific response.
-This documentation details how to connect and disconnect the Optilogic MCP connector using Copilot. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-The steps to take when connecting to the Optilogic MCP Connector in Copilot are as follows:
-These steps are covered in detail in the next sections.
-The following steps to create an MCP agent need to be completed by an IT administrator.
-Navigate to Copilot Studio (https://copilotstudio.microsoft.com/), and Open the Agents page. Then, choose New Agent:
-Provide a name for your agent, for example, Optilogic MCP.
-Choose a model to leverage from the drop-down list. As of August 2026, GPT 5.6 Reasoning works well; other models may work fine too. Once you have chosen your model, open the Tools menu by clicking on the plus button to the right:
-In the Tools menu, click on the Add button, then select Model Context Protocol (MCP):
-In the Add MCP server form that comes up, enter the following: 
-Once added, provide some basic instructions for the agent such as “You are an agent designed to assist with Ada in the Optilogic platform.”.
-Save and publish the agent. The Save button is just left of the publish button; next, click on Publish. Upon publishing a window will pop up with final settings. Be sure to check the box to make the agent available in Microsoft 365 Copilot:
-Still on the same form, click on the Availability options button, scroll to the bottom of the menu, and click on the Share Agent button to choose which users can access the agent. Alternatively, you can select the Share Agent button and enable end-user access for all users in the organization:
-Finally, you will need to associate a Microsoft Power Platform billing profile to agents created in Copilot Studio for the agent to function. Copilot agents require credits separate from end-user Copilot licensing. To explore current offerings from Microsoft and manage billing profiles, please see this webpage.
-Once IT creates the agent on your company’s Copilot account, they can share a link with you to the new agent, which will look similar to the next screenshot. Click on the Open button.
-The agent will be added to your Copilot account to chat with – notice it under Agents in the left pane:
-Start a chat with the agent and prompt it to connect to your Optilogic account. When you see the card for Connection Required, click on Set up connection:
-A browser window will open. Click on Connect under Actions:
-In the Connection drop-down list, select Create new connection:
-Enter a display name and click on Create:
-When prompted, sign in to your Optilogic account:
-The connection is complete! You will see the checkmark for confirmation:
-Go back to your Copilot chat window and test it out with a first prompt, such as: I just connected Optilogic. Give me a summary of what you can do with Optilogic, what you see in my Optilogic account and highlight one useful insight that you recommend I dig in to. Also, what sort of “what if” questions can you answer based on what you see in my account?.
-Ada is Optilogic’s next-generation agentic AI, enabling supply chain teams to work faster and with greater confidence across the full modeling lifecycle — from raw data preparation to optimization runs to executive reporting — all through natural language interactions.
-Unlike traditional UI chat assistants, it deploys purpose-built agents that can pursue multi-step goals, use specialized skills, maintain conversational context, and coordinate with each other to complete workflows that previously required significant manual effort. This dramatically reduces the time required to move from raw data to recommendations.
-As a core part of Optilogic’s Next Generation User InterfacePlatform, Ada provides a more intelligent and conversational approach to supply chain design work.
-Ada is named after Ada Lovelace, widely regarded as the world’s first computer programmer and one of the earliest visionaries to recognize the potential of computational systems beyond pure calculation. The name reflects Optilogic’s goal of building intelligent systems that help people solve complex problems through collaboration between human expertise and advanced computing.
-Ada is your AI-first supply chain modeling partner, designed specifically for the Optilogic platform. Through a conversational interface, Ada helps users build, validate, analyze, and improve supply chain models.
-You can think of Ada as a chat agent like for example Claude and ChatGPT. But, unlike general-purpose AI chat tools, Ada is trained around supply chain modelling workflows and has access to Optilogic-specific tools, applications, databases, schemas, and platform capabilities.
-Today, Ada includes three specialized AI Agents:
-The Select the AI Agent part of the Create Your First Prompt section further below includes guidance on which agent to use for what type of question/task.
-For a deeper technical explanation of how AI agents, tools, and skills work together, see the AI Agents: Architecture and Components help center article.
-Teams commonly use Ada for:
-Ada works best for:
-Ada is less suited for:
-Ada is best thought of as:
-Ada does not automatically understand:
-The clearer the context you provide, the better the results typically become.
-Ada can connect to:
-Ada operates entirely within the Optilogic platform and your connected databases. It does not access the internet or any data or systems outside of the Optilogic environment. It does not send your data to third parties beyond what is required by the underlying GPT family model API (see AI Data Security & Privacy).
-Ada may:
-To start using Ada, log into the next generation Optilogic platform at https://ai.optilogic.app or navigate there by clicking on the Ada icon in the navigation sidebar while on the current Optilogic platform (https://optilogic.app):
-Besides this documentation, you can also get a guided tour on how to use Ada from within the platform itself. In the sidebar on the left, click on the Apps Launcher icon:
-Then search for “Start Ada chat” and click on the Start Ada Chat Walkthrough item in the Actions list to start the tour:
-When logged into the next-gen platform at https://ai.optilogic.app, there are 2 main ways to start using Ada:
-In a new conversation, you first need to configure chat style (optional), select your database(s), choose your agent, and then enter your question/task for Ada.
-Note that for any further questions within the same conversation, the chat style, database(s), and agent do not need to be configured again – they will remain as they were set for the first prompt.
-To guide you on choosing the best agent for the task, here is an overview of what each is good at.
-Modeler Agent:
-Data Cleanser:
-Next Gen UI Agent:
-Once a prompt has been submitted, Ada will process it and formulate a response. Responses can have different formats, here we will see a text only result, while other response types are covered in the next section.
-Once Ada is done processing the prompt, the response will be displayed:
-The full response for this prompt is shown in the next 2 screenshots:
-Besides responses that are purely text-based, you will come across other types too. For example, when your input is needed, Ada will pause the response and ask you for feedback:
-When Ada modifies a Cosmic Frog model or a DataStar project sandbox, users can verify these in the respective applications on the current platform (https://optilogic.app). Here, we are checking if the data cleaning step indeed created the clean_ tables in the sandbox of the connected DataStar project:
-Responses can also contain files:
-When saving an artifact to your workspace, the following modal will come up where you can choose the location to save it and indicate if any pre-existing files with the same name at the chosen location should be overwritten or not:
-When choosing to open the report in Lightning Editor, it does so in the new platform, to the right of the conversation with Ada so users do not need to change context:
-The Next Gen UI Agent can help you for example with changing the look and feel of the platform’s UI. In this example it created a tour on how to customize the UI where the user can click on the buttons in the response to be taken directly to that part of the UI. Note that only part of Ada's response is shown in the screenshot:
-Conversations with Ada are by default saved and users can return to them to review, audit, or continue the conversation.
-Keep Conversations Focused
-Ada performs best when conversations stay centered on a single task or workflow. Avoid mixing unrelated activities — such as model building, reporting, and data cleansing — in the same chat.
-Focused conversations improve response quality, reduce confusion, and make it easier for Ada to maintain context.
-Give Context Before the Task
-Provide business context, objectives, constraints, and relevant background before asking Ada to perform work.
-Better prompts typically include:
-Example: Instead of: “Build scenarios for this model.”
-Try: “This model evaluates manufacturing diversification risk across LATAM and EMEA. The goal is to reduce China dependency while minimizing transportation cost increases. Create several realistic diversification scenarios.”
-Ask Ada to Explore Before Acting
-For complex workflows, first ask Ada to explore, profile, summarize, or analyze the environment before making changes.
-Examples:
-This gives both you and Ada better shared context before execution and reduces downstream errors.
-Plan First for Multi-Step Workflows
-For larger workflows, ask Ada to propose a plan before executing actions.
-Example: “Before making changes, provide a step-by-step plan for how you would approach this workflow.”
-This allows you to:
-Be Explicit About Constraints
-Clearly state any important rules or limitations.
-Explicit constraints improve consistency and reduce unintended actions.
-Ask Ada Clarifying Questions
-If a workflow is complex or ambiguous, invite Ada to ask clarifying questions before proceeding.
-Example: “Before executing, ask any clarifying questions needed to complete this task correctly.”
-This often improves first-pass accuracy significantly.
-Start a New Conversation When Switching Contexts
-Create a new conversation when:
-Long conversations can dilute context and reduce response quality over time.
-Ask for Multiple Options
-Instead of requesting a single recommendation, ask Ada for multiple approaches and trade-offs.
-Example: “Provide three approaches for supplier diversification and explain the trade-offs of each.”
-This helps surface alternatives and improves decision-making.
-Re-State Important Constraints During Long Workflows
-In long conversations, periodically remind Ada about key requirements.
-This helps reduce context drift.
-Generate a Summary Before Starting a New Chat
-If a conversation becomes long or complex, ask Ada to summarize:
-You can paste this summary into a new conversation to preserve context without carrying forward unnecessary noise.
-Helpful prompt: “Summarize this conversation into a clean handoff document including goals, technical decisions, constraints, and next steps.”
-Avoid Overloading Prompts
-More information is not always better.
-Instead:
-Focused prompts generally produce better results than overly large or unstructured requests.
-Ask Ada What It Can Do
-If you are unsure how to approach a task, ask Ada directly.
-Ada can often suggest workflows, prompts, and capabilities you may not know are available.
-Ada is evolving rapidly, and some platform capabilities are still in active development.
-File Attachments in Chat
-Files cannot currently be uploaded directly into Ada conversations.
-File Explorer Data Access
-Data stored in your account (accessible through the Explorer application) is not directly accessible in chat workflows. Data first needs to be imported into a DataStar project or connected database.
-DataStar and Cosmic Frog Integration
-The Next Gen platform does not yet provide fully seamless integration of the DataStar and Cosmic Frog applications. For some processes, users will need to open these in the current platform (https://optilogic.app).
-UI Rendering Requires the Next Gen UI Agent
-Advanced inline visualizations and UI rendering features currently require selecting the Next Gen UI Agent explicitly.
-Long Conversations Can Degrade Performance
-As conversations grow longer, Ada may lose context, become repetitive, or produce less reliable responses.
-Starting a fresh conversation for new workflows or projects generally improves results.
-AI Responses Should Always Be Reviewed
-Like all AI systems, Ada can occasionally produce incorrect or misleading outputs.
-Always validate:
-before using outputs in production or customer-facing work.
-Session Stability
-Leaving the platform idle for extended periods can interrupt workflows or produce unexpected behavior.
-If the platform becomes unstable:
-We hope you are going to have many productive conversations with Ada! Please do not hesitate to contact our Support team via support@optilogic.com if you have any questions or concerns.
-Applies to all Optilogic AI systems.
-No confidential client information will be used as inputs or part of model training and validation datasets. In addition:
-Data Minimization: The amount of data shared with the AI provider depends on the task being performed. Optilogic's agents are engineered to query and pass only the minimum data required for each specific operation — ranging from structural metadata (table and column names, data types, statistical summaries) for schema-level tasks, to slices of actual data values for operations that require it, such as data cleansing, outlier detection, or name matching.
-Optilogic does not transmit your entire dataset to the AI provider in a single operation. However, over the course of a session, the AI provider may process portions of your data as needed to complete the tasks you request.
-No Model Training: Optilogic does not use your data to train AI models. Optilogic’s current AI provider (OpenAI) does not use API-submitted data for model training under their enterprise API terms. Refer to OpenAI policies here: https://openai.com/policies/.
-Built-in Agent Safety Instructions: Optilogic agents include standing safety instructions in their core configuration to guard against prompt injection — attempts to manipulate agent behavior through user messages or data the agent processes. These instructions:
-Best Practices: Users should avoid including sensitive information (PII, credentials, etc.) in table/column names or prompts, as these are shared with the AI provider.
-This documentation details how to connect and disconnect the Optilogic MCP connector using ChatGPT. To learn more about the Optilogic MCP Connector, please see The Optilogic MCP Connector Help Center article. It includes an explanation of what the connector is, how it can be used, example prompts, best practices, data handling and security details, and troubleshooting pointers.
-Any user can add the connector to their own ChatGPT account and authenticate with Optilogic directly — no admin setup required.
-In ChatGPT, go to your Account > Settings > Security and login, or navigate directly to https://chatgpt.com/#settings/Security. Scroll down to Developer Mode and toggle it on:
-Go to Plugins in the menu at the top-left (or browse to https://chatgpt.com/plugins) and click the + icon in the top-right corner to add a new custom connector.
-Complete the New Plugin form as follows:
-Clicking Create brings up an “Add Optilogic to ChatGPT” form, click on the “Sign in with Optilogic” button:
-Complete the login with your Optilogic credentials:
-Once logged into Optilogic, the Plugins form in ChatGPT will show following. You do not need to do anything else and can close out of here by clicking on the x in the top-left corner:
-In a new ChatGPT conversation, ask it to use the connector. For example: “Connect to Optilogic – which databases do you see in my account?”. Success will look similar to the following prompt and response, confirming the MCP connection is live and authenticated correctly:
-Should you need to disconnect from the Optilogic Connector, go to Plugins and click on the Optilogic connector in the list of Installed connectors:
-Then click on the icon with 3 horizontal dots to open a context menu and choose Uninstall from this menu:
-Please note that the connector will be uninstalled immediately without asking to confirm.
-Use the steps outlined in the “Setting up the Connector” section above to re-connect to the Optilogic connector.
-When demand fluctuates due to for example seasonality, it can be beneficial to manage inventory dynamically. This means that when the demand (or forecasted demand) goes up or down, the inventory levels go up or down accordingly. To support this in Cosmic Frog models, inventory policies can be set up in terms of days of supply (DOS): for example for the (s,S) inventory policy, the Simulation Policy Value 1 UOM and Simulation Policy Value 2 UOM fields can be set to DOS. Say for example that reorder point s and order up to quantity S are set to 5 DOS and 10 DOS, respectively. This means that if the inventory falls to or below the level that is the equivalent of 5 days of supply, a replenishment order is placed that will order the amount of inventory to bring the level up to the equivalent of 10 days of supply. In this documentation we will cover the DOS-specific inputs on the Inventory Policies table, how a day of supply equivalent in units is calculated from these and walk through a numbers example.
-In short, using DOS lets users be flexible with policy parameters; it is a good starting point for estimating/making assumptions about how inventory is managed in practice.
-Note that it is recommended you are familiar with the Inventory Policies table in Cosmic Frog already before diving into the details of this help article.
-The following 2 screenshots show the fields that set the simulation inventory policy and its parameters on the Inventory Policies table:
-For the same inventory policy, the next 2 screenshots show the DOS-related fields on the Inventory Policies table; note that the UOM fields are omitted in these screenshots:
-As mentioned above, when using forecasted demand for the DOS calculations, this forecasted demand needs to be specified in the User Defined Forecasts Data and User Defined Forecasts tables, which we will discuss here. This next screenshot shows the first 15 example records in the User Defined Forecasts Table:
-Next, the User Defined Forecasts table lets a user configure the time-period to which a forecast is aggregated:
-Let us now explain how the DOS calculations work for different DOS settings through the examples shown in the next screenshot. Note that for all these examples the DOS Review Period First Time field has been left blank, meaning that the first 1 DOS equivalent calculation occurs at the start of this model (on January 1st) for each of these examples:
-Now that we know how to calculate the value of 1 DOS, we can apply this to inventory policies which use DOS as their UOM for the simulation policy value fields. We will do a numbers example with the one shown in the screenshot above (in the Days of Supply Settings section) where reorder point s is 5 DOS and order up to quantity S is 10 DOS. Let us assume the same settings as in the last example for the 1 DOS calculations in the screenshot above, explained in bullet #6 above: forecasted demand is used with a 10 day DOS Window, a 5 day DOS Leadtime, and a 5 day DOS Review Period, so the calculations for the equivalent of 1 DOS are the numbers in the last row shown in the screenshot, which we will use in our example below. In addition to this, we will assume a 2 day Review Period for the inventory policy, meaning inventory levels are checked every other day to see if a replenishment order needs to be placed. DC_1 also has 1,000 units of P1 on hand at the start of the simulation (specified in the Initial Inventory field):
-Cyclo is Optilogic’s new Multi Echelon Inventory Optimization (MEIO) engine within Cosmic Frog. It helps supply chain teams determine where safety stock should be held across a network, how much is needed at each stage, and how service levels impact total safety stock cost and responsiveness.
-This video gives a quick overview of how to use Cyclo; it uses the Demo Model described further down in this documentation:
-If you just want to get going with Cyclo as quick as possible, follow these steps:
-Multi Echelon Inventory Optimization (MEIO) is a planning approach used to optimize safety stock across an entire supply chain network.
-Cyclo, the MEIO engine, is designed to optimize safety stock placement across multi-stage supply chains that may include suppliers, manufacturing plants, distribution centers, and customer-facing locations. Instead of optimizing each node independently, Cyclo evaluates the entire network simultaneously so organizations can reduce total safety stock while maintaining desired service levels.
-Cyclo uses a Guaranteed Service Model (GSM) approach to optimize service-time relationships between facilities and derive recommended safety stock levels.
-Cyclo helps organizations answer key supply chain questions such as:
-By optimizing safety stock placement across the entire network, Cyclo can help organizations:
-Cyclo is especially valuable for:
-Both Cyclo and Dendro support inventory optimization workflows in Cosmic Frog, but they are designed for different planning problems.
-In practice both can be used together:
-Cyclo uses a Guaranteed Service Model (GSM) approach. Rather than directly optimizing safety stock quantities, Cyclo optimizes service-time commitments between facilities. Those service-time decisions are then translated into safety stock requirements.
-Represents your risk tolerance – balancing the cost of holding extra buffer inventory against the risk and cost of lost sales. This is a user input. Two risk measures are available:
-Service Type 1 is a stricter measure than Type 2 and will in most cases lead to more safety stock.
-Time a facility expects upstream suppliers to deliver material. This is a decision variable in the optimization
-Time a facility needs to replenish – typically transport time from the upstream location to the facility and/or production/processing time at the facility. These are model inputs.
-Time a facility promises to deliver to downstream customers. This is a decision variable in the optimization.
-The effective time window over which demand uncertainty accumulates.
-In a Guaranteed Service Model (GSM), each facility commits to serving downstream nodes within a defined service time. The effective exposure to uncertainty is the Net Replenishment Time (NRT):
-NRT = Incoming Service Time + Fixed Lead Times − Outgoing Service Time
-As NRT increases, more uncertainty accumulates and more safety stock is typically required.
-Cyclo evaluates many combinations of incoming and outgoing service times across the network to find the lowest total safety stock holding cost, while reaching the target service level. The optimization is not changing any fixed lead times. Instead, it is strategically deciding where responsiveness should exist in the network.
-Consider a product with the following flow path:
-Manufacturer → Distribution Center → Customer
-Assume the following fixed lead times:
-The total physical replenishment lead time across the network is therefore 5 days.
-These lead times are inputs to the model and are not optimized. What Cyclo optimizes are the service-time commitments between stages. Specifically:
-These service times are optimized with the goal to minimize total safety stock holding cost across the network.
-In the next example scenarios:
-Manufacturer ----> DC (5 days safety stock) ----> Customer
-Interpretation:
-This approach is common in highly responsive distribution networks.
-Manufacturer (2 days safety stock) --> DC (3 days safety stock) --> Customer
-Manufacturer (4 days safety stock) --> DC (1 day safety stock) --> Customer
-The total physical replenishment exposure is driven by the same 5-day total network lead time in all 3 scenarios.
-What changes is:
-Cyclo evaluates many combinations of:
-to determine the optimal inventory strategy across the network.
-Without MEIO, organizations often duplicate safety stock across multiple locations and optimize inventory independently at each node. Cyclo instead evaluates the network holistically and strategically concentrates inventory where it is most cost-effective, while achieving the required service level.
-The following diagram summarizes the inputs and outputs of the Cyclo engine; they will be covered in more detail in the Cyclo in Cosmic Frog section that follows.
-The following workflow provides a step-by-step approach for configuring and running Cyclo.
-The following table provides an overview of the input tables used by Cyclo, whether they are required, and their purpose. Further below, several screenshots show examples of some of the main inputs in Cosmic Frog.
-The following screenshots show several input tables with key Cyclo fields.
-Demand can be specified in either of the Customer Orders and Customer Order Profiles tables. If the Customer Orders table is populated it will be used and the Customer Order Profiles table will be skipped in that case. If the Customer Orders table is blank, the Customer Order Profiles table will be used.
-Before running Cyclo, verify that the supply chain network is fully configured. Recommended validation checks:
-You can also use Cosmic Frog’s Integrity Checker and filter the results where the Relevant Technology field contains Cyclo.
-Once the model has been built, you can optionally configure additional scenarios to run. Here 1 additional scenario is added besides the Baseline:
-After inputs are validated and scenarios set up, users can kick off their Cyclo optimization run by clicking on the green Run button at the top right in Cosmic Frog, which brings up the Run Settings modal:
-During execution, Cyclo processes:
-The optimization engine evaluates inventory decisions holistically across the network rather than independently by node.
-After the optimization is completed, review the generated outputs.
-The Cyclo outputs are in 2 tables, Inventory Network Summary and Inventory Safety Stock Summary, and include:
-Cyclo outputs help users understand recommended inventory placement, service-time commitments, and total network inventory cost tradeoffs.
-The Inventory Network Summary summarizes results by scenario:
-This helps users:
-The Inventory Safety Stock Summary shows detailed results at the product x location level, by scenario:
-The 4 screenshots in the next sub-sections are of additional fields on the same table and do not always show the fields of the screenshot above again.
-The recommended safety stock reflects:
-Note that another field not shown in the screenshot, Holding Cost, is available in this table too. Its value is the holding cost for 1 unit of product at that location for the length of the model run. The Holding Cost Contribution is calculated as this Holding Cost value multiplied with the Safety Stock value.
-These values represent:
-Cyclo can recommend inventory policies and their parameters:
-These policies help operationalize inventory decisions.
-When reviewing Cyclo outputs, focus on patterns across the network rather than individual locations.
-Questions to ask include:
-Safety stock optimization quality depends heavily on the quality of the data.
-Recommended practices:
-Cyclo is especially valuable for scenario analysis.
-Examples include:
-Scenario comparisons help quantify operational tradeoffs.
-MEIO is fundamentally a system-wide optimization problem; avoid evaluating locations independently. The best global solution may intentionally increase inventory at one node in order to reduce much larger inventory requirements elsewhere.
-Cyclo outputs are most valuable when reviewed collaboratively by:
-Why does Cyclo place more inventory at upstream locations?
-In many networks, upstream buffering can reduce downstream safety stock due to variability evening out when aggregating demand from multiple downstream locations (pooling effect). This lowers the total inventory holding cost. Cyclo evaluates these trade-offs automatically.
-Does higher service always mean more inventory?
-Generally, yes. Higher service-level targets reduce allowable stockout risk, which usually increases safety stock requirements.
-Why are service times optimized instead of inventory directly?
-The Guaranteed Service Model simplifies the optimization problem and provides a scalable framework for network-wide inventory positioning. Safety stock is derived from optimized service-time relationships.
-We will now walk through a Western Europe based life-size template Cyclo model. This model, Cyclo – MEIO, can also be copied to your own account from the Resource Library: Cyclo - MEIO model on the Resource Library.
-In this model, we will examine the impact of varying the target service level, reduced demand variability, reduced transport lead-time, and only allowing safety stock to be held at customer facing DCs.
-The following map shows most locations and the flow of product in this network:
-In this model, the following tables are populated, most of which we will see a screenshot of further below. A reminder that it is helpful to only show Cyclo tables and fields using the Technology Filter at the top.
-Facilities
-This table contains the 2 suppliers, primary DC in Rotterdam, and 8 country-level secondary DCs. They are geocoded based on city and country data.
-Products
-The Products table contains the 4 products which are being modeled. To minimize safety stock, it is important to set a unit value for the products so that safety stock costs can be calculated and minimized.
-Production Policies
-These are not strictly required in this model, as the source of the products can also be deduced from the Transportation Policies table, but the table can be populated if desired. We see that the “_1” products are coming from the supplier in China and the “_2” products are supplied by the India supplier.
-Inventory Policies
-For each of the DC-product combinations, a record is specified in this table. Initially, the Stocking Site field is set to True for all, meaning the Primary DC and 8 secondary DCs can all hold safety stock for all 4 products. Note that they are not used in this model, but the Unit Value and Inventory Carrying Cost Percentage fields on this table can be used to override the global values set in the Products and Model Settings tables.
-Transportation Policies
-The following sets of transportation policies have been added:
-Customer Order Profiles
-There are 2 sets of demand specified in the Customer Order Profiles table:
-Not shown in the above screenshot: but the Time Between Orders for all these records is set to 7 days, so we are modeling weekly demand.
-Inventory Settings
-In this model, we have left the target service level and service type at their defaults of 95% and Type 1. The target service level will be varied in several scenarios. Note that it is not used in this model, but you can use the Inventory Policies Advanced table to specify product-location specific target service levels, which will override this global value.
-Model Settings
-It is important to set an Inventory Carrying Cost Percentage in the Model Settings table to calculate safety stock holding costs. Here it is set to 10%. This global value can be overridden by specifying product-location specific values in the Inventory Policies table.
-The following scenarios are included in the template model, from top to bottom:
-Target Service Level Scenarios
-First, we will have a look at the 6 target service level scenarios, for which the outputs in the Inventory Network Summary output table are shown in ascending order of service level:
-As we expect, the higher the required service level, the more safety stock the network needs to hold, which also leads to increased safety stock holding costs. In the “MEIO – Cost vs Service” dashboard in the Analytics module, we can clearly see that as the service level is being pushed closer to 99%, the cost curve becomes steeper:
-Other Scenarios
-Now, we will compare the 95% target service level with the other scenarios that were run, which each also require a 95% service level. Starting with the Inventory Network Summary output table again:
-Comparing each scenario with the 95pct TSL baseline scenario, from top to bottom:
-The “MEIO – Safety Stock at DCs” dashboard also shows the safety stock as a stacked column for these 4 scenarios, where the colors indicate the contribution of the total safety stock from each DC. Again, we see that the “Less Demand Variability” and “Reduced Ocean LT” scenarios have overall less safety stock across all DCs as compared to the “95pct TSL” scenario. In the “No SS At Primary DC” scenario, the large pink bucket that represents the safety stock at the primary DC in the other scenarios is not there anymore and instead the other 8 DCs each hold a lot more safety stock than they did in the “95pct TSL” scenario.
-Lastly, we use the Inventory Safety Stock Summary output table to compare the safety stock for 2 secondary DCs and the primary DC for the “95pct TSL” and “No SS At Primary DC” scenarios:
-Cyclo brings advanced Multi Echelon Inventory Optimization capabilities into Cosmic Frog.
-By optimizing service-time commitments and safety stock placement across the entire supply chain network, Cyclo helps organizations:
-Cyclo is especially valuable for organizations operating complex, multi-stage supply chains where local safety stock decisions can create unintended network-wide impacts.
-Please do not hesitate to contact our support team on Support@optilogic.com in case of any questions of feedback.
-Finding problems with any Cosmic Frog model’s data has just become easier with the release of the Integrity Checker. This tool scans all tables or a selected table in a model and flags any records with potential issues. Field level checks to ensure fields contain the right type of data or a valid value from a drop-down list are included, as are referential integrity checks to ensure the consistency and validity of data relationships across the model’s input tables.
-In this documentation we will first cover the Integrity Checker tool’s scope, how to run it, and how to review its results. Next, we will compare the Integrity Checker to other Cosmic Frog data validation tools, and we will wrap up with several tips & tricks to help users make optimal use of the tool.
-The Integrity Checker extends cell validation and data entry helper capabilities to support users identify a range of issues relating to referential integrity and data types before running a model. The following types of data and referential integrity issues are being checked for when the Integrity Checker is run:
-Here, we provide a high-level description for each of these 4 categories; in the appendix at the end of this help center article more details and examples for each type of check are given. From left to right:
-The Integrity Checker can be accessed in two ways while in Cosmic Frog’s Data module: from the pane on the right-hand side that also contains Model Assistant and Scenario Errors or from the Grid drop-down menu. The latter is shown in the next screenshot:
-*Please note that in this first version of the Integrity Checker, the Inventory Policies and Inventory Policies Multi-Time Period tables are not included in any checks the Integrity Checker performs. All other tables are.
-The second way to access the Integrity Checker is, as mentioned above, from the pane on the right-hand side in Cosmic Frog:
-If the Integrity Checker has been run previously on a model, opening it again will show the previous results and gives user the option to re-run it by clicking on a “Rerun Check” button which we will see in screenshots further below.
-After starting the Integrity Checker in one of the 2 ways described above, a message indicating it is starting will appear in the Integrity Checker pane on the right-hand side:
-While the Integrity Checker is running, the status of the run will be continuously updated, while results will be added underneath as checks on individual tables complete. Only tables which have errors in them will be listed in the results.
-Once the Integrity Checker run is finished, its status changes to Completed:
-Users can see the errors identified by the Integrity Checker by clicking on one of the table cards which will open the table and the Integrity Checker Errors table beneath it:
-Clicking on a record in the Integrity Checker Errors table will filter the table above (here the Transportation Policies table) down to the record(s) with that error:
-User can go through each record in the Integrity Checker Errors table at the bottom and filter out the associated records with the errors in the table above to review the errors and possibly fix them. In the next screenshot, user has moved onto the second record in the Integrity Checker Errors table:
-We will look at one more error, the one that was found on the Products table:
-Finally, the following screenshot shows what it looks like when the Integrity Checker was run on an individual table and in the case no errors are found:
-There are additional tools in Cosmic Frog which can help with finding problems in the model’s data and overall construction, the table below gives an overview of how these tools compare to each other to help users choose the most suitable one for their situation:
-Please take note of the following so you can make optimal use of the Integrity Checker capabilities:
-We saw the next diagram further above in the Integrity Checker Scope section. Here we will expand on each of these categories and provide examples.
-From left to right:
-Note that the numeric and data type checks sound similar, but they are different: a value in a field can pass the data type check (e.g. a double field contains the value -2000), but not the numeric check (a latitude field can only contain values between -90 and 90, so -2000 would be invalid).
-We hope you will find the Integrity Checker to be a helpful additional tool to facilitate your model building in Cosmic Frog! For any questions, please contact Optilogic support on support@optilogic.com.
-Once you have run a model, you can visualize your results using the Analytics module. A dashboard in the Analytics module is a collection of visualizations. Visualizations can take on many forms, such as charts, tables or maps.
-To access the Analytics module:
-Once in the Analytics module, the left-hand side panel looks as follows:
-When opening a dashboard it is shown in the central part of Cosmic Frog. This is the default Optimization Scenario Comparison dashboard shown for the Global Supply Chain Strategy model, which highlights some common analytics and metrics:
-Many dashboards are designed to be interacted with through a set of filters, like for example the Optimization Transportation Flows one (also shown for the Global Supply Chain Strategy model):
-In the screenshot directly above, the dashboard is shown for all products in the model, which includes raw materials and finished goods. Filtering for just the finished goods changes the shown chart on this dashboard as follows:
-We can hover over visualization elements to get more information, which will be shown in a tooltip. Here, we show the information for one of the facilities, Princeton Factory, in a chart named Facility Geographic Risk Metrics, which is part of the Optimization Facility Risk Summary dashboard. This is again in the Global Supply Chain Strategy model:
-The Analytics drop-down menu at the top of the module contains the following options:
-The context menu that comes up when right-clicking on a dashboard in the list has all the same options, except for the New Dashboard one:
-After you click on New Dashboard in the Analytics menu, the central part of Cosmic Frog will look as follows:
-After clicking on the + Visualization button, first we need to choose the source data we will use for the visualization:
-The form now looks similar to the following screenshot, where on the left-hand side the visualization can be configured and on the right-hand side the chart will be shown as it is being built:
-After dragging the fields we want on top of the Label, Values, and Category areas, our visualization configuration area looks as follows:
-Clicking on a field in any of the configuration areas (bullet 3 above) brings up the Field Settings form:
-The following screenshot shows an example of using conditional formatting in a grid visualization, where the background color for values less than 2M is orange and over 2M green:
-While the chart is being configured, its current state is shown on the right-hand side where several additional settings and options are available to the user:
-The chart configuration options available to the user under the Settings tab are shown in the next 2 screenshots; these specify what is shown on the chart and the formatting of the different chart items:
-Once you are happy with the visualization, click on the Save checkmark icon to save it and close the editor for this visualization. This will bring you back to the dashboard:
-When you choose a Dashboard Filter, you are first prompted to choose your data source (a table, view or function) in the same way as selecting the source data for a visualization. After selecting your source, the Dashboard Filter form is shown:
-Creating a Date Filter works as follows:
-Note that after a Date Filter has been added to the dashboard, users can still switch between different timeframes when using the filter; this is not fixed at the time of Date Filter configuration.
-After a filter has been created, it is accessible in the top part of the dashboard, underneath the dashboard's description. Here we have added a filter for scenario name:
-We can customize existing dashboards to fit our needs. Click on the icon with 3 vertical dots to bring up the options to Edit, Refresh, and Export (Image, PowerPoint, PDF, or Excel) the current dashboard. If previously a visualization was copied to the Clipboard, a Paste option will be available here too:
-Please see the sections above on adding and configuring visualizations and dashboards which apply here in the same way.
-If bars are not showing in a chart this is likely due to the first column having no value or its value being 0. To resolve:
-As always, please reach out to our Support team at support@optilogic.com in case of any questions or feedback.
-To learn all about dashboards and visualizations within Cosmic Frog, please refer to the Getting Started with Analytics help center article, which contains the latest information.
-Watch the video to learn how to build dashboards to analyze scenarios and tell the stories behind your Cosmic Frog models. You can also refer to the Getting Started with Analytics help center article, which contains the latest information as of July 2026 in text + screenshot format.
-Cosmic Frog users can now perform additional quick analyses on their supply chain models’ input and output data through Cosmic Frog’s new grid features. This functionality enables users to easily apply different types of grouping and aggregation to their data, while also allowing users to view their data in a pivoted format. Think for example of the following use cases:
-In this documentation we will cover how grids can be configured to use these new features, show several additional examples, and conclude with a few pointers for effective use of these features.
-These new grid features can be accessed from the “Columns” section on the side bar on the right-hand side of input and output tables while in the Data module of Cosmic Frog:
-Alternatively, users can also start grouping and subsequently aggregating by right clicking on the column names in the table grid:
-We will first cover Row Grouping, then Aggregated Table Mode, and finally Pivot Mode.
-Using the row grouping functionality allows users to select 1 or multiple columns of an input or output table by which all records in the table will be grouped. These groups of records can be collapsed and expanded as desired to review the data. In the following screenshot the row grouping feature is used to compare the sources of a certain finished good in a particular period for 1 scenario:
-When clicking on Columns on the right hand-side of the table to open the row grouping / aggregated table / pivot grid configuration pane shows the configuration for this row grouping:
-The above example showed grouping the rows by 1 column, this next example shows the same table, but now the rows are grouped by 3 columns. Note that you can change the order of the Row Groups by clicking on a column header and dragging it up or down.
-The table then looks as follows:
-The number in parenthesis indicates how many unique values there are for the next row group:
-Once a table is grouped by one or more fields, a next step can be to aggregate one or multiple columns by this/these grouped field(s). When this is done, we call this aggregated table mode. Different types of aggregation are available to the user, which will be discussed in this section.
-When configuring the grid through the configuration panel that comes up when clicking on Columns on the right-hand side of input & output tables, several options are available to help users find field names quickly and turn multiple on/off simultaneously:
-To configure the grid, fields can be dragged and dropped:
-Alternatively, instead of dragging and dropping, users can also right-click on the field(s) of interest to add them to the configuration areas. This can be done both in the list with column names at the top of the configuration window as shown in the following screenshot, but also on the column names in the grid itself (which we have seen an example of in the “How to Access the New Grid Features” section above):
-In the screenshot above (taken with Pivot Mode on which is why the Column Labels area is also visible), the user right-clicked on the Flow Volume field and now they can choose to add it to the Row Groups area (“Group by FlowVolume”), to the ∑ Values area (“Add FlowVolume to values”), or to the Column Labels area (“Add FlowVolume to labels”).
-The next screenshot shows the result of a configured aggregated table grid:
-When adding numeric fields to the ∑ Values area, the following aggregation options are available to the user:
-For non-numeric fields, only the last 3 options are available as aggregations:
-When adding an aggregation field through right-clicking on a field name in the grid, it looks as follows. The user right-clicked on a numerical field, Transportation Cost, here:
-When filters are applied to the table, these are still applied when the table is being grouped by rows, aggregated, or pivoted:
-It was mentioned above that the number in parentheses after the scenario name represents the number of rows that the aggregation was applied to. We can expand this by clicking on the greater than (>) icon to view the individual rows that make up the aggregation:
-Next is an aggregated table mode example where more than 1 Row Group is used. Here, the Flow Quantity on the Optimization Flow Summary table is summed by scenario, origin, and product:
-The resulting table:
-When users turn on pivot mode, an extra configuration area named Column Labels becomes available in addition to the Row Groups and ∑ Values areas:
-Another example to show the total volumes of different flow types, filtered for finished goods, by scenario is shown in the next screenshot:
-So far, we have only looked at using the new grid features on the Optimization Flow Summary output table. Here, we will show some additional examples on different input and output tables.
-In this first additional example, a pivot grid is configured to show the total production quantity for each facility by scenario:
-In the next example, we will show how to configure a pivot grid to do a quick check on the shipment quantities: how much the backhaul vs linehaul quantity is and how much of each is set to Include vs Exclude:
-In the following 2 examples, we are doing some quick analysis on the Simulation Inventory On Hand Report, a simulation (Throg) output table containing granular details on the inventory levels by location and product over time. In the first of these 2 examples, we want to see the average inventory by location and product for a specific scenario:
-In the next example, we want to see how often products stock out at the different facilities in the Baseline scenario:
-The last 2 examples in this section show 2 different views of Greenfield (Triad) outputs. The first example shows the average transport distance and time by scenario:
-Lastly, we want to look, by scenario, how much of the quantity delivered to customers falls in the 300 miles, 500 miles, and 750 miles service bands:
-Please take note of following to make working with Row Grouping, Aggregated Table Grids and Pivot Grids as effective as possible:
-In this quick start guide we will walk through how you can build a DataStar macro for repeatable Cosmic Frog model building, where data needs to be refreshed periodically, through chatting with Ada.
-When using Ada to have the Modeler Agent create a model, it is a non-deterministic process where you may not get the same results every time. Once you are happy with the model you have built using Ada, you want to be able to repeat those steps every time in a reliable, performant, deterministic fashion. That is the value of being able to persist the process in DataStar.
-It is helpful to be familiar with the contents of the following Help Center articles prior to diving into this quick start:
-This quick start guide uses a historical shipments file that was also used in the Importing a CSV File quick start guide. In addition, we will create a second data connection for a basic costs file and import that one into the Project Sandbox too. We then use the data in those 2 files to populate tables of an initially empty Cosmic Frog model with the aim to run a Neo solve. Finally, the steps to populate this model are automatically captured in a DataStar macro to create a repeatable model build workflow. In summary the steps are:
-We will cover what is contained in the 2 CSV files and steps 1-3 in this section.
-The next 2 screenshots show the structure of the data in the 2 CSV files used in this quick start.
-Of the Historical_Shipments.csv file, the first 5 of a total of 42,656 records are shown. The Ship Dates range from May 2024 through August 2025:
-The next 2 screenshots show all data contained in the Basic_Costs.csv file:
-Now, we move on to chatting with Ada in the next generation Optilogic platform at https://ai.optilogic.app. Here, we will walk-through an initial prompt and the back and forth that follows. Note that you can get different responses and clarifying questions from Ada, even with the same starting data and initial prompt.
-We first connect the DataStar project and empty Cosmic Frog model in the Databases drop-down selector, and then submit our prompt:
-Ada comes back with three consecutive clarifying questions, 1 on model configuration decisions and 2 to approve running the DataStar macro and a Neo solve on the Cosmic Frog model. You can see the questions and the user’s responses in this screenshot:
-Ada’s response is then as follows:
-So, this achieved what we set out to do in the prompt. We did not yet run the Neo solve as we first want to examine the Cosmic Frog model and DataStar macro.
-In DataStar, we see that in addition to the macro that imports the data from the 2 CSV files, there is now a Model Build macro present too. Note that you may need to refresh your browser to see the new macro in case the project was still open from before. You can click on any task to select it and inspect its configuration which comes up on the right-hand side.
-Opening the model in Cosmic Frog, we see that the expected tables are populated. Here, the Facilities table is shown with the 7 DCs and 1 (geocoded) Factory, as we requested:
-All tables look good, except:
-To understand the distance calculation and correct the model horizon, we continue our conversation with Ada:
-As a result of the last prompt Ada updates the build_transportationpolicies Run SQL task in the Model Build macro, which we can see by opening its SQL Script:
-In addition, she adds 2 tasks to the Model Build macro to take care of setting the model start and end date in the Model Settings table:
-Double-checking the Cosmic Frog model to ensure the updated macro was run and results in the desired changes, we can see that the Unit Costs on the Factory-DC lanes have increased by 17% and that the Model Settings table now has Model Start Date and Model End Date set correctly.
-Now we have created a repeatable, deterministic workflow in DataStar to build a basic Neo model from the 2 input files, which may be refreshed with newer data regularly.
-To get an idea of the types of interactions you can have with Ada while working on DataStar projects, here are some example prompts to get you started:
-As always, please do not hesitate to reach out to our Support team via support@optilogic.com in case of questions or feedback.
-Please feel free to download the Cosmic Frog Python Library PDF file. Please note that this library requires Python 3.11.
-You can also reference the video shown below that covers an overview on scripting within Cosmic Frog.
-Thank you for using the most powerful supply chain design software in the galaxy (I mean, as far as we know).
-To see the highlights of the software please watch the following video.
-The Air Express Freight Costing utility solves the challenge of pricing air express freight shipments when carrier rate data is complex and varies by service level, distance, and weight. Rather than manually looking up rates in carrier tariff tables, this workflow automates the entire process using FedEx Express Freight standard list rates. The utility expects a lanes-to-cost table containing shipment details including origin, destination, distance, weight, and desired service level. After running the utility, users receive a fully costed table with calculated transportation costs.
-The Air Express Freight Costing Utility is available on the Resource Library, from which you can download it or copy it to your Optilogic account. Learn more about the Resource Library in this How to use the Resource Library help center article.
-Sample Data
-System Utility
-The steps to use this utility are as follows. These are illustrated with screenshots below.
-Screenshots of the steps where the project from the Resource Library is used (Copy to Account option), which creates the DataStar project including macro shown below in the user's account:
-Key Constraints:
-The utility produces an output table containing all lanes from the input with the following columns populated:
-Zones are determined automatically based on the following priority:
-Special Zones (for Alaska/Hawaii):
-Standard Distance-Based Zones:
-Costs are calculated using the following formula:
-base_charge = shipment_weight x price_per_lb final_cost = MAX(base_charge, minimum_charge) Effective Weight: If the shipment weight is below the minimum weight for a service/zone combination, the utility uses the minimum weight band's rate but calculates the charge based on the actual shipment weight.
-The Model Output Insights Agent helps users investigate and analyze Cosmic Frog model outputs by turning analytical questions into structured, data-backed strategic reports. It breaks down complex questions into a step-by-step exploration plan, executes targeted queries, synthesizes findings, and produces a professional report - complete with visualizations and actionable recommendations.
-This documentation describes how this specific agent works and can be configured. Please see the “AI Agents: Architecture and Components” Help Center article if you are interested in understanding how the Optilogic AI Agents work at a detailed level.
-Extracting meaningful insights from large databases typically requires exploring and analyzing many output tables which can take a lot of time and effort. The Model Output Insights Agent streamlines the process, helping users get to the insights quicker than ever before.
-Main skills the Model Output Insights Agent uses:
-Supporting capabilities:
-The agent can be accessed through the Run AI Agent task in DataStar. Once a Run AI Agent task is added to the macro, first the Model Output Insights Agent needs to be selected from the list of available agents and utilities in the "Select Utility" section:
-Next, the inputs and settings for the task can be specified in the Configure Utility, Run Configuration, and Notes sections:
-This next screenshot shows how to get a Folder Path while in the Explorer application: 1) right-click on the folder in the Explorer, 2) hover over Copy in the context menu, and 3) click on Folder Path:
-After the run, a report in both markdown (.md) and pdf (.pdf) format and charts (if any) are created and can be found in the Explorer with the specified file name and folder. Once clicked, the file is opened in the Lightning Editor application for review.
-Note that currently the charts are only included in the markdown file as a file name. Users can look for the charts in the Charts folder in the targeted output directory.
+Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
+Model, optimize, and simulate even the most complex supply chains at scale and trade off cost, service, risk, and sustainability.
+Eliminate data challenges with AI-automated cleansing and workflow orchestration for decision-ready intelligence instantly.
+Optilogic's breakthrough agentic AI system for supply chain design — compresses months of supply chain design work into a single day.
+Purpose-built apps for every stakeholder — Deploy across your entire organization today. Act on insights from day one.
+Stay updated on the latest from Optilogic.
+Enhance your skills with our hands-on training sessions and courses.
+Dive into expert insights, industry trends, and practical tips for success.
+Discover Optilogic's partner network empowering transformation and supply chain success.
+Attend in-person events, live training, and webinars, or catch sessions on demand.
+Find step-by-step guides, FAQs, and support.
+Access our full library of guides, case studies, and tools to help you succeed.
+Connect with Optilogic peers, exchange insights, and accelerate supply chain success.
+Stay updated on the latest from Optilogic.
+Find step-by-step guides, FAQs, and support.
 
 
 ---
@@ -25668,7 +24921,7 @@ Find step-by-step guides, FAQs, and support.
 
 
 ---
-## Navigating Atlas
+## Navigating Atlas - Optilogic
 **URL:** https://optilogic.com/resources/help-center/navigating-atlas
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -25689,7 +24942,7 @@ Find step-by-step guides, FAQs, and support.
 
 
 ---
-## Navigating Cosmic Frog
+## Navigating Cosmic Frog - Optilogic
 **URL:** https://optilogic.com/resources/help-center/navigating-cosmic-frog
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -25710,7 +24963,7 @@ Find step-by-step guides, FAQs, and support.
 
 
 ---
-## Navigating DataStar
+## Navigating DataStar - Optilogic
 **URL:** https://optilogic.com/resources/help-center/navigating-datastar
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -25731,7 +24984,7 @@ Find step-by-step guides, FAQs, and support.
 
 
 ---
-## Navigating the Supply Chain Design Kit (SDK)
+## Navigating the Supply Chain Design Kit (SDK) - Optilogic
 **URL:** https://optilogic.com/resources/help-center/navigating-the-supply-chain-design-kit-sdk
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
@@ -25752,7 +25005,7 @@ Find step-by-step guides, FAQs, and support.
 
 
 ---
-## Troubleshooting
+## Troubleshooting - Optilogic
 **URL:** https://optilogic.com/resources/help-center/troubleshooting
 
 Fast, AI-driven supply chain decision orchestration for every individual and team —from strategic design to tactical planning.
