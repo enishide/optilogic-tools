@@ -262,17 +262,22 @@ def send_email(subject: str, body: str):
     smtp_port = int(os.getenv("SMTP_PORT", "587"))
     smtp_user = os.getenv("SMTP_USER", "")
     smtp_pass = os.getenv("SMTP_PASS", "")
-    to_addr   = os.getenv("NOTIFY_TO", "")
+    # NOTIFY_TO はカンマ区切りで複数指定可。宛先同士に見えないよう全員 Bcc で送る
+    bcc_list  = [a.strip() for a in os.getenv("NOTIFY_TO", "").split(",") if a.strip()]
 
     if not smtp_user or not smtp_pass:
         print("[警告] SMTP_USER / SMTP_PASS が未設定のためメール送信をスキップします。")
         print("  .env ファイルに設定してください。")
         return False
+    if not bcc_list:
+        print("[警告] NOTIFY_TO が未設定のためメール送信をスキップします。")
+        return False
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = smtp_user
-    msg["To"] = to_addr
+    # To には送信元自身を入れ、受信者はエンベロープのみで指定する（Bcc ヘッダーは付けない）
+    msg["To"] = smtp_user
 
     # 冒頭の挨拶文（区切り線より前）と本文を分けて装飾する
     parts = body.split("\n\n---\n\n", 1)
@@ -343,8 +348,8 @@ def send_email(subject: str, body: str):
         with smtplib.SMTP(smtp_host, smtp_port) as server:
             server.starttls()
             server.login(smtp_user, smtp_pass)
-            server.sendmail(smtp_user, to_addr, msg.as_string())
-        print(f"[OK] メール送信完了 → {to_addr}")
+            server.sendmail(smtp_user, bcc_list, msg.as_string())
+        print(f"[OK] メール送信完了 → Bcc {len(bcc_list)} 件")
         return True
     except Exception as e:
         print(f"[エラー] メール送信失敗: {e}")
@@ -422,7 +427,9 @@ def run_check(notify: bool = True):
     if notify:
         subject = f"【Optilogic更新情報】{datetime.now().strftime('%Y/%m/%d')}"
         body = f"{EMAIL_GREETING}\n\n---\n\n{translated}"
-        send_email(subject, body)
+        if not send_email(subject, body):
+            print("[エラー] 通知に失敗したためハッシュを更新しません（次回再送されます）。")
+            return
 
     # 6. ハッシュ更新（通知後に保存）
     save_current_hash(current_hash)
