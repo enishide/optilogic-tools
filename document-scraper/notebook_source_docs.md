@@ -1659,6 +1659,37 @@ I
 
 
 ---
+## Getting Started with Data | Optilogic
+**URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-data
+
+The Data module in Cosmic Frog is where all model inputs and outputs live. Here you can enter, import, export, review, filter, aggregate, edit, and delete data.
+The data contained in the Data module is essential to a Cosmic Frog model as the input data is used when the model is run and therefore determines the outcomes. Additionally, all other modules build upon it:
+Scenarios – scenarios are set up where you define changes to column values for a subset of input records. Learn more about scenarios in this Getting Started with Scenarios article.
+Maps – the layers that are drawn on maps use data pulled from the model’s input and output tables. Learn more about maps in this Getting Started with Maps article.
+Analytics – the source data for the graphs, charts, and tables that make up dashboards in the Analytics module comes from the model’s input and output tables. Learn more about analytics in this Getting Started with Analytics article.
+Leapfrog – Leapfrog lets you query and edit data using natural language. Learn more about Leapfrog in this Getting Started with Leapfrog AI article.
+A Cosmic Frog model is a Postgres database under the hood. Model databases use a specific schema called “Anura” that Cosmic Frog understands and can use with its multiple engines. You can learn more about Anura and the modeling schema in these articles on Anura Inputs and Anura Outputs.
+After the Quick Start section, this documentation starts with an overview of the components of the Data module and then gets into the details of the technology filter, tables list, and table grid. Multiple options for data transfer, how to filter a table, and additional menus and context menus are covered next. The document wraps up with an overview of available data validation tools, tips on configuring the data module based on your role, and best practices.
+Quick Start
+Follow these steps to get your first data into a model:
+Open the Data module from the Module menu (top left).
+Use the Technology Filter (top toolbar) to enable only the engine(s) you are building for — this narrows the tables and columns to what is relevant.
+Select a table from the list on the left to open it in the grid.
+Enter records by typing into the top (data entry) row, or import data in bulk via File > Import.
+Use a filter on any column(s) to check or narrow down what you have entered.
+Once your core tables are populated, run the Integrity Checker (Grid menu) to catch data issues before running the model.
+Pro tip
+For large or messy source data, Ada or DataStar can populate input tables from raw files using natural language or repeatable workflows — no manual entry required.
+Overview
+To open the Data module within Cosmic Frog, click on the Module menu’s hamburger icon, and select Data from the list:
+The layout of the Data module is as follows:
+The hamburger icon which opens the Module drop-down list.
+This database icon indicates the Data module is the active module.
+There are 3 menus available while in the Data modu
+…（省略）
+
+
+---
 ## DataStar Overview | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-datastar
 
@@ -1854,7 +1885,8 @@ Select an existing scenario (e.g., Baseline) or create a new one via right-click
 Add a scenario item: right-click the scenario → New Item. Choose a table, specify a column change in the Actions field, and optionally apply a filter.
 Click the green Run button (top right) and configure technology parameters.
 Analyze results in the output tables or charts - compare across scenarios side by side.
-💡 Tip: Use Leapfrog (Cosmic Frog's AI assistant) to create scenarios and items from plain-language prompts - no manual configuration needed.
+Pro tip
+Use Ada or Leapfrog (Cosmic Frog's AI assistant) to create scenarios and items from plain-language prompts - no manual configuration needed.
 What Is a Scenario?
 A scenario defines one or more input-table changes to apply before running a solve. Common examples include:
 Adding candidate locations to evaluate for network expansion
@@ -1879,7 +1911,7 @@ Click on the Scenario drop-down menu to open it.
 New Scenario - creates a new scenario without any scenario items.
 New Item - creates a new scenario item in the currently selected scenario.
 Duplicate - makes a copy of the currently selected scenario or currently selected scenario item:
-Scenario - the whole scenario is copied into a new scenario which can be named by the user or otherwise the name will be the original postfixed with (1), (2), etc. The copy contain
+Scenario - the whole scenario is copied into a new scenario which can be named by the user or otherwise the name will be the original postfixed with (1), (2), etc. The copy
 …（省略）
 
 
@@ -2874,32 +2906,32 @@ As you continue to work with the tool you might find yourself asking, what do th
 ANURA
 Anura, the name of our data schema, comes from the biological root where Anura is the order that all frogs and toads fall into.
 NEO
-NEO, our optimization engine, takes its name from a suborder of Anura – Neobatrachia. Frogs in this suborder are known to be the most advanced of any other suborder.
+Neo, our optimization engine, takes its name from a suborder of Anura – Neobatrachia. Frogs in this suborder are known to be the most advanced of any other suborder.
 THROG
-THROG, our simulation engine, takes its name from a superhero hybrid that crosses Thor with a frog (yes, this actually exists)
+Throg, our simulation engine, takes its name from a superhero hybrid that crosses Thor with a frog (yes, this actually exists)
 TRIAD
 Triad, our greenfield engine, takes its name from the oldest known species of frogs – Triadobatrachus. You can think of it as the starting point for the evolution of all frogs, and it serves as a great starting point for modeling projects too!
 DART
 Dart, our risk engine, takes its name from the infamous poison dart frog. Just as you would want to be aware of a poisonous frog’s presence, you’ll also want to be sure to evaluate any opportunities for risks to present themselves.
 DENDRO
 Dendro, our simulation evolutionary algorithm, takes its name from what is known to be the smartest species of frog – Dendrobates auratus. These frogs have the ability to create complex mental maps to evaluate and better navigate their surroundings.
+CYCLO
+Cyclo, our multi echelon inventory optimization engine, takes it name from the frog species Cyclorana platycephala. These frogs have the amazing ability to "optimize" their water inventory: they live underground for years in a burrow without water, creating a water-holding cocoon of skin around their bodies to not dry out.
 HOPPER
 Hopper, our transportation routing engine, doesn’t have a name rooted in frog-related biology but rather a visual of a frog hopping along from stop to stop just as you might see with a multi-drop transportation route.
 As you continue to work with the tool you might find yourself asking, what do these engine names mean and how the heck did they come up with them?
 ANURA
 Anura, the name of our data schema, comes from the biological root where Anura is the order that all frogs and toads fall into.
 NEO
-NEO, our optimization engine, takes its name from a suborder of Anura – Neobatrachia. Frogs in this suborder are known to be the most advanced of any other suborder.
+Neo, our optimization engine, takes its name from a suborder of Anura – Neobatrachia. Frogs in this suborder are known to be the most advanced of any other suborder.
 THROG
-THROG, our simulation engine, takes its name from a superhero hybrid that crosses Thor with a frog (yes, this actually exists)
+Throg, our simulation engine, takes its name from a superhero hybrid that crosses Thor with a frog (yes, this actually exists)
 TRIAD
 Triad, our greenfield engine, takes its name from the oldest known species of frogs – Triadobatrachus. You can think of it as the starting point for the evolution of all frogs, and it serves as a great starting point for modeling projects too!
 DART
 Dart, our risk engine, takes its name from the infamous poison dart frog. Just as you would want to be aware of a poisonous frog’s presence, you’ll also want to be sure to evaluate any opportunities for risks to present themselves.
 DENDRO
-Dendro, our simulation evolutionary algorithm, takes its name from what is known to be the smartest species of frog – Dendrobates auratus. These frogs have the ability to create complex mental maps to evaluate and better navigate their surroundings.
-HOPPER
-Hopper, our transportation routing engine, doesn’t have a name rooted in frog-related biology but rather a visua
+Dendro, our simulation evolutionary al
 …（省略）
 
 

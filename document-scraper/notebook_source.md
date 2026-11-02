@@ -10120,6 +10120,718 @@ Please do not hesitate to contact our support team on Support@optilogic.com in c
 
 
 ---
+## Getting Started with Data | Optilogic
+**URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-data
+
+The Data module in Cosmic Frog is where all model inputs and outputs live. Here you can enter, import, export, review, filter, aggregate, edit, and delete data.
+The data contained in the Data module is essential to a Cosmic Frog model as the input data is used when the model is run and therefore determines the outcomes. Additionally, all other modules build upon it:
+Scenarios – scenarios are set up where you define changes to column values for a subset of input records. Learn more about scenarios in this Getting Started with Scenarios article.
+Maps – the layers that are drawn on maps use data pulled from the model’s input and output tables. Learn more about maps in this Getting Started with Maps article.
+Analytics – the source data for the graphs, charts, and tables that make up dashboards in the Analytics module comes from the model’s input and output tables. Learn more about analytics in this Getting Started with Analytics article.
+Leapfrog – Leapfrog lets you query and edit data using natural language. Learn more about Leapfrog in this Getting Started with Leapfrog AI article.
+A Cosmic Frog model is a Postgres database under the hood. Model databases use a specific schema called “Anura” that Cosmic Frog understands and can use with its multiple engines. You can learn more about Anura and the modeling schema in these articles on Anura Inputs and Anura Outputs.
+After the Quick Start section, this documentation starts with an overview of the components of the Data module and then gets into the details of the technology filter, tables list, and table grid. Multiple options for data transfer, how to filter a table, and additional menus and context menus are covered next. The document wraps up with an overview of available data validation tools, tips on configuring the data module based on your role, and best practices.
+Quick Start
+Follow these steps to get your first data into a model:
+Open the Data module from the Module menu (top left).
+Use the Technology Filter (top toolbar) to enable only the engine(s) you are building for — this narrows the tables and columns to what is relevant.
+Select a table from the list on the left to open it in the grid.
+Enter records by typing into the top (data entry) row, or import data in bulk via File > Import.
+Use a filter on any column(s) to check or narrow down what you have entered.
+Once your core tables are populated, run the Integrity Checker (Grid menu) to catch data issues before running the model.
+Pro tip
+For large or messy source data, Ada or DataStar can populate input tables from raw files using natural language or repeatable workflows — no manual entry required.
+Overview
+To open the Data module within Cosmic Frog, click on the Module menu’s hamburger icon, and select Data from the list:
+The layout of the Data module is as follows:
+The hamburger icon which opens the Module drop-down list.
+This database icon indicates the Data module is the active module.
+There are 3 menus available while in the Data module. We will cover each in more detail later in this documentation, but as a quick overview:
+Grid – lets you perform actions like copying, deleting, and aggregating records in the active table, which is the one that is showing in the center of the screen.
+Filter – to manage filters applied to the active table, options such as saving, duplicating, and removing filters are included in this menu.
+Geocode – this button is available when the Customers, Facilities, or Suppliers table is active and allows you to look up a location’s coordinates based on location information such as country, city, postal code, and/or address.
+Technology Filter – use this to only see the applicable tables and columns for the technology/technologies that are toggled on. For more details, see the Technology Filter section further down.
+The pane on the left-hand side shows the tables list. Details are covered in the next section.
+In the center of the Data module, the active table is shown in a grid. See the Table Grid section.
+A pane containing tools to help with entering and checking data is located on the right-hand side; it is collapsed in the screenshot, which is the default.
+The panes on the left and right can be expanded/collapsed using the chevron icons at the bottom of the panes. The grid in the center can be maximized/minimized and made full-screen by using the icons at its bottom right.
+Technology Filter
+The Technology Filter, in the top toolbar, controls which tables and columns are shown based on the technologies you are using. Each technology is run by its own engine and has its own icon in the filter:
+A colored icon = that engine is enabled; a grey icon = disabled.
+Click an icon to toggle it.
+A table or column shows if at least one enabled engine uses it, even if others do not.
+Example in the next 2 screenshots: with all engines enabled, the Facilities table shows both Initial State (used only by Neo) and Fixed Operating Cost (used by Neo and Triad). Disable everything except Throg and Dendro, and both columns disappear — neither engine uses them.
+As shown in the overview above, the list with tables that are present in the model is located on the left-hand side:
+There are 3 types of tables in a Cosmic Frog model, and they can be shown by using the icons at the top right of the tables list; the one that is selected is darker blue than the other 2:
+The square grid icon on the left will show the input tables
+The round grid icon in the middle will show the output tables
+The square grid with solid top half icon on the right will show the custom tables. By default, a Cosmic Frog model does not contain any custom tables; you can add them if needed, see the Grid Menu section.
+The list of tables itself is shown here:
+By default, tables are grouped into functional sections, such as sourcing and inventory. These sections can be collapsed/expanded by using the chevron icon to the left of the section’s name.
+The blue squares with white numbers indicate how many records a table contains; if a table does not have a blue square with a number associated with it, it is empty.
+This section above the tables list gives you options for configuring, searching, and sorting the list of tables. The next screenshot covers the options available here in more detail.
+The tables list pane can be collapsed/expanded by using the chevron icon at the bottom right of the pane.
+Note that right-clicking on a table brings up a context menu with many options from the File, Grid, and Filter menus. This context menu is covered in the Table Context Menu subsection.
+The following configuration options are available at the top of the tables list:
+Toggle “Show Populated Tables Only” to ON to hide all empty tables.
+Clicking on Visibility Options opens an additional form where Table/Column options can be configured, the next screenshot shows these.
+To quickly find a certain table in the list, type text contained in the table’s name into the Search box and the tables list will be filtered down.
+Use this icon to change the sort order of the tables. Options are:
+Default: grouped by function; both the sections and the tables within them are listed in order from most to least commonly used.
+A-Z Name: sorts alphabetically, first by functional section name and within the functional section alphabetically by table name. Selecting this option again reverts the sort.
+Collapse/Expand All: collapses or expands all functional sections with one click.
+Visibility Options
+The Visibility Options when opened for input tables are shown here:
+To have the form pop up, click anywhere on the Visibility Options line.
+The top section of the form pertains to Tables and has 1 option for Input tables:
+Show Scenario Indicators – ON: if any scenarios have been run and they resulted in any records being written to the Validation Error Report for the specific technology run, icons to the left of the table name(s) for which warning(s) were written are shown. See next screenshot for examples. Default: ON.
+The bottom section pertains to Columns and has 3 options for Input tables:
+Show Required Columns Only – ON: shows only the columns that must be populated for the enabled technologies to run successfully. Default: OFF.
+Show Populated Columns Only – ON: in each table in the list, all columns that only have blank values will be hidden. Default: OFF.
+Show Unsupported Columns – ON: columns that are already in the model’s Anura schema but not yet used/populated by any of Cosmic Frog’s technologies will be shown. Default: OFF.
+The number of visibility options that are turned on is shown in the blue square.
+Heads up
+Column specific settings are automatically applied to tables if there is a table-level equivalent. For example, if Show Populated Columns Only is ON, this also means that only populated tables are shown and empty tables are hidden. Same goes for Show Required Columns Only and Show Unsupported Columns.
+In addition to the visibility options listed under bullets 2 and 3 above, there is an additional output table-specific one:
+Hide Zero Columns – ON: columns where the only value for all records in the table is 0 will be hidden. Default: OFF.
+This table shows which of the visibility options are available for which table type(s):
+Heads up
+When an option that is available to more than 1 table type is changed for 1 type, it is also changed for the other type(s) – i.e. these are global settings. For example, if you switch the Show Unsupported Columns option to ON for output tables, it is also turned on for input tables.
+Next, we have a look at the scenario indicators mentioned under bullet 2b above:
+The Facilities table has a blue scenario indicator with it.
+Hovering over the indicator brings up a tooltip which states there was a validation issue related to this table reported in at least 1 scenario. The highest severity of any errors is stated too, which is 1 (minor) here. The severity range for scenario errors if from 0 (lowest) to 3 (highest).
+Clicking on this pop-out icon will open the Scenario Errors pane on the right-hand side of the screen. On that pane, you can dig into the details of the reported scenario errors more and from there can optionally open the Validation Error Report output table the error is listed in. See also the Understanding the Validation Error Report article.
+Using the Technology Filter and Visibility Options Together
+The Technology Filter and Visibility Options both control which tables and columns are shown, and they combine — only tables/columns that satisfy every active filter appear.
+For example, with only Neo enabled and Show Required Columns Only, Show Populated Tables Only, and Show Populated Columns Only all ON: the tables list shows only tables that are both required for Neo and populated, and each grid shows only columns that are both required for Neo and populated. Because these filters combine, a table or column that is genuinely required for Neo could still be hidden if it is not populated yet — worth remembering when something seems to be missing.
+For the recommended filter settings at each stage of building a model, see Build in Stages under Best Practices.
+If you cannot find a table or column you expect to see, clear everything that could be hiding it:
+Enable all technologies in the Technology Filter
+Turn off Show Populated Tables Only, Show Required Columns Only, Show Populated Columns Only, and Hide Zero Columns
+Use Expand All at the top of the Tables list
+Use the search box at the top of the Tables list, or in the Choose Columns option in the grid
+Table Grid
+When tables are opened, they are shown in the grid in the center part of the Cosmic Frog UI. This screenshot gives an overview of the grid; we will cover more details of each part in later sections with more screenshots:
+Multiple tables can be open simultaneously, clicking on a table’s tab makes it the active table which is then shown in the grid below.
+The table’s column names are shown at the top of the grid.
+In the first row, which has a darker background color, you can manually enter data into the table, which is covered in more detail in the Getting Data In and Out section.
+The data already present in the table is located here; this screenshot shows 7 records. Note that the background color for input tables and custom tables is light whereas for output tables it is darker to distinguish the read-only element of output tables.
+Table Tabs
+As seen in the previous screenshot, the tabs of the tables that are open can be seen at the top of the grid:
+The tab of the active table is white; tabs of other tables have a darker color.
+From the icons located on the right side of the tab you can tell the type of table:
+Square grid, evenly colored – input table
+Round grid – output table
+Square grid, solid upper half – custom table
+If a table name is not shown completely, you can hover over it to bring up a blue tooltip showing the entire name.
+To close tables:
+To close an individual table, click on the cross icon all the way right on the table’s tab.
+To close all but one table, right-click on the tab of the table that needs to stay open and then select Close other Tabs.
+Columns and their Options
+We can learn a lot about a column by hovering over its name to bring up a tooltip:
+From top to bottom the tooltip, shown for Unit Price on the Products table, contains:
+Name – repeats the name of the column.
+Technology – which technology/technologies use(s) this column. If a technology does not use the column, its values are ignored during any model runs.
+Description – explains how the column is used in plain English.
+DefaultValue (input tables only) – when a value is not entered, this value will be used when the model is run.
+Primary Key – True if the column is part of the table’s primary key; False if it is not. A table’s primary key is 1 column or a set of columns that uniquely identifies every row in the table.
+When looking at the column headers, we see:
+Columns that are part of the primary key of the table are bold and have a key icon to the left of their name.
+Columns are separated by a vertical bar, see also the next screenshot.
+There is a filter icon, which when clicked on will bring up a form to configure filters on the table based on the values in this column. Learn more about table filters in the Filtering a Table section further down.
+This icon with 3 vertical dots or right-clicking anywhere on the column header will bring up a context menu containing options such as sorting, pinning, auto-sizing, and choosing columns. All options available here are shown in a screenshot a bit further down in this section.
+Resizing columns: when hovering over the vertical bar, the cursor changes to 2 arrows pointing away from each other. Now you can drag the column separator to resize the columns; drop it when the desired width is reached:
+Re-ordering columns: you can drag and drop columns to change their order in the grid. The move symbol will be showing when you are moving the column around:
+Freezing panes: you can pin 1 or multiple columns to the left or right of the grid, so they stay visible when scrolling. Drag and drop the column all the way left or right, until the pin icon appears next to the column name, then drop the column:
+To unfreeze/unpin: drag and drop the column until the pin icon disappears.
+Sorting by individual columns: clicking on a column once will sort it in ascending order and an arrow pointing upwards will appear next to the column name. Clicking on it again will sort it in descending order, and the arrow will now point downwards. Clicking a third time will remove the sort and the arrow.
+Sorting by multiple columns: click once or twice on the first column to sort by, then holding Ctrl+Shift down, click once or twice on the second column to sort by, etc. The sorted columns will again show arrows pointing up or down indicating the sort order, and now they will also have a number which indicates the order in which the columns were sorted:
+Options from the context menu:
+From top to bottom:
+Add Custom Column: if there is data external to the model that would be good to add to a particular table, for example to filter or sort on, 1 or multiple custom columns can be added to hold this data. Note that you cannot apply scenario items to custom columns and they are not read by the engines when running a model either. Note that if a table contains any custom columns, additional options of Edit Custom Column and Delete Custom Column become available in this list too.
+Sort Ascending: alternative way to sort a table ascendingly by the selected column. If already sorted in ascending order, the option changes to Sort Descending, and the next option to Clear Sort.
+Sort Descending: alternative way to sort a table in descending order by the selected column. If already sorted in descending order, the option changes to Clear Sort.
+Pin Column: alternative way to pin and unpin a column.
+Autosize This Column: automatically sizes the column based on the length of the column’s name and its values.
+Autosize All Columns: automatically sizes all columns based on the length of each column’s name and its values.
+Group by <ColumnName>: you can group by one or multiple column names to aggregate data, see this article on row grouping, aggregation, and pivoting for more details.
+Choose Columns: brings up a form where you can quickly configure which columns are shown in the grid and allows them to re-order them as well. See next screenshot below.
+Reset Columns: unhides any columns that were hidden and puts all columns in the original order.
+Bulk Update this Column (input and custom tables only): change the value of this column for all (filtered) records to one specific value. See second screenshot below.
+Switch to Set Filter: there are 2 types of filters that can be applied to a column, called Default and Set. This option lets you switch between those 2. See the Filtering a Table section for details on filtering, Default filters, and Set filters.
+When selecting Choose Columns from the context menu, the following form comes up:
+To enable or disable all columns simultaneously, use this checkbox.
+To find specific columns quickly, use the search box to find columns with certain text in their names.
+A column with the checkbox enabled will be shown in the grid; those with disabled checkboxes will be hidden.
+To move a column up or down in the list (resulting in moving it left or right in the grid), put the cursor on top of this 4x3 dotted grid to the left of the column’s name, and drag and drop the column.
+When a column is being moved it looks like this. The line indicates where the column will be located if it is dropped now.
+When done configuring the columns, click on the cross at the right top to close the form.
+Note that if not all columns are visible, you can resize this form by clicking on a corner and dragging it.
+When selecting Bulk Update this Column from a column’s context menu, the following pane opens on the right-hand side:
+The Column Name will by default be that of the column from which the bulk update option was selected. You can however change it to another column present in the table by using the drop-down list.
+Enter the value the (filtered) records should be updated to. If the column has a drop-down list with available options, it will automatically appear.
+You can hit Update when ready to make the update or otherwise choose Cancel if not wanting to proceed with any changes.
+Getting Data In and Out
+Bulk Import and Export
+For more than a few records, use one of these bulk options instead of manual entry (covered below):
+Ada is Optilogic’s agentic AI. Use it on the next generation Optilogic platform or through AI agents such as Claude, ChatGPT, Copilot, Mistral, or Grok via the Optilogic MCP Connector. For example, you can attach raw data and ask Ada to populate a model’s input tables.
+DataStar
+DataStar is Optilogic’s AI-powered data product in which you can build repeatable workflows which take care of importing, cleansing, and transforming data into the Anura format for use in Cosmic Frog models. Automated output analysis workflows can be set up too. Learn more about DataStar in the Navigating DataStar section on the Help Center.
+Using Postgres Queries
+A Cosmic Frog model is a Postgres database under the hood, which uses the Anura schema. You can use SQL queries to transform their raw data into the Anura schema and populate a model’s input tables in this way. One option is to use the SQL Editor application available on the Optilogic platform.
+Similarly, queries can be used to examine, summarize, and aggregate results of scenario runs which are present in a model’s output tables.
+Manual Entry, Editing, and Copying
+This section covers data entry, editing, and removal done purely by hand; the Grid Menu section further down contains several options to speed some of these actions up.
+Note that following sections only apply to input and custom tables, since output tables are read-only. The only exception is the Copying Data section, which also applies to output tables.
+Entering Data Manually
+In an open input table, the top record which has a darker color can be used to enter records manually:
+Put the cursor in a cell of the top record for data entry and type the desired value in or paste a copied value in using Ctrl+V. Use Tab to go to the cell to the right.
+Either hit Enter or click on the plus-icon to the left of the data entry record to commit the record to the input table.
+For columns where the value needs to be one of a specific list of values, a drop-down list will automatically appear when you move the cursor to the cell. You can use the up/down arrows to choose the desired value and use Tab to select it and move to the next cell or Enter to select it and commit the record.
+The committed record appears in the grid below the data entry row, which clears for the next record:
+When starting to type in a column that needs to have a value that exists in another table, the options containing the typed text will automatically be populated in a dynamic drop-down list – it is updated as you type more characters. This will contain entity names (e.g. Facility Name or Customer Name), group names (see explanation in the Grid Menu section), and table filter names (see the Named Filters in Cosmic Frog article) based on the allowed entity/entities for the column.
+Pasting Data
+Single cell or single row:
+Ensure the order of the columns of the data to be copied matches the input table where the data will be pasted into
+Copy the value(s) from the source
+Select the leftmost cell of the input table to paste the data into, by left-clicking on it
+Do this in the top data entry row to append this as a new record
+Do this in an existing record to overwrite the data of this record
+Use Ctrl+V to paste
+Alternatively for steps 3 and 4: right-click on the leftmost cell and choose Paste from the context menu
+Data for multiple columns and/or rows can also be pasted from for example an Excel file if it is in the right format, including the order of the columns:
+In an empty input table: copy the data in Excel, then right-click on the top data entry row and choose Paste.
+To overwrite data in a populated input table: select the right number of cells in the correct order in the Excel file, copy them, and select a same size area in already existing records in the input table to be overwritten, then paste (either use Ctrl+V or right-click > Paste).
+Note that pasting multiple records as new records (i.e. to append) in an already populated table does not work. In general, using the Import/Export options under the File menu is recommended over manually pasting in more than one record as it is less error-prone.
+Editing Data
+To edit data, you can go into the cell to be edited and manually change the value or use the steps from the previous section to update the data by pasting the new values in from another source.
+If you are changing the values of fields that can be used by other input tables, you will be prompted if you want to update this value in any dependent tables too. Choose Continue with Cascade if so; otherwise choose Change Master Only.
+Copying Data
+Copying data is simply done by selecting the cells to be copied and using Ctrl+C. Options to include headers when copying are available from the Grid menu and the right-click context menu, see the Grid Menu section which follows this one.
+Use your cursor to select 1 or multiple cells. You can select multiple cells by drawing a box around the ones you want to select; for discontinuous selections, hold down the Ctrl key while selecting cells.
+A count at the bottom of the grid tells you how many cells are selected.
+Deleting Data
+Options for deleting cell contents and entire rows include:
+Select a single cell or multiple holding down the Ctrl key and then use the Delete key to remove the contents of the selected cell(s).
+Select a single row or multiple by their checkboxes and then use the Ctrl+Alt+T shortcut to delete them.
+Filtering a Table
+Filter a table on one or more columns to show a subset of its records. Filters can be saved as Named Filters for reuse in the same table, as dynamic groups, and as conditions in scenario items and maps (see Named Filters in Cosmic Frog). This section covers building and applying filters.
+When you click on the filter icon to the right of the column name, the following filter configuration form comes up:
+At the top there is a drop-down list with options on how to filter on the values present in this column. See the full list of options for both text-based and numeric columns in the next 2 screenshots.
+In this textbox, you type the condition the filtered records need to match.
+The 4 buttons at the bottom of the form:
+Cancel – if a filter has been applied previously and changes are being made to it after re-opening the form, hitting Cancel will revert to the filter as last applied. This undoes the changes made to the filter after re-opening the form. The filter form will be closed.
+Reset – removes all specified filter conditions on this column and closes the filter form.
+Clear – removes all specified filter conditions on this column and reverts the top drop-down to the default of Contains (Equals for numeric columns); keeps the filter form open.
+Apply – applies the specified filter and closes the filter form.
+The next 2 screenshots show the filtering condition options for text-based columns (top) and numeric columns (bottom):
+Once a filter condition has been entered, Begins with “Mich” in the screenshot below, the form automatically adds fields to allow you to add another filtering condition. You can choose if these conditions should be treated as AND or OR. Once one is chosen, it will be applied for all following conditions too.
+AND: choose AND when only records that meet all the conditions should be shown.
+OR: choose OR when records that meet any (1 or multiple) of the conditions should be shown.
+In the screenshot below, the filter is on the Region column in the Customers table. The filter reads “Region Begins with Mich OR Region Begins with Oh”. Since the values of the Region column are the names of US States, the filter should result in showing records where the region is either Michigan or Ohio.
+After applying the filter, the Customers table looks as follows:
+There are multiple indications a filter has been applied:
+The number of rows that is shown out of the total in the table is printed here. In our example 40 of a total of 1,333 records match the filter.
+At the right top of the table, a Region tag indicates a filter is applied to this column. You can click on the cross inside the tag to remove the filter from the Region field. When multiple filters are applied to different columns, you can click on the crossed out filter icon on the right to remove all filters with one click.
+The filter icon to the right of the Region column name is colored blue instead of black.
+We see that indeed only records where the region is Michigan or Ohio are now showing in the grid.
+Filters can be applied to multiple columns in a table; these work as an AND statement: only records that match all filters will be shown. In the next 2 screenshots the filtered table from the previous screenshot is used, and an additional filter is added to the Customer Name column: Customer Name Contains “CZ2” or Customer Name Contains “CZ3”:
+After applying the filter, we see the same indicators that filters have been applied, plus the resulting records:
+Now only 8 records match all filters,
+Both Customer Name and Region filter tags are at the right top of the table.
+For both fields, the filter icon is blue.
+We see that only customers containing CZ2 or CZ3 which are located in either Michigan or Ohio are shown.
+What we have discussed above uses what is called the Default filter. Besides this filter, we can instead also use a Set filter, where values can be enabled and disabled by checkboxes – especially useful for cases where there are several distinct values present. The last option in a column’s context menu allows you to switch to the Set filter:
+Click on the icon with 3 vertical dots to open the context menu.
+Choose “Switch to Set Filter”.
+Now, when clicking on the filter icon next to the column’s name (Product Name on the Customer Demand table here), the following filter form comes up:
+Should the list of values be long, the search box can help to quickly find the value(s) of interest.
+Use the select all option to check and uncheck the checkboxes of all values in one click.
+You can check and uncheck the boxes of the individual values to indicate which ones should be shown.
+Click on Apply when ready to apply filter; click on Cancel if deciding not to apply a filter at this time.
+A convenient way to quickly set up filters on multiple columns in a table is to use the Filters fold-out pane on the right-hand side of a table:
+Click on Filters on the right-hand side of the table to open the pane.
+Use the search box to quickly find the column(s) to filter on.
+Collapse/expand the columns as desired, e.g. keep them all collapsed except the ones you are applying filters to.
+For the Product Name column, we have switched to the Set filter option prior to opening the Filters pane and we are choosing to filter for records where the product name is Rockets.
+In addition, the table will also be filtered for records where the value of the Quantity column is greater than or equal to 1,000.
+Clicking on the Filters pane again folds it back in. After applying the filters shown in the previous screenshot, the Customer Demand table looks as follows. The same indicators that filters are present can be seen and we do indeed only see records for Rockets with quantities of at least 1,000:
+Finally, we have a look at the Filter menu and its options:
+When Show Filters is chosen, a Named Filters panel to the right of the table will be shown. This is also covered in the Help Center article linked in the previous bullet.
+To quickly remove filters from all tables or the active table, use these 2 options.
+The Show Input Data Errors option creates a special filter named ERRORS and filters out records in the input table it is applied to that have errors in the input data. For more details see the Input Data Errors section in the Named Filters article.
+Grid Menu
+Next, we will cover the options available under the Grid menu. Please note that:
+these overlap with many of the options in the context menu that comes up when right-clicking on a grid. This grid context menu will be covered in the next section.
+for output tables, several options in the Grid menu and its sub-menus are automatically greyed out. This is because output tables are read-only.
+When clicking on the Grid menu, the following options are shown:
+Click on the Grid menu to open its drop-down.
+From top to bottom the options available are:
+Table – folds out to more options that apply to the whole table, see next screenshot.
+Rows – folds out to more options that apply to the (selected) records, see screenshot further below in this section.
+Groups – folds out to more options to create and replace groups, see screenshot further below in this section.
+Aggregation - folds out to more options to summarize data at the bottom of the grid, see screenshot further below in this section.
+Data Entry Helper – this opens the Data Entry Helper pane to the right of the grid. When you select a cell in the grid that can have a finite number of values, the data entry helper pane shows all these possible values, and you can select the one to use for the cell.
+Run Integrity Checker (All Tables) and Run Integrity Checker (Selected Table) – the Integrity Checker tool can check 1 or multiple input tables of a model for data issues such as referential integrity, incorrect values, etc. To learn more, please see Cosmic Frog’s Integrity Checker Help Center article.
+When selecting Table from the Grid menu, a sub-menu with 5 options folds out:
+From top to bottom:
+Add Custom Column - if there is data external to the model that would be good to add to a particular table, for example to filter or sort on, 1 or multiple custom columns can be added to hold this data. Note that you cannot apply scenario items to custom columns and they are not read by the engines when running a model either. The next screenshot shows the Add Custom Column pane that opens on the right of the grid when choosing this option.
+New Custom Table – similar to a custom column under the previous bullet, a custom table can hold data that is not used by any model runs but can be helpful for creating dashboards or looking up data for example. Creating a custom table works like adding a custom column: after naming your custom table, you just repeat adding custom columns until all the required ones have been added.
+Create Lookup –with this feature, you can add values from a column in one input table to a column in another input table based on matching values in other columns on the source and destination table. This is the equivalent of performing a SQL Update statement that contains a Join.
+Clear Table – this option can be used to delete all (filtered) records from the active table. You will be prompted to confirm they want to delete X amount of (filtered) rows.
+Copy Name – copies the name of the table to the clipboard.
+Choosing the Add Custom Column option brings up the following pane to the right of the grid:
+Column Name - specify the name of the custom column.
+Pseudo Typed – when ON, the column is stored with the specified data type in a view with the same name as the table suffixed with _typed in the database, while the column is stored with data type of text in the table itself. Recommended to keep this option set to ON.
+Data Type – specify what data format the column’s values will be.
+Key Column – set to ON when the column is part of the table’s primary key; leave at the default of OFF otherwise.
+Add/Cancel – when ready to add the column, click on Add. Otherwise click on Cancel to not add a column at this time.
+When selecting Rows from the Grid menu, a sub-menu with 4 options folds out:
+From top to bottom:
+Add Row – puts the cursor in the first cell of the data entry row at the top of the grid.
+Duplicate All Rows – copies all rows and adds them to the grid as new rows. This includes rows which are not shown in case any filters are applied. A Duplicate pane on the right of the grid will open where you need to choose a column and set its value for the copied rows, so they are not exact duplicates of the originals. See also the “Duplicate Selected Rows” example in the Grid Context Menu section below.
+Duplicate Selected Rows – copies the rows that have been selected by checking their checkbox to the left of the record. The Duplicate pane to select a column and set its value so the copied records are not exact duplicates of the originals comes up in this case too.
+Delete Row – removes the selected rows from the table immediately.
+Heads up
+When using Delete Row, the selected row(s) are immediately removed from the table, you are not first asked to confirm. This action cannot be undone.
+When selecting Groups from the Grid menu, a sub-menu with 2 options folds out:
+From top to bottom:
+Create Group – creates a new group with the (filtered) records of the table as members. It brings up a Create Group pane to the right of the grid, see next screenshot.
+Replace Group – overwrites an existing group with the (filtered) records of the table as the new members. It brings up a Replace Group pane to the right of the grid where you can choose the group to replace from a drop-down list of groups.
+This screenshot shows Create Group pane that opens when choosing the Create Group option:
+Group Name – enter the name for the new group here
+Group Type – choose the type of group here, the drop-down list will contain the options based on the table you are on. In this case, Periods is the only option as the group is created on the Periods table. For a group created on the Facilities table for example, Group Type would include Facilities, but also Sources and Destinations as options.
+Create/Cancel – when ready to create the group, click on Create. Otherwise, click on Cancel to not create a new group at this time.
+Message – a message indicates how many new records will be created in the Groups table.
+When selecting Aggregation from the Grid menu, a sub-menu with 4 options folds out:
+Aggregation shows the minimum (Min), average (Avg), summed (Sum), or maximum (Max) values of each numeric column in the (filtered) records at the bottom of the grid
+This screenshot shows an example of a filtered grid that has the “sum columns” aggregation option turned on:
+This Optimization Flow Summary output table is filtered for Scenario Name = No Flow Constraints, Flow Type = Customer Fulfillment and Origin Name = Salt Lake City DC.
+The sum columns aggregation has been turned on and this sum symbol at the bottom left of the grid is a visual indication.
+Two numerical columns are shown with their summed total of the 273 filtered rows shown at the bottom of the grid.
+Grid Context Menu
+Right-clicking the grid brings up a context menu with most of the options from the Grid menu (covered in the previous section). The differences are highlighted in the next screenshot:
+This context menu has an additional Columns entry with 2 options (input and custom tables only):
+Add Custom Column – this option is available under the Table option in the Grid menu and can be used to add a user-defined column to the currently active table. For an example, see the Grid Menu section above.
+Bulk Update this Column – use this to update all values of all (filtered) rows for one column to the same value. For an example, see the Columns and their Options section above.
+Additional copy and paste options are available here, from top to bottom:
+Copy (Ctrl+C) – copies the selected cell(s) to the clipboard.
+Copy with Headers and Copy with Group Headers – both copy the selected cell(s) with their column names to the clipboard. On tables that use Pivot Mode (see Cosmic Frog Data Tables – Row Grouping, Aggregation, and Pivoting), only Copy with Group Headers includes the top-level columns, so it is the better default there.
+Paste (Ctrl+V) (input and custom tables only) – pastes the contents of the clipboard into the selected cell(s). Ensure the shape of the number of selected cell(s) matches those of the copied contents (e.g. same number of cells across and same number of cells down).
+The next 3 screenshots show how Duplicate Selected Rows works. It is selected via the grid’s right-click context menu here but works the same when chosen from the Grid menu. Our aim is to duplicate 5 records on the Customer Demand table.
+Enable the checkboxes of the rows to be duplicated.
+Right-click on the grid and choose Rows > Duplicate Selected Rows.
+This brings up the Duplicate pane to the right of the grid:
+Column Name – select the column that will have a different value in the copied row as compared to the value of the original row that is being copied. By default, the column that was right clicked on will be selected, but you can change this.
+Column Value – enter the value the duplicated rows should have for this column. We are changing the Period Name from Period1 (in the original records) to Period2 (in the duplicated records) here.
+Update/Cancel – click on the Update button when ready to duplicate the rows or otherwise on Cancel to not duplicate any rows at this time.
+The resulting duplicated rows are shown in this screenshot:
+We have filtered the table for Period Name = Period2.
+The 5 duplicated records are shown in the grid. Except for Period Name, the values of all other columns of these records are the same as those of the original records.
+Pro tip
+Often you will want to have multiple columns in the duplicated records to have different values from the original records (e.g. Status, Notes, Period Name, a cost number, etc.). A quick way to achieve this is to choose the Notes field as the Column Name on the Duplicate pane to essentially tag the duplicated records. Next, you can filter the table on the Notes field and use the Bulk Update this Column functionality to update the other columns that need to have different values.
+Geocode Button
+The Geocode button is only available on the Customers, Facilities, and Suppliers input tables. Based on location information, such as Address, City, Region, and Country entered into these tables, the geocoding provider looks up a location’s latitude and longitude and saves those in the table. These can be used to draw locations in the correct location on a map and for distance calculations.
+Consider the following Customers table:
+These customers do have city, region, and country specified, but do not yet have a latitude and longitude associated with them.
+Click on the Geocode button to start looking up the coordinates for these locations.
+By default, the MapBox geoprovider will be used to look up coordinates. You are prompted to indicate if you only want to get results where MapBox finds a 100% match. When this option is left unchecked, the best match (closest to 100%) will be used in case a 100% match is not found:
+Once the geocoding is finished, the latitude and longitude columns of these records are populated:
+Note that Geoproviders other than MapBox can be configured to be used for geocoding and distance lookups, see the Using Alternate Geocoding Providers Help Center article.
+Table Context Menu
+Right-clicking on a table in the Tables list brings up a context menu which contains the options we have already seen and covered above from the File, Grid, and Filter menus that are applicable to the table. Again, multiple options that do not apply to output tables are automatically greyed out in this context menu.
+From top to bottom:
+Table – fold-out menu has the same options as the Grid menu > Table option does.
+Rows – fold-out menu has 2 options which are also part of the Grid menu > Rows options: Duplicate All Rows and Duplicate Selected Rows.
+File – fold-out menu has the same options as the File menu does.
+Filters – fold-out menu has the same options as the Filter menu does.
+Groups – fold-out menu has the same options as the Grid menu > Groups option does.
+Aggregations – fold-out menu has the same options as the Grid menu > Aggregation option does.
+Data Entry Helper – opens the Data Entry Helper pane, same as the Grid menu > Data Entry Helper option does.
+Geocode – looks up coordinates for locations that do not have any yet when on the Customers, Facilities, or Suppliers table, same as the Geocode button in the toolbar does.
+Run Integrity Checker (All Tables) and Run Integrity Checker (Selected Table) – runs the Integrity Checker tool, same as selecting these options from the Grid menu does.
+Data Validation Tools
+There are several tools within Cosmic Frog which can help find problems with the model’s data and overall construction. The table below gives an overview of how these tools compare to each other to help you choose the most suitable one for your situation:
+These Help Center articles contain more details on some of these tools:
+Technology Filter: the engine(s) the scenarios run against
+Uses Status + Notes fields on input tables to include/exclude the correct scenario-specific records (see the Scenarios article)
+Relies on Named Filters (Filter menu) to facilitate scenario item creation and filtering of map layers for specific subsets of records
+Reviewer / Business Stakeholder (checking outputs, not building)
+Technology Filter: all engines enabled, to see everything
+Show Populated Tables Only, Show Populated Columns Only, and Hide Zero Columns: ON — cuts the noise down to what has data
+Uses Grid > Aggregation (Sum/Avg) to sanity-check totals and the Row Grouping/Aggregation/Pivoting features to slice and dice data as desired without leaving the grid
+Best Practices
+A few habits make working in the Data module faster and your models easier for others (or future you) to pick up.
+Build in stages, not all at once
+Set the Technology Filter to only the engine(s) you are building for.
+Turn on Show Required Columns Only and populate just the minimum inputs needed for a run.
+Once that runs successfully, turn Show Required Columns only off and expand into the other tables your analysis needs.
+When the model is complete, turn on Show Populated Tables Only and Show Populated Columns Only to review it with the noise cut out.
+This avoids the common trap of populating dozens of tables before confirming the model even runs.
+Use Status and Notes fields deliberately Most input tables include Status and Notes columns. Rather than deleting records you might need later, set Status = Exclude and tag them with a Notes value (e.g., a scenario name or a data source). This keeps your baseline data intact while letting you filter, bulk-update, or scenario-toggle those records later. See the Scenarios article for how this pattern powers scenario items.
+Save filters as Named Filters, do not recreate them If you find yourself typing the same filter condition more than once — on a table, a scenario item, or a map layer — save it as a Named Filter instead. It is pre-validated, reusable across the model, and shows a record-count preview so you can confirm it is selecting what you expect. See Named Filters in Cosmic Frog.
+Validate early, not just before a run Do not wait until a model fails to run to check your data. Run the Integrity Checker (Grid menu) after any significant data load or edit, not only at the end. Catching an issue right after an import is far faster to fix than tracing it back after a failed solve. See Cosmic Frog's Integrity Checker and the Data Validation Tools section above for guidance on choosing the right tool.
+Prefer bulk tools over manual entry for anything beyond a few rows Pasting or typing in more than a handful of records is error-prone and does not scale. Use File > Import for structured Excel/CSV files, Ada or DataStar for messier source data and repeatable workflows, or a Postgres query via the SQL Editor when you need to transform data into the Anura schema.
+Use custom columns to stage data, not to feed the model Custom columns are a convenient place to keep source values, growth factors, or notes external to the model — but remember they are not read by any engine and cannot be used in scenario items. If a value needs to affect a model run, it needs to live in a real Anura column, even if a custom column feeds into it via a scenario item's Actions field.
+Pro tip
+Combine a custom column with a scenario item to apply calculated changes without hand-editing every record — for example, a growth_pct custom column on Customer Demand referenced in an Actions field like quantity = quantity * (1 + (growth_pct / 100)).
+Happy modeling! As always, please contact our Support team at support@optilogic.com for any questions or feedback.
+The Data module in Cosmic Frog is where all model inputs and outputs live. Here you can enter, import, export, review, filter, aggregate, edit, and delete data.
+The data contained in the Data module is essential to a Cosmic Frog model as the input data is used when the model is run and therefore determines the outcomes. Additionally, all other modules build upon it:
+Scenarios – scenarios are set up where you define changes to column values for a subset of input records. Learn more about scenarios in this Getting Started with Scenarios article.
+Maps – the layers that are drawn on maps use data pulled from the model’s input and output tables. Learn more about maps in this Getting Started with Maps article.
+Analytics – the source data for the graphs, charts, and tables that make up dashboards in the Analytics module comes from the model’s input and output tables. Learn more about analytics in this Getting Started with Analytics article.
+Leapfrog – Leapfrog lets you query and edit data using natural language. Learn more about Leapfrog in this Getting Started with Leapfrog AI article.
+A Cosmic Frog model is a Postgres database under the hood. Model databases use a specific schema called “Anura” that Cosmic Frog understands and can use with its multiple engines. You can learn more about Anura and the modeling schema in these articles on Anura Inputs and Anura Outputs.
+After the Quick Start section, this documentation starts with an overview of the components of the Data module and then gets into the details of the technology filter, tables list, and table grid. Multiple options for data transfer, how to filter a table, and additional menus and context menus are covered next. The document wraps up with an overview of available data validation tools, tips on configuring the data module based on your role, and best practices.
+Quick Start
+Follow these steps to get your first data into a model:
+Open the Data module from the Module menu (top left).
+Use the Technology Filter (top toolbar) to enable only the engine(s) you are building for — this narrows the tables and columns to what is relevant.
+Select a table from the list on the left to open it in the grid.
+Enter records by typing into the top (data entry) row, or import data in bulk via File > Import.
+Use a filter on any column(s) to check or narrow down what you have entered.
+Once your core tables are populated, run the Integrity Checker (Grid menu) to catch data issues before running the model.
+Pro tip
+For large or messy source data, Ada or DataStar can populate input tables from raw files using natural language or repeatable workflows — no manual entry required.
+Overview
+To open the Data module within Cosmic Frog, click on the Module menu’s hamburger icon, and select Data from the list:
+The layout of the Data module is as follows:
+The hamburger icon which opens the Module drop-down list.
+This database icon indicates the Data module is the active module.
+There are 3 menus available while in the Data module. We will cover each in more detail later in this documentation, but as a quick overview:
+Grid – lets you perform actions like copying, deleting, and aggregating records in the active table, which is the one that is showing in the center of the screen.
+Filter – to manage filters applied to the active table, options such as saving, duplicating, and removing filters are included in this menu.
+Geocode – this button is available when the Customers, Facilities, or Suppliers table is active and allows you to look up a location’s coordinates based on location information such as country, city, postal code, and/or address.
+Technology Filter – use this to only see the applicable tables and columns for the technology/technologies that are toggled on. For more details, see the Technology Filter section further down.
+The pane on the left-hand side shows the tables list. Details are covered in the next section.
+In the center of the Data module, the active table is shown in a grid. See the Table Grid section.
+A pane containing tools to help with entering and checking data is located on the right-hand side; it is collapsed in the screenshot, which is the default.
+The panes on the left and right can be expanded/collapsed using the chevron icons at the bottom of the panes. The grid in the center can be maximized/minimized and made full-screen by using the icons at its bottom right.
+Technology Filter
+The Technology Filter, in the top toolbar, controls which tables and columns are shown based on the technologies you are using. Each technology is run by its own engine and has its own icon in the filter:
+A colored icon = that engine is enabled; a grey icon = disabled.
+Click an icon to toggle it.
+A table or column shows if at least one enabled engine uses it, even if others do not.
+Example in the next 2 screenshots: with all engines enabled, the Facilities table shows both Initial State (used only by Neo) and Fixed Operating Cost (used by Neo and Triad). Disable everything except Throg and Dendro, and both columns disappear — neither engine uses them.
+As shown in the overview above, the list with tables that are present in the model is located on the left-hand side:
+There are 3 types of tables in a Cosmic Frog model, and they can be shown by using the icons at the top right of the tables list; the one that is selected is darker blue than the other 2:
+The square grid icon on the left will show the input tables
+The round grid icon in the middle will show the output tables
+The square grid with solid top half icon on the right will show the custom tables. By default, a Cosmic Frog model does not contain any custom tables; you can add them if needed, see the Grid Menu section.
+The list of tables itself is shown here:
+By default, tables are grouped into functional sections, such as sourcing and inventory. These sections can be collapsed/expanded by using the chevron icon to the left of the section’s name.
+The blue squares with white numbers indicate how many records a table contains; if a table does not have a blue square with a number associated with it, it is empty.
+This section above the tables list gives you options for configuring, searching, and sorting the list of tables. The next screenshot covers the options available here in more detail.
+The tables list pane can be collapsed/expanded by using the chevron icon at the bottom right of the pane.
+Note that right-clicking on a table brings up a context menu with many options from the File, Grid, and Filter menus. This context menu is covered in the Table Context Menu subsection.
+The following configuration options are available at the top of the tables list:
+Toggle “Show Populated Tables Only” to ON to hide all empty tables.
+Clicking on Visibility Options opens an additional form where Table/Column options can be configured, the next screenshot shows these.
+To quickly find a certain table in the list, type text contained in the table’s name into the Search box and the tables list will be filtered down.
+Use this icon to change the sort order of the tables. Options are:
+Default: grouped by function; both the sections and the tables within them are listed in order from most to least commonly used.
+A-Z Name: sorts alphabetically, first by functional section name and within the functional section alphabetically by table name. Selecting this option again reverts the sort.
+Collapse/Expand All: collapses or expands all functional sections with one click.
+Visibility Options
+The Visibility Options when opened for input tables are shown here:
+To have the form pop up, click anywhere on the Visibility Options line.
+The top section of the form pertains to Tables and has 1 option for Input tables:
+Show Scenario Indicators – ON: if any scenarios have been run and they resulted in any records being written to the Validation Error Report for the specific technology run, icons to the left of the table name(s) for which warning(s) were written are shown. See next screenshot for examples. Default: ON.
+The bottom section pertains to Columns and has 3 options for Input tables:
+Show Required Columns Only – ON: shows only the columns that must be populated for the enabled technologies to run successfully. Default: OFF.
+Show Populated Columns Only – ON: in each table in the list, all columns that only have blank values will be hidden. Default: OFF.
+Show Unsupported Columns – ON: columns that are already in the model’s Anura schema but not yet used/populated by any of Cosmic Frog’s technologies will be shown. Default: OFF.
+The number of visibility options that are turned on is shown in the blue square.
+Heads up
+Column specific settings are automatically applied to tables if there is a table-level equivalent. For example, if Show Populated Columns Only is ON, this also means that only populated tables are shown and empty tables are hidden. Same goes for Show Required Columns Only and Show Unsupported Columns.
+In addition to the visibility options listed under bullets 2 and 3 above, there is an additional output table-specific one:
+Hide Zero Columns – ON: columns where the only value for all records in the table is 0 will be hidden. Default: OFF.
+This table shows which of the visibility options are available for which table type(s):
+Heads up
+When an option that is available to more than 1 table type is changed for 1 type, it is also changed for the other type(s) – i.e. these are global settings. For example, if you switch the Show Unsupported Columns option to ON for output tables, it is also turned on for input tables.
+Next, we have a look at the scenario indicators mentioned under bullet 2b above:
+The Facilities table has a blue scenario indicator with it.
+Hovering over the indicator brings up a tooltip which states there was a validation issue related to this table reported in at least 1 scenario. The highest severity of any errors is stated too, which is 1 (minor) here. The severity range for scenario errors if from 0 (lowest) to 3 (highest).
+Clicking on this pop-out icon will open the Scenario Errors pane on the right-hand side of the screen. On that pane, you can dig into the details of the reported scenario errors more and from there can optionally open the Validation Error Report output table the error is listed in. See also the Understanding the Validation Error Report article.
+Using the Technology Filter and Visibility Options Together
+The Technology Filter and Visibility Options both control which tables and columns are shown, and they combine — only tables/columns that satisfy every active filter appear.
+For example, with only Neo enabled and Show Required Columns Only, Show Populated Tables Only, and Show Populated Columns Only all ON: the tables list shows only tables that are both required for Neo and populated, and each grid shows only columns that are both required for Neo and populated. Because these filters combine, a table or column that is genuinely required for Neo could still be hidden if it is not populated yet — worth remembering when something seems to be missing.
+For the recommended filter settings at each stage of building a model, see Build in Stages under Best Practices.
+If you cannot find a table or column you expect to see, clear everything that could be hiding it:
+Enable all technologies in the Technology Filter
+Turn off Show Populated Tables Only, Show Required Columns Only, Show Populated Columns Only, and Hide Zero Columns
+Use Expand All at the top of the Tables list
+Use the search box at the top of the Tables list, or in the Choose Columns option in the grid
+Table Grid
+When tables are opened, they are shown in the grid in the center part of the Cosmic Frog UI. This screenshot gives an overview of the grid; we will cover more details of each part in later sections with more screenshots:
+Multiple tables can be open simultaneously, clicking on a table’s tab makes it the active table which is then shown in the grid below.
+The table’s column names are shown at the top of the grid.
+In the first row, which has a darker background color, you can manually enter data into the table, which is covered in more detail in the Getting Data In and Out section.
+The data already present in the table is located here; this screenshot shows 7 records. Note that the background color for input tables and custom tables is light whereas for output tables it is darker to distinguish the read-only element of output tables.
+Table Tabs
+As seen in the previous screenshot, the tabs of the tables that are open can be seen at the top of the grid:
+The tab of the active table is white; tabs of other tables have a darker color.
+From the icons located on the right side of the tab you can tell the type of table:
+Square grid, evenly colored – input table
+Round grid – output table
+Square grid, solid upper half – custom table
+If a table name is not shown completely, you can hover over it to bring up a blue tooltip showing the entire name.
+To close tables:
+To close an individual table, click on the cross icon all the way right on the table’s tab.
+To close all but one table, right-click on the tab of the table that needs to stay open and then select Close other Tabs.
+Columns and their Options
+We can learn a lot about a column by hovering over its name to bring up a tooltip:
+From top to bottom the tooltip, shown for Unit Price on the Products table, contains:
+Name – repeats the name of the column.
+Technology – which technology/technologies use(s) this column. If a technology does not use the column, its values are ignored during any model runs.
+Description – explains how the column is used in plain English.
+DefaultValue (input tables only) – when a value is not entered, this value will be used when the model is run.
+Primary Key – True if the column is part of the table’s primary key; False if it is not. A table’s primary key is 1 column or a set of columns that uniquely identifies every row in the table.
+When looking at the column headers, we see:
+Columns that are part of the primary key of the table are bold and have a key icon to the left of their name.
+Columns are separated by a vertical bar, see also the next screenshot.
+There is a filter icon, which when clicked on will bring up a form to configure filters on the table based on the values in this column. Learn more about table filters in the Filtering a Table section further down.
+This icon with 3 vertical dots or right-clicking anywhere on the column header will bring up a context menu containing options such as sorting, pinning, auto-sizing, and choosing columns. All options available here are shown in a screenshot a bit further down in this section.
+Resizing columns: when hovering over the vertical bar, the cursor changes to 2 arrows pointing away from each other. Now you can drag the column separator to resize the columns; drop it when the desired width is reached:
+Re-ordering columns: you can drag and drop columns to change their order in the grid. The move symbol will be showing when you are moving the column around:
+Freezing panes: you can pin 1 or multiple columns to the left or right of the grid, so they stay visible when scrolling. Drag and drop the column all the way left or right, until the pin icon appears next to the column name, then drop the column:
+To unfreeze/unpin: drag and drop the column until the pin icon disappears.
+Sorting by individual columns: clicking on a column once will sort it in ascending order and an arrow pointing upwards will appear next to the column name. Clicking on it again will sort it in descending order, and the arrow will now point downwards. Clicking a third time will remove the sort and the arrow.
+Sorting by multiple columns: click once or twice on the first column to sort by, then holding Ctrl+Shift down, click once or twice on the second column to sort by, etc. The sorted columns will again show arrows pointing up or down indicating the sort order, and now they will also have a number which indicates the order in which the columns were sorted:
+Options from the context menu:
+From top to bottom:
+Add Custom Column: if there is data external to the model that would be good to add to a particular table, for example to filter or sort on, 1 or multiple custom columns can be added to hold this data. Note that you cannot apply scenario items to custom columns and they are not read by the engines when running a model either. Note that if a table contains any custom columns, additional options of Edit Custom Column and Delete Custom Column become available in this list too.
+Sort Ascending: alternative way to sort a table ascendingly by the selected column. If already sorted in ascending order, the option changes to Sort Descending, and the next option to Clear Sort.
+Sort Descending: alternative way to sort a table in descending order by the selected column. If already sorted in descending order, the option changes to Clear Sort.
+Pin Column: alternative way to pin and unpin a column.
+Autosize This Column: automatically sizes the column based on the length of the column’s name and its values.
+Autosize All Columns: automatically sizes all columns based on the length of each column’s name and its values.
+Group by <ColumnName>: you can group by one or multiple column names to aggregate data, see this article on row grouping, aggregation, and pivoting for more details.
+Choose Columns: brings up a form where you can quickly configure which columns are shown in the grid and allows them to re-order them as well. See next screenshot below.
+Reset Columns: unhides any columns that were hidden and puts all columns in the original order.
+Bulk Update this Column (input and custom tables only): change the value of this column for all (filtered) records to one specific value. See second screenshot below.
+Switch to Set Filter: there are 2 types of filters that can be applied to a column, called Default and Set. This option lets you switch between those 2. See the Filtering a Table section for details on filtering, Default filters, and Set filters.
+When selecting Choose Columns from the context menu, the following form comes up:
+To enable or disable all columns simultaneously, use this checkbox.
+To find specific columns quickly, use the search box to find columns with certain text in their names.
+A column with the checkbox enabled will be shown in the grid; those with disabled checkboxes will be hidden.
+To move a column up or down in the list (resulting in moving it left or right in the grid), put the cursor on top of this 4x3 dotted grid to the left of the column’s name, and drag and drop the column.
+When a column is being moved it looks like this. The line indicates where the column will be located if it is dropped now.
+When done configuring the columns, click on the cross at the right top to close the form.
+Note that if not all columns are visible, you can resize this form by clicking on a corner and dragging it.
+When selecting Bulk Update this Column from a column’s context menu, the following pane opens on the right-hand side:
+The Column Name will by default be that of the column from which the bulk update option was selected. You can however change it to another column present in the table by using the drop-down list.
+Enter the value the (filtered) records should be updated to. If the column has a drop-down list with available options, it will automatically appear.
+You can hit Update when ready to make the update or otherwise choose Cancel if not wanting to proceed with any changes.
+Getting Data In and Out
+Bulk Import and Export
+For more than a few records, use one of these bulk options instead of manual entry (covered below):
+Ada is Optilogic’s agentic AI. Use it on the next generation Optilogic platform or through AI agents such as Claude, ChatGPT, Copilot, Mistral, or Grok via the Optilogic MCP Connector. For example, you can attach raw data and ask Ada to populate a model’s input tables.
+DataStar
+DataStar is Optilogic’s AI-powered data product in which you can build repeatable workflows which take care of importing, cleansing, and transforming data into the Anura format for use in Cosmic Frog models. Automated output analysis workflows can be set up too. Learn more about DataStar in the Navigating DataStar section on the Help Center.
+Using Postgres Queries
+A Cosmic Frog model is a Postgres database under the hood, which uses the Anura schema. You can use SQL queries to transform their raw data into the Anura schema and populate a model’s input tables in this way. One option is to use the SQL Editor application available on the Optilogic platform.
+Similarly, queries can be used to examine, summarize, and aggregate results of scenario runs which are present in a model’s output tables.
+Manual Entry, Editing, and Copying
+This section covers data entry, editing, and removal done purely by hand; the Grid Menu section further down contains several options to speed some of these actions up.
+Note that following sections only apply to input and custom tables, since output tables are read-only. The only exception is the Copying Data section, which also applies to output tables.
+Entering Data Manually
+In an open input table, the top record which has a darker color can be used to enter records manually:
+Put the cursor in a cell of the top record for data entry and type the desired value in or paste a copied value in using Ctrl+V. Use Tab to go to the cell to the right.
+Either hit Enter or click on the plus-icon to the left of the data entry record to commit the record to the input table.
+For columns where the value needs to be one of a specific list of values, a drop-down list will automatically appear when you move the cursor to the cell. You can use the up/down arrows to choose the desired value and use Tab to select it and move to the next cell or Enter to select it and commit the record.
+The committed record appears in the grid below the data entry row, which clears for the next record:
+When starting to type in a column that needs to have a value that exists in another table, the options containing the typed text will automatically be populated in a dynamic drop-down list – it is updated as you type more characters. This will contain entity names (e.g. Facility Name or Customer Name), group names (see explanation in the Grid Menu section), and table filter names (see the Named Filters in Cosmic Frog article) based on the allowed entity/entities for the column.
+Pasting Data
+Single cell or single row:
+Ensure the order of the columns of the data to be copied matches the input table where the data will be pasted into
+Copy the value(s) from the source
+Select the leftmost cell of the input table to paste the data into, by left-clicking on it
+Do this in the top data entry row to append this as a new record
+Do this in an existing record to overwrite the data of this record
+Use Ctrl+V to paste
+Alternatively for steps 3 and 4: right-click on the leftmost cell and choose Paste from the context menu
+Data for multiple columns and/or rows can also be pasted from for example an Excel file if it is in the right format, including the order of the columns:
+In an empty input table: copy the data in Excel, then right-click on the top data entry row and choose Paste.
+To overwrite data in a populated input table: select the right number of cells in the correct order in the Excel file, copy them, and select a same size area in already existing records in the input table to be overwritten, then paste (either use Ctrl+V or right-click > Paste).
+Note that pasting multiple records as new records (i.e. to append) in an already populated table does not work. In general, using the Import/Export options under the File menu is recommended over manually pasting in more than one record as it is less error-prone.
+Editing Data
+To edit data, you can go into the cell to be edited and manually change the value or use the steps from the previous section to update the data by pasting the new values in from another source.
+If you are changing the values of fields that can be used by other input tables, you will be prompted if you want to update this value in any dependent tables too. Choose Continue with Cascade if so; otherwise choose Change Master Only.
+Copying Data
+Copying data is simply done by selecting the cells to be copied and using Ctrl+C. Options to include headers when copying are available from the Grid menu and the right-click context menu, see the Grid Menu section which follows this one.
+Use your cursor to select 1 or multiple cells. You can select multiple cells by drawing a box around the ones you want to select; for discontinuous selections, hold down the Ctrl key while selecting cells.
+A count at the bottom of the grid tells you how many cells are selected.
+Deleting Data
+Options for deleting cell contents and entire rows include:
+Select a single cell or multiple holding down the Ctrl key and then use the Delete key to remove the contents of the selected cell(s).
+Select a single row or multiple by their checkboxes and then use the Ctrl+Alt+T shortcut to delete them.
+Filtering a Table
+Filter a table on one or more columns to show a subset of its records. Filters can be saved as Named Filters for reuse in the same table, as dynamic groups, and as conditions in scenario items and maps (see Named Filters in Cosmic Frog). This section covers building and applying filters.
+When you click on the filter icon to the right of the column name, the following filter configuration form comes up:
+At the top there is a drop-down list with options on how to filter on the values present in this column. See the full list of options for both text-based and numeric columns in the next 2 screenshots.
+In this textbox, you type the condition the filtered records need to match.
+The 4 buttons at the bottom of the form:
+Cancel – if a filter has been applied previously and changes are being made to it after re-opening the form, hitting Cancel will revert to the filter as last applied. This undoes the changes made to the filter after re-opening the form. The filter form will be closed.
+Reset – removes all specified filter conditions on this column and closes the filter form.
+Clear – removes all specified filter conditions on this column and reverts the top drop-down to the default of Contains (Equals for numeric columns); keeps the filter form open.
+Apply – applies the specified filter and closes the filter form.
+The next 2 screenshots show the filtering condition options for text-based columns (top) and numeric columns (bottom):
+Once a filter condition has been entered, Begins with “Mich” in the screenshot below, the form automatically adds fields to allow you to add another filtering condition. You can choose if these conditions should be treated as AND or OR. Once one is chosen, it will be applied for all following conditions too.
+AND: choose AND when only records that meet all the conditions should be shown.
+OR: choose OR when records that meet any (1 or multiple) of the conditions should be shown.
+In the screenshot below, the filter is on the Region column in the Customers table. The filter reads “Region Begins with Mich OR Region Begins with Oh”. Since the values of the Region column are the names of US States, the filter should result in showing records where the region is either Michigan or Ohio.
+After applying the filter, the Customers table looks as follows:
+There are multiple indications a filter has been applied:
+The number of rows that is shown out of the total in the table is printed here. In our example 40 of a total of 1,333 records match the filter.
+At the right top of the table, a Region tag indicates a filter is applied to this column. You can click on the cross inside the tag to remove the filter from the Region field. When multiple filters are applied to different columns, you can click on the crossed out filter icon on the right to remove all filters with one click.
+The filter icon to the right of the Region column name is colored blue instead of black.
+We see that indeed only records where the region is Michigan or Ohio are now showing in the grid.
+Filters can be applied to multiple columns in a table; these work as an AND statement: only records that match all filters will be shown. In the next 2 screenshots the filtered table from the previous screenshot is used, and an additional filter is added to the Customer Name column: Customer Name Contains “CZ2” or Customer Name Contains “CZ3”:
+After applying the filter, we see the same indicators that filters have been applied, plus the resulting records:
+Now only 8 records match all filters,
+Both Customer Name and Region filter tags are at the right top of the table.
+For both fields, the filter icon is blue.
+We see that only customers containing CZ2 or CZ3 which are located in either Michigan or Ohio are shown.
+What we have discussed above uses what is called the Default filter. Besides this filter, we can instead also use a Set filter, where values can be enabled and disabled by checkboxes – especially useful for cases where there are several distinct values present. The last option in a column’s context menu allows you to switch to the Set filter:
+Click on the icon with 3 vertical dots to open the context menu.
+Choose “Switch to Set Filter”.
+Now, when clicking on the filter icon next to the column’s name (Product Name on the Customer Demand table here), the following filter form comes up:
+Should the list of values be long, the search box can help to quickly find the value(s) of interest.
+Use the select all option to check and uncheck the checkboxes of all values in one click.
+You can check and uncheck the boxes of the individual values to indicate which ones should be shown.
+Click on Apply when ready to apply filter; click on Cancel if deciding not to apply a filter at this time.
+A convenient way to quickly set up filters on multiple columns in a table is to use the Filters fold-out pane on the right-hand side of a table:
+Click on Filters on the right-hand side of the table to open the pane.
+Use the search box to quickly find the column(s) to filter on.
+Collapse/expand the columns as desired, e.g. keep them all collapsed except the ones you are applying filters to.
+For the Product Name column, we have switched to the Set filter option prior to opening the Filters pane and we are choosing to filter for records where the product name is Rockets.
+In addition, the table will also be filtered for records where the value of the Quantity column is greater than or equal to 1,000.
+Clicking on the Filters pane again folds it back in. After applying the filters shown in the previous screenshot, the Customer Demand table looks as follows. The same indicators that filters are present can be seen and we do indeed only see records for Rockets with quantities of at least 1,000:
+Finally, we have a look at the Filter menu and its options:
+When Show Filters is chosen, a Named Filters panel to the right of the table will be shown. This is also covered in the Help Center article linked in the previous bullet.
+To quickly remove filters from all tables or the active table, use these 2 options.
+The Show Input Data Errors option creates a special filter named ERRORS and filters out records in the input table it is applied to that have errors in the input data. For more details see the Input Data Errors section in the Named Filters article.
+Grid Menu
+Next, we will cover the options available under the Grid menu. Please note that:
+these overlap with many of the options in the context menu that comes up when right-clicking on a grid. This grid context menu will be covered in the next section.
+for output tables, several options in the Grid menu and its sub-menus are automatically greyed out. This is because output tables are read-only.
+When clicking on the Grid menu, the following options are shown:
+Click on the Grid menu to open its drop-down.
+From top to bottom the options available are:
+Table – folds out to more options that apply to the whole table, see next screenshot.
+Rows – folds out to more options that apply to the (selected) records, see screenshot further below in this section.
+Groups – folds out to more options to create and replace groups, see screenshot further below in this section.
+Aggregation - folds out to more options to summarize data at the bottom of the grid, see screenshot further below in this section.
+Data Entry Helper – this opens the Data Entry Helper pane to the right of the grid. When you select a cell in the grid that can have a finite number of values, the data entry helper pane shows all these possible values, and you can select the one to use for the cell.
+Run Integrity Checker (All Tables) and Run Integrity Checker (Selected Table) – the Integrity Checker tool can check 1 or multiple input tables of a model for data issues such as referential integrity, incorrect values, etc. To learn more, please see Cosmic Frog’s Integrity Checker Help Center article.
+When selecting Table from the Grid menu, a sub-menu with 5 options folds out:
+From top to bottom:
+Add Custom Column - if there is data external to the model that would be good to add to a particular table, for example to filter or sort on, 1 or multiple custom columns can be added to hold this data. Note that you cannot apply scenario items to custom columns and they are not read by the engines when running a model either. The next screenshot shows the Add Custom Column pane that opens on the right of the grid when choosing this option.
+New Custom Table – similar to a custom column under the previous bullet, a custom table can hold data that is not used by any model runs but can be helpful for creating dashboards or looking up data for example. Creating a custom table works like adding a custom column: after naming your custom table, you just repeat adding custom columns until all the required ones have been added.
+Create Lookup –with this feature, you can add values from a column in one input table to a column in another input table based on matching values in other columns on the source and destination table. This is the equivalent of performing a SQL Update statement that contains a Join.
+Clear Table – this option can be used to delete all (filtered) records from the active table. You will be prompted to confirm they want to delete X amount of (filtered) rows.
+Copy Name – copies the name of the table to the clipboard.
+Choosing the Add Custom Column option brings up the following pane to the right of the grid:
+Column Name - specify the name of the custom column.
+Pseudo Typed – when ON, the column is stored with the specified data type in a view with the same name as the table suffixed with _typed in the database, while the column is stored with data type of text in the table itself. Recommended to keep this option set to ON.
+Data Type – specify what data format the column’s values will be.
+Key Column – set to ON when the column is part of the table’s primary key; leave at the default of OFF otherwise.
+Add/Cancel – when ready to add the column, click on Add. Otherwise click on Cancel to not add a column at this time.
+When selecting Rows from the Grid menu, a sub-menu with 4 options folds out:
+From top to bottom:
+Add Row – puts the cursor in the first cell of the data entry row at the top of the grid.
+Duplicate All Rows – copies all rows and adds them to the grid as new rows. This includes rows which are not shown in case any filters are applied. A Duplicate pane on the right of the grid will open where you need to choose a column and set its value for the copied rows, so they are not exact duplicates of the originals. See also the “Duplicate Selected Rows” example in the Grid Context Menu section below.
+Duplicate Selected Rows – copies the rows that have been selected by checking their checkbox to the left of the record. The Duplicate pane to select a column and set its value so the copied records are not exact duplicates of the originals comes up in this case too.
+Delete Row – removes the selected rows from the table immediately.
+Heads up
+When using Delete Row, the selected row(s) are immediately removed from the table, you are not first asked to confirm. This action cannot be undone.
+When selecting Groups from the Grid menu, a sub-menu with 2 options folds out:
+From top to bottom:
+Create Group – creates a new group with the (filtered) records of the table as members. It brings up a Create Group pane to the right of the grid, see next screenshot.
+Replace Group – overwrites an existing group with the (filtered) records of the table as the new members. It brings up a Replace Group pane to the right of the grid where you can choose the group to replace from a drop-down list of groups.
+This screenshot shows Create Group pane that opens when choosing the Create Group option:
+Group Name – enter the name for the new group here
+Group Type – choose the type of group here, the drop-down list will contain the options based on the table you are on. In this case, Periods is the only option as the group is created on the Periods table. For a group created on the Facilities table for example, Group Type would include Facilities, but also Sources and Destinations as options.
+Create/Cancel – when ready to create the group, click on Create. Otherwise, click on Cancel to not create a new group at this time.
+Message – a message indicates how many new records will be created in the Groups table.
+When selecting Aggregation from the Grid menu, a sub-menu with 4 options folds out:
+Aggregation shows the minimum (Min), average (Avg), summed (Sum), or maximum (Max) values of each numeric column in the (filtered) records at the bottom of the grid
+This screenshot shows an example of a filtered grid that has the “sum columns” aggregation option turned on:
+This Optimization Flow Summary output table is filtered for Scenario Name = No Flow Constraints, Flow Type = Customer Fulfillment and Origin Name = Salt Lake City DC.
+The sum columns aggregation has been turned on and this sum symbol at the bottom left of the grid is a visual indication.
+Two numerical columns are shown with their summed total of the 273 filtered rows shown at the bottom of the grid.
+Grid Context Menu
+Right-clicking the grid brings up a context menu with most of the options from the Grid menu (covered in the previous section). The differences are highlighted in the next screenshot:
+This context menu has an additional Columns entry with 2 options (input and custom tables only):
+Add Custom Column – this option is available under the Table option in the Grid menu and can be used to add a user-defined column to the currently active table. For an example, see the Grid Menu section above.
+Bulk Update this Column – use this to update all values of all (filtered) rows for one column to the same value. For an example, see the Columns and their Options section above.
+Additional copy and paste options are available here, from top to bottom:
+Copy (Ctrl+C) – copies the selected cell(s) to the clipboard.
+Copy with Headers and Copy with Group Headers – both copy the selected cell(s) with their column names to the clipboard. On tables that use Pivot Mode (see Cosmic Frog Data Tables – Row Grouping, Aggregation, and Pivoting), only Copy with Group Headers includes the top-level columns, so it is the better default there.
+Paste (Ctrl+V) (input and custom tables only) – pastes the contents of the clipboard into the selected cell(s). Ensure the shape of the number of selected cell(s) matches those of the copied contents (e.g. same number of cells across and same number of cells down).
+The next 3 screenshots show how Duplicate Selected Rows works. It is selected via the grid’s right-click context menu here but works the same when chosen from the Grid menu. Our aim is to duplicate 5 records on the Customer Demand table.
+Enable the checkboxes of the rows to be duplicated.
+Right-click on the grid and choose Rows > Duplicate Selected Rows.
+This brings up the Duplicate pane to the right of the grid:
+Column Name – select the column that will have a different value in the copied row as compared to the value of the original row that is being copied. By default, the column that was right clicked on will be selected, but you can change this.
+Column Value – enter the value the duplicated rows should have for this column. We are changing the Period Name from Period1 (in the original records) to Period2 (in the duplicated records) here.
+Update/Cancel – click on the Update button when ready to duplicate the rows or otherwise on Cancel to not duplicate any rows at this time.
+The resulting duplicated rows are shown in this screenshot:
+We have filtered the table for Period Name = Period2.
+The 5 duplicated records are shown in the grid. Except for Period Name, the values of all other columns of these records are the same as those of the original records.
+Pro tip
+Often you will want to have multiple columns in the duplicated records to have different values from the original records (e.g. Status, Notes, Period Name, a cost number, etc.). A quick way to achieve this is to choose the Notes field as the Column Name on the Duplicate pane to essentially tag the duplicated records. Next, you can filter the table on the Notes field and use the Bulk Update this Column functionality to update the other columns that need to have different values.
+Geocode Button
+The Geocode button is only available on the Customers, Facilities, and Suppliers input tables. Based on location information, such as Address, City, Region, and Country entered into these tables, the geocoding provider looks up a location’s latitude and longitude and saves those in the table. These can be used to draw locations in the correct location on a map and for distance calculations.
+Consider the following Customers table:
+These customers do have city, region, and country specified, but do not yet have a latitude and longitude associated with them.
+Click on the Geocode button to start looking up the coordinates for these locations.
+By default, the MapBox geoprovider will be used to look up coordinates. You are prompted to indicate if you only want to get results where MapBox finds a 100% match. When this option is left unchecked, the best match (closest to 100%) will be used in case a 100% match is not found:
+Once the geocoding is finished, the latitude and longitude columns of these records are populated:
+Note that Geoproviders other than MapBox can be configured to be used for geocoding and distance lookups, see the Using Alternate Geocoding Providers Help Center article.
+Table Context Menu
+Right-clicking on a table in the Tables list brings up a context menu which contains the options we have already seen and covered above from the File, Grid, and Filter menus that are applicable to the table. Again, multiple options that do not apply to output tables are automatically greyed out in this context menu.
+From top to bottom:
+Table – fold-out menu has the same options as the Grid menu > Table option does.
+Rows – fold-out menu has 2 options which are also part of the Grid menu > Rows options: Duplicate All Rows and Duplicate Selected Rows.
+File – fold-out menu has the same options as the File menu does.
+Filters – fold-out menu has the same options as the Filter menu does.
+Groups – fold-out menu has the same options as the Grid menu > Groups option does.
+Aggregations – fold-out menu has the same options as the Grid menu > Aggregation option does.
+Data Entry Helper – opens the Data Entry Helper pane, same as the Grid menu > Data Entry Helper option does.
+Geocode – looks up coordinates for locations that do not have any yet when on the Customers, Facilities, or Suppliers table, same as the Geocode button in the toolbar does.
+Run Integrity Checker (All Tables) and Run Integrity Checker (Selected Table) – runs the Integrity Checker tool, same as selecting these options from the Grid menu does.
+Data Validation Tools
+There are several tools within Cosmic Frog which can help find problems with the model’s data and overall construction. The table below gives an overview of how these tools compare to each other to help you choose the most suitable one for your situation:
+These Help Center articles contain more details on some of these tools:
+Technology Filter: the engine(s) the scenarios run against
+Uses Status + Notes fields on input tables to include/exclude the correct scenario-specific records (see the Scenarios article)
+Relies on Named Filters (Filter menu) to facilitate scenario item creation and filtering of map layers for specific subsets of records
+Reviewer / Business Stakeholder (checking outputs, not building)
+Technology Filter: all engines enabled, to see everything
+Show Populated Tables Only, Show Populated Columns Only, and Hide Zero Columns: ON — cuts the noise down to what has data
+Uses Grid > Aggregation (Sum/Avg) to sanity-check totals and the Row Grouping/Aggregation/Pivoting features to slice and dice data as desired without leaving the grid
+Best Practices
+A few habits make working in the Data module faster and your models easier for others (or future you) to pick up.
+Build in stages, not all at once
+Set the Technology Filter to only the engine(s) you are building for.
+Turn on Show Required Columns Only and populate just the minimum inputs needed for a run.
+Once that runs successfully, turn Show Required Columns only off and expand into the other tables your analysis needs.
+When the model is complete, turn on Show Populated Tables Only and Show Populated Columns Only to review it with the noise cut out.
+This avoids the common trap of populating dozens of tables before confirming the model even runs.
+Use Status and Notes fields deliberately Most input tables include Status and Notes columns. Rather than deleting records you might need later, set Status = Exclude and tag them with a Notes value (e.g., a scenario name or a data source). This keeps your baseline data intact while letting you filter, bulk-update, or scenario-toggle those records later. See the Scenarios article for how this pattern powers scenario items.
+Save filters as Named Filters, do not recreate them If you find yourself typing the same filter condition more than once — on a table, a scenario item, or a map layer — save it as a Named Filter instead. It is pre-validated, reusable across the model, and shows a record-count preview so you can confirm it is selecting what you expect. See Named Filters in Cosmic Frog.
+Validate early, not just before a run Do not wait until a model fails to run to check your data. Run the Integrity Checker (Grid menu) after any significant data load or edit, not only at the end. Catching an issue right after an import is far faster to fix than tracing it back after a failed solve. See Cosmic Frog's Integrity Checker and the Data Validation Tools section above for guidance on choosing the right tool.
+Prefer bulk tools over manual entry for anything beyond a few rows Pasting or typing in more than a handful of records is error-prone and does not scale. Use File > Import for structured Excel/CSV files, Ada or DataStar for messier source data and repeatable workflows, or a Postgres query via the SQL Editor when you need to transform data into the Anura schema.
+Use custom columns to stage data, not to feed the model Custom columns are a convenient place to keep source values, growth factors, or notes external to the model — but remember they are not read by any engine and cannot be used in scenario items. If a value needs to affect a model run, it needs to live in a real Anura column, even if a custom column feeds into it via a scenario item's Actions field.
+Pro tip
+Combine a custom column with a scenario item to apply calculated changes without hand-editing every record — for example, a growth_pct custom column on Customer Demand referenced in an Actions field like quantity = quantity * (1 + (growth_pct / 100)).
+Happy modeling! As always, please contact our Support team at support@optilogic.com for any questions or feedback.
+
+
+---
 ## DataStar Overview | Optilogic
 **URL:** https://optilogic.com/resources/help-center/docs/getting-started-with-datastar
 
@@ -14253,7 +14965,8 @@ Select an existing scenario (e.g., Baseline) or create a new one via right-click
 Add a scenario item: right-click the scenario → New Item. Choose a table, specify a column change in the Actions field, and optionally apply a filter.
 Click the green Run button (top right) and configure technology parameters.
 Analyze results in the output tables or charts - compare across scenarios side by side.
-💡 Tip: Use Leapfrog (Cosmic Frog's AI assistant) to create scenarios and items from plain-language prompts - no manual configuration needed.
+Pro tip
+Use Ada or Leapfrog (Cosmic Frog's AI assistant) to create scenarios and items from plain-language prompts - no manual configuration needed.
 What Is a Scenario?
 A scenario defines one or more input-table changes to apply before running a solve. Common examples include:
 Adding candidate locations to evaluate for network expansion
@@ -14288,9 +15001,9 @@ Switching a Scenario's Technology
 Each scenario is associated with one engine. To change it, select the scenario and use the radio buttons in the central panel:
 Click the scenario to select it.
 In the central panel, select a different technology using the radio buttons.
-📝 Note: Running with multiple technologies
+Good to know
 You can solve the same scenario with more than one engine sequentially: assign the first technology → run → change technology → run again. Be aware that any scenario edits between runs may cause results to differ for subsequent runs.
-💡 Tip: Dendro workflow
+Pro tip
 To optimize inventory policies with Dendro: first build and validate a Throg (simulation) scenario, then switch its technology to Dendro and run.
 Creating Scenarios and Items
 Creating a New Scenario
@@ -14306,6 +15019,8 @@ Start typing a column name - intelli-type shows matching columns.
 Use arrow keys to navigate and Tab to autocomplete.
 Once the column to change has been typed in, we can set its new value. In our example we want to set the value of the status column to Exclude:
 Intelli-type also validates syntax. Incorrect quote style (need to use single quotes, not double quotes):
+Combine a custom column with a scenario item to apply calculated changes without hand-editing every record. For example, a growth_pct custom column on the Customer Demand table referenced in a scenario item's Actions field like quantity = quantity * (1 + (growth_pct / 100)).
+Filtering Which Records a Scenario Item Affects
 By default, a scenario item's action applies to every record in the selected table. Add a filter to restrict which records are changed. Two methods are available:
 Named Filters (Recommended)
 If Named Filters exist for the selected table, you can apply one directly to the scenario item:
@@ -14320,18 +15035,19 @@ After selecting a filter, the Filter Grid Preview updates to show exactly which 
 The active filter name, "US Customers" here, appears at the top right of the preview. Click x to remove it; hover over it to bring up a tooltip with the entire filter name.
 The row count shows how many records match - and will be updated.
 The preview grid confirms the filtered subset (e.g., only US customers).
-💡 Tip: Why prefer Named Filters?
-Named Filters are pre-validated - you have already confirmed they select the right records when creating the filter. The Condition Builder requires you to write syntax manually, which is more error-prone. Named Filters also show a record preview. (Preview for Condition Builder is coming soon.)
-📝 Note: One Named Filter per scenario item
+Pro tip
+Named Filters are preferred, because they are pre-validated - you have already confirmed they select the right records when creating the filter. The Condition Builder requires you to write syntax manually, which is more error-prone.
+Heads up
 Each scenario item supports a maximum of one Named Filter. If you need to combine multiple filter conditions, create a new Named Filter that merges all required conditions.
 Condition Builder
 Use the Condition Builder when no applicable Named Filter exists, or for ad hoc conditions:
 Select Condition Builder in the Conditions area.
-Type the condition expression. Intelli-type column-name suggestions are available here too.
+Type the condition expression. Intelli-type column-name suggestions are available here too. The preview grid will again confirm the filtered subset (not shown here).
 When multiple items modify the same column in the same table, they execute top-to-bottom. Order matters. Consider the following 2 scenarios where both scenario items are applied to the Quantity column in the Customer Demand table:
 This scenario contains 2 items: first the demand quantity is multiplied by 2 and then 10 units are added. If the original demand quantity is 100, this scenario changes it to: 2*100 + 10 = 210.
 This scenario contains the same 2 items but in reverse order: first 10 units are added to the demand and then it is multiplied by 2. For original demand quantity of 100, this results in: (100+10) * 2 = 220.
-💡 Tip: Drag items up or down within a scenario to reorder them.
+Pro tip
+Drag items up or down within a scenario to reorder them.
 Item Assignments
 A single scenario item can be shared across multiple scenarios. The Item Assignments panel (right side) appears automatically when an item is selected:
 The selected item's configuration appears on the left.
@@ -14398,7 +15114,8 @@ Next, the user clicked on the Sc3_PrebuildInventory scenario.
 This selects the 2 scenarios and all 6 scenario items of the Sc2_CoPacker scenario. Since 5 of those items are also used by the Sc3_Prebuild Inventory scenario, they are highlighted as selected there too.
 The count of selected scenarios and items is 8: 2 scenarios and 6 items.
 Deleting removes both selected scenarios and all 6 selected items - including from any other scenariosthat use them. The one unselected item in these 2 scenarios, "Add Inventory capacity at CDCs", remains.
-⚠️ Important: Deleting a scenario item removes it from all scenarios that it is assigned to, not just the selected scenario. Review item assignments before deleting.
+Heads up
+Deleting a scenario item removes it from all scenarios that it is assigned to, not just the selected scenario. Review item assignments before deleting.
 Deleting Scenario Results
 Use Delete Scenario Results (context menu or Scenario drop-down) to clear output data for one or more scenarios without removing the scenarios themselves:
 After choosing Delete Scenario Results, the Delete Scenario Results panel comes up on the right-hand side.
@@ -14424,15 +15141,17 @@ A custom column on the Transportation Policies table named "newcost" contains up
 A custom column on the Customer Demand table named "projection" contains growth percentages for demand quantities (e.g. 10 for 10%). A scenario item can then set quantity = quantity * (1 + (projection/100)) to apply those growth percentages in a scenario.
 Copy Scenarios Between Models
 The Copy Scenarios utility (Utilities module → Copy to a Model) copies a single scenario or all scenarios from one model to another, including all items and assignments.
-Use Leapfrog AI
-Use Leapfrog for scenario and item creation, and also for manipulating scenario-specific data.
-Leapfrog can create scenarios and scenario items from a plain-language description - ideal for quickly spinning up variations without manually configuring each item. See the specific section on this in the Getting Started with Leapfrog AI Help Center article.
-🔧 Leapfrog Use Case: 2026 Demand Projections from 2025 Numbers
-Model 2026 demand from 2025 quantities using a custom growth projections table. Leapfrog can be utilized to set this up, so no external tool needs to be used:
-Use Leapfrog to copy the 2025 demand record set into the Customer Demand table as a new set. Set Status = Exclude and Notes = '2026 Scenarios' for the copied records.
-Use Leapfrog to update the dates of those records to 2026 (if date fields are used in the original demand data, otherwise not needed).
+Use Ada or Leapfrog AI
+Ada is Optilogic's agentic AI and while chatting with her she can create new scenarios and their associated items for you. See the Getting Started with Ada & Agentic AI article to get going with Ada.
+In addition, you can also use Leapfrog for scenario and item creation, and scenario-specific data manipulation.
+Like Ada, Leapfrog can create scenarios and scenario items from a plain-language description - ideal for quickly spinning up variations without manually configuring each item. See the specific section on this in the Getting Started with Leapfrog AI Help Center article.
+🔧 Use Case: 2027 Demand Projections from 2026 Numbers
+Model 2027 demand from 2026 quantities using a custom growth projections table. Both Ada and Leapfrog can be utilized to set this up, so no external tool needs to be used. In Leapfrog, you can achieve the goal for example in following 4 steps:
+Copy the 2026 demand record set into the Customer Demand table as a new set. Set Status = Exclude and Notes = '2027 Scenarios' for the copied records.
+Update the dates of those records to 2027 (if date fields are used in the original demand data, otherwise not needed).
 Use Leapfrog to multiply the demand quantities by the growth factor from the custom projection table, matching the tables on product and customer names.
-In each 2026 scenario, use scenario items that set the Status of the 2025 records to Exclude and of the '2026 Scenarios' records to Include.
+In each 2027 scenario, use scenario items that set the Status of the 2026 records to Exclude and of the '2027 Scenarios' records to Include.
+Using Ada, you will be able to use 1 prompt explaining the goal while attaching the growth projections table. For example: "The attached model contains 2026 demand in the Customer Demand table, copy this entire set and paste as a new set with Status set to Exclude and Notes field set to 2027 scenarios. In the new 2027 set, multiply the demand quantities with the growth projection numbers in the attached file. Then create a scenario that does not use the 2026 demand, but the 2027 demand instead."
 Happy scenario modeling! As always, please contact our Support team on support@optilogic.com for any questions or feedback.
 Scenarios let you rapidly explore "what-if" questions against an existing Cosmic Frog model. Define one or more data changes (scenario items), run the scenarios, then compare outputs - all without altering your baseline input data.
 Quick Start
@@ -14442,7 +15161,8 @@ Select an existing scenario (e.g., Baseline) or create a new one via right-click
 Add a scenario item: right-click the scenario → New Item. Choose a table, specify a column change in the Actions field, and optionally apply a filter.
 Click the green Run button (top right) and configure technology parameters.
 Analyze results in the output tables or charts - compare across scenarios side by side.
-💡 Tip: Use Leapfrog (Cosmic Frog's AI assistant) to create scenarios and items from plain-language prompts - no manual configuration needed.
+Pro tip
+Use Ada or Leapfrog (Cosmic Frog's AI assistant) to create scenarios and items from plain-language prompts - no manual configuration needed.
 What Is a Scenario?
 A scenario defines one or more input-table changes to apply before running a solve. Common examples include:
 Adding candidate locations to evaluate for network expansion
@@ -14477,9 +15197,9 @@ Switching a Scenario's Technology
 Each scenario is associated with one engine. To change it, select the scenario and use the radio buttons in the central panel:
 Click the scenario to select it.
 In the central panel, select a different technology using the radio buttons.
-📝 Note: Running with multiple technologies
+Good to know
 You can solve the same scenario with more than one engine sequentially: assign the first technology → run → change technology → run again. Be aware that any scenario edits between runs may cause results to differ for subsequent runs.
-💡 Tip: Dendro workflow
+Pro tip
 To optimize inventory policies with Dendro: first build and validate a Throg (simulation) scenario, then switch its technology to Dendro and run.
 Creating Scenarios and Items
 Creating a New Scenario
@@ -14495,6 +15215,8 @@ Start typing a column name - intelli-type shows matching columns.
 Use arrow keys to navigate and Tab to autocomplete.
 Once the column to change has been typed in, we can set its new value. In our example we want to set the value of the status column to Exclude:
 Intelli-type also validates syntax. Incorrect quote style (need to use single quotes, not double quotes):
+Combine a custom column with a scenario item to apply calculated changes without hand-editing every record. For example, a growth_pct custom column on the Customer Demand table referenced in a scenario item's Actions field like quantity = quantity * (1 + (growth_pct / 100)).
+Filtering Which Records a Scenario Item Affects
 By default, a scenario item's action applies to every record in the selected table. Add a filter to restrict which records are changed. Two methods are available:
 Named Filters (Recommended)
 If Named Filters exist for the selected table, you can apply one directly to the scenario item:
@@ -14509,18 +15231,19 @@ After selecting a filter, the Filter Grid Preview updates to show exactly which 
 The active filter name, "US Customers" here, appears at the top right of the preview. Click x to remove it; hover over it to bring up a tooltip with the entire filter name.
 The row count shows how many records match - and will be updated.
 The preview grid confirms the filtered subset (e.g., only US customers).
-💡 Tip: Why prefer Named Filters?
-Named Filters are pre-validated - you have already confirmed they select the right records when creating the filter. The Condition Builder requires you to write syntax manually, which is more error-prone. Named Filters also show a record preview. (Preview for Condition Builder is coming soon.)
-📝 Note: One Named Filter per scenario item
+Pro tip
+Named Filters are preferred, because they are pre-validated - you have already confirmed they select the right records when creating the filter. The Condition Builder requires you to write syntax manually, which is more error-prone.
+Heads up
 Each scenario item supports a maximum of one Named Filter. If you need to combine multiple filter conditions, create a new Named Filter that merges all required conditions.
 Condition Builder
 Use the Condition Builder when no applicable Named Filter exists, or for ad hoc conditions:
 Select Condition Builder in the Conditions area.
-Type the condition expression. Intelli-type column-name suggestions are available here too.
+Type the condition expression. Intelli-type column-name suggestions are available here too. The preview grid will again confirm the filtered subset (not shown here).
 When multiple items modify the same column in the same table, they execute top-to-bottom. Order matters. Consider the following 2 scenarios where both scenario items are applied to the Quantity column in the Customer Demand table:
 This scenario contains 2 items: first the demand quantity is multiplied by 2 and then 10 units are added. If the original demand quantity is 100, this scenario changes it to: 2*100 + 10 = 210.
 This scenario contains the same 2 items but in reverse order: first 10 units are added to the demand and then it is multiplied by 2. For original demand quantity of 100, this results in: (100+10) * 2 = 220.
-💡 Tip: Drag items up or down within a scenario to reorder them.
+Pro tip
+Drag items up or down within a scenario to reorder them.
 Item Assignments
 A single scenario item can be shared across multiple scenarios. The Item Assignments panel (right side) appears automatically when an item is selected:
 The selected item's configuration appears on the left.
@@ -14587,7 +15310,8 @@ Next, the user clicked on the Sc3_PrebuildInventory scenario.
 This selects the 2 scenarios and all 6 scenario items of the Sc2_CoPacker scenario. Since 5 of those items are also used by the Sc3_Prebuild Inventory scenario, they are highlighted as selected there too.
 The count of selected scenarios and items is 8: 2 scenarios and 6 items.
 Deleting removes both selected scenarios and all 6 selected items - including from any other scenariosthat use them. The one unselected item in these 2 scenarios, "Add Inventory capacity at CDCs", remains.
-⚠️ Important: Deleting a scenario item removes it from all scenarios that it is assigned to, not just the selected scenario. Review item assignments before deleting.
+Heads up
+Deleting a scenario item removes it from all scenarios that it is assigned to, not just the selected scenario. Review item assignments before deleting.
 Deleting Scenario Results
 Use Delete Scenario Results (context menu or Scenario drop-down) to clear output data for one or more scenarios without removing the scenarios themselves:
 After choosing Delete Scenario Results, the Delete Scenario Results panel comes up on the right-hand side.
@@ -14613,15 +15337,17 @@ A custom column on the Transportation Policies table named "newcost" contains up
 A custom column on the Customer Demand table named "projection" contains growth percentages for demand quantities (e.g. 10 for 10%). A scenario item can then set quantity = quantity * (1 + (projection/100)) to apply those growth percentages in a scenario.
 Copy Scenarios Between Models
 The Copy Scenarios utility (Utilities module → Copy to a Model) copies a single scenario or all scenarios from one model to another, including all items and assignments.
-Use Leapfrog AI
-Use Leapfrog for scenario and item creation, and also for manipulating scenario-specific data.
-Leapfrog can create scenarios and scenario items from a plain-language description - ideal for quickly spinning up variations without manually configuring each item. See the specific section on this in the Getting Started with Leapfrog AI Help Center article.
-🔧 Leapfrog Use Case: 2026 Demand Projections from 2025 Numbers
-Model 2026 demand from 2025 quantities using a custom growth projections table. Leapfrog can be utilized to set this up, so no external tool needs to be used:
-Use Leapfrog to copy the 2025 demand record set into the Customer Demand table as a new set. Set Status = Exclude and Notes = '2026 Scenarios' for the copied records.
-Use Leapfrog to update the dates of those records to 2026 (if date fields are used in the original demand data, otherwise not needed).
+Use Ada or Leapfrog AI
+Ada is Optilogic's agentic AI and while chatting with her she can create new scenarios and their associated items for you. See the Getting Started with Ada & Agentic AI article to get going with Ada.
+In addition, you can also use Leapfrog for scenario and item creation, and scenario-specific data manipulation.
+Like Ada, Leapfrog can create scenarios and scenario items from a plain-language description - ideal for quickly spinning up variations without manually configuring each item. See the specific section on this in the Getting Started with Leapfrog AI Help Center article.
+🔧 Use Case: 2027 Demand Projections from 2026 Numbers
+Model 2027 demand from 2026 quantities using a custom growth projections table. Both Ada and Leapfrog can be utilized to set this up, so no external tool needs to be used. In Leapfrog, you can achieve the goal for example in following 4 steps:
+Copy the 2026 demand record set into the Customer Demand table as a new set. Set Status = Exclude and Notes = '2027 Scenarios' for the copied records.
+Update the dates of those records to 2027 (if date fields are used in the original demand data, otherwise not needed).
 Use Leapfrog to multiply the demand quantities by the growth factor from the custom projection table, matching the tables on product and customer names.
-In each 2026 scenario, use scenario items that set the Status of the 2025 records to Exclude and of the '2026 Scenarios' records to Include.
+In each 2027 scenario, use scenario items that set the Status of the 2026 records to Exclude and of the '2027 Scenarios' records to Include.
+Using Ada, you will be able to use 1 prompt explaining the goal while attaching the growth projections table. For example: "The attached model contains 2026 demand in the Customer Demand table, copy this entire set and paste as a new set with Status set to Exclude and Notes field set to 2027 scenarios. In the new 2027 set, multiply the demand quantities with the growth projection numbers in the attached file. Then create a scenario that does not use the 2026 demand, but the 2027 demand instead."
 Happy scenario modeling! As always, please contact our Support team on support@optilogic.com for any questions or feedback.
 
 
@@ -20888,30 +21614,34 @@ As you continue to work with the tool you might find yourself asking, what do th
 ANURA
 Anura, the name of our data schema, comes from the biological root where Anura is the order that all frogs and toads fall into.
 NEO
-NEO, our optimization engine, takes its name from a suborder of Anura – Neobatrachia. Frogs in this suborder are known to be the most advanced of any other suborder.
+Neo, our optimization engine, takes its name from a suborder of Anura – Neobatrachia. Frogs in this suborder are known to be the most advanced of any other suborder.
 THROG
-THROG, our simulation engine, takes its name from a superhero hybrid that crosses Thor with a frog (yes, this actually exists)
+Throg, our simulation engine, takes its name from a superhero hybrid that crosses Thor with a frog (yes, this actually exists)
 TRIAD
 Triad, our greenfield engine, takes its name from the oldest known species of frogs – Triadobatrachus. You can think of it as the starting point for the evolution of all frogs, and it serves as a great starting point for modeling projects too!
 DART
 Dart, our risk engine, takes its name from the infamous poison dart frog. Just as you would want to be aware of a poisonous frog’s presence, you’ll also want to be sure to evaluate any opportunities for risks to present themselves.
 DENDRO
 Dendro, our simulation evolutionary algorithm, takes its name from what is known to be the smartest species of frog – Dendrobates auratus. These frogs have the ability to create complex mental maps to evaluate and better navigate their surroundings.
+CYCLO
+Cyclo, our multi echelon inventory optimization engine, takes it name from the frog species Cyclorana platycephala. These frogs have the amazing ability to "optimize" their water inventory: they live underground for years in a burrow without water, creating a water-holding cocoon of skin around their bodies to not dry out.
 HOPPER
 Hopper, our transportation routing engine, doesn’t have a name rooted in frog-related biology but rather a visual of a frog hopping along from stop to stop just as you might see with a multi-drop transportation route.
 As you continue to work with the tool you might find yourself asking, what do these engine names mean and how the heck did they come up with them?
 ANURA
 Anura, the name of our data schema, comes from the biological root where Anura is the order that all frogs and toads fall into.
 NEO
-NEO, our optimization engine, takes its name from a suborder of Anura – Neobatrachia. Frogs in this suborder are known to be the most advanced of any other suborder.
+Neo, our optimization engine, takes its name from a suborder of Anura – Neobatrachia. Frogs in this suborder are known to be the most advanced of any other suborder.
 THROG
-THROG, our simulation engine, takes its name from a superhero hybrid that crosses Thor with a frog (yes, this actually exists)
+Throg, our simulation engine, takes its name from a superhero hybrid that crosses Thor with a frog (yes, this actually exists)
 TRIAD
 Triad, our greenfield engine, takes its name from the oldest known species of frogs – Triadobatrachus. You can think of it as the starting point for the evolution of all frogs, and it serves as a great starting point for modeling projects too!
 DART
 Dart, our risk engine, takes its name from the infamous poison dart frog. Just as you would want to be aware of a poisonous frog’s presence, you’ll also want to be sure to evaluate any opportunities for risks to present themselves.
 DENDRO
 Dendro, our simulation evolutionary algorithm, takes its name from what is known to be the smartest species of frog – Dendrobates auratus. These frogs have the ability to create complex mental maps to evaluate and better navigate their surroundings.
+CYCLO
+Cyclo, our multi echelon inventory optimization engine, takes it name from the frog species Cyclorana platycephala. These frogs have the amazing ability to "optimize" their water inventory: they live underground for years in a burrow without water, creating a water-holding cocoon of skin around their bodies to not dry out.
 HOPPER
 Hopper, our transportation routing engine, doesn’t have a name rooted in frog-related biology but rather a visual of a frog hopping along from stop to stop just as you might see with a multi-drop transportation route.
 
